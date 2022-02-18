@@ -1,0 +1,80 @@
+<style>
+    html {
+      scroll-behavior: smooth;
+      scroll-padding: 5rem; /* scroll-p-20 */
+  
+      @media (min-width: 1024px) {
+        scroll-padding: 7rem; /* scroll-p-28 */
+      }
+    }
+  
+    .scrolled {
+      box-shadow: 0px 4px 6px -1px rgba(0, 0, 0, 0.1), 0px 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+  </style>
+  <header class="h-16 lg:h-[88px] w-full">
+    <div class="header-content fixed w-full bg-white flex p-4 lg:px-16 lg:py-8 items-center justify-between z-10">
+      <div class="flex items-center">
+        <div class="h-6">
+          <img class="w-full h-full object-cover" src="/images/logo.png" alt="Inlive Logo">
+        </div>
+      </div>
+      <button type="button" class="block lg:hidden p-1" onclick="handleToggleNavMenu()">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+      <nav class="hidden lg:block">
+        <ul class="flex items-center">
+          <li class="mr-8 font-semibold text-sm leading-6">
+            <a href="#what-we-offer" class="inline-block text-gray-700 hover:text-blue-500">What We Offer</a>
+          </li>
+          <li class="mr-8 font-semibold text-sm leading-6">
+            <a href="#what-is-inlive" class="inline-block text-gray-700 hover:text-blue-500">What is inLive</a>
+          </li>
+          <li class="mr-8 font-semibold text-sm leading-6">
+            <a href="/docs" class="inline-block text-gray-700 hover:text-blue-500">Docs</a>
+          </li>
+          <li class="mr-8 font-semibold text-sm leading-6">
+            <a href="/blog" class="inline-block text-gray-700 hover:text-blue-500">Blog</a>
+          </li>
+          <li class="mr-8 font-semibold text-sm leading-6">
+            <hr class="w-[1px] border-none h-6 bg-gray-300">
+          </li>
+          <li class="font-semibold text-sm leading-6">
+            <a href="/login" class="inline-block text-gray-700 hover:text-blue-500">Login</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <div id="mobile-nav-menu" class="hidden">
+      <inlive-overlay onclick="handleToggleNavMenu()"></inlive-overlay>
+      <div class="fixed top-0 mt-4 left-0 ml-4 right-0 mr-4 w-[calc(100%-2rem)] z-50">
+        <nav class="bg-white w-full p-6 shadow-lg rounded-lg">
+          <ul>
+            <li class="mb-6 font-semibold text-base flex items-center justify-between relative">
+              <a href="#what-we-offer" class="text-gray-700">What We Offer</a>
+              <button type="button" class="p-1 absolute right-0" onclick="handleToggleNavMenu()">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </li>
+            <li class="mb-6 font-semibold text-base">
+              <a href="#what-is-inlive" class="text-gray-700">What is inLive</a>
+            </li>
+            <li class="mb-6 font-semibold text-base">
+              <a href="#developer-portal" class="text-gray-700 opacity-50 pointer-events-none cursor-not-allowed" aria-disabled="true">Developer Portal</a>
+            </li>
+            <li class="mb-6 font-semibold text-base">
+              <hr class="w-full h-[1px] border-none bg-gray-300">
+            </li>
+            <li class="font-semibold text-base">
+              <a href="/login" class="text-gray-700">Login</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>

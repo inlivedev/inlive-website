@@ -1,0 +1,8 @@
+<h3>Documentation</h3>
+<ul>
+{{ range .FirstSection.Pages }}
+    <li>
+        <h3><a href="{{.Permalink}}">{{.Title}}</a></h3>
+    </li>
+{{ end }}
+</ul>

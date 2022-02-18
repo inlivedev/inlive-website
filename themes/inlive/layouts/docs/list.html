@@ -1,0 +1,15 @@
+{{ define "main" }}
+    <aside>
+        {{- partial "docs/sidebar.html" . -}}
+    </aside>
+    <main>
+        <ul>
+            {{ range .Pages }}
+            <li>
+                <a href="{{.Permalink}}">{{.Title}}</a>
+            </li>
+        {{ end }}
+        </ul>
+    </main>
+    
+{{ end }}
