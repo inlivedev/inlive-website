@@ -18,10 +18,11 @@
         }
     </style>
     <title>{{ .Title }}</title>
-{{ $styles := resources.Get "css/styles.css" | toCSS | postCSS (dict "config" "./assets/css/postcss.config.js") }}
+{{ $styles := resources.Get "/css/_generated.css" | postCSS }}
+
 {{ if .Site.IsServer }}
-  <link rel="stylesheet" href="{{ $styles.RelPermalink }}">
+  <link rel="stylesheet" href="{{ $styles.RelPermalink }}"/>
 {{ else }}
   {{ $styles := $styles | minify | fingerprint | resources.PostProcess }}
-  <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}">
+  <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}"/>
 {{ end }}

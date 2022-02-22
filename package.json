@@ -4,7 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "concurrently npm:watch:*",
+    "watch:tw": "tailwindcss -i ./themes/inlive/assets/css/tailwind.css -o ./themes/inlive/assets/css/_generated.css --watch",
+    "watch:hugo": "wait-on ./themes/inlive/assets/css/_generated.css && hugo server --gc",
+    "build": "concurrently npm:build:*",
+    "build:tw": "tailwindcss -i ./themes/inlive/assets/css/tailwind.css -o ./themes/inlive/assets/css/_generated.css --minify",
+    "build:hugo": "wait-on ./themes/inlive/assets/css/_generated.css && hugo --gc --minify"
   },
   "keywords": [],
   "author": "",
@@ -14,6 +19,10 @@
     "postcss": "^8.4.6",
     "postcss-cli": "^9.1.0",
     "postcss-import": "^14.0.2",
-    "tailwindcss": "^3.0.22"
+    "tailwindcss": "^3.0.23"
+  },
+  "dependencies": {
+    "concurrently": "^7.0.0",
+    "wait-on": "^6.0.1"
   }
 }
