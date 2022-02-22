@@ -3,9 +3,11 @@ inlive static site for blog and documentation
 
 ## Setup
 This is static site generated using Hugo. To run this locally, you can do these steps:
-1. [Install Hugo](https://gohugo.io/getting-started/installing/)
-2. Run `hugo server` to run hugo server and enable auto reload when the code changes.
-3. You can test the deployment by call `hugo` and it will generate all static files needed under `public` directory.
+1. [Install Hugo](https://gohugo.io/getting-started/installing/).
+2. Ensure the hugo is installed properly by using `hugo version` command.
+3. Install all dependencies using `npm install`.
+4. Run `npm run dev` to run tailwind in watch mode along with the hugo webserver which will enable auto reload when the code changes. The server is available on http://localhost:1313.
+5. Run `npm run build` and it will generate all static files needed under `public` directory. The `public` directory contains all files that we will use to deploy the website.
 
 
 ## Adjusting Layout
