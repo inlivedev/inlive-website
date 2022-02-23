@@ -1,5 +1,6 @@
 baseURL = 'http://example.org/'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = 'inLive'
+description = ''
 theme = "inlive"
 assetDir = "static"
