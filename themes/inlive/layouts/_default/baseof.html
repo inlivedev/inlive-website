@@ -1,11 +1,15 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-    {{- partial "head.html" . -}}
+	{{- partial "head.html" . -}}
+	{{- block "head" . }}{{- end }}
 </head>
+
 <body class="antialiased">
-    {{- partial "header.html" . -}}
-    {{- block "main" . }}{{- end }}
-    {{- partial "footer.html" . -}}
+	{{- block "main" . }}{{- end }}
+	{{- partial "footer/footer.html" . -}}
+	{{- block "script" . }}{{- end }}
 </body>
+
 </html>
