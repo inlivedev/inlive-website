@@ -1,6 +1,4 @@
 baseURL = 'http://example.org/'
 languageCode = 'en-us'
 title = 'inLive'
-description = ''
 theme = "inlive"
-assetDir = "static"
