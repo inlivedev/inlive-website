@@ -6,8 +6,8 @@ This is static site generated using Hugo. To run this locally, you can do these 
 1. [Install Hugo](https://gohugo.io/getting-started/installing/).
 2. Ensure the hugo is installed properly by using `hugo version` command.
 3. Install all dependencies using `npm install`.
-4. Run `npm run dev` to run tailwind in watch mode along with the hugo webserver which will enable auto reload when the code changes. The server is available on http://localhost:1313.
-5. Run `npm run build` and it will generate all static files needed under `public` directory. The `public` directory contains all files that we will use to deploy the website.
+4. Run `hugo server --gc` to run hugo server and enable auto reload when the code changes. Preferably using `--gc` flag to clean unused cache files. The server is available on http://localhost:1313
+5. You can test the deployment by calling `hugo` (preferably using `--gc` and `--minify` flags) and it will generate all static files needed under `public` directory. The `public` directory contains all files that we will use to deploy the website.
 
 
 ## Adjusting Layout
