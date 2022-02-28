@@ -19,5 +19,5 @@ resources
 # Generated files
 *.lock
 *.log
+.DS_Store
 public
-**/_generated.css
