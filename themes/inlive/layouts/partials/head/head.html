@@ -20,4 +20,4 @@
     <title>{{ .Title }}</title>
 
 {{/* This will greatly speedup build times in development which is required due to hack for rebuilding / regenerating the tailwind styles https://github.com/gohugoio/hugo/issues/8343#issuecomment-1019383325 */}}
-{{ partialCached "css.html" . }}
+{{ partialCached "head/css.html" . }}
