@@ -3,10 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "dev": "hugo server --gc",
-    "build": "hugo --gc --minify"
-  },
+  "scripts": {},
   "keywords": [],
   "author": "",
   "license": "ISC",
