@@ -14,14 +14,18 @@
     box-shadow: 0px 4px 6px -1px rgba(0, 0, 0, 0.1), 0px 2px 4px -1px rgba(0, 0, 0, 0.06);
   }
 </style>
-<header class="h-16 lg:h-[88px] w-full">
-  <div class="header-content fixed w-full bg-white flex p-4 lg:px-16 lg:py-8 items-center justify-between z-10">
-    <div class="flex items-center">
-      <a href="/" class="w-16 h-6">
-        <img class="w-full h-full object-cover" width="64" height="24" src="/images/logo/logo.png" alt="Inlive Logo">
-      </a>
-    </div>
-    {{- partial "navbar/navbar.html" . -}}
-    {{- partial "navbar/mobile-navbar.html" . -}}
+<header class="w-full sticky top-0 z-10 bg-white flex p-4 lg:px-16 lg:py-8 items-center justify-between header-content">
+  <div class="flex items-center">
+    <a href="/" class="block w-16 h-6">
+      <img class="w-full h-full object-cover" width="64" height="24" src="/images/logo/logo.png" alt="Inlive Logo">
+    </a>
   </div>
+  <!-- Hamburger menu -->
+  <button type="button" class="block lg:hidden p-1 text-gray-500" aria-label="open navigation menu" onclick="handleToggleNavMenu()">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16" />
+    </svg>
+  </button>
+  {{- partial "navbar/navbar.html" . -}}
 </header>
+{{- partial "navbar/mobile-navbar.html" . -}}
