@@ -11,7 +11,7 @@
         <p class="mb-6 text-lg lg:text-xl leading-8 text-gray-600">
           {{ .Description }}
         </p>
-        <article class="prose max-w-none prose-blue prose-a:no-underline hover:prose-a:underline">
+        <article class="prose prose-sm lg:prose-base max-w-none prose-blue prose-a:no-underline hover:prose-a:underline">
           {{ .Content }}
         </article>
       </main>
@@ -19,7 +19,7 @@
       {{ partial "docs/footer.html" . }}
     </div>
     <div class="w-64">
-      {{ partial "docs/table-of-content.html" . }}
+      {{/* partial "docs/table-of-content.html" . */}}
     </div>
   </div>
 </div>
