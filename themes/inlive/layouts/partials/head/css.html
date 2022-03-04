@@ -1,0 +1,10 @@
+{{/* Using hack for automatically rebuilding / regenerating the tailwind styles in development https://github.com/gohugoio/hugo/issues/8343#issuecomment-1013956389 */}}
+
+{{ $styles := resources.Get "css/tailwind.css" }}
+{{ $styles = $styles | resources.PostCSS }}
+{{ if  hugo.IsProduction  }}
+  {{ $styles = $styles | minify | fingerprint | resources.PostProcess }}
+{{ else if .Site.IsServer }}
+  {{ $styles = $styles | resources.ExecuteAsTemplate (printf "tailwind.%v.css" now.UnixMilli) .}}
+{{ end }}
+<link href="{{ $styles.RelPermalink }}" rel="stylesheet" />
