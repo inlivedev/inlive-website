@@ -360,7 +360,9 @@
 
 {{ define "script" }}
 <script src="https://cdn.jsdelivr.net/npm/keen-slider@6.6.3/keen-slider.js" defer></script>
-{{ $js := resources.Get "/js/home.js" }}
-{{ $minifiedJS := $js | resources.Minify }}
+{{ $globalJS := resources.Get "/js/global.js" }}
+{{ $homeJS := resources.Get "/js/home.js" }}
+{{ $bundleJS := slice $globalJS $homeJS | resources.Concat "/js/bundle.js" }}
+{{ $minifiedJS := $bundleJS | resources.Minify }}
 <script type="text/javascript" src="{{ $minifiedJS.RelPermalink }}" defer></script>
 {{ end }}
