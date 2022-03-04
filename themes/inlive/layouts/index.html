@@ -3,7 +3,7 @@
 {{ end }}
 
 {{ define "main" }}
-{{- partial "header/home.html" . -}}
+{{ partial "header/home.html" . }}
 <main>
   {{/* Hero */}}
   <section class="mt-6 lg:mt-0 px-4 lg:px-8 pb-3">
@@ -356,6 +356,10 @@
     </div>
   </section>
 </main>
+{{ end }}
+
+{{ define "footer" }}
+{{ partial "footer/footer.html" . }}
 {{ end }}
 
 {{ define "script" }}
