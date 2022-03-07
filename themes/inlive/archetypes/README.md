@@ -21,4 +21,4 @@
 
     - weight: Menu's weight. This is used to sort the order of the menu. The value is a multiple of 1000 for section page (_index.md) (example 2000) and increment by 1 for single page inside the section (example 2001, 2002). (By default the value is 0). The value is the same as page's weight.
 
-    - parent: Parent menu for nested menu. This applies to single page which is not section page (_index.md). The value is the name of current directory where the menu resides. For example menu that has identifier installation has parent which identifier is getting-started. For section page (_index.md), the value is empty because section page is supposed to be a parent menu.
+    - parent: Parent menu for nested menu. This applies to single page which is not section page (_index.md). The value is the name of current directory where the menu resides. For example menu that has identifier "Installation" has parent which identifier is "Getting Started". For section page (_index.md), the value is empty because section page is supposed to be a parent menu.
