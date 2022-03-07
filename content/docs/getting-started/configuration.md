@@ -1,5 +1,6 @@
 ---
 date: 2022-03-01
+lastmod: 2022-03-01
 name: Configuration
 title: Configuration
 description: Here is the configuration setting that you need before start the app

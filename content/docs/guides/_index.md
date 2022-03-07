@@ -1,5 +1,6 @@
 ---
 date: 2022-03-01
+lastmod: 2022-03-01
 name: Guides
 title: Guides
 description: List of guides that we created for you
