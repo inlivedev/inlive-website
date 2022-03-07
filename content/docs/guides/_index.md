@@ -8,7 +8,7 @@ slug: guides
 weight: 3000
 menu:
   docs_sidebar:
-    identifier: guides
+    identifier: Guides
     name: Guides
     weight: 3000
 ---

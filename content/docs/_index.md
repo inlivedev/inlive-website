@@ -11,7 +11,7 @@ aliases:
   - /docs/
 menu:
   docs_sidebar:
-    identifier: introduction
+    identifier: Introduction
     name: Introduction
     weight: 1000
 ---

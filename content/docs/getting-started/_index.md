@@ -8,7 +8,7 @@ slug: getting-started
 weight: 2000
 menu:
   docs_sidebar:
-    identifier: getting-started
+    identifier: Getting Started
     name: Getting Started
     weight: 2000
 ---
