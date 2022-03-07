@@ -41,9 +41,8 @@
 {{ end }}
 
 {{ define "script" }}
-{{ $globalJS := resources.Get "/js/global.js" }}
-{{ $docsJS := resources.Get "/js/docs.js" }}
-{{ $bundleJS := slice $globalJS $docsJS | resources.Concat "/js/bundle.js" }}
-{{ $minifiedJS := $bundleJS | resources.Minify }}
-<script type="text/javascript" src="{{ $minifiedJS.RelPermalink }}" defer></script>
+{{ $globalJS := resources.Get "js/global.js" | minify }}
+{{ $docsJS := resources.Get "js/docs.js" | minify }}
+<script type="text/javascript" src="{{ $globalJS.RelPermalink }}" defer></script>
+<script type="text/javascript" src="{{ $docsJS.RelPermalink }}" defer></script>
 {{ end }}
