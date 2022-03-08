@@ -1,0 +1,42 @@
+{{ define "main" }}
+{{ partial "header/header.html" . }}
+<main class="max-w-5xl mx-auto">
+  <article class="px-4 lg:px-0">
+    <h1 class="mt-16 mb-2 font-extrabold text-3xl text-center text-gray-900">Behind the Stream</h1>
+    <p class="mb-16 text-lg text-center text-gray-700 ">We write stuff from time to time that might be interesting</p>
+
+    <ul class="border-t border-gray-300 pt-5 lg:pt-12 pb-4 lg:px-28">
+      {{ range .Pages }}
+      <li class="mb-16 last:mb-0">
+        <article class="w-full">
+          <time datetime="{{ .Date.Format `2006-01-02T00:00` }}" class="block mb-1 text-sm text-gray-500">{{ .Date.Format "02 January 2006" }}</time>
+          <a href="{{ .RelPermalink }}" class="mb-4 block text-gray-900 hover:text-blue-800">
+            <h2 class="font-bold text-xl lg:text-2xl">{{ .Title }}</h2>
+          </a>
+          <p class="mb-2 text-base leading-7 text-gray-700 ">
+            Aliquet felis sed egestas tristique scelerisque morbi eleifend sagittis. Tellus habitant vitae, in dignissim. Tempor augue cum praesent tempus in at in. Vulputate leo ullamcorper varius pellentesque. Suscipit consectetur luctus nulla dui, ipsum vitae.
+          </p>
+          <a href="{{ .RelPermalink }}" class="inline-flex items-center rounded pl-2 pr-1 py-1.5 font-semibold text-sm text-blue-700 hover:bg-blue-100">
+            Continue reading
+            <span class="ml-1 flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+              </svg>
+            </span>
+          </a>
+        </article>
+      </li>
+      {{ end }}
+    </ul>
+  </article>
+</main>
+{{ end }}
+
+{{ define "footer" }}
+{{ partial "footer/footer.html" . }}
+{{ end }}
+
+{{ define "script" }}
+{{ $globalJS := resources.Get "js/global.js" | minify }}
+<script type="text/javascript" src="{{ $globalJS.RelPermalink }}" defer></script>
+{{ end }}
