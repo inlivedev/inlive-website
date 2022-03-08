@@ -1,0 +1,31 @@
+{{ define "main" }}
+{{ partial "header/header.html" . }}
+<main class="max-w-5xl mx-auto">
+  <article class="px-4 lg:px-28 pt-4 lg:pt-8">
+    <a href="/blog/" class="inline-flex items-center rounded pl-2 pr-1 py-1.5 font-semibold text-sm text-blue-700 hover:bg-blue-100">
+      <span class="mr-1 flex items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+        </svg>
+      </span>
+      Back to Blog
+    </a>
+    <header class="text-center py-16">
+      <time datetime="{{ .Date.Format `2006-01-02T00:00` }}" class="mb-2 inline-block text-sm text-gray-500">{{ .Date.Format "02 January 2006" }}</time>
+      <h1 class="font-extrabold text-3xl lg:text-4xl tracking-tight text-gray-900">Without featured image, tellus aliquam enim tincidunt consequat at posuere morbi tempus</h1>
+    </header>
+    <article class="border-t border-gray-300 pt-10 lg:pt-16 pb-24 max-w-none prose prose-blue prose-a:no-underline hover:prose-a:underline">
+      {{ .Content }}
+    </article>
+  </article>
+</main>
+{{ end }}
+
+{{ define "footer" }}
+{{ partial "footer/footer.html" . }}
+{{ end }}
+
+{{ define "script" }}
+{{ $globalJS := resources.Get "js/global.js" | minify }}
+<script type="text/javascript" src="{{ $globalJS.RelPermalink }}" defer></script>
+{{ end }}
