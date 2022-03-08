@@ -4,7 +4,7 @@
   <div class="lg:flex lg:flex-1">
     {{ partial "docs/sidebar.html" . }}
     {{/*  Main Content  */}}
-    <div class="lg:flex-1 px-4 lg:px-10 pt-6 lg:pt-8">
+    <div class="lg:flex-1 min-w-0 px-4 lg:px-10 pt-6 lg:pt-8">
       <main>
         {{ partial "docs/breadcrumbs.html" . }}
         <h1 class="mb-4 lg:mb-8 font-bold text-3xl lg:text-4xl text-gray-900">{{ .Title }}</h1>
@@ -18,7 +18,7 @@
       {{ partial "docs/pagination.html" . }}
       {{ partial "docs/footer.html" . }}
     </div>
-    <div class="w-64">
+    <div class="hidden lg:block w-64">
       {{/* partial "docs/table-of-content.html" . */}}
     </div>
   </div>
