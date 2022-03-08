@@ -9,7 +9,3 @@ const handleToggleSideNavMenu = () => {
 const handleBackToTop = () => {
   window.scrollTo({ top: 0, behavior: 'smooth' })
 }
-
-const handleToggleSearchBar = () => {
-
-}
