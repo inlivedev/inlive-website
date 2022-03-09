@@ -4,7 +4,7 @@
 
 - lastmod: The last modified date of the content (By default is using current date with YYYY-MM-DD format)
 
-- name: Name of the page. This will be used in the breadcrumb. "Name" here is same as menu name. (By default is using the file name)
+- name: Name of the page. This will be used in the breadcrumb. The value here is the same as menu name. (By default is using the file name)
 
 - title: Title of the page. This is used for title tag, meta title tag and heading level 1 inside single and list docs layout. (By default is using the file name)
 
@@ -12,13 +12,21 @@
 
 - slug: Page's slug. (By default is using the file name)
 
-- weight: Page's weight. This is used to sort the order of the page and is used for next and previous page features. The value is a multiple of 1000 for section page (_index.md) (example 2000) and increment by 1 for single page inside the section (example 2001, 2002). (By default the value is 0). The value is the same as menu's weight.
+- weight: Page's weight. This is used to sort the order of the page in ascending order and is used for next and previous page features.
+  - For level 1 page: The value is a multiple of 1000 (example: 1000, 2000, 3000).
+  - For level 2 page: The value is a multiple of 1000 + page's weight number (example: 3001, 3002, 3003, 3004).
 
-- docs_sidebar: Menu's name for sidebar menu in the documentation page
+  Level 1 page is a page that is a direct children of docs directory (example: docs/introduction/index.md, docs/getting-started/index.md, docs/guides/_index.md).
+
+  Level 2 page is a page that is a direct children of a level 1 page. (example: docs/guides/app-with-webrtc/index.md).
+
+  The default value of weight is 0. The value is the same as menu's weight.
+
+- docs_sidebar: Menu name for sidebar menu in the documentation page
     - identifier: Menu item identifier. This is used as a key and the value must be unique for each menu item entry. For nested menu, this is used to connect parent and child menus
 
-    - name: The name or label of the menu item. Menu name is same as page's name.
+    - name: The name or text label of the menu item. Menu name's value is the same as page's name value.
 
-    - weight: Menu's weight. This is used to sort the order of the menu. The value is a multiple of 1000 for section page (_index.md) (example 2000) and increment by 1 for single page inside the section (example 2001, 2002). (By default the value is 0). The value is the same as page's weight.
+    - weight: Menu's weight. This is used to sort the order of the menu in ascending order. Menu's weight value is should be the same as page's weight. Please see the page's weight above. The default value is 0.
 
-    - parent: Parent menu for nested menu. This applies to single page which is not section page (_index.md). The value is the name of current directory where the menu resides. For example menu that has identifier "Installation" has parent which identifier is "Getting Started". For section page (_index.md), the value is empty because section page is supposed to be a parent menu.
+    - parent: Parent menu for nested menu. This applies to a level 2 page or a page that is not a direct children of docs directory. The value is the parent's menu identifier. If the menu is a level 1 page, the menu obviously doesn't have a parent.
