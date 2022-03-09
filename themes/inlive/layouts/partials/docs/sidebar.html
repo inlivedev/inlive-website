@@ -65,7 +65,7 @@
         </li>
         {{ else }}
         <li>
-          <a href="{{ .URL }}" title="{{ .Title }}" class="pb-2 lg:pt-4 lg:pb-1 mr-6 block text-base lg:text-sm leading-6 lg:leading-6 {{ if and ($currentPage.HasMenuCurrent `docs_sidebar` .) ($currentPage.IsMenuCurrent `docs_sidebar` .) }} font-semibold text-blue-600 hover:text-blue-600 {{ else }} font-medium text-gray-700 hover:text-gray-900 {{ end }}">
+          <a href="{{ .URL }}" title="{{ .Title }}" class="pb-2 lg:pt-4 lg:pb-1 mr-6 block text-base lg:text-sm leading-6 lg:leading-6 {{ if ($currentPage.IsMenuCurrent `docs_sidebar` .) }} font-semibold text-blue-600 hover:text-blue-600 {{ else }} font-medium text-gray-700 hover:text-gray-900 {{ end }}">
             <h5>{{ .Name }}</h5>
           </a>
 
