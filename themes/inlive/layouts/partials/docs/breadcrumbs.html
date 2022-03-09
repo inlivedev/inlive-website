@@ -8,7 +8,7 @@
   {{ $split := index (split .currentPage.Parent.File.Dir "/") }}
   {{ $parentSection := index $split (sub (len $split) 2) }}
 
-  {{ if and (.currentPage.Parent) (and (not .currentPage.Parent.IsHome) (ne $parentSection "docs")) }}
+  {{ if and (.currentPage.Parent) (and (not .currentPage.Parent.IsHome) (ne $parentSection nil)) }}
     {{ template "breadcrumbs" dict "currentPage" .currentPage.Parent }}
   {{ end }}
   <li class="group flex items-center text-blue-600 font-bold text-sm">
