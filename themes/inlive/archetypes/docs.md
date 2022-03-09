@@ -12,5 +12,5 @@ menu:
     identifier: {{ .Name | humanize | title }}
     name: {{ .Name | humanize | title }}
     weight: 0 #Please set the weight
-    parent: #No parent
+    parent: #No parent menu
 ---
