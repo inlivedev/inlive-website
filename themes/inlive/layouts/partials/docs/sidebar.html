@@ -52,7 +52,7 @@
       {{ range $index, $pages := .Site.Menus.docs_sidebar }}
         {{ if .HasChildren }}
         <li>
-          <a href="{{ .URL }}" title="{{ .Title }}" class="pt-4 pb-2 lg:pb-1 block text-base lg:text-sm leading-6 lg:leading-6 {{ if and ($currentPage.HasMenuCurrent `docs_sidebar` .) ($currentPage.IsMenuCurrent `docs_sidebar` .) }} font-semibold text-blue-600 hover:text-blue-600 {{ else if ($currentPage.HasMenuCurrent `docs_sidebar` .) }} font-semibold text-gray-800 hover:text-gray-800 {{ else }} font-medium text-gray-700 hover:text-gray-900 {{ end }}">
+          <a href="{{ .URL }}" title="{{ .Title }}" class="pt-3 pb-2 lg:pb-1 block text-base lg:text-sm leading-6 lg:leading-6 {{ if and ($currentPage.HasMenuCurrent `docs_sidebar` .) ($currentPage.IsMenuCurrent `docs_sidebar` .) }} font-semibold text-blue-600 hover:text-blue-600 {{ else if ($currentPage.HasMenuCurrent `docs_sidebar` .) }} font-semibold text-gray-800 hover:text-gray-800 {{ else }} font-medium text-gray-700 hover:text-gray-900 {{ end }}">
             <h5>{{ .Name }}</h5>
           </a>
           <ul>
@@ -65,7 +65,7 @@
         </li>
         {{ else }}
         <li>
-          <a href="{{ .URL }}" title="{{ .Title }}" class="pb-2 lg:pt-4 lg:pb-1 mr-6 block text-base lg:text-sm leading-6 lg:leading-6 {{ if ($currentPage.IsMenuCurrent `docs_sidebar` .) }} font-semibold text-blue-600 hover:text-blue-600 {{ else }} font-medium text-gray-700 hover:text-gray-900 {{ end }}">
+          <a href="{{ .URL }}" title="{{ .Title }}" class="{{ if not (eq $index 0) }} pt-3 {{ end }} pb-2 lg:pt-3 lg:pb-1 mr-6 block text-base lg:text-sm leading-6 lg:leading-6 {{ if ($currentPage.IsMenuCurrent `docs_sidebar` .) }} font-semibold text-blue-600 hover:text-blue-600 {{ else }} font-medium text-gray-700 hover:text-gray-900 {{ end }}">
             <h5>{{ .Name }}</h5>
           </a>
 
