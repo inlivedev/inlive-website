@@ -1,11 +1,20 @@
 ---
-weight : 0
-slug : 'introduction'
-title : 'Introduction'
+date: 2022-03-08
+lastmod: 2022-03-08
+name: Introduction
+title: Welcome to inLive Developer Portal
+description: Welcome to developer portal. This will be your source and reference how our services can help you to develop a live stream application.
+slug: introduction
+weight: 1000
+menu:
+  docs_sidebar:
+    identifier: Introduction
+    name: Introduction
+    weight: 1000
 ---
 
-# Introduction
-Inlive is an infrastructure as a service that allows a developer to develop a live video capability in their web or app. We provide APIs to create a live stream, send video input, and watch the live video. Developers can use our APIs without thinking about server requirements, scalability, and video hosting. 
+## Introduction
+Inlive is an infrastructure as a service that allows a developer to develop a live video capability in their web or app. We provide APIs to create a live stream, send video input, and watch the live video. Developers can use our APIs without thinking about server requirements, scalability, and video hosting.
 
 ## Use Inlive vs. build your own
 ### Easy to use and scale
@@ -19,7 +28,7 @@ Our designed server deployment automation allows us to charge you only when used
 ## What you can do
 These are some of the examples of what you can do with our APIs:
 Create a live video stream.
-Send a video input with WebRTC or RTMP protocol. 
+Send a video input with WebRTC or RTMP protocol.
 Get a list of all created video live streams.
 Get the HLS and Dash playlist manifest to use for any compatible video player.
 Get an embedded video player code that you use directly on your website.
