@@ -1,32 +1,39 @@
+{{ if .File.Path }}
 <nav class="py-16">
   {{$pages := where .Site.Pages "Section" "docs"}}
+  {{/* next and prev is reversed  */}}
   {{$next := $pages.ByWeight.Prev .}}
   {{$prev := $pages.ByWeight.Next .}}
 
   <ul class="grid grid-cols-1 lg:grid-cols-2 justify-between gap-4">
     <li>
       {{ if $prev }}
-      <a href="{{ $prev.RelPermalink }}" class="px-4 py-3 lg:p-4 flex justify-between gap-x-4 border border-gray-300 hover:border-blue-400 rounded-lg font-medium text-base text-blue-600">
-        <span>
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-          </svg>
-        </span>
-        <span class="flex-1 text-right">{{ $prev.Params.Name }}</span>
-      </a>
+        {{ if $prev.Params.Name }}
+        <a href="{{ $prev.RelPermalink }}" class="px-4 py-3 lg:p-4 flex justify-between gap-x-4 border border-gray-300 hover:border-blue-400 rounded-lg font-medium text-base text-blue-600">
+          <span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+            </svg>
+          </span>
+          <span class="flex-1 text-right">{{ $prev.Params.Name }}</span>
+        </a>
+        {{ end }}
       {{ end }}
     </li>
     <li>
       {{ if $next }}
-      <a href="{{ $next.RelPermalink }}" class="px-4 py-3 lg:p-4 flex justify-between gap-x-4 border border-gray-300 hover:border-blue-400 rounded-lg font-medium text-base text-blue-600">
-        <span class="flex-1 text-left">{{ $next.Params.Name }}</span>
-        <span>
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-          </svg>
-        </span>
-      </a>
+        {{ if $next.Params.Name }}
+        <a href="{{ $next.RelPermalink }}" class="px-4 py-3 lg:p-4 flex justify-between gap-x-4 border border-gray-300 hover:border-blue-400 rounded-lg font-medium text-base text-blue-600">
+          <span class="flex-1 text-left">{{ $next.Params.Name }}</span>
+          <span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </span>
+        </a>
+        {{ end }}
       {{ end }}
     </li>
   </ul>
 </nav>
+{{ end }}
