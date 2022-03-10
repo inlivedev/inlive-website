@@ -25,12 +25,12 @@ We can create a new content using a Hugo `new` command. The `new` command will c
 ### Create a new documentation content
 This is a step by step for creating a new documentation content inside the `docs` folder.
 
-1. Create a content using Hugo command. We encourage you to use this approach because we already have default front matter setup for documentation content.
+1. Create a content using Hugo command. We encourage you to use this approach because we already have default front matter setup using [Hugo archetypes](https://gohugo.io/content-management/archetypes/).
 
     ```
     hugo new docs/getting-started/index.md
     ```
-    We encourage you to create a directory-based content to make it easier to maintain. Every content has its own directory and the actual content is inside `index.md` file. This will create a `/docs/getting-started/` and will use a `single.html` layout from `layout/docs`.
+    We encourage you to create a directory-based content to make it easier to maintain. Every content has its own directory and the actual content is inside `index.md` file. This will create a `/docs/getting-started/` route and will use a `single.html` layout from `layout/docs`.
 
     You may notice there is a `_index.md` file inside our project (except in the root content directory). This is a content section which will generate a page based on `list.html` inside `layouts/docs`. This will create a page that lists all documentation content inside its directory. This is useful when we want to group some contents together. To know more about content section please refer to the documentation about [content sections](https://gohugo.io/content-management/sections/).
 
