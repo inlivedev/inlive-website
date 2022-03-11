@@ -16,5 +16,8 @@
 node_modules
 resources
 
+# Generated files
 *.lock
 *.log
+.DS_Store
+public

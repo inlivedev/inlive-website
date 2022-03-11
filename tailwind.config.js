@@ -2,7 +2,10 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
   content: [
-    './themes/inlive/**/*.{html,js}',
+    './archetypes/**/*.md',
+    './content/**/*.md',
+    './themes/inlive/archetypes/**/*.md',
+    './themes/inlive/layouts/**/*.html',
   ],
   theme: {
     extend: {
