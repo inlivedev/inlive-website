@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
+
+#docs-content h1:first-child {
+  @apply font-bold text-3xl lg:text-4xl text-gray-900 mb-4 lg:mb-8
+}
+
+#docs-content h1:first-child + p {
+  @apply mb-6 text-lg lg:text-xl lg:leading-8 text-gray-600
+}
+
+/* put below to ensure utilities can still override the styles */
 @tailwind utilities;

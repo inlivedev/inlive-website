@@ -7,10 +7,9 @@
     <div class="lg:flex-1 min-w-0 px-4 lg:px-10 pt-6 lg:pt-8 xl:mr-64">
       <main>
         {{ partial "docs/breadcrumbs.html" . }}
-        <h1 class="mb-4 lg:mb-8 font-bold text-3xl lg:text-4xl text-gray-900">{{ .Title }}</h1>
-        <p class="mb-12 text-lg lg:text-xl leading-8 text-gray-600">
-          {{ .Description }}
-        </p>
+        <article id="docs-content" class="mb-12 prose prose-sm lg:prose-base max-w-none prose-blue prose-a:no-underline hover:prose-a:underline">
+          {{ .Content }}
+        </article>
         <section>
           <ul>
             {{ range .Pages }}
@@ -25,7 +24,7 @@
                   </svg>
                 </div>
                 <p class="ml-3 lg:ml-4 flex-1 font-semibold text-base lg:text-xl lg:leading-8 text-blue-700">
-                  {{ .Title }}
+                  {{ .Params.Name }}
                 </p>
               </a>
             </li>
