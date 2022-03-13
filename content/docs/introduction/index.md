@@ -2,8 +2,8 @@
 date: 2022-03-08
 lastmod: 2022-03-08
 name: Introduction
-title: Welcome to inLive Developer Portal
-description: Welcome to developer portal. This will be your source and reference how our services can help you to develop a live stream application.
+title: Introduction
+description: Inlive is an infrastructure as a service that allows a developer to develop a live video capability in their web or app.
 slug: introduction
 weight: 1000
 menu:
@@ -12,8 +12,7 @@ menu:
     name: Introduction
     weight: 1000
 ---
-
-## Introduction
+# Introduction
 Inlive is an infrastructure as a service that allows a developer to develop a live video capability in their web or app. We provide APIs to create a live stream, send video input, and watch the live video. Developers can use our APIs without thinking about server requirements, scalability, and video hosting.
 
 ## Use Inlive vs. build your own

@@ -13,8 +13,8 @@ menu:
     weight: 3001
     parent: Guides
 ---
-## Making an app with WebRTC input
-Lacus, ultrices in enim sociis. Molestie interdum facilisi adipiscing vitae pretium elit, volutpat pulvinar. Magna pretium bibendum libero egestas in eu. Vel in lectus blandit enim. Vivamus imperdiet blandit nunc integer lorem. Viverra et, this slanted text is italic vel aliquet vel nunc. Nisl faucibus libero est mauris purus. Eu consectetur feugiat quis amet nulla lorem hendrerit. Enim, mattis etiam adipiscing molestie.
+# Making an app with WebRTC input
+In this section you will learn about developing an app with WebRTC
 
 ## Why WebRTC
 Lacus, ultrices in enim sociis. Molestie interdum facilisi adipiscing vitae pretium elit, volutpat pulvinar. Magna pretium bibendum libero egestas in eu. Vel in lectus blandit enim. Vivamus imperdiet blandit nunc integer lorem. Viverra et, this slanted text is italic vel aliquet vel nunc. Nisl faucibus libero est mauris purus. Eu consectetur feugiat quis amet nulla lorem hendrerit. Enim, mattis etiam adipiscing molestie.

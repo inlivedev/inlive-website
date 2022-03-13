@@ -2,7 +2,7 @@
 date: 2022-03-08
 lastmod: 2022-03-08
 name: Getting Started
-title: Get Started
+title: Getting Started
 description: To start developing with Inlive, you will need three simple steps to integrate inlive with your app.
 slug: getting-started
 weight: 2000
@@ -12,6 +12,9 @@ menu:
     name: Getting Started
     weight: 2000
 ---
+# Get Started
+To start developing with Inlive, you will need three simple steps to integrate inlive with your app.
+
 ## Get an application key
 To allow your app to access the Inlive APIs, you need an application key. This API key is unique per application, and you will need to use it will all your API request. Follow these steps to create your application key:
 1. Register an Inlive account.

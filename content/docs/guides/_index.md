@@ -12,3 +12,5 @@ menu:
     name: Guides
     weight: 3000
 ---
+# Guides
+List of guides that we created for you
