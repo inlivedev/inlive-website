@@ -6,9 +6,9 @@
 
 - name: Name of the page. This will be used in the breadcrumb. The value here is the same as menu name. (By default is using the file name)
 
-- title: Title of the page. This is used for title tag, meta title tag and heading level 1 inside single and list docs layout. (By default is using the file name)
+- title: Title of the page. This is used for title, and meta title inside single and list docs layout. (By default is using the file name)
 
-- description: Description of the page. This is used for meta description, and paragraph leading below heading level 1 inside single and list docs layout. (By default is using the file name)
+- description: Description of the page. This is used for meta description inside single and list docs layout. (By default is using the file name)
 
 - slug: Page's slug. (By default is using the file name)
 
