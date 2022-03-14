@@ -1,12 +1,23 @@
 ---
-slug : 'tutorial-app-with-webrtc'
-title : 'Tutorial building a live stream app with WebRTC'
+date: 2022-03-11
+lastmod: 2022-03-11
+name: Tutorial with WebRTC
+title: Tutorial building a live stream app with WebRTC
+description: This tutorial will show you how to build a live video stream web app with WebRTC video source input.
+slug: tutorial-app-with-webrtc
+weight: 3001
+menu:
+  docs_sidebar:
+    identifier: Tutorial with WebRTC
+    name: Tutorial with WebRTC
+    weight: 3001
+    parent: Tutorial
 ---
 # Tutorial building a live stream app with WebRTC
 
 This tutorial will show you how to build a live video stream web app with WebRTC video source input. Please read it on [video input documentation](/docs/video-input/) to understand what the WebRTC is and how it's compared with RTMP.
 
-This tutorial will show you how to create a streamer client and viewer page. 
+This tutorial will show you how to create a streamer client and viewer page.
 We will create a web page for the streamer client to capture our webcam directly and send it to Inlive encoder as a video source input once the user clicks the start button.
 We will create a web page that can use by live stream viewers to watch the live video stream.
 
@@ -14,7 +25,7 @@ We will create a web page that can use by live stream viewers to watch the live 
 Before coding your web app, you need to create an application key as stated in our [getting started documentation](/docs/getting-started). Please make sure you write down that key after you create it because it is used in this web app that we will create.
 
 ## B. Create a streamer client
-A streamer client will be using a video capture to capture your webcam video and send it to Inlive encoder. Inlive encoder will encode and publish the video that we watch later with a video player. In this tutorial we will create a streamer client that will create a stream with the name with set, then start a stream. 
+A streamer client will be using a video capture to capture your webcam video and send it to Inlive encoder. Inlive encoder will encode and publish the video that we watch later with a video player. In this tutorial we will create a streamer client that will create a stream with the name with set, then start a stream.
 
 ### 1. Create a live stream
 Before going live, a streamer will always need to create a live stream. This live stream is unique, and it will provide single video input and single video output that can watch through a video player. To create a live stream, use `https://api.inlive.app/v1/streams/create` endpoint to create a stream. But before interacting with the API, first, we need to create a function called `APIRequest` and default options for customized and reusable API request function.
@@ -36,16 +47,16 @@ async function apiRequest(apiKey, url, method, body){
         'Authorization': `Bearer ${apiKey}`
         }
     };
-    
+
     if(typeof body!== 'undefined')
         opts.body = JSON.stringify(body);
-    
+
     const res = await fetch(url,opts);
-    
+
     try{
         const bodyJSON = await res.json();
         return bodyJSON;
-        
+
     } catch(err) {
         console.error(err);
         throw err;
@@ -63,7 +74,7 @@ async function createStream(){
         name:'my first stream',
         slug:'my-first-stream'
       });
-     
+
     } catch(err) {
       console.error(err)
     }
@@ -106,7 +117,7 @@ Once the video stream input is available, we're ready to send the video stream t
 1. Create `RTCPeerConnection` object and add the media stream tracks to this RTCPeerConnection. This is an important step to make sure the Offer SDP that we will generate will have information about our media tracks, like video and audio codec information. The RTCPeerConnection also will need to have a media track before being able to start the ice gathering process.
 
     We modify the start stream function and adding some lines to send the video through WebRTC connection.
-   
+
    ```js
     async function startStream(){
         const videoEl = document.querySelector('video');
@@ -139,7 +150,7 @@ Once the video stream input is available, we're ready to send the video stream t
             // handle state change (disconnect, connected)
             const iceConnectionState = peerConnection.iceConnectionState;
             console.log('iceConnectionState', iceConnectionState);
-                
+
         }
 
         peerConnection.onicecandidate = async (event) => {
@@ -163,7 +174,7 @@ Once the video stream input is available, we're ready to send the video stream t
     }
     ```
 
-2. If you see `peerConnection.onicecandidate` line above, there is an `initStream` function called after the ice candidate gathering is finished. The `event.candidate === null` means the gathering process is finished. The `initStream` function is called to initiate a WebRTC connection with the inLive server by sending an HTTP POST request to API endpoint `https://api.inlive.app/v1/streams/${streamid}/init`. 
+2. If you see `peerConnection.onicecandidate` line above, there is an `initStream` function called after the ice candidate gathering is finished. The `event.candidate === null` means the gathering process is finished. The `initStream` function is called to initiate a WebRTC connection with the inLive server by sending an HTTP POST request to API endpoint `https://api.inlive.app/v1/streams/${streamid}/init`.
 
     Then we create `initStream` function that use that `APIRequest` function.
     ```js
@@ -175,7 +186,7 @@ Once the video stream input is available, we're ready to send the video stream t
 
         try {
             const url = `${options.origin}/${options.apiVersion}/streams/${slug}/init`
-            
+
             const resp = await apiRequest(options.apiKey,url,'POST',body)
 
             if (resp.code === 200) {
@@ -188,11 +199,11 @@ Once the video stream input is available, we're ready to send the video stream t
             console.error(error);
             throw err;
         }
-    
+
     }
     ```
-    As you see above, once we got the response from the init endpoint, we set the `peerConnection` with the answer SDP that we extract from the response by calling `peerConnection.setRemoteDescription(answerSDP)`. 
-    
+    As you see above, once we got the response from the init endpoint, we set the `peerConnection` with the answer SDP that we extract from the response by calling `peerConnection.setRemoteDescription(answerSDP)`.
+
 3. Once the RTCPeerConnection is set with both offer and answer SDP, it will initiate the connection to the remote peer, and the `peerConnection.oniceconnectionstatechange` will be triggered if the connection state is changing.
 
 ### 4. Get the video
@@ -299,4 +310,3 @@ There are two options to play the video, and you can [read more detail here](/do
     </body>
     </html>
 ```
-
