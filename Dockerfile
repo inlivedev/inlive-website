@@ -1,6 +1,3 @@
-FROM busybox
-ENV HUGO_VERSION=0.93.2-ext
-RUN wget -O- https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_Linux-64bit.tar.gz | tar zx
-FROM gcr.io/distroless/cc
-ENTRYPOINT ["/hugo"]
-COPY --from=0 /hugo /
+FROM ubuntu
+RUN /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+RUN brew install hugo
