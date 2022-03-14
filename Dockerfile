@@ -1,5 +1,8 @@
 FROM ubuntu
 RUN apt-get update
-RUN apt-get install git curl -y
+RUN apt-get install git curl build-essential -y
 RUN /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+RUN echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> /root/.profile
+RUN eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+RUN brew install gcc
 RUN brew install hugo
