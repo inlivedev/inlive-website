@@ -34,7 +34,7 @@ site_image_build() {
 }
 
 site_cloud_run_deploy() {
-  gcloud -q beta \
+  gcloud \
     run deploy $CLOUD_RUN_PROJECT_NAME \
       --platform managed \
       --region asia-southeast2 \
