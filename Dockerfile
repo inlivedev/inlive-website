@@ -6,7 +6,6 @@
 # RUN echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> /root/.profile
 # RUN eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 # RUN brew install hugo
-FROM klakegg/hugo:0.93.2-onbuild AS hugo
-RUN npm install postcss-cli
+FROM klakegg/hugo:0.93.2-ext-ubuntu-onbuild AS hugo
 FROM nginx
 COPY --from=hugo /target /usr/share/nginx/html
