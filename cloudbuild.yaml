@@ -5,15 +5,13 @@ steps:
   - '-O'
   - 'firebase'
   - 'https://firebase.tools/bin/linux/latest'
- 
 - name: 'gcr.io/cloud-builders/wget'
   args:
   - '--quiet'
   - '-O'
   - 'hugo.tar.gz'
-  - 'https://github.com/gohugoio/hugo/releases/download/v${_HUGO_VERSION}/'hugo_extended_${_HUGO_VERSION}_Linux-64bit.tar.gz
+  - 'https://github.com/gohugoio/hugo/releases/download/v${_HUGO_VERSION}/hugo_extended_${_HUGO_VERSION}_Linux-64bit.tar.gz'
   waitFor: ['-']
- 
 - name: 'ubuntu:20.04'
   args:
   - 'bash'
@@ -25,7 +23,6 @@ steps:
     chmod 755 /tmp/firebase
     /tmp/hugo
     /tmp/firebase deploy --project ${_FIREBASE_PROJECT_NAME} --non-interactive --only hosting -m "Build ${BUILD_ID}"
- 
 substitutions:
   _HUGO_VERSION: 0.93.2
   _FIREBASE_PROJECT_NAME: inlive-website-dev
