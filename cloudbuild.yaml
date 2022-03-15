@@ -2,6 +2,8 @@ images:
 - gcr.io/asgard-livestream/inlive-website
 timeout: '600s'
 steps:
+# Docker Image used to build hugo site within Cloud Build pipeline.
+- name: sidpalas/cloud-builder-hugo
 # Build the container image
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-t', 'gcr.io/asgard-livestream/inlive-website', '.']
@@ -12,7 +14,3 @@ steps:
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   entrypoint: gcloud
   args: ['run', 'deploy', 'inlive-website', '--image', 'gcr.io/asgard-livestream/inlive-website', '--region', 'asia-southeast2', '--platform', 'managed']
-- name: 'gcr.io/asgard-livestream/inlive-website'
-- name: busybox
-  args: ["cat", "public/index.xml"]
-tags: ['cloud-builders-community']
