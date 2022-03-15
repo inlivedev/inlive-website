@@ -13,5 +13,5 @@ RUN npm install
 RUN npx tailwindcss init
 WORKDIR /src
 COPY . .
-FROM nginx
-COPY --from=hugo /target /usr/share/nginx/html
+# FROM nginx
+# COPY --from=hugo /target /usr/share/nginx/html
