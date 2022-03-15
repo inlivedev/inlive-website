@@ -1,47 +1,22 @@
 steps:
-- name: 'gcr.io/cloud-builders/wget'
-  args:
-  - '--quiet'
-  - '-O'
-  - 'firebase'
-  - 'https://firebase.tools/bin/linux/latest'
-- name: 'gcr.io/cloud-builders/wget'
-  args:
-  - '--quiet'
-  - '-O'
-  - 'hugo.tar.gz'
-  - 'https://github.com/gohugoio/hugo/releases/download/v${_HUGO_VERSION}/hugo_extended_${_HUGO_VERSION}_Linux-64bit.tar.gz'
-  waitFor: ['-']
-- name: 'ubuntu:20.04'
-  args:
-  - 'bash'
-  - '-c'
-  - |
-    mv hugo.tar.gz /tmp
-    tar -C /tmp -xzf /tmp/hugo.tar.gz
-    mv firebase /tmp
-    chmod 755 /tmp/firebase
-    /tmp/hugo
-    /tmp/firebase deploy --project ${_FIREBASE_PROJECT_NAME} --non-interactive --only hosting -m "Build ${BUILD_ID}"
-substitutions:
-  _HUGO_VERSION: 0.93.2
-  _FIREBASE_PROJECT_NAME: inlive-website-dev
-
-# =================================================================
-# images:
-# - gcr.io/asgard-livestream/inlive-website
-# timeout: '600s'
-# steps:
-# # Docker Image used to build hugo site within Cloud Build pipeline.
-# - name: sidpalas/cloud-builder-hugo
-#   args: ['build', '-t', 'gcr.io/asgard-livestream/inlive-website', '.']
-# # Build the container image
-# - name: 'gcr.io/cloud-builders/docker'
-#   args: ['build', '-t', 'gcr.io/asgard-livestream/inlive-website', '.']
-# # Push the container image to Container Registry
-# - name: 'gcr.io/cloud-builders/docker'
-#   args: ['push', 'gcr.io/asgard-livestream/inlive-website']
-# # Deploy container image to Cloud Run
-# - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
-#   entrypoint: gcloud
-#   args: ['run', 'deploy', 'inlive-website', '--image', 'gcr.io/asgard-livestream/inlive-website', '--region', 'asia-southeast2', '--platform', 'managed']
+# Docker Image used to build hugo site within Cloud Build pipeline.
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '--tag=gcr.io/${PROJECT_ID}/hugo', '.']
+- name: 'gcr.io/${PROJECT_ID}/hugo'
+  args: ['hugo']
+# Build the container image
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/asgard-livestream/inlive-website', '.']
+# Push the container image to Container Registry
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/asgard-livestream/inlive-website']
+# Deploy container image to Cloud Run
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  entrypoint: gcloud
+  args: ['run', 'deploy', 'inlive-website', '--image', 'gcr.io/asgard-livestream/inlive-website', '--region', 'asia-southeast2', '--platform', 'managed']
+timeout: '600s'
+images: [
+  'gcr.io/asgard-livestream/inlive-website',
+  'gcr.io/${PROJECT_ID}/hugo',
+]
+tags: ['cloud-builders-community']
