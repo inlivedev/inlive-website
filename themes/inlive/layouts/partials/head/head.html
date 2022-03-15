@@ -6,9 +6,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" crossorigin="anonymous">
 <title>{{ if .Title }}{{ .Title }} — {{ end }}{{ .Site.Title }}</title>
 <meta name="title" content="{{ if .Title }}{{ .Title }} — {{ end }}{{ .Site.Title }}">
-<meta name="description" content="{{ .Description }}">
+{{ if .Description }} <meta name="description" content="{{ .Description }}"> {{ end }}
 <meta property="og:title" content="{{ if .Title }}{{ .Title }} — {{ end }}{{ .Site.Title }}">
-<meta property="og:description" content="{{ .Description }}">
+{{ if .Description }} <meta property="og:description" content="{{ .Description }}"> {{ end }}
 
 {{/* This will greatly speedup build times in development which is required due to hack for rebuilding / regenerating the tailwind styles https://github.com/gohugoio/hugo/issues/8343#issuecomment-1019383325 */}}
 {{ partialCached "head/css.html" . }}

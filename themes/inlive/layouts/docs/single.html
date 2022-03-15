@@ -1,41 +1,29 @@
 {{ define "main" }}
-<section id="main">
-  <h1 id="title">{{ .Title }}</h1>
-  <div>
-        <article id="content">
-           {{ .Content }}
+<div class="min-h-screen flex flex-col">
+  {{ partial "header/header.html" . }}
+  <div class="lg:flex lg:flex-1">
+    {{ partial "docs/sidebar.html" . }}
+    {{/*  Main Content  */}}
+    <div class="lg:flex-1 min-w-0 px-4 lg:px-10 pt-6 lg:pt-8">
+      <main>
+        {{ partial "docs/breadcrumbs.html" . }}
+        <article id="docs-content" class="prose prose-sm lg:prose-base max-w-none prose-blue prose-a:no-underline hover:prose-a:underline">
+          {{ .Content }}
         </article>
+      </main>
+      {{ partial "docs/pagination.html" . }}
+      {{ partial "docs/footer.html" . }}
+    </div>
+    <div class="hidden xl:block w-64">
+      {{/* partial "docs/table-of-content.html" . */}}
+    </div>
   </div>
-</section>
-<aside id="meta">
-    <div>
-        {{ .TableOfContents }}
-    <section>
-      <h4 id="date"> {{ .Date.Format "Mon Jan 2, 2006" }} </h4>
-      <h5 id="wordcount"> {{ .WordCount }} Words </h5>
-    </section>
-    {{ with .Params.topics }}
-    <ul id="topics">
-      {{ range . }}
-        <li><a href="{{ "topics" | absURL}}{{ . | urlize }}">{{ . }}</a> </li>
-      {{ end }}
-    </ul>
-    {{ end }}
-    {{ with .Params.tags }}
-    <ul id="tags">
-      {{ range . }}
-        <li> <a href="{{ "tags" | absURL }}{{ . | urlize }}">{{ . }}</a> </li>
-      {{ end }}
-    </ul>
-    {{ end }}
-    </div>
-    <div>
-        {{ with .PrevInSection }}
-          <a class="previous" href="{{.Permalink}}"> {{.Title}}</a>
-        {{ end }}
-        {{ with .NextInSection }}
-          <a class="next" href="{{.Permalink}}"> {{.Title}}</a>
-        {{ end }}
-    </div>
-</aside>
+</div>
+{{ end }}
+
+{{ define "script" }}
+{{ $globalJS := resources.Get "js/global.js" | minify }}
+{{ $docsJS := resources.Get "js/docs.js" | minify }}
+<script type="text/javascript" src="{{ $globalJS.RelPermalink }}" defer></script>
+<script type="text/javascript" src="{{ $docsJS.RelPermalink }}" defer></script>
 {{ end }}
