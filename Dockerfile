@@ -6,8 +6,10 @@
 # RUN echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> /root/.profile
 # RUN eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 # RUN brew install hugo
-FROM klakegg/hugo:0.93.2-ext-ubuntu-onbuild AS hugo
+FROM klakegg/hugo:0.93.2-ext-ci AS hugo
+RUN npm install -g npm@8.5.4
 RUN npm install -D tailwindcss
+RUN npm install
 RUN npx tailwindcss init
 WORKDIR /src
 COPY . .
