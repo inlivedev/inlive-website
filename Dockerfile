@@ -13,5 +13,6 @@ RUN npm install
 RUN npx tailwindcss init
 WORKDIR /src
 COPY . .
+RUN hugo server --gc
 # FROM nginx
 # COPY --from=hugo /target /usr/share/nginx/html
