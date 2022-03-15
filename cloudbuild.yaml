@@ -3,7 +3,6 @@ steps:
 - name: 'gcr.io/$PROJECT_ID/hugo'
 - name: busybox
   args: ["cat", "public/index.xml"]
-tags: ['cloud-builders-community']
 # Build the container image
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-t', 'gcr.io/asgard-livestream/inlive-website', '.']
