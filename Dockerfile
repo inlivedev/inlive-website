@@ -7,6 +7,8 @@
 # RUN eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 # RUN brew install hugo
 FROM klakegg/hugo:0.93.2-ext-ubuntu-onbuild AS hugo
+RUN npm install -D tailwindcss
+RUN npx tailwindcss init
 WORKDIR /src
 COPY . .
 FROM nginx
