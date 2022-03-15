@@ -1,0 +1,7 @@
+baseURL = '/'
+languageCode = 'en-us'
+title = 'inLive'
+theme = 'inlive'
+
+[params]
+  inliveStudioOrigin = 'https://dev-studio.inlive.app'
