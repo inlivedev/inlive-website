@@ -4,7 +4,7 @@ timeout: '600s'
 steps:
 # Build the container image
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/asgard-livestream/studio-inlive', '-f nginx/nginx.Dockerfile', '.']
+  args: ['build', '-t', 'gcr.io/asgard-livestream/studio-inlive', '-f', 'nginx/nginx.Dockerfile', '.']
 # Push the container image to Container Registry
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'gcr.io/asgard-livestream/studio-inlive']
