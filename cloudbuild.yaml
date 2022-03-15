@@ -4,9 +4,10 @@ timeout: '600s'
 steps:
 # Docker Image used to build hugo site within Cloud Build pipeline.
 - name: sidpalas/cloud-builder-hugo
-# Build the container image
-- name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-t', 'gcr.io/asgard-livestream/inlive-website', '.']
+# # Build the container image
+# - name: 'gcr.io/cloud-builders/docker'
+#   args: ['build', '-t', 'gcr.io/asgard-livestream/inlive-website', '.']
 # Push the container image to Container Registry
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'gcr.io/asgard-livestream/inlive-website']
