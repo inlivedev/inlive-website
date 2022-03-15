@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tutorial on inLive</title>
+    <link>http://example.org/docs/tutorial/</link>
+    <description>Recent content in Tutorial on inLive</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 11 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://example.org/docs/tutorial/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tutorial building a live stream app with WebRTC</title>
+      <link>http://example.org/docs/tutorial/tutorial-app-with-webrtc/</link>
+      <pubDate>Fri, 11 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/docs/tutorial/tutorial-app-with-webrtc/</guid>
+      <description>Tutorial building a live stream app with WebRTC This tutorial will show you how to build a live video stream web app with WebRTC video source input. Please read it on video input documentation to understand what the WebRTC is and how it&amp;rsquo;s compared with RTMP.
+This tutorial will show you how to create a streamer client and viewer page. We will create a web page for the streamer client to capture our webcam directly and send it to Inlive encoder as a video source input once the user clicks the start button.</description>
+    </item>
+    
+  </channel>
+</rss>
