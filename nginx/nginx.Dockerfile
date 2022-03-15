@@ -7,7 +7,7 @@ COPY nginx/etc/nginx /etc/nginx
 
 # Sources
 RUN mkdir -p /var/www/
-COPY ${SITE}/public /var/www/${SITE}/public
+COPY ${SITE}/public /var/www/public
 
 # initialization
 COPY nginx/docker-entrypoint.sh /
