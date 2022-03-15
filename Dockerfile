@@ -7,5 +7,7 @@
 # RUN eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 # RUN brew install hugo
 FROM klakegg/hugo:0.93.2-ext-ubuntu-onbuild AS hugo
+WORKDIR /src
+COPY . .
 FROM nginx
 COPY --from=hugo /target /usr/share/nginx/html
