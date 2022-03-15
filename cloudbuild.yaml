@@ -3,7 +3,7 @@ steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build', '--tag=gcr.io/${PROJECT_ID}/hugo', '.']
 - name: 'gcr.io/${PROJECT_ID}/hugo'
-  args: ['--help']
+  args: ['hugo']
 # Build the container image
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-t', 'gcr.io/asgard-livestream/inlive-website', '.']
