@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Docs on inLive</title>
+    <link>http://example.org/docs/</link>
+    <description>Recent content in Docs on inLive</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 11 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://example.org/docs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Introduction</title>
+      <link>http://example.org/docs/introduction/</link>
+      <pubDate>Tue, 08 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/docs/introduction/</guid>
+      <description>Introduction Inlive is an infrastructure as a service that allows a developer to develop a live video capability in their web or app. We provide APIs to create a live stream, send video input, and watch the live video. Developers can use our APIs without thinking about server requirements, scalability, and video hosting.
+Use Inlive vs. build your own Easy to use and scale A video live stream infrastructure can be costly and very complicated to set up because this involves many components to develop.</description>
+    </item>
+    
+    <item>
+      <title>Getting Started</title>
+      <link>http://example.org/docs/getting-started/</link>
+      <pubDate>Tue, 08 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/docs/getting-started/</guid>
+      <description>Get Started To start developing with Inlive, you will need three simple steps to integrate inlive with your app.
+Get an application key To allow your app to access the Inlive APIs, you need an application key. This API key is unique per application, and you will need to use it will all your API request. Follow these steps to create your application key:
+ Register an Inlive account. Go to the setting page.</description>
+    </item>
+    
+    <item>
+      <title>Video Input</title>
+      <link>http://example.org/docs/video-input/</link>
+      <pubDate>Fri, 11 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/docs/video-input/</guid>
+      <description>Video Input Inlive is support 2 ways to sending the video source input to our encoder. You can use either WebRTC or RTMP. This page will explain the different between this two and how you can choose which input method that fit with your case.
+WebRTC RTMP </description>
+    </item>
+    
+  </channel>
+</rss>

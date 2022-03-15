@@ -20,4 +20,4 @@ resources
 *.lock
 *.log
 .DS_Store
-public
+# public
