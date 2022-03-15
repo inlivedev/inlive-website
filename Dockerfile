@@ -1,7 +1,7 @@
-FROM ubuntu:20.04
-WORKDIR /src
-COPY . .
-RUN apt update
-RUN apt install curl -y
-RUN curl -L https://github.com/gohugoio/hugo/releases/download/v0.56.0/hugo_extended_0.56.0_Linux-64bit.tar.gz|tar -xz
-RUN ./hugo -s ./src --minify
+FROM busybox
+ENV HUGO_VERSION=0.93.2
+RUN wget -O- https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_Linux-64bit.tar.gz | tar zx
+
+FROM gcr.io/distroless/cc
+ENTRYPOINT ["/hugo"]
+COPY --from=0 /hugo /

@@ -5,8 +5,6 @@ steps:
 # Build the container image
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-t', 'gcr.io/asgard-livestream/inlive-website', '.']
-- name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/asgard-livestream/inlive-website', '-f', 'nginx.Dockerfile', '.']
 # Push the container image to Container Registry
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'gcr.io/asgard-livestream/inlive-website']
@@ -14,3 +12,7 @@ steps:
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   entrypoint: gcloud
   args: ['run', 'deploy', 'inlive-website', '--image', 'gcr.io/asgard-livestream/inlive-website', '--region', 'asia-southeast2', '--platform', 'managed']
+- name: 'gcr.io/asgard-livestream/inlive-website'
+- name: busybox
+  args: ["cat", "public/index.xml"]
+tags: ['cloud-builders-community']
