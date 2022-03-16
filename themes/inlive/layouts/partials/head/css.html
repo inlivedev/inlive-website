@@ -2,7 +2,7 @@
 
 {{ $styles := resources.Get "css/tailwind.css" }}
 {{ $styles = $styles | resources.PostCSS }}
-{{ if  hugo.IsProduction  }}
+{{ if  or (eq hugo.Environment "production") (and (eq hugo.Environment "development") (not .Site.IsServer))  }}
   {{ $styles = $styles | minify | fingerprint | resources.PostProcess }}
 {{ else if .Site.IsServer }}
   {{ $styles = $styles | resources.ExecuteAsTemplate (printf "tailwind.%v.css" now.UnixMilli) .}}
