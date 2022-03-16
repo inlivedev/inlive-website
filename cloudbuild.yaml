@@ -6,9 +6,19 @@ steps:
     entrypoint: 'npm'
     args: ['install', 'postcss-cli']
   - name: 'gcr.io/$PROJECT_ID/hugo'
-  - name: gcr.io/cloud-builders/gsutil
-    args: ["-m", "rsync", "-r", "-c", "-d", "./public", "gs://inlive-website-dev"]
+    # args: ['--help']
+  # Build the container image
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcr.io/asgard-livestream/inlive-website', '.']
+  # Push the container image to Container Registry
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/asgard-livestream/inlive-website']
+  # Deploy container image to Cloud Run
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: gcloud
+    args: ['run', 'deploy', 'inlive-website', '--image', 'gcr.io/asgard-livestream/inlive-website', '--region', 'asia-southeast2', '--platform', 'managed']
 images: [
   'gcr.io/${PROJECT_ID}/hugo',
+  'gcr.io/asgard-livestream/inlive-website'
 ]
 tags: ['cloud-builders-community']
