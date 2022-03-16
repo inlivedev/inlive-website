@@ -3,7 +3,7 @@ steps:
   - name: 'gcr.io/$PROJECT_ID/hugo'
     args: ['version']
   - name: 'gcr.io/$PROJECT_ID/hugo'
-    args: ['deploy', '[--target=development,', 'defaults', 'to', 'first', 'target]']
+    args: ['deploy', '--target=development']
   # # Build the container image
   # - name: 'gcr.io/cloud-builders/docker'
   #   args: ['build', '-t', 'gcr.io/asgard-livestream/inlive-website', '.']
