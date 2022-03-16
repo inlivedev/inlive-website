@@ -1,7 +1,10 @@
 steps:
 # Generate Hugo web
+  # - name: 'gcr.io/$PROJECT_ID/hugo'
+  #   args: ['version']
+  # - name: 'gcr.io/$PROJECT_ID/hugo'
+  #   args: ['env']
   - name: 'gcr.io/$PROJECT_ID/hugo'
-    args: ['version']
   - name: 'gcr.io/$PROJECT_ID/hugo'
     args: ['deploy', '--target=development']
   # # Build the container image
