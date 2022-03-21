@@ -2,7 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: inlive-website
-  namespace: development
 spec:
   replicas: 1
   selector:
@@ -25,10 +24,9 @@ kind: Service
 apiVersion: v1
 metadata:
   name: inlive-website-http
-  namespace: development
 spec:
   selector:
-     run: inlive-website
+    run: inlive-website
   ports:
   - protocol: TCP
     port: 80
