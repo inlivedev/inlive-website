@@ -1,4 +1,4 @@
-**Docs Archetype**
+## Docs Archetype
 
 - date: The date associated with the page (By default is using current date with YYYY-MM-DD format)
 
@@ -30,3 +30,17 @@
     - weight: Menu's weight. This is used to sort the order of the menu in ascending order. Menu's weight value is should be the same as page's weight. Please see the page's weight above. The default value is 0.
 
     - parent: Parent menu for nested menu. This applies to a level 2 page or a page that is not a direct children of docs directory. The value is the parent's menu identifier. If the menu is a level 1 page, the menu obviously doesn't have a parent.
+
+
+## Blog Archetype
+- date: The date associated with the blog page (By default is using current date with YYYY-MM-DD format)
+
+- lastmod: The last modified date of the blog content (By default is using current date with YYYY-MM-DD format)
+
+- title: Title of the blog page. This is used for title, and meta title tags.
+
+- description: Description of the blog page. This is used for meta description.
+
+- slug: Blog page's slug.
+
+- summary: A blog post summary. If this is empty, Hugo will automatically takes the first 70 words from the content.
