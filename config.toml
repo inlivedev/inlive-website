@@ -2,7 +2,3 @@ baseURL = 'http://example.org/'
 languageCode = 'en-us'
 title = 'inLive'
 theme = "inlive"
-[deployment]
-[[deployment.targets]]
-name = "development"
-URL = "gs://inlive-website-dev"
