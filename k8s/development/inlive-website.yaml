@@ -24,10 +24,9 @@ kind: Service
 apiVersion: v1
 metadata:
   name: inlive-website-http
-  namespace: development
 spec:
   selector:
-     run: inlive-website
+    run: inlive-website
   ports:
   - protocol: TCP
     port: 80
