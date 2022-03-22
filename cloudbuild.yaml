@@ -1,10 +1,10 @@
 steps:
   # Build the container image
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'gcr.io/asgard-livestream/inlive-website:$BUILD_ID', '.']
+    args: ['build', '-t', 'gcr.io/asgard-livestream/inlive-website:latest', '.']
   # Push the container image to Container Registry
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'gcr.io/asgard-livestream/inlive-website:$BUILD_ID']
+    args: ['push', 'gcr.io/asgard-livestream/inlive-website:latest']
   # Deploy container image to Cloud Run
   - name: "gcr.io/cloud-builders/gke-deploy"
     args:
@@ -14,6 +14,14 @@ steps:
     - --cluster=inlive-dev
     - --output=output/inlive-website
     timeout: 900s
+  - name: "gcr.io/cloud-builders/gke-deploy"
+    args:
+    - run
+    - --filename=k8s/development/ingress-service.yaml
+    - --location=asia-southeast1
+    - --cluster=inlive-dev
+    - --output=output/ingress-service
+    timeout: 900s
 images: [
-  'gcr.io/$PROJECT_ID/inlive-website:$BUILD_ID',
+  'gcr.io/$PROJECT_ID/inlive-website',
 ]
