@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: inlive-website
-        image: gcr.io/asgard-livestream/inlive-website:latest
+        image: gcr.io/asgard-livestream/inlive-website:$BUILD_ID
         imagePullPolicy: Always
         ports:
         - containerPort: 80
