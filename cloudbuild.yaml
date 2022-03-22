@@ -1,10 +1,10 @@
 steps:
   # Build the container image
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'gcr.io/asgard-livestream/inlive-website', '.']
+    args: ['build', '-t', 'gcr.io/asgard-livestream/inlive-website:$BUILD_ID', '.']
   # Push the container image to Container Registry
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'gcr.io/asgard-livestream/inlive-website']
+    args: ['push', 'gcr.io/asgard-livestream/inlive-website:$BUILD_ID']
   # Deploy container image to Cloud Run
   - name: "gcr.io/cloud-builders/gke-deploy"
     args:
@@ -15,6 +15,5 @@ steps:
     - --output=output/inlive-website
     timeout: 900s
 images: [
-  'gcr.io/asgard-livestream/inlive-website',
+  'gcr.io/$PROJECT_ID/inlive-website:$BUILD_ID',
 ]
-tags: ['cloud-builders-community']
