@@ -9,13 +9,5 @@
   @apply mb-6 text-lg lg:text-xl lg:leading-8 text-gray-600
 }
 
-a, a:visited{
-  @apply text-blue-700
-}
-
-section p {
-  margin-bottom: 1rem;
-}
-
 /* put below to ensure utilities can still override the styles */
 @tailwind utilities;
