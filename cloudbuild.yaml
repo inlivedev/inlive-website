@@ -11,6 +11,12 @@ steps:
     args: ['push', 'gcr.io/$PROJECT_ID/$REPO_NAME:$BUILD_ID']
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'gcr.io/$PROJECT_ID/$REPO_NAME:$BRANCH_NAME']
+  - name: 'gcr.io/cloud-builders/gcloud'
+    entrypoint: 'bash'
+    args: 
+      - '-c'
+      - |
+        sed -i "s#@BUILD_ID@#$BUILD_ID#g; s#@BRANCH_NAME@#$BRANCH_NAME#g" k8s/development/inlive-website.yaml
   # Deploy container image to Cloud Run
   - name: "gcr.io/cloud-builders/gke-deploy"
     args:
