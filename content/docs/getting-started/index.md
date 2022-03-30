@@ -52,4 +52,4 @@ When you send the video source input through WebRTC or RTMP protocol, the Inlive
 
 You can choose which format you want to use if you're using your own or an open-source video player. But if you use our embedded HTML player, the player will automatically use low latency Dash if your browser is supported but will fall back to HLS format if not.
 
-Check the play video section in our complete tutorial on using Inlive APIs to get the video and play it in your app.
+Check the [play video section in our complete tutorial](/docs/tutorial/app-with-webrtc/#6-get-the-video) on using Inlive APIs to get the video and play it in your app.
