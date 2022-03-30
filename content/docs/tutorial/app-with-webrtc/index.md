@@ -112,60 +112,80 @@ async function startStream(){
 }
 ```
 
-### 3. Initiate the WebRTC connection by sending offer SDP and receiving an answer from inLive API
+### 4. Prepare the live stream
+For now, we need you to call this `prepare` API endpoint before starting to initiate the WebRTC connection. This is to start your live stream session, and this is where the billing will start counting your live streaming duration. In the future, we will automate the preparation process so the preparation will start automatically once we receive your video ingestion. Let's create a function that will be used to call the `prepare` API endpoint:
+
+```js
+async function prepareStream(slug){
+    const url = `${options.origin}/${options.apiVersion}/streams/${slug}`;
+    try{
+      resp = await apiRequest(options.apiKey, url, 'POST');
+      if (resp.code !== 200) {
+            throw new Error('Failed to prepare stream session');
+        }
+    } catch(err) {
+      console.error(err)
+    }
+}
+```
+
+### 5. Initiate the WebRTC connection by sending offer SDP and receiving an answer from inLive API
 Once the video stream input is available, we're ready to send the video stream to Inlive encoder and start publishing our live video stream. To send the video, these are the steps we need to follow:
 1. Create `RTCPeerConnection` object and add the media stream tracks to this RTCPeerConnection. This is an important step to make sure the Offer SDP that we will generate will have information about our media tracks, like video and audio codec information. The RTCPeerConnection also will need to have a media track before being able to start the ice gathering process.
 
-    We modify the start stream function and adding some lines to send the video through WebRTC connection.
+    We modify the start stream function and added some lines to send the video through WebRTC connection. We also need to call the `prepare` API endpoint first before start capturing the video camera. 
 
    ```js
     async function startStream(){
-        const videoEl = document.querySelector('video');
-        const constraints = {
-                video: {
-                frameRate: 30,
-                width: 1280,
-                height: 720,
-                },
-                audio: true
-            };
-
-        const localStream = await navigator.mediaDevices.getUserMedia(constraints);
-        videoEl.srcObject = localStream;
-
-        const servers = {
-            iceServers: [
-                { urls: 'stun:stun.l.google.com:19302' },
-                {
-                    urls: 'turn:34.101.121.241:3478',
-                    username: 'username',
-                    credential: 'password'
-                }
-            ]
-        }
-
-        const peerConnection = new RTCPeerConnection(servers);
-
-        peerConnection.oniceconnectionstatechange = () => {
-            // handle state change (disconnect, connected)
-            const iceConnectionState = peerConnection.iceConnectionState;
-            console.log('iceConnectionState', iceConnectionState);
-
-        }
-
-        peerConnection.onicecandidate = async (event) => {
-            // initiate the stream process once ice gathering is finished
-            if (event.candidate === null) {
-                await initStream(slug,peerConnection,options);
-            }
-        }
-
-        // we use stream from the webcam that we captured from previous step
-        localStream.getTracks().forEach((track) => {
-            peerConnection.addTrack(track, localStream);
-        });
-
         try {
+            // call the prepare endpoint first
+            await prepareStream('my-first-stream');
+            
+            const videoEl = document.querySelector('video');
+            const constraints = {
+                    video: {
+                    frameRate: 30,
+                    width: 1280,
+                    height: 720,
+                    },
+                    audio: true
+                };
+
+            const localStream = await navigator.mediaDevices.getUserMedia(constraints);
+            videoEl.srcObject = localStream;
+
+            const servers = {
+                iceServers: [
+                    { urls: 'stun:stun.l.google.com:19302' },
+                    {
+                        urls: 'turn:34.101.121.241:3478',
+                        username: 'username',
+                        credential: 'password'
+                    }
+                ]
+            }
+
+            const peerConnection = new RTCPeerConnection(servers);
+
+            peerConnection.oniceconnectionstatechange = () => {
+                // handle state change (disconnect, connected)
+                const iceConnectionState = peerConnection.iceConnectionState;
+                console.log('iceConnectionState', iceConnectionState);
+
+            }
+
+            peerConnection.onicecandidate = async (event) => {
+                // initiate the stream process once ice gathering is finished
+                if (event.candidate === null) {
+                    await initStream(slug,peerConnection,options);
+                }
+            }
+
+            // we use stream from the webcam that we captured from previous step
+            localStream.getTracks().forEach((track) => {
+                peerConnection.addTrack(track, localStream);
+            });
+
             const offerSession = await peerConnection.createOffer();
             peerConnection.setLocalDescription(offerSession);
         } catch (err) {
@@ -206,7 +226,7 @@ Once the video stream input is available, we're ready to send the video stream t
 
 3. Once the RTCPeerConnection is set with both offer and answer SDP, it will initiate the connection to the remote peer, and the `peerConnection.oniceconnectionstatechange` will be triggered if the connection state is changing.
 
-### 4. Get the video
+### 6. Get the video
 Once we streamed the video from our webcam through WebRTC, we can watch the video by getting the video URL through the stream detail endpoint.
 Get the stream detail by sending HTTP GET request to the API endpoint `https://api.inlive.app/v1/streams/${streamid}`. Let's create a get stream function that we can call later
 ```js
