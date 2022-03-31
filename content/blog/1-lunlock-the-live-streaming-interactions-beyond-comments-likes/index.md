@@ -2,8 +2,8 @@
 # Refer to the themes/inlive/archetypes/README.md
 date: 2022-03-01
 lastmod: 2022-03-01
-title : Let's go Inlive
-slug : lets-go-inlive
+title : To unlock the live streaming interactions beyond comments and likes
+slug : unlock-the-live-streaming-interactions-beyond-comments-likes
 summary: inLive is going to unlock the live streaming interactions beyond comments and likes. We want to help more startups and developers to build products around live streaming and help us discover new way to interact through live streaming.
 ---
 
