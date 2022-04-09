@@ -117,7 +117,7 @@ For now, we need you to call this `prepare` API endpoint before starting to init
 
 ```js
 async function prepareStream(slug){
-    const url = `${options.origin}/${options.apiVersion}/streams/${slug}`;
+    const url = `${options.origin}/${options.apiVersion}/streams/${slug}/prepare`;
     try{
       resp = await apiRequest(options.apiKey, url, 'POST');
       if (resp.code !== 200) {
