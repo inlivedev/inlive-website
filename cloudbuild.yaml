@@ -22,16 +22,16 @@ steps:
     args:
     - run
     - --filename=k8s/development/inlive-website.yaml
-    - --location=asia-southeast1
-    - --cluster=inlive-dev
+    - --location=asia-southeast2
+    - --cluster=inlive-cluster
     - --output=output/inlive-website
     timeout: 900s
   - name: "gcr.io/cloud-builders/gke-deploy"
     args:
     - run
     - --filename=k8s/development/ingress-service.yaml
-    - --location=asia-southeast1
-    - --cluster=inlive-dev
+    - --location=asia-southeast2
+    - --cluster=inlive-cluster
     - --output=output/ingress-service
     timeout: 900s
 images: [
