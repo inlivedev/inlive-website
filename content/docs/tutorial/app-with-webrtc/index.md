@@ -156,13 +156,13 @@ async function prepareStream(slug){
 Once the video stream input is available, we're ready to send the video stream to Inlive encoder and start publishing our live video stream. To send the video, these are the steps we need to follow:
 1. Create `RTCPeerConnection` object and add the media stream tracks to this RTCPeerConnection. This is an important step to make sure the Offer SDP that we will generate will have information about our media tracks, like video and audio codec information. The RTCPeerConnection also will need to have a media track before being able to start the ice gathering process.
 
-    We modify the start stream function and added some lines to send the video through WebRTC connection. We also need to call the `prepare` API endpoint first before start capturing the video camera. 
+    We modify the start stream function and added some lines to send the video through WebRTC connection. We also need to call the `prepare` API endpoint, by passing stream `id` from create stream as its parameter, first before start capturing the video camera.
 
    ```js
     async function startStream(){
         try {
-            // call the prepare endpoint first
-            await prepareStream('my-first-stream');
+            // call the prepare endpoint first, using stream id
+            await prepareStream(2);
             
             const videoEl = document.querySelector('video');
             const constraints = {
