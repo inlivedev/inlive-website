@@ -90,6 +90,29 @@ Use the code below to create a simple web page that contain a video element to m
 <button onclick="startStream()">Start Stream</button>
 ```
 
+Since we've already made a create stream function, then when we click on the `Create Stream` button, the API response will return data like this:
+
+```json
+{
+    "code": 200,
+    "message": "OK",
+    "data": {
+        "id": 2,
+        "name": "my first stream",
+        "slug": "my-first-stream",
+        "start_date": null,
+        "end_date": null,
+        "hls_manifest_path": "",
+        "dash_manifest_path": "",
+        "description": "",
+        "created_by": 3,
+        "created_at": "2022-02-22T10:28:20.69262Z",
+        "updated_by": null,
+        "updated_at": "2022-02-22T10:51:31.050747Z"
+    }
+}
+```
+
 We need to set the video element to be muted and autoplay to make the video plays automatically once it's loaded.
 
 ### 3. Capture the video.
