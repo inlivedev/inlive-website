@@ -71,6 +71,8 @@ async function apiRequest(apiKey, url, method, body){
 Then we use the function above to create a create stream function that will binded to create stream button. When the button clicked, the function will called and create a stream with a stream name `my first stream`.
 
 ```js
+let streamId;
+
 async function createStream(){
     const url = `${options.origin}/${options.apiVersion}/streams/create`;
     try{
@@ -78,7 +80,8 @@ async function createStream(){
         name:'my first stream',
         slug:'my-first-stream'
       });
-
+      // store the response stream ID to a variable, we will use this ID as parameter on another function
+      streamId = resp.data.id;
     } catch(err) {
       console.error(err)
     }
@@ -117,6 +120,8 @@ Since we've already made a create stream function, then when we click on the `Cr
 }
 ```
 
+Keep in mind that we've already store the stream ID (`data.id`) on a variable called `streamId`. This ID will be used as a parameter on later functions.
+
 We need to set the video element to be muted and autoplay to make the video plays automatically once it's loaded.
 
 ### 3. Capture the video.
@@ -143,8 +148,8 @@ async function startStream(){
 For now, we need you to call this `prepare` API endpoint before starting to initiate the WebRTC connection. This is to start your live stream session, and this is where the billing will start counting your live streaming duration. In the future, we will automate the preparation process so the preparation will start automatically once we receive your video ingestion. Let's create a function that will be used to call the `prepare` API endpoint:
 
 ```js
-async function prepareStream(slug){
-    const url = `${options.origin}/${options.apiVersion}/streams/${slug}/prepare`;
+async function prepareStream(id){
+    const url = `${options.origin}/${options.apiVersion}/streams/${id}/prepare`;
     try{
       resp = await apiRequest(options.apiKey, url, 'POST');
       if (resp.code !== 200) {
@@ -166,7 +171,7 @@ Once the video stream input is available, we're ready to send the video stream t
     async function startStream(){
         try {
             // call the prepare endpoint first, using stream id
-            await prepareStream(2);
+            await prepareStream(streamId);
             
             const videoEl = document.querySelector('video');
             const constraints = {
@@ -205,8 +210,8 @@ Once the video stream input is available, we're ready to send the video stream t
                 // initiate the stream process once ice gathering is finished, using stream id as one of parameters
                 // start the stream process after initiate, using stream id as parameter
                 if (event.candidate === null) {
-                    await initStream(2,peerConnection,options);
-                    await startStreaming(2)
+                    await initStream(streamId,peerConnection,options);
+                    await startStreaming(streamId)
                 }
             }
 
@@ -231,14 +236,14 @@ Once the video stream input is available, we're ready to send the video stream t
     Then we create `initStream` function that use that `APIRequest` function.
     
     ```js
-    async function initStream(slug,peerConnection,options){
+    async function initStream(id,peerConnection,options){
         const body = {
             slug : slug,
             session_description: peerConnection.localDescription,
         }
 
         try {
-            const url = `${options.origin}/${options.apiVersion}/streams/${slug}/init`
+            const url = `${options.origin}/${options.apiVersion}/streams/${id}/init`
 
             const resp = await apiRequest(options.apiKey,url,'POST',body)
 
@@ -276,9 +281,9 @@ Once the video stream input is available, we're ready to send the video stream t
 
     We create `startStreaming` function :
     ```js
-    async function startStreaming(slug){
+    async function startStreaming(id){
         try {
-            const url = `${options.origin}/${options.apiVersion}/streams/${slug}/start`
+            const url = `${options.origin}/${options.apiVersion}/streams/${id}/start`
 
             const resp = await apiRequest(options.apiKey,url,'POST')
 
