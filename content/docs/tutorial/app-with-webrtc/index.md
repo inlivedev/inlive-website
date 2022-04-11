@@ -28,7 +28,11 @@ Before coding your web app, you need to create an application key as stated in o
 A streamer client will be using a video capture to capture your webcam video and send it to Inlive encoder. Inlive encoder will encode and publish the video that we watch later with a video player. In this tutorial we will create a streamer client that will create a stream with the name with set, then start a stream.
 
 ### 1. Create a live stream
-Before going live, a streamer will always need to create a live stream. This live stream is unique, and it will provide single video input and single video output that can watch through a video player. To create a live stream, use `https://api.inlive.app/v1/streams/create` endpoint to create a stream. But before interacting with the API, first, we need to create a function called `APIRequest` and default options for customized and reusable API request function.
+Before going live, a streamer will always need to create a live stream. This live stream is unique, and it will provide single video input and single video output that can watch through a video player. To create a live stream, use 
+```
+https://api.inlive.app/v1/streams/create
+``` 
+endpoint to create a stream. But before interacting with the API, first, we need to create a function called `APIRequest` and default options for customized and reusable API request function.
 
 ```js
 let options ={
@@ -219,9 +223,13 @@ Once the video stream input is available, we're ready to send the video stream t
     }
     ```
 
-2. If you see `peerConnection.onicecandidate` line above, there is an `initStream` function called after the ice candidate gathering is finished. The `event.candidate === null` means the gathering process is finished. The `initStream` function is called to initiate a WebRTC connection with the inLive server by sending an HTTP POST request to API endpoint `https://api.inlive.app/v1/streams/${streamid}/init`.
+2. If you see `peerConnection.onicecandidate` line above, there is an `initStream` function called after the ice candidate gathering is finished. The `event.candidate === null` means the gathering process is finished. The `initStream` function is called to initiate a WebRTC connection with the inLive server by sending an HTTP POST request to API endpoint 
+    ```
+    https://api.inlive.app/v1/streams/${streamid}/init
+    ```
 
     Then we create `initStream` function that use that `APIRequest` function.
+    
     ```js
     async function initStream(slug,peerConnection,options){
         const body = {
@@ -247,11 +255,24 @@ Once the video stream input is available, we're ready to send the video stream t
 
     }
     ```
-    As you see above, once we got the response from the init endpoint, we set the `peerConnection` with the answer SDP that we extract from the response by calling `peerConnection.setRemoteDescription(answerSDP)`.
 
-3. Once the RTCPeerConnection is set with both offer and answer SDP, it will initiate the connection to the remote peer, and the `peerConnection.oniceconnectionstatechange` will be triggered if the connection state is changing.
+    As you see above, once we got the response from the init endpoint, we set the `peerConnection` with the answer SDP that we extract from the response by calling 
+    ```
+    peerConnection.setRemoteDescription(answerSDP)
+    ```
 
-4. After `initStream` function runs, we need to call `startStreaming` function by sending an HTTP POST request to API endpoint `https://api.inlive.app/v1/streams/${streamid}/start` to be able to go livestream. Start stream send chunk video to dash server using FFMPEG.
+3. Once the RTCPeerConnection is set with both offer and answer SDP, it will initiate the connection to the remote peer, and the 
+    ```
+    peerConnection.oniceconnectionstatechange
+    ```
+    will be triggered if the connection state is changing.
+
+4. After `initStream` function runs, we need to call `startStreaming` function to be able to go livestream by sending an HTTP POST request to API endpoint, it sends chunk video to dash server using FFMPEG. 
+    ```
+    https://api.inlive.app/v1/streams/${streamid}/start
+    ``` 
+
+    
 
     We create `startStreaming` function :
     ```js
@@ -277,7 +298,12 @@ Once the video stream input is available, we're ready to send the video stream t
 
 ### 6. Get the video
 Once we streamed the video from our webcam through WebRTC, we can watch the video by getting the video URL through the stream detail endpoint.
-Get the stream detail by sending HTTP GET request to the API endpoint `https://api.inlive.app/v1/streams/${streamid}`. Let's create a get stream function that we can call later
+Get the stream detail by sending HTTP GET request to the API endpoint 
+```
+https://api.inlive.app/v1/streams/${streamid}
+``` 
+
+Let's create a get stream function that we can call later
 ```js
 async function getStream(slug,options){
     try{
