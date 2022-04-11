@@ -375,7 +375,7 @@ There are two options to play the video, and you can [read more detail here](/do
         </script>
     </head>
     <body>
-        <video autoplay muted controls playsinline></video>
+        <video autoplay muted controls playsinline id="video"></video>
     </body>
     </html>
 ```
