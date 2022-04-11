@@ -198,9 +198,11 @@ Once the video stream input is available, we're ready to send the video stream t
             }
 
             peerConnection.onicecandidate = async (event) => {
-                // initiate the stream process once ice gathering is finished
+                // initiate the stream process once ice gathering is finished, using stream id as one of parameters
+                // start the stream process after initiate, using stream id as parameter
                 if (event.candidate === null) {
-                    await initStream(slug,peerConnection,options);
+                    await initStream(2,peerConnection,options);
+                    await startStreaming(2)
                 }
             }
 
@@ -240,7 +242,7 @@ Once the video stream input is available, we're ready to send the video stream t
             }
         } catch (error) {
             console.error(error);
-            throw err;
+            throw error;
         }
 
     }
@@ -248,6 +250,30 @@ Once the video stream input is available, we're ready to send the video stream t
     As you see above, once we got the response from the init endpoint, we set the `peerConnection` with the answer SDP that we extract from the response by calling `peerConnection.setRemoteDescription(answerSDP)`.
 
 3. Once the RTCPeerConnection is set with both offer and answer SDP, it will initiate the connection to the remote peer, and the `peerConnection.oniceconnectionstatechange` will be triggered if the connection state is changing.
+
+4. After `initStream` function runs, we need to call `startStreaming` function by sending an HTTP POST request to API endpoint `https://api.inlive.app/v1/streams/${streamid}/start` to be able to go livestream. Start stream send chunk video to dash server using FFMPEG.
+
+    We create `startStreaming` function :
+    ```js
+    async function startStreaming(slug){
+        try {
+            const url = `${options.origin}/${options.apiVersion}/streams/${slug}/start`
+
+            const resp = await apiRequest(options.apiKey,url,'POST')
+
+            if (resp.code === 200) {
+                console.log("streaming started")
+                return resp;
+            } else {
+                throw new Error('Failed to start stream session');
+            }
+        } catch (error) {
+            console.error(error);
+            throw error;
+        }
+
+    }
+    ```
 
 ### 6. Get the video
 Once we streamed the video from our webcam through WebRTC, we can watch the video by getting the video URL through the stream detail endpoint.
