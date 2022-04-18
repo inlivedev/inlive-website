@@ -44,3 +44,16 @@
 - slug: Blog page's slug.
 
 - summary: A blog post summary. If this is empty, Hugo will automatically takes the first 70 words from the content.
+
+## Pricing Archetype
+- date: The date associated with the pricing page (By default is using current date with YYYY-MM-DD format)
+  
+- lastmod: The last modified date of the pricing content (By default is using current date with YYYY-MM-DD format)
+
+- title: Title of the pricing page. This is used for title, and meta title tags.
+
+- description: Description of the pricing page. This is used for meta description.
+
+- type: Define a folder which a piece of content to render using a different layout. Since we use pricing/index.md, if not include this type, it will render default layouts instead.
+  
+- layout: A file name on the define type folder so the content will render as different layout. Since we use pricing/index.md, if not include this layout, it will render default layouts instead.
