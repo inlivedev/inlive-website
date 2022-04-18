@@ -1,35 +1,87 @@
 {{ define "main" }}
 {{ partial "header/header.html" . }}
-<main class="mx-auto">
+<main class="xl:max-w-6xl md:max-w-2xl mx-auto">
   <header class="text-center my-20">
       <h1 class="font-extrabold text-4xl leading-10">Choose Your Plan</h1>
   </header>
 
   <section>
-      <div class="flex flex-col justify-between items-center xl:flex-row xl:justify-around">
-          <div class="text-center w-[280px] border border-blue-200 rounded-2xl shadow-lg">
+      <div class="grid grid-cols-1 justify-items-center gap-5 items-center md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4">
+          <!-- free plan -->
+          <div class="text-center w-[280px] border border-blue-200 rounded-2xl shadow-lg min-h-[750px]">
               <h2 class="bg-blue-200 font-bold text-2xl leading-8 rounded-t-2xl text-center py-5">Free</h2>
               <div class="my-11"><span class="text-4xl leading-10">$</span><span class="text-6xl leading-none font-extrabold">0</span></div>
-              <p class="text-sm leading-5">For small teams to plan and track work more efficiently</p>
-              <button aria-label="getStarted" type="button" class="bg-blue-600 text-white rounded-md shadow-lg py-[13px] px-[25px] my-10 text-center">Get Started</button>
+              <p class="text-sm leading-5 px-2">For small teams to plan and track work more efficiently</p>
+              <a href="{{ .Site.Params.inliveStudioOrigin }}/login" aria-label="link-to-studio">
+                <button aria-label="getStarted" type="button" class="bg-white text-blue-600 border border-blue-600 rounded-md shadow-lg py-[13px] px-[25px] mt-[52px] mb-10 text-center">Get Started</button>
+              </a>
+              <ul class="list-disc pt-10 pl-10 pr-7 border-t border-t-gray-300 text-left text-sm leading-5">
+                <li><b>3</b> Streaming hours</li>
+                <li><b>1,000</b> Minutes views</li>
+                <li><b>1</b> Simultaneous Live Streams</li>
+                <li><b>1</b> Max Streaming Hours per Streaming</li>
+                <li><b>17</b> Viewers (1 hour per view)</li>
+              </ul>
           </div>
-          <div class="text-center w-[280px] border border-blue-200 rounded-2xl shadow-lg">
+          <!-- standard plan -->
+          <div class="text-center w-[280px] border border-blue-200 rounded-2xl shadow-lg min-h-[750px]">
               <h2 class="bg-blue-200 font-bold text-2xl leading-8 rounded-t-2xl text-center py-5">Standart</h2>
               <div class="my-11"><span class="text-4xl leading-10">$</span><span class="text-6xl leading-none font-extrabold">9</span></div>
-              <p class="text-sm leading-5">For growing teams focused on building more together</p>
-              <button aria-label="startTrial" type="button" class="border border-blue-600 text-blue-600 rounded-md shadow-lg py-[13px] px-[25px] my-10 text-center">Start Trial</button>
+              <p class="text-sm leading-5 px-2">For growing teams focused on building more together</p>
+              <a href="{{ .Site.Params.inliveStudioOrigin }}/login" aria-label="link-to-studio">
+                <button aria-label="startTrial" type="button" class="bg-white text-blue-600 border border-blue-600 rounded-md shadow-lg py-[13px] px-[25px] mt-[52px] mb-10 text-center">Start Trial</button>
+              </a>
+              <ul class="list-disc pt-10 pl-10 pr-7 border-t border-t-gray-300 text-left text-sm leading-5">
+                <li><b>10</b> Streaming hours</li>
+                <li><b>4,200</b> Minutes views</li>
+                <li><b>2</b> Simultaneous Live Streams</li>
+                <li><b>4</b> Max Streaming Hours per Streaming</li>
+                <li><b>0.9</b> Price / Hours</li>
+                <li><b>70</b> Viewers (1 hour per view)</li>
+                <li><b>1.2</b> Overage Hours Price</li>
+                <li><b>7</b> Margin price - streaming cost</li>
+                <li><b>77.78%</b> Margin</li>
+              </ul>
           </div>
-          <div class="text-center w-[280px] border border-blue-200 rounded-2xl shadow-lg">
+          <!-- premium plan -->
+          <div class="text-center w-[280px] border border-blue-200 rounded-2xl shadow-lg min-h-[750px]">
               <h2 class="bg-blue-200 font-bold text-2xl leading-8 rounded-t-2xl text-center py-5">Premium</h2>
               <div class="my-11"><span class="text-4xl leading-10">$</span><span class="text-6xl leading-none font-extrabold">49</span></div>
-              <p class="text-sm leading-5">For organizations that need to scale how they collaborate and track work</p>
-              <button aria-label="startTrial" type="button" class="border border-blue-600 text-blue-600 rounded-md shadow-lg py-[13px] px-[25px] my-10 text-center">Start Trial</button>
+              <p class="text-sm leading-5 px-2">For organizations that need to scale how they collaborate and track work</p>
+              <a href="{{ .Site.Params.inliveStudioOrigin }}/login" aria-label="link-to-studio">
+                <button aria-label="startTrial" type="button" class="bg-white text-blue-600 border border-blue-600 rounded-md shadow-lg py-[13px] px-[25px] mt-[52px] mb-10 text-center">Start Trial</button>
+              </a>
+              <ul class="list-disc pt-10 pl-10 pr-7 border-t border-t-gray-300 text-left text-sm leading-5">
+                <li><b>60</b> Streaming hours</li>
+                <li><b>22,000</b> Minutes views</li>
+                <li><b>5</b> Simultaneous Live Streams</li>
+                <li><b>12</b> Max Streaming Hours per Streaming</li>
+                <li><b>0.8167</b> Price / Hours</li>
+                <li><b>367</b> Viewers (1 hour per view)</li>
+                <li><b>1</b> Overage Hours Price</li>
+                <li><b>37</b> Margin price - streaming cost</li>
+                <li><b>75.51%</b> Margin</li>
+              </ul>
           </div>
-          <div class="text-center w-[280px] border border-blue-200 rounded-2xl shadow-lg">
+          <!-- enterpise plan -->
+          <div class="text-center w-[280px] border border-blue-200 rounded-2xl shadow-lg min-h-[750px]">
               <h2 class="bg-blue-200 font-bold text-2xl leading-8 rounded-t-2xl text-center py-5">Enterprise</h2>
               <div class="my-11"><span class="text-4xl leading-10">$</span><span class="text-6xl leading-none font-extrabold">99</span></div>
-              <p class="text-sm leading-5">For enterprises with global scale, security, and governance needs</p>
-              <button aria-label="startTrial" type="button" class="border border-blue-600 text-blue-600 rounded-md shadow-lg py-[13px] px-[25px] my-10 text-center">Start Trial</button>
+              <p class="text-sm leading-5 px-2">For enterprises with global scale, security, and governance needs</p>
+              <a href="{{ .Site.Params.inliveStudioOrigin }}/login" aria-label="link-to-studio">
+                <button aria-label="startTrial" type="button" class="bg-white text-blue-600 border border-blue-600 rounded-md shadow-lg py-[13px] px-[25px] mt-[52px] mb-10 text-center">Start Trial</button>
+              </a>
+              <ul class="list-disc pt-10 pl-10 pr-7 border-t border-t-gray-300 text-left text-sm leading-5">
+                <li><b>150</b> Streaming hours</li>
+                <li><b>50,000</b> Minutes views</li>
+                <li><b>9</b> Simultaneous Live Streams</li>
+                <li><b>Unlimited</b> Max Streaming Hours per Streaming</li>
+                <li><b>0.66</b> Price / Hours</li>
+                <li><b>833</b> Viewers (1 hour per view)</li>
+                <li><b>0,8</b> Overage Hours Price</li>
+                <li><b>69</b> Margin price - streaming cost</li>
+                <li><b>69.70%</b> Margin</li>
+              </ul>
           </div>
       </div>
   </section>
