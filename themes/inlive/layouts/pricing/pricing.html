@@ -1,13 +1,13 @@
 {{ define "main" }}
 {{ partial "header/header.html" . }}
-<main class="xl:max-w-6xl md:max-w-2xl mx-auto">
+<main class="max-w-xs xl:max-w-7xl md:max-w-[45rem] sm:max-w-[39rem] mx-auto">
   <header class="text-center my-20">
       <h1 class="font-extrabold text-4xl leading-10 mb-1.5">Choose Your Plan</h1>
       <p class="text-lg leading-7 text-gray-700 px-6">Pay by month or the year, and cancel at any time.</p>
   </header>
 
   <section>
-      <div class="grid grid-cols-1 justify-items-center gap-5 items-center md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4">
+      <div class="grid overflow-x-auto gap-5 pb-4" style="grid-template-columns: repeat(4, 1fr);">
           <!-- free plan -->
           <div class="text-center w-[280px] border border-blue-200 rounded-2xl shadow-lg min-h-[515px]">
               <h2 class="bg-blue-200 font-bold text-2xl leading-8 rounded-t-2xl text-center py-5">Free</h2>
@@ -89,7 +89,7 @@
 
   <section class="mt-20">
     <div class="px-4 lg:px-20">
-      <div class="max-w-7xl mx-auto lg:py-10">
+      <div class="max-w-7xl mx-auto py-12 lg:py-10">
         <h2 class="mb-4 font-extrabold text-3xl lg:text-4xl text-blue-900 text-center">
           Try inLive today
         </h2>
