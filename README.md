@@ -52,4 +52,4 @@ Also we added cloudbuild.yaml in root folder of the repository and this file use
 We used [CodeceptJS](https://codecept.io/quickstart/) Playwright for testing end to end page to determine the flows of opening the pages are correct. Kindly see this [documentation](https://codecept.io/playwright/) for more information.
 1. `codecept.conf.js` file is for configuring the testing environment such as the url testing as we use localhost:1313 and the browser as chromium.
 2. `_test.js` file consists with a scenario of user's action taken on a page.
-3. To run the test, type `npx codeceptjs run --steps` on your terminal and hit enter.
+3. To run the test, type `npm run codeceptjs` on your terminal and hit enter.
