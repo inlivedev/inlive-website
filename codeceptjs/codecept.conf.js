@@ -1,6 +1,6 @@
 exports.config = {
-  tests: './codeceptjs/ProofOfConcept/*_test.js',
-  output: './codeceptjs/output',
+  tests: './ProofOfConcept/*_test.js',
+  output: './output',
   helpers: {
     Playwright: {
       url: 'http://localhost:1313',
@@ -9,7 +9,7 @@ exports.config = {
     }
   },
   include: {
-    I: './codeceptjs/steps_file.js'
+    I: './steps_file.js'
   },
   bootstrap: null,
   mocha: {},
