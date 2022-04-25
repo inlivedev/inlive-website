@@ -1,5 +1,5 @@
 exports.config = {
-  tests: './ProofOfConcept/*_test.js',
+  tests: './proof_of_concept/*_test.js',
   output: './output',
   helpers: {
     Playwright: {
