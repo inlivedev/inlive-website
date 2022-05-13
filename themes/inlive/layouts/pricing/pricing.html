@@ -97,7 +97,7 @@
               <span class="w-11/12 md:w-full">What currency do you bill in?</span>
             </button>
             <div class="panel overflow-hidden text-left text-gray-600">
-              <p class="text-base leading-6 mt-3.5 mr-[3.75rem]">USD – All plans are billed in USD. Australian customers are additionally billed 10% GST.</p>
+              <p class="text-base leading-6 mt-3.5 mr-5 lg:mr-[3.75rem]">USD – All plans are billed in USD. Australian customers are additionally billed 10% GST.</p>
             </div>
         </div>
 
@@ -107,7 +107,7 @@
               <span class="w-11/12 md:w-full">What if I only want to host a single event?</span>
             </button>
             <div class="panel overflow-hidden text-left text-gray-600">
-              <p class="text-base leading-6 mt-3.5 mr-[3.75rem]">Plans can be cancelled at any time. We recommend customers sign up for the Standard $199/mo plan and cancel it before the month has ended.</p>
+              <p class="text-base leading-6 mt-3.5 mr-5 lg:mr-[3.75rem]">Plans can be cancelled at any time. We recommend customers sign up for the Standard $199/mo plan and cancel it before the month has ended.</p>
             </div>
         </div>
         
@@ -117,7 +117,7 @@
               <span class="w-11/12 md:w-full">What happens if I use all my data transfer/storage/VOD encoding allocation?</span>
             </button>
             <div class="panel overflow-hidden text-left text-gray-600">
-              <p class="text-base leading-6 mt-3.5 mr-[3.75rem]">Data transfer overage will be billed at the rate listed above, storage will be billed at the same rate as data transfer overage and VOD encoding will be billed at $0.50/GB.</p>
+              <p class="text-base leading-6 mt-3.5 mr-5 lg:mr-[3.75rem]">Data transfer overage will be billed at the rate listed above, storage will be billed at the same rate as data transfer overage and VOD encoding will be billed at $0.50/GB.</p>
             </div>
         </div>
         
@@ -127,7 +127,7 @@
               <span class="w-11/12 md:w-full">What payment options do you accept?</span>
             </button>
             <div class="panel overflow-hidden text-left text-gray-600">
-              <p class="text-base leading-6 mt-3.5 mr-[3.75rem]">We accept Visa, Mastercard, AMEX and Paypal.</p>
+              <p class="text-base leading-6 mt-3.5 mr-5 lg:mr-[3.75rem]">We accept Visa, Mastercard, AMEX and Paypal.</p>
             </div>
         </div>
 
@@ -137,7 +137,7 @@
               <span class="w-11/12 md:w-full">Can I upgrade/downgrade my plan at a later date?</span>
             </button>
             <div class="panel overflow-hidden text-left text-gray-600">
-              <p class="text-base leading-6 mt-3.5 mr-[3.75rem]">If you are on a monthly plan, you can upgrade or downgrade your plan at any time from the customer portal. Upgrades & downgrades are applied immediately. If you are on a yearly plan you can upgrade at any time, however downgrades are applied at the end of the billing period.</p>
+              <p class="text-base leading-6 mt-3.5 mr-5 lg:mr-[3.75rem]">If you are on a monthly plan, you can upgrade or downgrade your plan at any time from the customer portal. Upgrades & downgrades are applied immediately. If you are on a yearly plan you can upgrade at any time, however downgrades are applied at the end of the billing period.</p>
             </div>
         </div>
 
@@ -147,7 +147,7 @@
               <span class="w-11/12 md:w-full">Can I cancel my subscription at any time?</span>
             </button>
             <div class="panel overflow-hidden text-left text-gray-600">
-              <p class="text-base leading-6 mt-3.5 mr-[3.75rem]">You can cancel your subscription at any time from the customer portal. Once you have selected to cancel your plan, customers on month-to-month plans can continue to use their account until their monthly billing anniversary, after which their access will be terminated and all services will be removed. Customers on yearly plans can continue to use their account until their yearly billing anniversary.</p>
+              <p class="text-base leading-6 mt-3.5 mr-5 lg:mr-[3.75rem]">You can cancel your subscription at any time from the customer portal. Once you have selected to cancel your plan, customers on month-to-month plans can continue to use their account until their monthly billing anniversary, after which their access will be terminated and all services will be removed. Customers on yearly plans can continue to use their account until their yearly billing anniversary.</p>
             </div>
         </div>
     </div>
@@ -170,6 +170,20 @@
         </div>
       </div>
     </div>
+  </section>
+
+  <section class="mt-20">
+    {{/*  {{ range getJSON "https://programming-quotes-api.herokuapp.com/Quotes?count=10" }}
+    <div>
+      <p>{{.en}}</p>
+    </div>
+    {{end}}  */}}
+    {{ $items := getJSON "https://dev-api.inlive.app/v1/package/"}}
+    {{ range $item := $items.data}}
+    <div>
+      <p>{{ $item.name }}</p>
+    </div>
+    {{ end }}
   </section>
 </main>
 {{ end }}
