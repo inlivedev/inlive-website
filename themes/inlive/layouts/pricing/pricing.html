@@ -172,20 +172,6 @@
       </div>
     </div>
   </section>
-
-  <section class="mt-20">
-    {{/*  {{ range getJSON "https://programming-quotes-api.herokuapp.com/Quotes?count=10" }}
-    <div>
-      <p>{{.en}}</p>
-    </div>
-    {{end}}  */}}
-    {{ $items := getJSON "https://dev-api.inlive.app/v1/package/"}}
-    {{ range $item := $items.data}}
-    <div>
-      <p>{{ $item.name }}</p>
-    </div>
-    {{ end }}
-  </section>
 </main>
 {{ end }}
 
