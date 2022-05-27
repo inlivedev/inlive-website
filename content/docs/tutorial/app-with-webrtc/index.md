@@ -344,7 +344,7 @@ The API response will return data like this:
 }
 ```
 
-There are two options to play the video, and you can [read more detail here](/docs/guide/playing-video). But in this tutorial, we will use the shaka player to embed the video player to our website. The code below will show you how to use HLS URL playlist from API to play it with Shaka Player. We use the modified version of [Shaka basic tutorial example](https://shaka-player-demo.appspot.com/docs/api/tutorial-basic-usage.html) for this. Create a new page and use the code below:
+There are two options to play the video, and you can [read more detail here](/docs/guide/playing-video). But in this tutorial, we will use the shaka player to embed the video player to our website. The code below will show you how to use DASH manifest URL playlist from API to play it with Shaka Player. We use the modified version of [Shaka basic tutorial example](https://shaka-player-demo.appspot.com/docs/api/tutorial-basic-usage.html) for this. Create a new page and use the code below:
 
 ```html
 <html>
