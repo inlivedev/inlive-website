@@ -76,7 +76,7 @@ let streamId;
 async function createStream(){
     const url = `${options.origin}/${options.apiVersion}/streams/create`;
     try{
-      resp = await apiRequest(options.apiKey, url, 'POST',{
+      const resp = await apiRequest(options.apiKey, url, 'POST',{
         name:'my first stream',
         slug:'my-first-stream'
       });
@@ -151,7 +151,7 @@ For now, we need you to call this `prepare` API endpoint before starting to init
 async function prepareStream(id){
     const url = `${options.origin}/${options.apiVersion}/streams/${id}/prepare`;
     try{
-      resp = await apiRequest(options.apiKey, url, 'POST');
+      const resp = await apiRequest(options.apiKey, url, 'POST');
       if (resp.code !== 200) {
             throw new Error('Failed to prepare stream session');
         }
