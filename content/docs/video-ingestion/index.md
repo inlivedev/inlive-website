@@ -3,7 +3,7 @@ date: 2022-05-31
 lastmod: 2022-05-31
 name: Video Ingestion
 title: Video Ingestion
-description: Inlive support WebRTC as our video ingestion. We have RTMP in development on progress.
+description: Inlive uses WebRTC which supports video ingestion on all platforms including web, has better latency than RTMP, and can be used to build your own OBS client.
 slug: video-ingestion
 weight: 4000
 menu:
