@@ -147,7 +147,7 @@ async function startStream(){
 ```
 
 ### 4. Prepare the live stream
-For now, we need you to call this `prepare` API endpoint before starting to initiate the WebRTC connection. This is to start your live stream session, and this is where the billing will start counting your live streaming duration. In the future, we will automate the preparation process so the preparation will start automatically once we receive your video ingestion. Let's create a function that will be used to call the `prepare` API endpoint:
+For now, we need you to call this `prepare` API endpoint before starting to initiate the WebRTC connection. This is to start your live stream session, and this is where the billing will start counting your live streaming duration. In the future, we will automate the preparation process so the preparation will start automatically once we receive your [video ingestion](/docs/video-ingestion/). Let's create a function that will be used to call the `prepare` API endpoint:
 
 ```js
 async function prepareStream(id){
