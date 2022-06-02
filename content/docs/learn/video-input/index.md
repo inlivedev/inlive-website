@@ -11,6 +11,7 @@ menu:
     identifier: Video Input
     name: Video Input
     weight: 4000
+    parent: Learn
 ---
 
 # Video Input
