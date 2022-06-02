@@ -34,32 +34,33 @@
           <div class="my-11">
             <span class="text-4xl leading-10">$</span><span class="text-6xl leading-none font-extrabold">{{ $item.price }}</span><span class="text-xl leading-10">/mo</span>
           </div>
+          <p class="text-sm leading-5 px-7">{{ $item.description }}</p>
           {{ if eq $index 0 }}
-            <p class="text-sm leading-5 px-7">For small teams to plan and track work more efficiently</p>
             <a href="{{ $link }}/login" aria-label="link-to-studio">
               <button aria-label="getStarted" type="button" class="bg-white text-blue-600 border border-blue-600 hover:bg-blue-600 hover:text-white rounded-md shadow-lg py-[13px] px-[25px] mt-[52px] mb-10 text-center">Get Started</button>
             </a>
           {{ else if eq $index 1 }}
-            <p class="text-sm leading-5 px-7">For growing teams focused on building more together</p>
             <a href="{{ $link }}/login" aria-label="link-to-studio">
               <button aria-label="startTrial" type="button" class="bg-white text-blue-600 border border-blue-600 hover:bg-blue-600 hover:text-white rounded-md shadow-lg py-[13px] px-[25px] mt-[52px] mb-10 text-center">Start Trial</button>
             </a>
           {{ else if eq $index 2 }}
-            <p class="text-sm leading-5 px-7">For organizations that need to scale how they collaborate and track work</p>
             <a href="{{ $link }}/login" aria-label="link-to-studio">
-              <button aria-label="startTrial" type="button" class="bg-white text-blue-600 border border-blue-600 hover:bg-blue-600 hover:text-white rounded-md shadow-lg py-[13px] px-[25px] mt-[35px] mb-10 text-center">Start Trial</button>
+              <button aria-label="startTrial" type="button" class="bg-white text-blue-600 border border-blue-600 hover:bg-blue-600 hover:text-white rounded-md shadow-lg py-[13px] px-[25px] mt-[32px] mb-10 text-center">Start Trial</button>
             </a>
           {{ else }}
-            <p class="text-sm leading-5 px-7">For enterprises with global scale, security, and governance needs</p>
             <a href="mailto:sales@inlive.app" aria-label="link-to-studio">
               <button aria-label="startTrial" type="button" class="bg-white text-blue-600 border border-blue-600 hover:bg-blue-600 hover:text-white rounded-md shadow-lg py-[13px] px-[25px] mt-[52px] mb-10 text-center">Contact Us</button>
             </a>
           {{ end }}
           <ul class="list-disc py-10 pl-10 pr-7 border-t border-t-gray-300 text-left text-sm leading-7">
             <li><b>{{ $item.quota }}</b> Streaming hours</li>
-            <li>Overage Price <b>${{ $item.per_minute_exceeded_price }}</b> per Hour</li>
+            {{ if eq $item.per_minute_exceed_price "0"}}
+            <li>Overage <b>Not allowed</b></li>
+            {{ else }}
+            <li>Overage Price <b>${{ $item.per_minute_exceed_price }}</b> per Hour</li>
+            {{ end }}
           </ul>
-      </div>
+        </div>
         {{ end }}
 
           <!-- free plan -->
