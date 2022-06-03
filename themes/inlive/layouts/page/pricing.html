@@ -28,7 +28,7 @@
         {{ $link := .Site.Params.inliveStudioOrigin }}
         {{ $linkAPI := printf "%s/v1/package/" .Site.Params.inliveAPI }}
         {{ $items := getJSON $linkAPI }}
-        {{ range $index, $item := $items.data}}
+        {{ range $index, $item := sort $items.data "id" "asc"}}
         <div class="text-center w-[280px] border border-blue-200 rounded-2xl shadow-lg min-h-[515px]">
           <h2 class="bg-blue-200 font-bold text-2xl leading-8 rounded-t-2xl text-center py-5">{{ $item.name }}</h2>
           <div class="my-11">
@@ -37,7 +37,7 @@
           <p class="text-sm leading-5 px-7">{{ $item.description }}</p>
           {{ if eq $index 0 }}
             <a href="{{ $link }}/login" aria-label="link-to-studio">
-              <button aria-label="getStarted" type="button" class="bg-white text-blue-600 border border-blue-600 hover:bg-blue-600 hover:text-white rounded-md shadow-lg py-[13px] px-[25px] mt-[52px] mb-10 text-center">Get Started</button>
+              <button aria-label="getStarted" type="button" class="bg-white text-blue-600 border border-blue-600 hover:bg-blue-600 hover:text-white rounded-md shadow-lg py-[13px] px-[25px] mt-[71px] mb-10 text-center">Get Started</button>
             </a>
           {{ else if eq $index 1 }}
             <a href="{{ $link }}/login" aria-label="link-to-studio">
@@ -45,11 +45,11 @@
             </a>
           {{ else if eq $index 2 }}
             <a href="{{ $link }}/login" aria-label="link-to-studio">
-              <button aria-label="startTrial" type="button" class="bg-white text-blue-600 border border-blue-600 hover:bg-blue-600 hover:text-white rounded-md shadow-lg py-[13px] px-[25px] mt-[32px] mb-10 text-center">Start Trial</button>
+              <button aria-label="startTrial" type="button" class="bg-white text-blue-600 border border-blue-600 hover:bg-blue-600 hover:text-white rounded-md shadow-lg py-[13px] px-[25px] mt-[52px] mb-10 text-center">Start Trial</button>
             </a>
           {{ else }}
             <a href="mailto:sales@inlive.app" aria-label="link-to-studio">
-              <button aria-label="startTrial" type="button" class="bg-white text-blue-600 border border-blue-600 hover:bg-blue-600 hover:text-white rounded-md shadow-lg py-[13px] px-[25px] mt-[52px] mb-10 text-center">Contact Us</button>
+              <button aria-label="startTrial" type="button" class="bg-white text-blue-600 border border-blue-600 hover:bg-blue-600 hover:text-white rounded-md shadow-lg py-[13px] px-[25px] mt-[32px] mb-10 text-center">Contact Us</button>
             </a>
           {{ end }}
           <ul class="list-disc py-10 pl-10 pr-7 border-t border-t-gray-300 text-left text-sm leading-7">
