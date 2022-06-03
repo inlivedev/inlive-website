@@ -21,6 +21,8 @@ This tutorial will show you how to create a streamer client and viewer page.
 We will create a web page for the streamer client to capture our webcam directly and send it to Inlive encoder as a video source input once the user clicks the start button.
 We will create a web page that can use by live stream viewers to watch the live video stream.
 
+The example code for this tutorial is available on our [simple livestream Glitch app](https://glitch.com/~inlive-live-stream-app) demo. 
+
 ## A. Requirement
 Before coding your web app, you need to create an application key as stated in our [getting started documentation](/docs/getting-started). Please make sure you write down that key after you create it because it is used in this web app that we will create.
 
@@ -145,7 +147,7 @@ async function startStream(){
 ```
 
 ### 4. Prepare the live stream
-For now, we need you to call this `prepare` API endpoint before starting to initiate the WebRTC connection. This is to start your live stream session, and this is where the billing will start counting your live streaming duration. In the future, we will automate the preparation process so the preparation will start automatically once we receive your video ingestion. Let's create a function that will be used to call the `prepare` API endpoint:
+For now, we need you to call this `prepare` API endpoint before starting to initiate the WebRTC connection. This is to start your live stream session, and this is where the billing will start counting your live streaming duration. In the future, we will automate the preparation process so the preparation will start automatically once we receive your [video ingestion](/docs/video-ingestion/). Let's create a function that will be used to call the `prepare` API endpoint:
 
 ```js
 async function prepareStream(id){
