@@ -20,7 +20,7 @@
 <main class="max-w-xs xl:max-w-7xl lg:max-w-[58rem] md:max-w-[45rem] sm:max-w-[39rem] mx-auto">
   <header class="text-center my-20">
       <h1 class="font-extrabold text-4xl leading-10 mb-1.5">Choose Your Plan</h1>
-      <p class="text-lg leading-7 text-gray-700 px-6">Pay by month or the year, and cancel at any time.</p>
+      <p class="text-lg leading-7 text-gray-700 px-6">Flexible pricing plans for teams of all sizes and pay by month.</p>
   </header>
 
   <section>
@@ -53,7 +53,7 @@
             </a>
           {{ end }}
           <ul class="list-disc py-10 pl-10 pr-7 border-t border-t-gray-300 text-left text-sm leading-7">
-            <li><b>{{ $item.quota }}</b> Streaming hours</li>
+            <li><b>{{div $item.quota 60}}</b> Streaming hours</li>
             {{ if eq $item.per_minute_exceed_price "0"}}
             <li>Overage <b>Not allowed</b></li>
             {{ else }}
