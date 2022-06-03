@@ -5,12 +5,12 @@ name: Video Input
 title: Video Input
 description: Inlive supports 2 ways to sending the video source input to our encoder. You can use either WebRTC or RTMP.
 slug: video-input
-weight: 4001
+weight: 4002
 menu:
   docs_sidebar:
     identifier: Video Input
     name: Video Input
-    weight: 4001
+    weight: 4002
     parent: Learn
 ---
 
