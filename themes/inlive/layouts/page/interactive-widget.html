@@ -1,0 +1,96 @@
+{{ define "main" }}
+{{ partial "header/header.html" . }}
+<main>
+  <section class="px-4 lg:py-44 bg-blue-600 h-40 lg:h-auto flex items-center justify-center bg-no-repeat bg-center bg-cover" style="background-image: url('/images/interactive-widget/bg-hero-pattern.svg');">
+    <h1 class="font-extrabold text-xl lg:text-5xl text-center text-white max-w-5xl mx-auto">
+      Level up your live stream’s interactivity
+    </h1>
+  </section>
+  <section class="py-10 lg:py-20 px-4 lg:px-8">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row">
+      <div class="md:order-2 md:flex-1 mx-auto md:max-w-xl mb-4 md:mb-0">
+        <img src="/images/interactive-widget/live-shopping-preview.png" alt="Interactive live shopping">
+      </div>
+      <div class="md:order-1 md:flex-1 md:flex md:items-center">
+        <div class="md:mr-10 lg:mr-32">
+          <h2 class="mb-4 lg:mb-5 font-extrabold text-2xl lg:text-3xl text-blue-900">
+            Engage with your audience
+          </h2>
+          <p class="lg:text-lg text-gray-600">
+            Being interactive grabs more attention, creates a personal connection between you and your audience, and makes them feel included. Increase the engagement of your live stream by providing a more exciting and fun interactivity.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="py-10 lg:py-20 px-4 lg:px-8 bg-no-repeat bg-center bg-cover bg-blue-50" style="background-image: url('/images/interactive-widget/bg-beyond-likes-and-comments-pattern.svg');">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row">
+      <div class="md:flex-1 mx-auto md:max-w-xl mb-4 md:mb-0">
+        <img src="/images/interactive-widget/live-events-preview.png" alt="Interactive live events">
+      </div>
+      <div class="md:flex-1 md:flex md:items-center">
+        <div class="md:ml-10 lg:ml-32">
+          <h2 class="mb-4 lg:mb-5 font-extrabold text-2xl lg:text-3xl text-blue-900">
+            Beyond likes and comments
+          </h2>
+          <p class="lg:text-lg text-gray-600">
+            Discover endless possibilities of interactive widgets beyond likes and comments. From holding a trivia quiz to examining your student position in yoga class with the help of AR, make your audiences play an active role in influencing the live experience.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="py-10 lg:py-20 px-4 lg:px-8">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row">
+      <div class="md:order-2 md:flex-1 mx-auto md:max-w-xl mb-4 md:mb-0">
+        <img src="/images/interactive-widget/widget-api-diagram.png" alt="Real Time Widget API Diagram">
+      </div>
+      <div class="md:order-1 md:flex-1 md:flex md:items-center">
+        <div class="md:mr-10 lg:mr-32">
+          <h2 class="mb-4 lg:mb-5 font-extrabold text-2xl lg:text-3xl text-blue-900">
+            Real Time Widget API
+          </h2>
+          <p class="mb-4 lg:mb-5 lg:text-lg text-gray-600">
+            Save your time to develop interactive widgets with Real Time Widget API.
+          </p>
+          <a href="https://github.com/asumsi/inlive-widget-samples" target="_blank" rel="noopener noreferrer" class="inline-block py-3 px-6 bg-white border border-blue-600 rounded-md font-medium text-base text-blue-600">
+            Go to sample widget
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="py-10 lg:py-16 px-4 lg:px-8 bg-no-repeat bg-center bg-cover bg-blue-50" style="background-image: url('/images/interactive-widget/bg-try-interactive-widget-pattern.svg');">
+    <div class="max-w-3xl mx-auto text-center">
+      <header class="mb-4 lg:mb-10">
+        <h2 class="mb-4 lg:mb-5 font-extrabold text-2xl lg:text-3xl text-blue-900">
+          Try Interactive Widget
+        </h2>
+        <p class="lg:text-lg text-gray-600">
+          Real Time Widget API will be ready in the 3rd quarter of this year. While waiting, don't hesitate to discuss the possibility of interactive widgets with us or read our documentation.
+        </p>
+      </header>
+      <div class="max-w-xl mx-auto">
+        <img src="/images/interactive-widget/fan-base-preview.png" alt="Interactive Fan Streaming">
+      </div>
+      <div class="max-w-xl mx-auto mt-4 lg:mt-10 flex flex-col lg:flex-row gap-4 text-center justify-center">
+        <a href="https://tally.so/r/wgD9aM" target="_blank" rel="noopener noreferrer" class="inline-block py-3 px-6 bg-blue-600 shadow-lg rounded-md font-medium text-base text-white">
+          Register your interest
+        </a>
+        <a href="/docs/introduction/" class="inline-block py-3 px-6 bg-white border border-blue-600 rounded-md font-medium text-base text-blue-600">
+          Visit our documentation
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+{{ end }}
+
+{{ define "footer" }}
+{{ partial "footer/footer.html" . }}
+{{ end }}
+
+{{ define "script" }}
+{{ $globalJS := resources.Get "js/global.js" | minify }}
+<script type="text/javascript" src="{{ $globalJS.RelPermalink }}" defer></script>
+{{ end }}
