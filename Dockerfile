@@ -1,5 +1,8 @@
 FROM nginx:alpine as build
 
+ENV inliveStudioOrigin="https://studio.inlive.app"
+ENV inliveAPI="https://dev-api.inlive.app"
+
 RUN apk add --update \
     wget
     
