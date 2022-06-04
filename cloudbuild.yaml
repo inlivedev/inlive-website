@@ -6,6 +6,9 @@ steps:
       '-t', 'gcr.io/$PROJECT_ID/$REPO_NAME:$BRANCH_NAME', 
       '--cache-from', 'gcr.io/$PROJECT_ID/$REPO_NAME:$BRANCH_NAME',
       '.' ]
+    env:
+      - "inliveStudioOrigin=https://studio.inlive.app"
+      - "inliveAPI=https://dev-api.inlive.app"
   # Push the container image to Container Registry
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'gcr.io/$PROJECT_ID/$REPO_NAME:$BUILD_ID']
