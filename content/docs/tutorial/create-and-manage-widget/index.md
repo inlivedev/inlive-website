@@ -43,7 +43,7 @@ To create a widget, simply press the “create new widget” button. Then you ne
 
 ## Generating The Widget Key
 
-After successfully creating the widget you will be redirected to the widget page that you just created. To generate the key simply click the “Get a new key” button, you can alwasy regenerate the key by clicking the button again.
+After successfully creating the widget you will be redirected to the widget page that you just created. To generate the key simply click the “Get a new key” button, you can always regenerate the key by clicking the button again.
 
 ![generate widget key](/images/tutorial-widget/generate-widget-key.png)
 
