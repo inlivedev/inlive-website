@@ -13,7 +13,7 @@
 {{/* This will greatly speedup build times in development which is required due to hack for rebuilding / regenerating the tailwind styles https://github.com/gohugoio/hugo/issues/8343#issuecomment-1019383325 */}}
 {{ partialCached "head/css.html" . }}
 
-{{ $googleAnalyticsID := getenv "HUGO_GOOGLE_ANALYTICS_TRACKING_ID" }}
+{{ $googleAnalyticsID := getenv "_HUGO_GOOGLE_ANALYTICS_TRACKING_ID" }}
 {{ if gt (len $googleAnalyticsID) 0 }}
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id={{ $googleAnalyticsID }}"></script>
@@ -26,7 +26,7 @@
 </script>
 {{ end }}
 
-{{ $clarityID := getenv "HUGO_CLARITY_TRACKING_ID" }}
+{{ $clarityID := getenv "_HUGO_CLARITY_TRACKING_ID" }}
 {{ if gt (len $clarityID) 0 }}
 <!-- Clarity Analytics -->
 <script type="text/javascript">
