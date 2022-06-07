@@ -37,7 +37,8 @@
         <hr class="w-full h-[1px] border-none bg-gray-300">
       </li>
       <li class="font-semibold text-base">
-        <a href="{{ .Site.Params.inliveStudioOrigin }}/login" class="text-gray-700">Login</a>
+        {{ $inliveStudioOrigin := getenv "_HUGO_INLIVE_STUDIO_ORIGIN" }}
+        <a href="{{ $inliveStudioOrigin }}/login" class="text-gray-700">Login</a>
       </li>
     </ul>
   </nav>
