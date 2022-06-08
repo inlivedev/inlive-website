@@ -32,9 +32,9 @@
 
   <section>
       <div class="grid overflow-x-auto gap-5" style="grid-template-columns: repeat(4, 1fr);">
-        {{ $link := getenv "_HUGO_INLIVE_STUDIO_ORIGIN" }}
-        {{ $apiLink := getenv "_HUGO_INLIVE_API_ORIGIN"}}
-        {{ $linkAPI := printf "%s/v1/package/" $apiLink }}
+        {{ $linkStudioOrigin := getenv "_HUGO_INLIVE_STUDIO_ORIGIN" }}
+        {{ $apiOriginLink := getenv "_HUGO_INLIVE_API_ORIGIN"}}
+        {{ $linkAPI := printf "%s/v1/package/" $apiOriginLink }}
         {{ $items := getJSON $linkAPI }}
         {{ range $index, $item := sort $items.data "id" "asc"}}
         <div class="text-center w-[280px] border border-gray-300 rounded-2xl hover:shadow-lg min-h-[515px]">
@@ -44,15 +44,15 @@
           </div>
           <p class="text-sm leading-5 px-7">{{ $item.description }}</p>
           {{ if eq $index 0 }}
-            <a href="{{ $link }}/login" aria-label="link-to-studio" target="_blank" rel="noopener noreferrer">
+            <a href="{{ $linkStudioOrigin }}/login" aria-label="link-to-studio" target="_blank" rel="noopener noreferrer">
               <button aria-label="getStarted" type="button" class="bg-white text-blue-600 border border-blue-600 hover:bg-blue-600 hover:text-white rounded-md hover:shadow-lg active:shadow-lg py-[13px] px-[25px] mt-[71px] mb-10 text-center">Get Started</button>
             </a>
           {{ else if eq $index 1 }}
-            <a href="{{ $link }}/login" aria-label="link-to-studio" target="_blank" rel="noopener noreferrer">
+            <a href="{{ $linkStudioOrigin }}/login" aria-label="link-to-studio" target="_blank" rel="noopener noreferrer">
               <button aria-label="startTrial" type="button" class="bg-white text-blue-600 border border-blue-600 hover:bg-blue-600 hover:text-white rounded-md hover:shadow-lg active:shadow-lg py-[13px] px-[25px] mt-[52px] mb-10 text-center">Start Trial</button>
             </a>
           {{ else if eq $index 2 }}
-            <a href="{{ $link }}/login" aria-label="link-to-studio" target="_blank" rel="noopener noreferrer">
+            <a href="{{ $linkStudioOrigin }}/login" aria-label="link-to-studio" target="_blank" rel="noopener noreferrer">
               <button aria-label="startTrial" type="button" class="bg-white text-blue-600 border border-blue-600 hover:bg-blue-600 hover:text-white rounded-md hover:shadow-lg active:shadow-lg py-[13px] px-[25px] mt-[52px] mb-10 text-center">Start Trial</button>
             </a>
           {{ else }}
