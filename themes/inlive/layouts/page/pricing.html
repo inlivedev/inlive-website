@@ -17,14 +17,21 @@
 
 {{ define "main" }}
 {{ partial "header/header.html" . }}
-<main class="max-w-xs xl:max-w-7xl lg:max-w-[58rem] md:max-w-[45rem] sm:max-w-[39rem] mx-auto">
-  <header class="text-center my-20">
-      <h1 class="font-extrabold text-4xl leading-10 mb-1.5">Choose Your Plan</h1>
+<main class="px-4 lg:px-8 sm:mb-20 xl:flex xl:flex-col xl:justify-center xl:items-center mx-auto mb-12">
+  <header class="text-center my-16">
+      <h1 class="font-extrabold text-3xl leading-9 mb-2">Choose Your Plan</h1>
       <p class="text-lg leading-7 text-gray-700 px-6">Flexible pricing plans for teams of all sizes and pay by month.</p>
   </header>
 
+  <section class="flex justify-center items-center mb-10">
+    <div class="bg-emerald-100 border border-emerald-300 rounded-lg sm:py-4 sm:px-10 py-2 px-4 text-center">
+      <p class="text-emerald-800 text-base sm:text-xl leading-6 sm:leading-7 font-medium">During our beta phase, you can get business package for free</p>
+    </div>
+  </section>
+  
+
   <section>
-      <div class="grid overflow-x-auto gap-5 pb-4" style="grid-template-columns: repeat(4, 1fr);">
+      <div class="grid overflow-x-auto gap-5" style="grid-template-columns: repeat(4, 1fr);">
         {{ $link := getenv "_HUGO_INLIVE_STUDIO_ORIGIN" }}
         {{ $apiLink := getenv "_HUGO_INLIVE_API_ORIGIN"}}
         {{ $linkAPI := printf "%s/v1/package/" $apiLink }}
@@ -67,7 +74,7 @@
   </section>
 
   <section>
-    <h1 class="font-bold text-2xl leading-8 mt-[110px] mb-12 text-center">Frequently Asked Questions</h1>
+    <h1 class="font-bold text-2xl leading-8 mt-16 mb-[46px] text-center">Frequently Asked Questions</h1>
     
     <div class="max-w-[45rem] mx-auto">
         <!-- faq 1 -->
@@ -143,9 +150,9 @@
   </section>
 
   <!-- footer -->
-  <section class="my-20">
+  <section class="mt-56">
     <div class="px-4 lg:px-20">
-      <div class="max-w-7xl mx-auto py-12 lg:py-10">
+      <div class="max-w-7xl mx-auto lg:py-10">
         <h2 class="mb-4 font-extrabold text-3xl lg:text-4xl text-blue-900 text-center">
           Try inLive today
         </h2>
