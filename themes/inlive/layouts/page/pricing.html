@@ -25,8 +25,9 @@
 
   <section>
       <div class="grid overflow-x-auto gap-5 pb-4" style="grid-template-columns: repeat(4, 1fr);">
-        {{ $link := .Site.Params.inliveStudioOrigin }}
-        {{ $linkAPI := printf "%s/v1/package/" .Site.Params.inliveAPI }}
+        {{ $link := getenv "_HUGO_INLIVE_STUDIO_ORIGIN" }}
+        {{ $apiLink := getenv "_HUGO_INLIVE_API_ORIGIN"}}
+        {{ $linkAPI := printf "%s/v1/package/" $apiLink }}
         {{ $items := getJSON $linkAPI }}
         {{ range $index, $item := sort $items.data "id" "asc"}}
         <div class="text-center w-[280px] border border-gray-300 rounded-2xl hover:shadow-lg min-h-[515px]">
