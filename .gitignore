@@ -21,3 +21,6 @@ resources
 *.log
 .DS_Store
 public
+
+# Environment variable
+.env
