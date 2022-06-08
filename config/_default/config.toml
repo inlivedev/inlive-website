@@ -6,3 +6,8 @@ theme = 'inlive'
 [security]
   [security.funcs]
     getenv = ['^_HUGO_']
+
+[caches]
+[caches.getjson]
+dir = ":cacheDir/:project"
+maxAge = "10s"
