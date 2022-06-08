@@ -176,7 +176,6 @@
 {{ end }}
 
 {{ define "script" }}
-<script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
 {{ $globalJS := resources.Get "js/global.js" | minify }}
 <script type="text/javascript" src="{{ $globalJS.RelPermalink }}" defer></script>
 {{ $priceJS := resources.Get "js/price.js" | minify }}
