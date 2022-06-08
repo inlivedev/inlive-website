@@ -16,7 +16,7 @@ COPY ./ /site
 WORKDIR /site
 RUN apk add --update npm
 RUN npm install postcss-cli -y
-RUN hugo --environment development
+RUN hugo
 
 #Copy static files to Nginx
 FROM nginx:alpine
