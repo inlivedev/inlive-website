@@ -1,8 +1,0 @@
-[params]
-  inliveStudioOrigin = 'https://studio.inlive.app'
-  inliveAPI = 'https://dev-api.inlive.app'
-
-[caches]
-[caches.getjson]
-dir = ":cacheDir/:project"
-maxAge = "10s"

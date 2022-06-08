@@ -1,3 +1,4 @@
+{{ $inliveStudioOrigin := getenv "_HUGO_INLIVE_STUDIO_ORIGIN" }}
 <nav class="hidden lg:block">
   <ul class="flex items-center">
     <li class="mr-8 font-semibold text-sm leading-6">
@@ -25,7 +26,7 @@
       <hr class="w-[1px] border-none h-6 bg-gray-300">
     </li>
     <li class="font-semibold text-sm leading-6">
-      <a href="{{ .Site.Params.inliveStudioOrigin }}/login" class="inline-block text-gray-700 hover:text-blue-600">Login</a>
+      <a href="{{ $inliveStudioOrigin }}/login" class="inline-block text-gray-700 hover:text-blue-600">Login</a>
     </li>
   </ul>
 </nav>

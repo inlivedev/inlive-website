@@ -3,9 +3,9 @@ languageCode = 'en-us'
 title = 'inLive'
 theme = 'inlive'
 
-[params]
-  inliveStudioOrigin = 'https://dev-studio.inlive.app'
-  inliveAPI = 'https://dev-api.inlive.app'
+[security]
+  [security.funcs]
+    getenv = ['^_HUGO_']
 
 [caches]
 [caches.getjson]

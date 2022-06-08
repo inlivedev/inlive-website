@@ -1,3 +1,4 @@
+{{ $inliveStudioOrigin := getenv "_HUGO_INLIVE_STUDIO_ORIGIN" }}
 <footer
   class="bg-gray-50 py-8 lg:pt-10 lg:pb-20 px-4 lg:px-16 flex flex-col md:flex-row gap-16 md:gap-8">
   <div class="md:order-2 flex-1 flex gap-y-6 gap-x-4 md:gap-8">
@@ -13,7 +14,7 @@
           <a href="/#pricing" class="text-gray-500">Pricing</a>
         </li>
         <li class="text-sm leading-6">
-          <a href="{{ .Site.Params.inliveStudioOrigin }}/login" class="text-gray-500">inLive Studio</a>
+          <a href="{{ $inliveStudioOrigin }}/login" class="text-gray-500">inLive Studio</a>
         </li>
       </ul>
     </nav>
