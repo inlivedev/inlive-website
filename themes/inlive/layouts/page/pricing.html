@@ -53,11 +53,11 @@
             </a>
           {{ end }}
           <ul class="list-disc py-10 pl-10 pr-7 border-t border-t-gray-300 text-left text-sm leading-7">
-            <li><b>{{div $item.quota 60}}</b> Streaming hours</li>
+            <li><b>{{div $item.quota 60}}</b> streaming hours</li>
             {{ if eq $item.per_minute_exceed_price "0"}}
-            <li>Overage <b>Not allowed</b></li>
+            <li>Overage <b>not allowed</b></li>
             {{ else }}
-            <li>Overage Price <b>${{ $item.per_minute_exceed_price }}</b> per Hour</li>
+            <li>Overage price <b>${{ $item.per_minute_exceed_price }}</b> per hour</li>
             {{ end }}
           </ul>
         </div>
@@ -70,7 +70,7 @@
     
     <div class="max-w-[45rem] mx-auto">
         <!-- faq 1 -->
-        <div class="border-b border-b-gray-300 py-3.5">
+        <div class="border-y border-y-gray-300 py-3.5">
             <button class="accordion font-bold text-gray-800 text-lg leading-7 text-left w-full flex items-center justify-between" style="transition: 0.4s;">
               <span class="w-11/12 md:w-full">What if I only want to host a single event?</span>
             </button>
@@ -115,7 +115,7 @@
             <span class="w-11/12 md:w-full">How many days is inLive Billing Cycle?</span>
           </button>
           <div class="panel overflow-hidden text-left text-gray-600">
-            <p class="text-base leading-6 mt-3.5 mr-5 lg:mr-[3.75rem]">Our Billing Cycle is every 30 days.</p>
+            <p class="text-base leading-6 mt-3.5 mr-5 lg:mr-[3.75rem]">Our billing cycle is every 30 days.</p>
           </div>
         </div>
 
@@ -132,7 +132,7 @@
   </section>
 
   <!-- footer -->
-  <section class="mt-20">
+  <section class="my-20">
     <div class="px-4 lg:px-20">
       <div class="max-w-7xl mx-auto py-12 lg:py-10">
         <h2 class="mb-4 font-extrabold text-3xl lg:text-4xl text-blue-900 text-center">
