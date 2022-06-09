@@ -6,11 +6,6 @@ steps:
       '-t', 'gcr.io/$PROJECT_ID/$REPO_NAME:$BRANCH_NAME', 
       '--cache-from', 'gcr.io/$PROJECT_ID/$REPO_NAME:$BRANCH_NAME',
       '.' ]
-    env:
-      - "_HUGO_GOOGLE_ANALYTICS_TRACKING_ID=$_HUGO_GOOGLE_ANALYTICS_TRACKING_ID"
-      - "_HUGO_CLARITY_TRACKING_ID=$_HUGO_CLARITY_TRACKING_ID"
-      - "_HUGO_INLIVE_API_ORIGIN=$_HUGO_INLIVE_API_ORIGIN"
-      - "_HUGO_INLIVE_STUDIO_ORIGIN=$_HUGO_INLIVE_STUDIO_ORIGIN"
   # Push the container image to Container Registry
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'gcr.io/$PROJECT_ID/$REPO_NAME:$BUILD_ID']

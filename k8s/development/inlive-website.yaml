@@ -19,6 +19,15 @@ spec:
         ports:
         - containerPort: 80
           name: http
+        env:
+        - name: _HUGO_CLARITY_TRACKING_ID
+          value: "DEV_HUGO_CLARITY_TRACKING_ID"
+        - name: _HUGO_GOOGLE_ANALYTICS_TRACKING_ID
+          value: "DEV_HUGO_GOOGLE_ANALYTICS_TRACKING_ID"
+        - name: _HUGO_INLIVE_API_ORIGIN
+          value: "DEV_HUGO_INLIVE_API_ORIGIN"
+        - name: _HUGO_INLIVE_STUDIO_ORIGIN
+          value: "DEV_HUGO_INLIVE_STUDIO_ORIGIN"
 ---
 kind: Service
 apiVersion: v1
