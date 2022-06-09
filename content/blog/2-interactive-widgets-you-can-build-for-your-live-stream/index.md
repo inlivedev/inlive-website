@@ -4,7 +4,7 @@ date: 2022-06-09
 lastmod: 2022-06-09
 title : 5 Interactive Widgets You Can Build for Your Live Stream
 slug : 5-interactive-widgets-you-can-build-for-your-live-stream
-summary: inLive provides real time widget API to help developers develops interactive widgets on live stream. There are 5 widgets ideas that you can develop which are quiz, polling, showcase, mini games, and AR filter.
+summary: inLive provides real time widget API to help developers develops interactive widgets for live streaming. There are 5 samples widgets ideas that you can develop which are quiz, polling, showcase, mini games, and AR filter.
 ---
 
 # 5 Interactive Widgets You Can Build for Your Live Stream
