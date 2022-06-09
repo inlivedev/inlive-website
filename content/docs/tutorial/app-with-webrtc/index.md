@@ -5,12 +5,12 @@ name: Tutorial with WebRTC
 title: Tutorial building a live stream app with WebRTC
 description: This tutorial will show you how to build a live video stream web app with WebRTC video source input.
 slug: tutorial-app-with-webrtc
-weight: 3001
+weight: 4001
 menu:
   docs_sidebar:
     identifier: Tutorial with WebRTC
     name: Tutorial with WebRTC
-    weight: 3001
+    weight: 4001
     parent: Tutorial
 ---
 # Tutorial building a live stream app with WebRTC
@@ -20,6 +20,8 @@ This tutorial will show you how to build a live video stream web app with WebRTC
 This tutorial will show you how to create a streamer client and viewer page.
 We will create a web page for the streamer client to capture our webcam directly and send it to Inlive encoder as a video source input once the user clicks the start button.
 We will create a web page that can use by live stream viewers to watch the live video stream.
+
+The example code for this tutorial is available on our [simple livestream Glitch app](https://glitch.com/~inlive-live-stream-app) demo. 
 
 ## A. Requirement
 Before coding your web app, you need to create an application key as stated in our [getting started documentation](/docs/getting-started). Please make sure you write down that key after you create it because it is used in this web app that we will create.
@@ -76,7 +78,7 @@ let streamId;
 async function createStream(){
     const url = `${options.origin}/${options.apiVersion}/streams/create`;
     try{
-      resp = await apiRequest(options.apiKey, url, 'POST',{
+      const resp = await apiRequest(options.apiKey, url, 'POST',{
         name:'my first stream',
         slug:'my-first-stream'
       });
@@ -145,13 +147,13 @@ async function startStream(){
 ```
 
 ### 4. Prepare the live stream
-For now, we need you to call this `prepare` API endpoint before starting to initiate the WebRTC connection. This is to start your live stream session, and this is where the billing will start counting your live streaming duration. In the future, we will automate the preparation process so the preparation will start automatically once we receive your video ingestion. Let's create a function that will be used to call the `prepare` API endpoint:
+For now, we need you to call this `prepare` API endpoint before starting to initiate the WebRTC connection. This is to start your live stream session, and this is where the billing will start counting your live streaming duration. In the future, we will automate the preparation process so the preparation will start automatically once we receive your [video ingestion](/docs/video-ingestion/). Let's create a function that will be used to call the `prepare` API endpoint:
 
 ```js
 async function prepareStream(id){
     const url = `${options.origin}/${options.apiVersion}/streams/${id}/prepare`;
     try{
-      resp = await apiRequest(options.apiKey, url, 'POST');
+      const resp = await apiRequest(options.apiKey, url, 'POST');
       if (resp.code !== 200) {
             throw new Error('Failed to prepare stream session');
         }
@@ -344,7 +346,7 @@ The API response will return data like this:
 }
 ```
 
-There are two options to play the video, and you can [read more detail here](/docs/guide/playing-video). But in this tutorial, we will use the shaka player to embed the video player to our website. The code below will show you how to use HLS URL playlist from API to play it with Shaka Player. We use the modified version of [Shaka basic tutorial example](https://shaka-player-demo.appspot.com/docs/api/tutorial-basic-usage.html) for this. Create a new page and use the code below:
+There are two options to play the video, and you can [read more detail here](/docs/learn/playing-video). But in this tutorial, we will use the shaka player to embed the video player to our website. The code below will show you how to use DASH manifest URL playlist from API to play it with Shaka Player. We use the modified version of [Shaka basic tutorial example](https://shaka-player-demo.appspot.com/docs/api/tutorial-basic-usage.html) for this. Create a new page and use the code below:
 
 ```html
 <html>

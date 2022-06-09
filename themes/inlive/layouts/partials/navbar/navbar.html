@@ -1,3 +1,4 @@
+{{ $inliveStudioOrigin := getenv "_HUGO_INLIVE_STUDIO_ORIGIN" }}
 <nav class="hidden lg:block">
   <ul class="flex items-center">
     <li class="mr-8 font-semibold text-sm leading-6">
@@ -10,10 +11,10 @@
       <a href="/#why-us" class="inline-block text-gray-700 hover:text-blue-600">Why Us</a>
     </li>
     <li class="mr-8 font-semibold text-sm leading-6">
-      <a href="/#pricing" class="inline-block text-gray-700 hover:text-blue-600">Pricing</a>
+      <a href="/pricing/" class="inline-block text-gray-700 hover:text-blue-600">Pricing</a>
     </li>
     <li class="mr-8 font-semibold text-sm leading-6">
-      <a href="/#use-cases" class="inline-block text-gray-700 hover:text-blue-600">Use Cases</a>
+      <a href="/interactive-widget/" class="inline-block text-gray-700 hover:text-blue-600">Widget</a>
     </li>
     <li class="mr-8 font-semibold text-sm leading-6">
       <a href="/docs/introduction/" class="inline-block text-gray-700 hover:text-blue-600">Docs</a>
@@ -25,7 +26,7 @@
       <hr class="w-[1px] border-none h-6 bg-gray-300">
     </li>
     <li class="font-semibold text-sm leading-6">
-      <a href="{{ .Site.Params.inliveStudioOrigin }}/login" class="inline-block text-gray-700 hover:text-blue-600">Login</a>
+      <a href="{{ $inliveStudioOrigin }}/login" class="inline-block text-gray-700 hover:text-blue-600">Login</a>
     </li>
   </ul>
 </nav>

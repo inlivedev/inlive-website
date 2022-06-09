@@ -3,5 +3,11 @@ languageCode = 'en-us'
 title = 'inLive'
 theme = 'inlive'
 
-[params]
-  inliveStudioOrigin = 'https://dev-studio.inlive.app'
+[security]
+  [security.funcs]
+    getenv = ['^_HUGO_']
+
+[caches]
+[caches.getjson]
+dir = ":cacheDir/:project"
+maxAge = "10s"

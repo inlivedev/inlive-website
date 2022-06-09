@@ -1,5 +1,5 @@
 window.addEventListener('load', () => {
-  const sliderUseCases = new KeenSlider('#slider-use-cases', {
+  new KeenSlider('#slider', {
     loop: true,
     created: (slider) => {
       const navigation = slider.container.nextElementSibling;

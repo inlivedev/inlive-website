@@ -1,4 +1,5 @@
 <!-- Mobile navigation menu -->
+{{ $inliveStudioOrigin := getenv "_HUGO_INLIVE_STUDIO_ORIGIN" }}
 <div id="mobile-nav-overlay" onclick="handleToggleNavMenu()"
   class="hidden lg:hidden fixed top-0 left-0 bottom-0 right-0 w-full h-full bg-black bg-opacity-30 z-40">
 </div>
@@ -22,10 +23,10 @@
         <a href="/#why-us" class="text-gray-700">Why Us</a>
       </li>
       <li class="mb-6 font-semibold text-base">
-        <a href="/#pricing" class="text-gray-700">Pricing</a>
+        <a href="/pricing/" class="text-gray-700">Pricing</a>
       </li>
       <li class="mb-6 font-semibold text-base">
-        <a href="/#use-cases" class="text-gray-700">Use Cases</a>
+        <a href="/interactive-widget/" class="text-gray-700">Widget</a>
       </li>
       <li class="mb-6 font-semibold text-base">
         <a href="/docs/introduction/" class="text-gray-700">Docs</a>
@@ -37,7 +38,7 @@
         <hr class="w-full h-[1px] border-none bg-gray-300">
       </li>
       <li class="font-semibold text-base">
-        <a href="{{ .Site.Params.inliveStudioOrigin }}/login" class="text-gray-700">Login</a>
+        <a href="{{ $inliveStudioOrigin }}/login" class="text-gray-700">Login</a>
       </li>
     </ul>
   </nav>
