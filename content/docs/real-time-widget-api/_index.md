@@ -22,3 +22,5 @@ Real Time Widget API works by exchanging messages between viewers and the stream
 A widget will typically be divided into two different client-side code, one part is dedicated for streamers and the other for the viewers that are watching the stream. These two parts will communicate with each other to achieve a functional widget. This allows a high level of interactivity between streamers and viewers.
 
 Our channel server also allows webhooks to be triggered by the messages. This allows for more complex functionalities that need communication to external third party services.
+
+![widget diagram](/images/interactive-widget/widget-api-diagram.png)
