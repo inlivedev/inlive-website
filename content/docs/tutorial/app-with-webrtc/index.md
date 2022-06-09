@@ -5,12 +5,12 @@ name: Tutorial with WebRTC
 title: Tutorial building a live stream app with WebRTC
 description: This tutorial will show you how to build a live video stream web app with WebRTC video source input.
 slug: tutorial-app-with-webrtc
-weight: 3001
+weight: 4001
 menu:
   docs_sidebar:
     identifier: Tutorial with WebRTC
     name: Tutorial with WebRTC
-    weight: 3001
+    weight: 4001
     parent: Tutorial
 ---
 # Tutorial building a live stream app with WebRTC

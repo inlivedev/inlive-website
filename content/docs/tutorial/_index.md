@@ -5,12 +5,12 @@ name: Tutorial
 title: Tutorial
 description: List of tutorials that we created for you
 slug: tutorial
-weight: 3000
+weight: 4000
 menu:
   docs_sidebar:
     identifier: Tutorial
     name: Tutorial
-    weight: 3000
+    weight: 4000
 ---
 # Tutorial
 List of tutorials that we created for you
