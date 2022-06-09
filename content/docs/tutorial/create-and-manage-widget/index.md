@@ -5,12 +5,12 @@ name: Creating and managing widget
 title: Creating and managing widget
 description: This tutorial will show you how to develop your own widget (creating widget and managing widget).
 slug: tutorial-creating-and-managing-widget
-weight: 3002
+weight: 4002
 menu:
   docs_sidebar:
     identifier: Creating and managing widget
     name: Creating and managing widget
-    weight: 3002
+    weight: 4002
     parent: Tutorial
 ---
 # How to Create & Manage your Widget

@@ -5,12 +5,12 @@ name: Learn
 title: Learn
 description: List of supporting articles related to our Inlive that we created for you
 slug: learn
-weight: 4000
+weight: 5000
 menu:
   docs_sidebar:
     identifier: Learn
     name: Learn
-    weight: 4000
+    weight: 5000
 ---
 # Learn
 List of supporting articles related to our Inlive that we created for you
