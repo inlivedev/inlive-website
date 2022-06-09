@@ -5,12 +5,12 @@ name: Playing Video with HLS and MPEG-DASH
 title: Playing Video with HLS and MPEG-DASH 
 description: Inlive supports HLS and MPEG-DASH streaming protocol formats which offers 3 types adaptive bitrate qualities for playing video through a video player.
 slug: playing-video
-weight: 4003
+weight: 5003
 menu:
   docs_sidebar:
     identifier: Playing Video with HLS and MPEG-DASH
     name: Playing Video with HLS and MPEG-DASH
-    weight: 4003
+    weight: 5003
     parent: Learn
 ---
 
