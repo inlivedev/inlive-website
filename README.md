@@ -3,11 +3,13 @@ inlive static site for blog and documentation
 
 ## Setup
 This is static site generated using Hugo. To run this locally, you can do these steps:
-1. [Install Hugo](https://gohugo.io/getting-started/installing/).
-2. Ensure the hugo is installed properly by using `hugo version` command.
+1. [Install Hugo](https://gohugo.io/getting-started/installing/) and [Golang](https://go.dev/doc/install).
+2. Ensure the Hugo and Golang is installed properly by using `hugo version` and `go version` command.
 3. Install all dependencies using `npm install`.
-4. Run `hugo server --gc` to run hugo server and enable auto reload when the code changes. Preferably using `--gc` flag for every time you run the development server to clean unused cache files. The server is available on http://localhost:1313
-5. You can test the deployment by calling `hugo` (preferably using `--gc` and `--minify` flags) and it will generate all static files needed under `public` directory. The `public` directory contains all files that we will use to deploy the website.
+4. Create a new file named `.env`, then copy and paste all the content inside the `.env.example` file into the `.env` file.
+5. We’re using [godotenv](https://github.com/joho/godotenv) command to read the `.env` file. Please follow the [installation of godotenv](https://github.com/joho/godotenv#installation). You need to make sure the GOPATH is set properly in the PATH environment variable. To set the GOPATH, please follow the [instructions here](https://github.com/golang/go/wiki/SettingGOPATH). In order to be able to run the godotenv from CLI, you also need to set GOPATH/bin in the PATH environment variable.
+6. Run `godotenv -f .env hugo server --gc` to run hugo server and enable auto reload when the code changes. Preferably using `--gc` flag for every time you run the development server to clean unused cache files. The server is available on http://localhost:1313
+7. You can test the deployment by calling `godotenv -f .env hugo` (preferably using `--gc` and `--minify` flags) and it will generate all static files needed under `public` directory. The `public` directory contains all files that we will use to deploy the website.
 
 
 ## Adjusting Layout
