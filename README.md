@@ -56,5 +56,5 @@ We used [CodeceptJS](https://codecept.io/quickstart/) Playwright for testing end
 
 ### URL
 
-Dev [https://dev.inlive-website.pages.dev/]()
-Prod [https://inlive.app/]()
+Dev [https://dev.inlive-website.pages.dev/](https://dev.inlive-website.pages.dev/)
+Prod [https://inlive.app/](https://inlive.app/)
