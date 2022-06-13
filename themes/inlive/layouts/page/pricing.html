@@ -37,29 +37,32 @@
         {{ $linkAPI := printf "%s/v1/package/" $apiOriginLink }}
         {{ $items := getJSON $linkAPI }}
         {{ range $index, $item := sort $items.data "id" "asc"}}
-        <div class="text-center w-[280px] border border-gray-300 rounded-2xl hover:shadow-lg min-h-[515px]">
+        <div class="text-center w-[280px] border border-gray-300 rounded-2xl min-h-[515px]">
           <h2 class="bg-blue-200 font-bold text-2xl leading-8 rounded-t-2xl text-center py-5">{{ $item.name }}</h2>
-          <div class="my-11">
-            <span class="text-4xl leading-10">$</span><span class="text-6xl leading-none font-extrabold">{{ $item.price }}</span><span class="text-xl leading-10">/mo</span>
+          <div class="grid items-end">
+            <div class="my-11 self-start">
+              <span class="text-4xl leading-10">$</span><span class="text-6xl leading-none font-extrabold">{{ $item.price }}</span><span class="text-xl leading-10">/mo</span>
+            </div>
+            <p class="text-sm leading-5 px-7 self-start h-[61px]">{{ $item.description }}</p>
+            {{ if eq $index 0 }}
+              <a href="{{ $linkStudioOrigin }}/login" aria-label="link-to-studio" target="_blank" rel="noopener noreferrer" class="mt-[52px] mb-10">
+                <button aria-label="getStarted" type="button" class="bg-white text-blue-600 border border-blue-600 hover:bg-blue-600 hover:text-white rounded-md hover:shadow-lg active:shadow-lg py-[13px] px-[25px] text-center">Get Started</button>
+              </a>
+            {{ else if eq $index 1 }}
+              <a href="{{ $linkStudioOrigin }}/login" aria-label="link-to-studio" target="_blank" rel="noopener noreferrer" class="mt-[52px] mb-10">
+                <button aria-label="startTrial" type="button" class="bg-white text-blue-600 border border-blue-600 hover:bg-blue-600 hover:text-white rounded-md hover:shadow-lg active:shadow-lg py-[13px] px-[25px] text-center">Start Trial</button>
+              </a>
+            {{ else if eq $index 2 }}
+              <a href="{{ $linkStudioOrigin }}/login" aria-label="link-to-studio" target="_blank" rel="noopener noreferrer" class="mt-[52px] mb-10">
+                <button aria-label="startTrial" type="button" class="bg-white text-blue-600 border border-blue-600 hover:bg-blue-600 hover:text-white rounded-md hover:shadow-lg active:shadow-lg py-[13px] px-[25px] text-center">Start Trial</button>
+              </a>
+            {{ else }}
+              <a href="mailto:hello@inlive.app" aria-label="link-to-studio" target="_blank" rel="noopener noreferrer" class="mt-[52px] mb-10">
+                <button aria-label="startTrial" type="button" class="bg-white text-blue-600 border border-blue-600 hover:bg-blue-600 hover:text-white rounded-md hover:shadow-lg active:shadow-lg py-[13px] px-[25px] text-center">Contact Us</button>
+              </a>
+            {{ end }}
           </div>
-          <p class="text-sm leading-5 px-7">{{ $item.description }}</p>
-          {{ if eq $index 0 }}
-            <a href="{{ $linkStudioOrigin }}/login" aria-label="link-to-studio" target="_blank" rel="noopener noreferrer">
-              <button aria-label="getStarted" type="button" class="bg-white text-blue-600 border border-blue-600 hover:bg-blue-600 hover:text-white rounded-md hover:shadow-lg active:shadow-lg py-[13px] px-[25px] mt-[71px] mb-10 text-center">Get Started</button>
-            </a>
-          {{ else if eq $index 1 }}
-            <a href="{{ $linkStudioOrigin }}/login" aria-label="link-to-studio" target="_blank" rel="noopener noreferrer">
-              <button aria-label="startTrial" type="button" class="bg-white text-blue-600 border border-blue-600 hover:bg-blue-600 hover:text-white rounded-md hover:shadow-lg active:shadow-lg py-[13px] px-[25px] mt-[52px] mb-10 text-center">Start Trial</button>
-            </a>
-          {{ else if eq $index 2 }}
-            <a href="{{ $linkStudioOrigin }}/login" aria-label="link-to-studio" target="_blank" rel="noopener noreferrer">
-              <button aria-label="startTrial" type="button" class="bg-white text-blue-600 border border-blue-600 hover:bg-blue-600 hover:text-white rounded-md hover:shadow-lg active:shadow-lg py-[13px] px-[25px] mt-[52px] mb-10 text-center">Start Trial</button>
-            </a>
-          {{ else }}
-            <a href="mailto:hello@inlive.app" aria-label="link-to-studio" target="_blank" rel="noopener noreferrer">
-              <button aria-label="startTrial" type="button" class="bg-white text-blue-600 border border-blue-600 hover:bg-blue-600 hover:text-white rounded-md hover:shadow-lg active:shadow-lg py-[13px] px-[25px] mt-[32px] mb-10 text-center">Contact Us</button>
-            </a>
-          {{ end }}
+          
           <ul class="list-disc py-10 pl-10 pr-7 border-t border-t-gray-300 text-left text-sm leading-7">
             <li><b>{{div $item.quota 60}}</b> streaming hours</li>
             {{ if eq $item.per_minute_exceed_price "0"}}
@@ -143,7 +146,7 @@
             <span class="w-11/12 md:w-full">How can I know my billing?</span>
           </button>
           <div class="panel overflow-hidden text-left text-gray-600">
-            <p class="text-base leading-6 mt-3.5 mr-5 lg:mr-[3.75rem]">WWe will send you a billing statement after 1 cycle (30 days) has been finished via email. Due date applied 14 days after billing was issued.</p>
+            <p class="text-base leading-6 mt-3.5 mr-5 lg:mr-[3.75rem]">We will send you a billing statement after 1 cycle (30 days) has been finished via email. Due date applied 14 days after billing was issued.</p>
           </div>
         </div>
     </div>
