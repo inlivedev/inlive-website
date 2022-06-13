@@ -42,16 +42,21 @@ This is a step by step for creating a new documentation content inside the `docs
 
 3. The last step is to ensure if the page is properly configured. You may check if the page link is already visible inside the sidebar menu on the left side, if the order of the page (when accessing from next and previous link) is the same as the order of the sidebar menu, and ensure if the page is actually a level 1 page (parent page) or a level 2 page (child page).
 
-### Additional file for deployment on Kubernetes cluster
+<!-- ### Additional file for deployment on Kubernetes cluster
 We added some YAML file in folder k8s/development such as below:
 1. ingress-nginx.yaml is YAML deployment file to deploy ingres-nginx on our K8s cluster and only need to run once in each K8s cluster.
 2. ingress-service.yaml is YAML deployment file to deploy mapping of subdomain into ingress-nginx which is already deploy before, we need to make some adjustment if there is a changes in subdomain pointing.
 3. inlive-website is YAML deployment file to deploy each time there is push to dev branch by Cloud Build and deploy into our existing Kubernetes cluster.
 
-Also we added cloudbuild.yaml in root folder of the repository and this file used for Cloud Build after triggered by push to dev branch. And also we added Dockerfile in root folder of the repository and this file used for Cloud Build to build Docker image.
+Also we added cloudbuild.yaml in root folder of the repository and this file used for Cloud Build after triggered by push to dev branch. And also we added Dockerfile in root folder of the repository and this file used for Cloud Build to build Docker image. -->
 
 ### Testing
 We used [CodeceptJS](https://codecept.io/quickstart/) Playwright for testing end to end page to determine the flows of opening the pages are correct. Kindly see this [documentation](https://codecept.io/playwright/) for more information.
 1. `codecept.conf.js` file is for configuring the testing environment such as the url testing as we use localhost:1313 and the browser as chromium.
 2. `_test.js` file consists with a scenario of user's action taken on a page.
 3. To run the test, type `npm run codeceptjs` on your terminal and hit enter.
+
+### URL
+
+- Dev [https://dev.inlive-website.pages.dev/](https://dev.inlive-website.pages.dev/)
+- Prod [https://inlive.app/](https://inlive.app/)
