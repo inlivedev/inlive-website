@@ -50,6 +50,7 @@ We added some YAML file in folder k8s/development such as below:
 
 Also we added cloudbuild.yaml in root folder of the repository and this file used for Cloud Build after triggered by push to dev branch. And also we added Dockerfile in root folder of the repository and this file used for Cloud Build to build Docker image. -->
 
+
 ### Testing
 We used [CodeceptJS](https://codecept.io/quickstart/) Playwright for testing end to end page to determine the flows of opening the pages are correct. Kindly see this [documentation](https://codecept.io/playwright/) for more information.
 1. `codecept.conf.js` file is for configuring the testing environment such as the url testing as we use localhost:1313 and the browser as chromium.
@@ -60,3 +61,5 @@ We used [CodeceptJS](https://codecept.io/quickstart/) Playwright for testing end
 
 - Dev [https://dev.inlive-website.pages.dev/](https://dev.inlive-website.pages.dev/)
 - Prod [https://inlive.app/](https://inlive.app/)
+
+

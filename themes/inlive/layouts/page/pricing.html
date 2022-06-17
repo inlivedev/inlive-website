@@ -62,7 +62,6 @@
               </a>
             {{ end }}
           </div>
-          
           <ul class="list-disc py-10 pl-10 pr-7 border-t border-t-gray-300 text-left text-sm leading-7">
             <li><b>{{div $item.quota 60}}</b> streaming hours</li>
             {{ if eq $item.per_minute_exceed_price "0"}}
@@ -89,8 +88,18 @@
             <p class="text-base leading-6 mt-3.5 mr-5 lg:mr-[3.75rem]">So right now we provide beta users to apply with our Business Plan. And the good thing is it's <b>free</b>. It is valid until <b>30 June 2022</b>.</p>
           </div>
         </div>
-
+      
         <!-- faq 2 -->
+        <div class="border-b border-b-gray-300 py-3.5">
+          <button class="accordion font-bold text-gray-800 text-lg leading-7 text-left w-full flex items-center justify-between" style="transition: 0.4s;">
+            <span class="w-11/12 md:w-full">How much is the cost of bandwidth or viewer minutes?</span>
+          </button>
+          <div class="panel overflow-hidden text-left text-gray-600">
+            <p class="text-base leading-6 mt-3.5 mr-5 lg:mr-[3.75rem]">The bandwidth and viewer minutes is the biggest factor in live streaming cost, we're working to make this more affordable so small startups and indie hackers can afford to build a live streaming app. In the meantime, the bandwidth or viewer minutes is free during beta.</p>
+          </div>
+        </div>
+
+        <!-- faq 3 -->
         <div class="border-b border-b-gray-300 py-3.5">
             <button class="accordion font-bold text-gray-800 text-lg leading-7 text-left w-full flex items-center justify-between" style="transition: 0.4s;">
               <span class="w-11/12 md:w-full">What if I only want to host a single event?</span>
@@ -100,7 +109,7 @@
             </div>
         </div>
 
-        <!-- faq 3 -->
+        <!-- faq 4 -->
         <div class="border-b border-b-gray-300 py-3.5">
             <button class="accordion font-bold text-gray-800 text-lg leading-7 text-left w-full flex items-center justify-between" style="transition: 0.4s;">
               <span class="w-11/12 md:w-full">Can I upgrade/downgrade my plan at a later date?</span>
@@ -110,7 +119,7 @@
             </div>
         </div>
 
-        <!-- faq 4 -->
+        <!-- faq 5 -->
         <div class="border-b border-b-gray-300 py-3.5">
             <button class="accordion font-bold text-gray-800 text-lg leading-7 text-left w-full flex items-center justify-between" style="transition: 0.4s;">
               <span class="w-11/12 md:w-full">Can I cancel my subscription at any time?</span>
@@ -120,7 +129,7 @@
             </div>
         </div>
 
-        <!-- faq 5 -->
+        <!-- faq 6 -->
         <div class="border-b border-b-gray-300 py-3.5">
           <button class="accordion font-bold text-gray-800 text-lg leading-7 text-left w-full flex items-center justify-between" style="transition: 0.4s;">
             <span class="w-11/12 md:w-full">How many days is inLive billing cycle?</span>
@@ -130,7 +139,7 @@
           </div>
         </div>
 
-        <!-- faq 6 -->
+        <!-- faq 7 -->
         <div class="border-b border-b-gray-300 py-3.5">
           <button class="accordion font-bold text-gray-800 text-lg leading-7 text-left w-full flex items-center justify-between" style="transition: 0.4s;">
             <span class="w-11/12 md:w-full">How does our overage usage system work?</span>
@@ -140,23 +149,13 @@
           </div>
         </div>
 
-        <!-- faq 7 -->
+        <!-- faq 8 -->
         <div class="border-b border-b-gray-300 py-3.5">
           <button class="accordion font-bold text-gray-800 text-lg leading-7 text-left w-full flex items-center justify-between" style="transition: 0.4s;">
             <span class="w-11/12 md:w-full">How can I know my billing?</span>
           </button>
           <div class="panel overflow-hidden text-left text-gray-600">
             <p class="text-base leading-6 mt-3.5 mr-5 lg:mr-[3.75rem]">We will send you a billing statement after 1 cycle (30 days) has been finished via email. Due date applied 14 days after billing was issued.</p>
-          </div>
-        </div>
-
-        <!-- faq 8 -->
-        <div class="border-b border-b-gray-300 py-3.5">
-          <button class="accordion font-bold text-gray-800 text-lg leading-7 text-left w-full flex items-center justify-between" style="transition: 0.4s;">
-            <span class="w-11/12 md:w-full">How much is the cost of bandwidth or viewer minutes?</span>
-          </button>
-          <div class="panel overflow-hidden text-left text-gray-600">
-            <p class="text-base leading-6 mt-3.5 mr-5 lg:mr-[3.75rem]">The bandwidth and viewer minutes is the biggest factor in live streaming cost, we're working to make this more affordable so small startups and indie hackers can afford to build a live streaming app. In the meantime, the bandwidth or viewer minutes is free during beta.</p>
           </div>
         </div>
     </div>
