@@ -38,7 +38,7 @@
         {{ $items := getJSON $linkAPI }}
         {{ range $index, $item := sort $items.data "id" "asc"}}
         <div class="text-center w-[280px] border border-gray-300 rounded-2xl min-h-[515px]">
-          <h2 class="bg-blue-200 font-bold text-2xl leading-8 rounded-t-2xl text-center py-5">{{ $item.name }}</h2>
+          <h2 class="bg-blue-200 font-bold text-2xl leading-8 rounded-t-2xl text-center py-5 capitalize">{{ $item.name }}</h2>
           <div class="grid items-end">
             <div class="my-11 self-start">
               <span class="text-4xl leading-10">$</span><span class="text-6xl leading-none font-extrabold">{{ $item.price }}</span><span class="text-xl leading-10">/mo</span>
@@ -64,10 +64,25 @@
           </div>
           <ul class="list-disc py-10 pl-10 pr-7 border-t border-t-gray-300 text-left text-sm leading-7">
             <li><b>{{div $item.quota 60}}</b> streaming hours</li>
+
             {{ if eq $item.per_minute_exceed_price "0"}}
             <li>Overage <b>not allowed</b></li>
             {{ else }}
             <li>Overage price <b>${{ $item.per_minute_exceed_price }}</b> per hour</li>
+            {{ end }}
+
+            {{ if eq $index 0 }}
+              <li>Bandwidth <b>100 GB</b></li>
+              <li>Quality <b>360p</b></li>
+            {{ else if eq $index 1 }}
+              <li>Bandwidth <b>4,000 GB</b></li>
+              <li>Quality <b>720p</b></li>
+            {{ else if eq $index 2 }}
+              <li>Bandwidth <b>12,000 GB</b></li>
+              <li>Quality <b>720p</b></li>
+            {{ else }}
+              <li>Bandwidth <b>25,000 GB</b></li>
+              <li>Quality <b>720p</b></li>
             {{ end }}
           </ul>
         </div>
