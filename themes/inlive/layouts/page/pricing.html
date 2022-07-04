@@ -65,6 +65,12 @@
           <ul class="list-disc py-10 pl-10 pr-7 border-t border-t-gray-300 text-left text-sm leading-7">
             <li><b>{{div $item.quota 60}}</b> streaming hours</li>
 
+            {{ if eq $item.per_minute_exceed_price "0"}}
+            <li>Overage <b>not allowed</b></li>
+            {{ else }}
+            <li>Overage price <b>${{ $item.per_minute_exceed_price }}</b> per hour</li>
+            {{ end }}
+
             {{ if eq $index 0 }}
               <li>Bandwidth <b>100 GB</b></li>
               <li>Quality <b>360p</b></li>
