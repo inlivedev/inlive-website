@@ -11,15 +11,15 @@ menu:
     identifier: Subscribe to channel server
     name: Subscribe to channel server
     weight: 3001
-    parent: Real Time Widget API
+    parent: Real-Time Widget API
 ---
 # How to subscribe to our Channel Server using SSE
 
-To use our Real Time Widget API, you need to create a simple SSE client to subscribe to a channel server.
+To use our Real-Time Widget API, you need to create a simple SSE client to subscribe to a channel server.
 
 Our channel server works by sending JSON messages to clients using SSE (Server sent events). SSE, as the name suggests, can only act as a medium for messages that are sent from the server to the client. Sending messages to the channel server (i.e., broadcasting messages) is not possible through SSE.
 
- This article will focus on how to subscribe to our channel server using SSE to **receive messages** from our channel server and explain how to create a simple SSE client in the browser as an example. Sending messages to our channel server will be explained in detail in a different section. 
+ This article will focus on how to subscribe to our channel server using SSE to **receive messages** from our channel server and explain how to create a simple SSE client in the browser as an example. Sending messages to our channel server will be explained in detail in a different section.
 
 
 ## Subscribing to Channel Server
@@ -36,7 +36,7 @@ Let’s try to create a simple webpage that listens to SSE messages and list the
 <html>
   <h1>Test SSE</h1>
   <ul id="list">
-    
+
   </ul>
 </html>
 ```
@@ -62,7 +62,7 @@ Now, let’s try to process the messages that are sent from the channel server b
 evtSource.onmessage = function(event) {
   const newElement = document.createElement("li");
   const eventList = document.getElementById("list");
-  
+
   console.log(event)
 
   newElement.textContent = "message: " + event.data;
@@ -92,9 +92,8 @@ If you’re successful at connecting to the server, you’ll see that the server
 ```
 
 
-The message is in the format of our communication scheme, for now, let’s just take note of the **message** field and the **type** field. The **type** field indicates that this message is of the **init** type which is a message that’s sent to supply the initial credentials that the client may need when connected to the channel server. You can read more about these types in the [communication scheme section](/docs/real-time-widget-api/communication-scheme-and-formatting/) below. These credentials will be stored in the **message** field, in which the message’s main payload will be stored. 
+The message is in the format of our communication scheme, for now, let’s just take note of the **message** field and the **type** field. The **type** field indicates that this message is of the **init** type which is a message that’s sent to supply the initial credentials that the client may need when connected to the channel server. You can read more about these types in the [communication scheme section](/docs/real-time-widget-api/communication-scheme-and-formatting/) below. These credentials will be stored in the **message** field, in which the message’s main payload will be stored.
 
 There are two credentials provided in the message, **user_id** and **token**.**user_id** contains the client’s unique ID in the channel, this will be used to identify and differentiate the clients. The other one is called **token**, which is, as the name suggests, a token that you send to the channel server for authentication. This token will be used when you’re trying to send a message to the channel server, this will be covered in detail in the next document.
 
 Good, now you are successfully connected to the channel server, let’s try to broadcast and see other messages in the next tutorial.
-

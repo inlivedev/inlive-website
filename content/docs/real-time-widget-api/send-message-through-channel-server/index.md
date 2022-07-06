@@ -11,7 +11,7 @@ menu:
     identifier: Send message through channel server
     name: Send message through channel server
     weight: 3002
-    parent: Real Time Widget API
+    parent: Real-Time Widget API
 ---
 # How to send or publish messages through the Channel Server
 
@@ -34,9 +34,9 @@ Let’s create a simple webpage that listens to the messages from the channel se
 <html>
   <h1>Test SSE</h1>
   <ul id="list">
-    
+
   </ul>
-  
+
   <input type="text" id="msg">
   <button id="send">Send</button>
 </html>
@@ -52,7 +52,7 @@ const evtSource = new EventSource("https://channel.inlive.app/subscribe/1")
 evtSource.onmessage = function(event) {
   const newElement = document.createElement("li");
   const eventList = document.getElementById("list");
-  
+
   console.log(event)
 
   newElement.textContent = "message: " + event.data;
