@@ -17,7 +17,7 @@ menu:
 To make our Real Time Communication work, we have standardized how clients and our server format their messages when sending them. The standard format of our messages in the channel server is as follows:
 
 
-```
+```js
 {
   "stream_id": "1",
   "author_id": "1",

@@ -30,12 +30,10 @@ To send or publish a message to a channel in the channel server, Firstly, you mu
 Let’s create a simple webpage that listens to the messages from the channel server akin to the one in the previous tutorial but let’s add the ability to send messages. You can do this locally or use online sandboxes like [JSfiddle](https://jsfiddle.net/). Let’s start with the HTML document, let’s make a list to list the messages received, a textbox to type our message and a button to send it.
 
 
-```
+```html
 <html>
   <h1>Test SSE</h1>
-  <ul id="list">
-
-  </ul>
+  <ul id="list"></ul>
 
   <input type="text" id="msg">
   <button id="send">Send</button>
@@ -46,7 +44,7 @@ Let’s create a simple webpage that listens to the messages from the channel se
 Now, for the Javascript, in the last tutorial the JS code looks more or less like this:
 
 
-```
+```js
 const evtSource = new EventSource("https://channel.inlive.app/subscribe/1")
 
 evtSource.onmessage = function(event) {
@@ -64,7 +62,7 @@ evtSource.onmessage = function(event) {
 Let’s modify these codes a bit so that we can retrieve the token:
 
 
-```
+```js
 const evtSource = new EventSource("https://channel.inlive.app/subscribe/1");
 
 let token = "";
@@ -99,7 +97,7 @@ Now, we have the token that we needed. We still need the widget key to be able t
 Let’s add the on-click function into the button that we made. This on-click function must retrieve the text from the textbox, format it, and send it to the channel server with the necessary credentials.
 
 
-```
+```js
 const btn = document.getElementById("send");
 
 btn.onclick = function() {

@@ -32,12 +32,10 @@ Every channel in our Channel Server is tied into a single stream. Every currentl
 Let’s try to create a simple webpage that listens to SSE messages and list them. First, let’s create the html document. You can do this locally by creating a file or using online sandboxes like [JSFiddle](https://jsfiddle.net/). Let’s create a simple ordered list as the container of our messages.
 
 
-```
+```html
 <html>
   <h1>Test SSE</h1>
-  <ul id="list">
-
-  </ul>
+  <ul id="list"></ul>
 </html>
 ```
 
@@ -45,7 +43,7 @@ Let’s try to create a simple webpage that listens to SSE messages and list the
 Then, using Javascript, let’s subscribe to the EventSource. The EventSource URL will be formatted as `/subscribe/{streamId}`
 
 
-```
+```js
 const evtSource = new EventSource("https://channel.inlive.app/subscribe/1")
 ```
 
@@ -58,7 +56,7 @@ In the code above, we subscribed to the channel of a stream with streamID `1`. C
 Now, let’s try to process the messages that are sent from the channel server by adding it into the list that we’ve created.
 
 
-```
+```js
 evtSource.onmessage = function(event) {
   const newElement = document.createElement("li");
   const eventList = document.getElementById("list");
@@ -76,7 +74,7 @@ In the code above we will append every new message from the channel server to th
 If you’re successful at connecting to the server, you’ll see that the server will immediately send a message to you, the message will be similar to this:
 
 
-```
+```js
 {
   "stream_id": "1",
   "author_id": "0",
