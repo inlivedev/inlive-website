@@ -1,12 +1,13 @@
 {{ define "main" }}
 {{ partial "header/header.html" . }}
+{{ $inliveStudioOrigin := getenv "_HUGO_INLIVE_STUDIO_ORIGIN" }}
 <main>
   <section class="px-4 py-10 lg:py-36 bg-blue-600 flex flex-col items-center justify-center bg-no-repeat bg-center bg-cover" style="background-image: url('/images/interactive-widget/bg-hero-pattern.svg');">
     <h1 class="font-extrabold text-2xl lg:text-5xl text-center text-white max-w-5xl mx-auto">
       Level up your live stream’s interactivity
     </h1>
     <div class="mt-5">
-      <a href="https://tally.so/r/wgD9aM" target="_blank" rel="noopener noreferrer" class="inline-block py-2 lg:py-3 px-3 lg:px-6 bg-white border border-white shadow-lg rounded-md font-medium lg:font-bold text-sm lg:text-base text-blue-600">Register your interest</a>
+      <a href="{{ $inliveStudioOrigin }}" target="_blank" rel="noopener noreferrer" class="inline-block py-2 lg:py-3 px-3 lg:px-6 bg-white border border-white shadow-lg rounded-md font-medium lg:font-bold text-sm lg:text-base text-blue-600">Get Started</a>
     </div>
   </section>
   <section class="py-10 lg:py-20 px-4 lg:px-8">
@@ -57,7 +58,7 @@
             Save your time to develop interactive widgets with Real Time Widget API.
           </p>
           <a href="/docs/real-time-widget-api/" class="inline-block py-2 lg:py-3 px-4 lg:px-6 bg-white border border-blue-600 rounded-md font-medium text-sm lg:text-base text-blue-600">
-            Visit our documentation
+            Learn more
           </a>
         </div>
       </div>
@@ -70,18 +71,18 @@
           Ready to level up your live stream?
         </h2>
         <p class="lg:text-lg text-gray-600">
-          Real Time Widget API will be ready in the third quarter of this year. While waiting, don't hesitate to discuss the possibility of interactive widgets with us or read our documentation.
+          Explore Developer Portal to get to know more about Real-Time Widget API, or don't hesitate to discuss the possibility of interactive widgets with us.
         </p>
       </header>
       <div class="max-w-xl mx-auto">
         <img src="/images/interactive-widget/fan-base-preview.png" loading="lazy" width="576" height="327" alt="Interactive Fan Streaming">
       </div>
       <div class="max-w-xl mx-auto mt-4 lg:mt-10 flex flex-col lg:flex-row gap-4 text-center justify-center">
-        <a href="https://tally.so/r/wgD9aM" target="_blank" rel="noopener noreferrer" class="inline-block py-2 lg:py-3 px-4 lg:px-6 bg-blue-600 border border-blue-600 shadow-lg rounded-md font-medium text-sm lg:text-base text-white">
-          Register your interest
-        </a>
-        <a href="/docs/real-time-widget-api/" class="inline-block py-2 lg:py-3 px-4 lg:px-6 bg-white border border-blue-600 rounded-md font-medium text-sm lg:text-base text-blue-600">
+        <a href="/docs/real-time-widget-api/" class="inline-block py-2 lg:py-3 px-4 lg:px-6 bg-blue-600 border border-blue-600 shadow-lg rounded-md font-medium text-sm lg:text-base text-white">
           Visit our documentation
+        </a>
+        <a href="mailto:hello@inlive.app" target="_blank" rel="noopener noreferrer" class="inline-block py-2 lg:py-3 px-4 lg:px-6 bg-white border border-blue-600 rounded-md font-medium text-sm lg:text-base text-blue-600">
+          Contact Us
         </a>
       </div>
     </div>
