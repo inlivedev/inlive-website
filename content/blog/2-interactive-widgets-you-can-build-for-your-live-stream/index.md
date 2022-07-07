@@ -4,7 +4,7 @@ date: 2022-06-09
 lastmod: 2022-06-09
 title : 5 Interactive Widgets You Can Build for Your Live Stream
 slug : 5-interactive-widgets-you-can-build-for-your-live-stream
-summary: Discover 5 interactive widget ideas such as quiz, polling, showcase, mini-games, and AR filter that you can develop on your live stream with the help of inLive Real Time Widget API.
+summary: Discover 5 interactive widget ideas such as quiz, polling, showcase, mini-games, and AR filter that you can develop on your live stream with the help of inLive Real-Time Widget API.
 ---
 
 # 5 Interactive Widgets You Can Build for Your Live Stream
@@ -35,4 +35,4 @@ Have you ever been bored while waiting for a live stream break? Entertain your a
 
 Brings the sophisticated Augmented Reality (AR) experience in a widget to your live stream. Let the audience try a shade of a brand new make-up product on themself, or yoga instructors can examine their student’s position during online class with the help of AR.
 
-Save your time developing interactive widgets with InLive **Real Time Widget API**. The API will be ready in the 3rd quarter of 2022. While waiting, [register your interest](https://tally.so/r/wgD9aM) to discuss more with us and keep up-to-date with the development progress.
+Save your time developing interactive widgets with InLive **Real-Time Widget API**. The API will be ready in the 3rd quarter of 2022. While waiting, [register your interest](https://tally.so/r/wgD9aM) to discuss more with us and keep up-to-date with the development progress.
