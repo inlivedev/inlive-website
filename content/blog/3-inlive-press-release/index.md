@@ -26,14 +26,3 @@ Knowing just how expensive live streaming and building a live streaming app can 
 With no server setup and with no need of installation, InLive aims to help in developing a new live streaming experience for all to level up your live streaming game.
 
 InLive is a subsidiary product of [Asumsi](http://asumsi.co).
-
-You can find out more on their website and all that it has to offer on [inlive.app](https://inlive.app/).
-
-\
-*Further Contact:* 
-
-Pangeran Siahaan \
-Chief Executive Officer
-
-pangeran@inlive.app \
-M: +62 878 8898 7878
