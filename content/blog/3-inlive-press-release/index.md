@@ -3,6 +3,7 @@
 date: 2022-07-07
 lastmod: 2022-07-07
 title : InLive Press Release
+description: InLive, the newest and most affordable live streaming infrastructure in Indonesia launch its service this July 2022. InLive focuses on developer experiences with the latest low latency streaming technology, affordable pricing, and no complicated server setup.
 slug : inlive-press-release
 summary: InLive, the newest and most affordable live streaming infrastructure, announced the launch of its service made available for companies in Indonesia and beyond looking to maximize their live streaming efforts this July 2022.
 ---
