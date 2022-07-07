@@ -30,7 +30,6 @@ InLive is a subsidiary product of [Asumsi](http://asumsi.co).
 You can find out more on their website and all that it has to offer on [inlive.app](https://inlive.app/).
 
 \
-\
 *Further Contact:* 
 
 Pangeran Siahaan \
