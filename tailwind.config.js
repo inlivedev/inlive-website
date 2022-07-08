@@ -14,6 +14,14 @@ module.exports = {
           'Inter',
           ...defaultTheme.fontFamily.sans,
         ]
+      },
+      typography: {
+        quoteless: {
+          css: {
+            'blockquote p:first-of-type::before': { content: 'none' },
+            'blockquote p:last-of-type::after': { content: 'none' },
+          },
+        }
       }
     }
   },
