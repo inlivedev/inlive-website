@@ -26,7 +26,7 @@ The first step is to navigate to the InLive Studio Site, you can access it by cl
 
 The login page should be similar to the screen capture below : 
 
-![studio login page](/images/tutorial-widget/studio-login-page.png) 
+![studio login page](/images/tutorial-widget/studio-login-page.png)
 ## Navigating to the Widget List
 
 The next step is to navigate to the Widgets Menu. First you open the settings menu that is located on the left side. On the settings page, you should see the "Widget" tab to view all of your widgets or you can go by clicking the following [URL](https://dev-studio.inlive.app/settings/widget/). Since it’s your first time you will be asked to create a new widget.
@@ -49,12 +49,7 @@ After successfully creating the widget you will be redirected to the widget page
 
 ## Updating & Deleting Widget
 
-If you need to update the information of the widget, simply navigate to the Widget settings. You can update the name, summary, and description. 
+If you need to update the information of the widget, simply navigate to the Widget settings. You can update the name, summary, and description.
 ![update and delete widget](/images/tutorial-widget/managing-widget.png)
 
 If needed, you can also delete the widget, but keep in mind that this action is **not reversible**.
-
-
-## Ready to develop your own widget?
-
-Our Widget feature will be ready in the 3rd quarter of this year. While waiting, don't hesitate to discuss the possibility to enable your live stream’s interactivity with us by filling the form [here](https://tally.so/r/wgD9aM ).

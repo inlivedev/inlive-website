@@ -34,5 +34,3 @@ Have you ever been bored while waiting for a live stream break? Entertain your a
 ## 5. AR Filter
 
 Brings the sophisticated Augmented Reality (AR) experience in a widget to your live stream. Let the audience try a shade of a brand new make-up product on themself, or yoga instructors can examine their student’s position during online class with the help of AR.
-
-Save your time developing interactive widgets with InLive **Real-Time Widget API**. The API will be ready in the 3rd quarter of 2022. While waiting, [register your interest](https://tally.so/r/wgD9aM) to discuss more with us and keep up-to-date with the development progress.
