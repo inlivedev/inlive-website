@@ -15,7 +15,7 @@ menu:
 ---
 # Tutorial building a live stream app with WebRTC
 
-This tutorial will show you how to build a live video stream web app with WebRTC video source input. Please read it on [video input documentation](/docs/video-input/) to understand what the WebRTC is and how it's compared with RTMP.
+This tutorial will show you how to build a live video stream web app with WebRTC video source input. Please read it on [video input documentation](/docs/learn/video-input/) to understand what the WebRTC is and how it's compared with RTMP.
 
 This tutorial will show you how to create a streamer client and viewer page.
 We will create a web page for the streamer client to capture our webcam directly and send it to Inlive encoder as a video source input once the user clicks the start button.
@@ -147,7 +147,7 @@ async function startStream(){
 ```
 
 ### 4. Prepare the live stream
-For now, we need you to call this `prepare` API endpoint before starting to initiate the WebRTC connection. This is to start your live stream session, and this is where the billing will start counting your live streaming duration. In the future, we will automate the preparation process so the preparation will start automatically once we receive your [video ingestion](/docs/video-ingestion/). Let's create a function that will be used to call the `prepare` API endpoint:
+For now, we need you to call this `prepare` API endpoint before starting to initiate the WebRTC connection. This is to start your live stream session, and this is where the billing will start counting your live streaming duration. In the future, we will automate the preparation process so the preparation will start automatically once we receive your [video ingestion](/docs/learn/video-input/). Let's create a function that will be used to call the `prepare` API endpoint:
 
 ```js
 async function prepareStream(id){
