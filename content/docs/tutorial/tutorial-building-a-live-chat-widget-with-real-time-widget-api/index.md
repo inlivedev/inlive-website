@@ -2,24 +2,24 @@
 # Refer to the themes/inlive/archetypes/README.md
 date: 2022-07-20
 lastmod: 2022-07-20
-name: Building a live chat with a real-time widget API
-title: How to build a simple live chat with Real-Time Widget API
-description: In this tutorial, we will walk you through the steps of building a simple live chat message using inLive Real-Time Widget API.
-slug: tutorial-building-a-live-chat-with-a-real-time-widget-api
+name: Building a live chat widget with Real-Time Widget API
+title: How to build a simple live chat widget with Real-Time Widget API
+description: In this tutorial, we will walk you through the steps of building a simple live chat widget using inLive Real-Time Widget API.
+slug: tutorial-building-a-live-chat-widget-with-real-time-widget-api
 weight: 4003
 menu:
   docs_sidebar:
-    identifier: Building a live chat with a real-time widget API
-    name: Building a live chat with a real-time widget API
+    identifier: Building a live chat widget with Real-Time Widget API
+    name: Building a live chat widget with Real-Time Widget API
     weight: 4003
     parent: Tutorial
 ---
 
-# How to build a simple live chat with Real-Time Widget API
+# How to build a simple live chat widget with Real-Time Widget API
 
 ## Introduction
 
-In this tutorial, we will walk you through the steps of building a simple live chat message using [inLive Real-Time Widget API](/docs/real-time-widget-api/). We will not build any fancy live chat widget here. The goal of this tutorial is to make you understand how to build a simple real-time live chat using inLive Real-Time Widget API.
+In this tutorial, we will walk you through the steps of building a simple live chat widget using [inLive Real-Time Widget API](/docs/real-time-widget-api/). We will not build any fancy live chat widget here. The goal of this tutorial is to make you understand how to build a simple real-time live chat using inLive Real-Time Widget API.
 
 You can see the full version of this tutorial's code example [here](https://github.com/inlivedev/inlive-widget-examples/tree/main/live-chat) on GitHub.
 
@@ -62,7 +62,7 @@ Let’s run the local dev server using this command.
 $ npm run dev
 ```
 
-We can see the Vite dev server running in the terminal. It’s time to build our simple live chat.
+We can see the Vite dev server running in the terminal. It’s time to write some code.
 
 ## Building the UI
 
@@ -413,6 +413,6 @@ You can see after the modification, the code inside the event source listener be
 
 After you have implemented the modification code above, you can try to refresh the page or open a new second tab or window in the browser and try to visit the page again. You will see the client will get and display all broadcasted messages sent by us or by other people before.
 
-If you have finished implementing the code and done the above part, our simple live chat is finally working properly. If you are still reading until this section, congratulations you have finished the tutorial of building a simple live chat using inLive Real-Time Widget API!
+If you have finished implementing the code and done the above part, our simple live chat widget is finally working properly. If you are still reading until this section, congratulations you have finished the tutorial of building a simple live chat widget using inLive Real-Time Widget API!
 
 The live chat is able to subscribe to the channel server, and it is able to send and handle the incoming message from the channel server in real-time. Besides that, the live chat is also able to get the previous broadcasted messages that were already sent previously. We hope this tutorial can help you to achieve your dream of making your own widget using [inLive Real-Time Widget API](/docs/real-time-widget-api/).
