@@ -4,7 +4,7 @@ date: 2022-07-20
 lastmod: 2022-07-20
 name: Building a live chat with a real-time widget API
 title: How to build a simple live chat with Real-Time Widget API
-description:
+description: In this tutorial, we will walk you through the steps of building a simple live chat message using inLive Real-Time Widget API.
 slug: tutorial-building-a-live-chat-with-a-real-time-widget-api
 weight: 4003
 menu:
