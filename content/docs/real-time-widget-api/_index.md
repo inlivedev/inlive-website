@@ -15,7 +15,7 @@ menu:
 # About Inlive Widget
 Here at Inlive, our mission is to unlock the interactivity beyond likes and comments. Our Real-Time Widget API allows you to save your time developing an interactive widget by providing a low-latency communication scheme.
 
-> Real-Time Widget API will be ready in the 3rd quarter of this year. Register your interest [here](https://tally.so/r/wgD9aM) to discuss more with us and stay up-to-date with the development progress.
+> We have provided code examples to help you to understand and get familiar with our Real-Time Widget API. You can see the examples at our GitHub repository [inlivedev/inlive-widget-examples](https://github.com/inlivedev/inlive-widget-examples/).
 
 Real-Time Widget API works by exchanging messages between viewers and the streamer through a server that we call a “Channel Server”. This channel server functions to receive and send messages from and to appropriate users. These messages then will be processed by the client-side widget code to be processed and give the appropriate visual response to the users. With this simple building block, we have the capability to create varieties of widgets.
 

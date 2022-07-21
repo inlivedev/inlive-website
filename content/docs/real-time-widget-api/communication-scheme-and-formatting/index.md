@@ -41,48 +41,48 @@ Let’s define these values in more detail:
 
 
 
-* **stream_id**
+* **stream_id** \
     This designates the stream channel where the message was sent. The value is in string. This value is always optional to be filled by the client.
 
-* **author_id**
+* **author_id** \
     This designates the ID of the user, this could be provided from the client or we generate them ourselves. The value is always optional to be filled by the client.
 
-* **to_user_id**
+* **to_user_id** \
     This is only used when sending a message to a specific user. This designates the receiver’s user id. The value is in string
 
-* **message**
+* **message** \
     This contains the actual payload of the message, this could hold anything that the widgets wish to convey to one another.
 
-* **timestamp**
+* **timestamp** \
     This should contain the timestamp of the video when the message is triggered in seconds. This should contain float values. Server messages that act as responses (e.g., _request_ or _init_ types) should have this value as 0.
 
-* **type**
+* **type** \
     This designates the purpose of the message. The value of this field also dictates the necessities of the other fields, especially when a client is sending a message to the channel server :
 
-    * _broadcast_
+    * ***broadcast*** \
         Designates the channel message as a broadcast, the channel server will broadcast it to _all_ users that participate in the same stream. This kind of message will be stored in an internal datastore that you can retrieve later. Fields necessary for this type are:
       * message
       * timestamp
       * widget_key
 
-    * _webhook_
+    * ***webhook*** \
         Request a webhook to be performed to a third party server. The **message** field should be supplied with the webhook URL. Supplying the **message** field with an object that contains a field named `url`(e.g., {url:”https://foo-bar.com/get”} ) Fields necessary for this type are:
       * message
       * widget_key
 
-    * _private_
+    * ***private*** \
         Designates the message as a private message, and will be shown to the intended eyes only. Fields necessary for this type are:
+      * message
+      * to_user_id
+      * timestamp
+      * widget_key
 
-        * message
-        * to_user_id
-        * timestamp
-        * widget_key
-
-    * _request_
+    * ***request*** \
         Requests from the datastore all _broadcasted_ messages that have been sent before. The response message from the server for this type also will have this type. Field necessary for this this type is:
       * widget key
-    * _init_
+
+    * ***init*** \
         This type indicates the initial response of the channel server when first subscribed to.
 
-* **widget_key**
+* **widget_key** \
     This is a non-optional field when sending a message to the channel server. The field should contain the widget key of the widget that sent it.
