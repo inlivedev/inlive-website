@@ -32,4 +32,4 @@ Real-Time Widget API works by using a data channel server that can receive and s
 
 We can’t wait to see all the ways Real-Time Widget API helps you take your live stream to new heights!
 
-[Click here](/docs/real-time-widget-api/) to learn more and get started today!
+Visit the documentation of Real-Time Widget API to learn more by clicking [this link](/docs/real-time-widget-api/). If you prefer a step-by-step tutorial, we have a tutorial that explains building a simple live chat with Real-Time Widget API on [this link](/docs/tutorial/tutorial-building-a-live-chat-with-a-real-time-widget-api/).
