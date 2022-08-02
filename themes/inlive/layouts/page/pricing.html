@@ -38,57 +38,59 @@
         {{ $linkAPI := printf "%s/v1/package/" $apiOriginLink }}
         {{ $items := getJSON $linkAPI }}
         {{ range $index, $item := sort $items.data "id" "asc"}}
-        <div class="text-center w-[280px] border border-gray-300 rounded-2xl min-h-[515px]">
+        <div class="text-center w-[280px] border border-gray-300 rounded-2xl min-h-[586px]">
           <h2 class="bg-blue-200 font-bold text-2xl leading-8 rounded-t-2xl text-center py-5 capitalize">{{ $item.name }}</h2>
           <div class="grid items-end">
-            <div class="my-11 self-start">
+            <div class="my-10 self-start">
               <span class="text-4xl leading-10">$</span><span class="text-6xl leading-none font-extrabold">{{ $item.price }}</span><span class="text-xl leading-10">/mo</span>
             </div>
-            <p class="text-sm leading-5 px-7 self-start h-[61px]">{{ $item.description }}</p>
+            <p class="text-sm leading-5 px-8 self-start h-[61px]">{{ $item.description }}</p>
             {{ if eq $index 0 }}
-              <a href="{{ $linkStudioOrigin }}/login" aria-label="link-to-studio" target="_blank" rel="noopener noreferrer" class="mt-[52px] mb-10">
+              <a href="{{ $linkStudioOrigin }}/login" aria-label="link-to-studio" target="_blank" rel="noopener noreferrer" class="my-10">
                 <button aria-label="getStarted" type="button" class="bg-white text-blue-600 border border-blue-600 hover:bg-blue-600 hover:text-white rounded-md hover:shadow-lg active:shadow-lg py-[13px] px-[25px] text-center">Get Started</button>
               </a>
             {{ else if eq $index 1 }}
-              <a href="{{ $linkStudioOrigin }}/login" aria-label="link-to-studio" target="_blank" rel="noopener noreferrer" class="mt-[52px] mb-10">
+              <a href="{{ $linkStudioOrigin }}/login" aria-label="link-to-studio" target="_blank" rel="noopener noreferrer" class="my-10">
                 <button aria-label="startTrial" type="button" class="bg-white text-blue-600 border border-blue-600 hover:bg-blue-600 hover:text-white rounded-md hover:shadow-lg active:shadow-lg py-[13px] px-[25px] text-center">Start Trial</button>
               </a>
             {{ else if eq $index 2 }}
-              <a href="{{ $linkStudioOrigin }}/login" aria-label="link-to-studio" target="_blank" rel="noopener noreferrer" class="mt-[52px] mb-10">
+              <a href="{{ $linkStudioOrigin }}/login" aria-label="link-to-studio" target="_blank" rel="noopener noreferrer" class="my-10">
                 <button aria-label="startTrial" type="button" class="bg-white text-blue-600 border border-blue-600 hover:bg-blue-600 hover:text-white rounded-md hover:shadow-lg active:shadow-lg py-[13px] px-[25px] text-center">Start Trial</button>
               </a>
             {{ else }}
-              <a href="mailto:{{ $inliveEmail }}" aria-label="link-to-studio" target="_blank" rel="noopener noreferrer" class="mt-[52px] mb-10">
+              <a href="mailto:{{ $inliveEmail }}" aria-label="link-to-studio" target="_blank" rel="noopener noreferrer" class="my-10">
                 <button aria-label="startTrial" type="button" class="bg-white text-blue-600 border border-blue-600 hover:bg-blue-600 hover:text-white rounded-md hover:shadow-lg active:shadow-lg py-[13px] px-[25px] text-center">Contact Us</button>
               </a>
             {{ end }}
           </div>
-          <ul class="list-disc py-10 pl-10 pr-7 border-t border-t-gray-300 text-left text-sm leading-7">
-            <li><b>{{div $item.quota 60}}</b> streaming hours</li>
-
-            {{ if eq $index 0 }}
-              <li>Bandwidth <b>100 GB</b></li>
-              <li>Quality <b>360p</b></li>
-            {{ else if eq $index 1 }}
-              <li>Bandwidth <b>4,000 GB</b></li>
-              <li>Quality <b>720p</b></li>
-            {{ else if eq $index 2 }}
-              <li>Bandwidth <b>12,000 GB</b></li>
-              <li>Quality <b>720p</b></li>
-            {{ else }}
-              <li>Bandwidth <b>25,000 GB</b></li>
-              <li>Quality <b>720p</b></li>
-            {{ end }}
-          </ul>
+          <div class="flex justify-center py-10 border-t border-t-gray-300">
+            <ul class="list-disc text-left text-sm leading-7">
+              <li><b>{{div $item.quota 60}}</b> streaming hours</li>
+  
+              {{ if eq $index 0 }}
+                <li>Bandwidth <b>100 GB</b></li>
+                <li>Quality <b>360p</b></li>
+              {{ else if eq $index 1 }}
+                <li>Bandwidth <b>4,000 GB</b></li>
+                <li>Quality <b>720p</b></li>
+              {{ else if eq $index 2 }}
+                <li>Bandwidth <b>12,000 GB</b></li>
+                <li>Quality <b>720p</b></li>
+              {{ else }}
+                <li>Bandwidth <b>25,000 GB</b></li>
+                <li>Quality <b>720p</b></li>
+              {{ end }}
+            </ul>
+          </div>
         </div>
         {{ end }}
       </div>
   </section>
 
   <section>
-    <h1 class="font-bold text-2xl leading-8 mt-16 mb-[46px] text-center">Frequently Asked Questions</h1>
+    <h1 class="font-bold text-2xl leading-8 mt-32 lg:mt-64 mb-[46px] text-center">Frequently Asked Questions</h1>
 
-    <div class="max-w-[45rem] mx-auto">
+    <div class="max-w-[580px] mx-auto">
         <!-- faq 1 -->
         <div class="border-y border-y-gray-300 py-3.5">
           <button class="accordion font-bold text-gray-800 text-lg leading-7 text-left w-full flex items-center justify-between" style="transition: 0.4s;">
@@ -162,9 +164,9 @@
   </section>
 
   <!-- footer -->
-  <section class="mt-56">
+  <section class="mt-[120px]">
     <div class="px-4 lg:px-20">
-      <div class="max-w-7xl mx-auto lg:py-10">
+      <div class="max-w-7xl mx-auto lg:py-16">
         <h2 class="mb-4 font-extrabold text-3xl lg:text-4xl text-blue-900 text-center">
           Try inLive today
         </h2>
