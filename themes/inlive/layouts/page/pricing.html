@@ -66,12 +66,6 @@
           <ul class="list-disc py-10 pl-10 pr-7 border-t border-t-gray-300 text-left text-sm leading-7">
             <li><b>{{div $item.quota 60}}</b> streaming hours</li>
 
-            {{ if eq $item.per_minute_exceed_price "0"}}
-            <li>Overage <b>not allowed</b></li>
-            {{ else }}
-            <li>Overage price <b>${{ $item.per_minute_exceed_price }}</b> per hour</li>
-            {{ end }}
-
             {{ if eq $index 0 }}
               <li>Bandwidth <b>100 GB</b></li>
               <li>Quality <b>360p</b></li>
@@ -83,7 +77,6 @@
               <li>Quality <b>720p</b></li>
             {{ else }}
               <li>Bandwidth <b>25,000 GB</b></li>
-              <li>Overage bandwidth <b>0.007/GB</b></li>
               <li>Quality <b>720p</b></li>
             {{ end }}
           </ul>
@@ -157,16 +150,6 @@
         </div>
 
         <!-- faq 7 -->
-        <div class="border-b border-b-gray-300 py-3.5">
-          <button class="accordion font-bold text-gray-800 text-lg leading-7 text-left w-full flex items-center justify-between" style="transition: 0.4s;">
-            <span class="w-11/12 md:w-full">How does our overage usage system work?</span>
-          </button>
-          <div class="panel overflow-hidden text-left text-gray-600">
-            <p class="text-base leading-6 mt-3.5 mr-5 lg:mr-[3.75rem]">Basically, if your quota is already exceeded then you won't be able to create any streaming. So if you need more than your existing quota, you can <a href="https://docs.google.com/forms/d/e/1FAIpQLSde2L12q23o2CrY8JLciw92zLVtPuqaMl0rpF2qspPXhw3rCg/viewform" aria-label="link-to-studio" target="_blank" rel="noopener noreferrer" class="text-blue-700 font-semibold hover:underline">contact us</a>.</p>
-          </div>
-        </div>
-
-        <!-- faq 8 -->
         <div class="border-b border-b-gray-300 py-3.5">
           <button class="accordion font-bold text-gray-800 text-lg leading-7 text-left w-full flex items-center justify-between" style="transition: 0.4s;">
             <span class="w-11/12 md:w-full">How can I know my billing?</span>
