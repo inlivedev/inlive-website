@@ -19,19 +19,17 @@
 {{ partial "header/header.html" . }}
 {{ $inliveEmail := getenv "_HUGO_INLIVE_EMAIL" }}
 <main class="px-4 lg:px-8 sm:mb-20 xl:flex xl:flex-col xl:justify-center xl:items-center mx-auto mb-12">
-  <header class="text-center my-16">
-      <h1 class="font-extrabold text-3xl leading-9 mb-2">Choose Your Plan</h1>
-      <p class="text-lg leading-7 text-gray-700 px-6">Flexible pricing plans for teams of all sizes and pay by month.</p>
+  <header class="text-center mt-16 mb-10">
+    <h1 class="font-extrabold text-3xl leading-9 mb-2">Choose Your Plan</h1>
+    <p class="text-lg leading-7 text-gray-700 px-6">Flexible pricing plans for teams of all sizes and pay by month.</p>
   </header>
 
   <section class="flex justify-center items-center mb-10">
-    <div class="bg-emerald-100 border border-emerald-300 rounded-lg sm:py-4 sm:px-10 py-2 px-4 text-center">
-      <p class="text-emerald-800 text-base sm:text-xl leading-6 sm:leading-7 font-medium">During our beta phase, you can get business package for free</p>
+    <div class="bg-emerald-100 border border-emerald-300 w-full sm:w-2/3 rounded-lg py-4 sm:py-7 px-4 sm:px-10 text-center">
+      <p class="text-emerald-800 text-base leading-6 sm:leading-7 font-medium">During our beta phase, you can get business package for free, and our streaming quota will <b>still use streaming hours</b> as its metrics, not bandwidth.</p>
     </div>
   </section>
-
-
-  <section>
+  <section class="mt-4">
       <div class="grid overflow-x-auto gap-5" style="grid-template-columns: repeat(4, 1fr);">
         {{ $linkStudioOrigin := getenv "_HUGO_INLIVE_STUDIO_ORIGIN" }}
         {{ $apiOriginLink := getenv "_HUGO_INLIVE_API_ORIGIN"}}
