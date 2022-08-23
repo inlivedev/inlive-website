@@ -84,5 +84,8 @@ Let’s define these values in more detail:
     * ***init*** \
         This type indicates the initial response of the channel server when first subscribed to.
 
+    * ***system*** \
+        Messages with this type are only sent by the server. This notifies the client the information regarding any backend process. For now, it serves two functions: Notifying the start and end of a stream and notifying when a user either leaves or joins the channel.
+
 * **widget_key** \
     This is a non-optional field when sending a message to the channel server. The field should contain the widget key of the widget that sent it.
