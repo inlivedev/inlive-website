@@ -3,7 +3,7 @@
 date: 2022-08-12
 lastmod: 2022-08-12
 name: Building viewer counter widget with Real-Time Widget API
-title: How to build a simple viewer counter widget with real-time widget API
+title: How to build a simple viewer counter widget with Real-Time Widget API
 description: In this tutorial, we will walk you through the steps of building a simple viewer counter widget using inLive Real-Time Widget API.
 slug: tutorial-building-viewer-counter-widget-with-real-time-widget-api
 weight: 4004
@@ -15,11 +15,11 @@ menu:
     parent: Tutorial
 ---
 
-# How to build a simple viewer counter widget with real-time widget API
+# How to build a simple viewer counter widget with Real-Time Widget API
 
 ## Introduction
 
-In this tutorial, we will walk you through the steps of building a simple viewer counter using [inLive real-time widget API](/docs/real-time-widget-api/). InLive has provided a way to identify the total number of users actually connected to the specific stream by integrating the stream built with the inLive API to the server called inLive channel server. Think about this, you already built your streaming platform and you want to have a real-time counter that displays the total number of viewers connected to the specific stream. Yes, you can. We will build something similar to that in this tutorial.
+In this tutorial, we will walk you through the steps of building a simple viewer counter using [inLive Real-Time Widget API](/docs/real-time-widget-api/). InLive has provided a way to identify the total number of users actually connected to the specific stream by integrating the stream built with the inLive API to the server called inLive channel server. Think about this, you already built your streaming platform and you want to have a real-time counter that displays the total number of viewers connected to the specific stream. Yes, you can. We will build something similar to that in this tutorial.
 
 You can see the full version of this tutorial’s code example [here](https://github.com/inlivedev/inlive-widget-examples/tree/main/viewer-counter) on GitHub.
 
@@ -29,9 +29,9 @@ To follow this tutorial, you need to have:
 - An IDE/code editor like [Visual Studio Code](https://code.visualstudio.com).
 - Some knowledge of HTML, and JavaScript languages.
 
-## Set up real-time widget API
+## Set up Real-Time Widget API
 
-Before proceeding further, you must create an account in the [inLive Studio]({{< getenv env="_HUGO_INLIVE_STUDIO_ORIGIN" >}}) in order to use the real-time widget API. After the account is created, you need to **create a widget** and obtain the **widget key**, which will be used to communicate with the inLive channel server later. There is a tutorial that explains more about this process. You can read the tutorial [here](/docs/tutorial/tutorial-creating-and-managing-widget/).
+Before proceeding further, you must create an account in the [inLive Studio]({{< getenv env="_HUGO_INLIVE_STUDIO_ORIGIN" >}}) in order to use the Real-Time Widget API. After the account is created, you need to **create a widget** and obtain the **widget key**, which will be used to communicate with the inLive channel server later. There is a tutorial that explains more about this process. You can read the tutorial [here](/docs/tutorial/tutorial-creating-and-managing-widget/).
 
 ## Set up the project
 
@@ -86,7 +86,7 @@ Let’s add the JavaScript code to subscribe to the channel server inside the `<
 </script>
 ```
 
-To successfully subscribe to the channel server, the client needs an **ID of the stream**. In order to get the ID of the stream and use the real-time widget API, you must have a stream created first using inLive stream API and get the ID for that specific stream. We cannot use the ID of the stream that has already ended. [This article](/docs/tutorial/tutorial-app-with-webrtc/) will help you understand working with inLive stream API and getting the ID of the stream.
+To successfully subscribe to the channel server, the client needs an **ID of the stream**. In order to get the ID of the stream and use the Real-Time Widget API, you must have a stream created first using inLive stream API and get the ID for that specific stream. We cannot use the ID of the stream that has already ended. [This article](/docs/tutorial/tutorial-app-with-webrtc/) will help you understand working with inLive stream API and getting the ID of the stream.
 
 In the code above, we use a stream with the ID of 15. Currently, the ID is always a number. The code above basically says that we want to subscribe to the inLive channel server with the ID of 15. If there is no error message in the console, that means we have successfully subscribed to the inLive channel server with the stream ID of 15.
 
@@ -138,4 +138,4 @@ const updateViewerCounterUI = (counter) => {
 
 The `updateViewerCounterUI` function will receive a counter value and check if the type is number. This check can also be useful for checking whether the value actually exists and is not undefined. After receiving the updated counter value, the text content of the element that has a viewer-counter ID is updated and we have successfully updated the counter to the UI. If you want to test the counter, try to open the page in a new tab or new window. You will see the counter value change.
 
-If you have read until this point, congratulations you have finished the tutorial of building a simple viewer counter widget using inLive real-time widget API.
+If you have read until this point, congratulations you have finished the tutorial of building a simple viewer counter widget using inLive Real-Time Widget API.
