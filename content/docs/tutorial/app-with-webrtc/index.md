@@ -1,6 +1,6 @@
 ---
 date: 2022-03-11
-lastmod: 2022-03-11
+lastmod: 2022-09-06
 name: Tutorial with WebRTC
 title: Tutorial building a live stream app with WebRTC
 description: This tutorial will show you how to build a live video stream web app with WebRTC video source input.
@@ -109,15 +109,19 @@ Since we've already made a create stream function, then when we click on the `Cr
         "id": 2,
         "name": "my first stream",
         "slug": "my-first-stream",
-        "start_date": null,
-        "end_date": null,
+        "start_time": null,
+        "end_time": null,
         "hls_manifest_path": "",
         "dash_manifest_path": "",
         "description": "",
+        "billing_start": null,
+        "billing_end": null,
         "created_by": 3,
         "created_at": "2022-02-22T10:28:20.69262Z",
+        "prepared_at": null,
         "updated_by": null,
-        "updated_at": "2022-02-22T10:51:31.050747Z"
+        "updated_at": "2022-02-22T10:51:31.050747Z",
+        "quality": "360"
     }
 }
 ```
@@ -333,15 +337,20 @@ The API response will return data like this:
         "id": 2,
         "name": "my first stream",
         "slug": "my-first-stream",
-        "start_date": "2022-02-22T10:28:33.799416Z",
-        "end_date": "2022-02-22T10:51:31.049414Z",
+        "start_time": "2022-09-06T02:11:39.954264Z",
+        "end_time": "2022-09-06T02:38:50.746014Z",
         "hls_manifest_path": "https://bifrost.inlive.app/streams/2/master.m3u8",
         "dash_manifest_path": "https://bifrost.inlive.app/streams/2/manifest.mpd",
-        "description": "my first stream",
+        "description": "",
+        "billing_start": "2022-09-06T02:10:49.746014Z",
+        "billing_end": "2022-09-06T02:38:50.746014Z",
         "created_by": 3,
-        "created_at": "2022-02-22T10:28:20.69262Z",
+        "created_at": "2022-09-06T02:07:43.466014Z",
+        "prepared_at": "2022-09-06T02:10:49.746014Z",
         "updated_by": null,
-        "updated_at": "2022-02-22T10:51:31.050747Z"
+        "updated_at": "2022-09-06T02:38:50.746014Z",
+        "quality": "360",
+        "viewer_count": 0
     }
 }
 ```
