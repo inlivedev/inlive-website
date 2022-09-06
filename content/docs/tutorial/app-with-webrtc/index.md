@@ -121,7 +121,7 @@ Since we've already made a create stream function, then when we click on the `Cr
         "prepared_at": null,
         "updated_by": null,
         "updated_at": "2022-02-22T10:51:31.050747Z",
-        "quality": "360",
+        "quality": "360"
     }
 }
 ```
@@ -350,7 +350,7 @@ The API response will return data like this:
         "updated_by": null,
         "updated_at": "2022-09-06T02:38:50.746014Z",
         "quality": "360",
-        "viewer_count": 0,
+        "viewer_count": 0
     }
 }
 ```
