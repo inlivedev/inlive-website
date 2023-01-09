@@ -1,5 +1,5 @@
 {{ define "head" }}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/keen-slider@6.6.3/keen-slider.min.css">
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/keen-slider@6.6.3/keen-slider.min.css"> -->
 {{ end }}
 
 {{ define "main" }}
@@ -103,6 +103,7 @@
               </span>
               REST API to create and broadcast live streaming
             </li>
+            <!--
             <li class="flex items-center font-medium text-base lg:text-lg mb-8">
               <span class="mr-4">
                 <svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -123,6 +124,7 @@
               </span>
               Interactive widget in your video, you can build your own too
             </li>
+            -->
             <li class="flex items-center font-medium text-base lg:text-lg mb-8">
               <span class="mr-4">
                 <svg class="w-12 h-12" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -160,20 +162,6 @@
         </div>
       </div>
     </div>
-    {{/*
-    <div class="px-4 lg:px-20">
-      <div class="max-w-7xl mx-auto lg:px-8 py-8 lg:py-16">
-        <h3 class="max-w-3xl mb-4 font-extrabold text-3xl lg:text-4xl text-black">
-          In video live interactive widgets.
-        </h3>
-        <p class="max-w-3xl text-base text-gray-500">
-          We need more than like buttons and chats in live streaming video. Choose our pre-made interactive widgets from
-          polling, question, and answer, trivia quiz, and others. Or build and publish your own interactive widget to
-          our widget gallery.
-        </p>
-      </div>
-    </div>
-    */}}
   </section>
   <section id="why-us" class="mt-20">
     <div class="px-4 lg:px-20">
@@ -224,24 +212,7 @@
       </div>
     </div>
   </section>
-  {{/*  <section id="pricing" class="mt-20">
-    <div class="px-4 lg:px-20">
-      <header class="max-w-7xl mx-auto lg:px-8 lg:pt-8">
-        <h2 class="mb-4 font-semibold text-base text-blue-600 uppercase flex items-center">
-          <span class="bg-blue-600 h-[2px] w-4 lg:w-6 mr-2"></span>Pricing
-        </h2>
-        <h3 class="max-w-3xl mb-4 font-extrabold text-3xl lg:text-4xl text-black">
-          Predictable and fair pricing model.
-        </h3>
-        <p class="max-w-3xl text-base text-gray-500 mb-4">
-          We're still calculating our pricing model to make sure it's easy to understand and affordable for you. While you're waiting, we're giving you free 10 streaming hours to experiment with.
-        </p>
-        <p class="max-w-3xl text-base text-gray-500">
-          We're open for your inputs and what kind of pricing model that comfortable for you.
-        </p>
-      </header>
-    </div>
-  </section>  */}}
+  <!--
   <section id="widget" class="mt-20 py-20 lg:pt-12 bg-no-repeat bg-center bg-cover bg-blue-500" style="background-image: url('/images/interactive-widget/bg-interactive-widget-pattern.svg');">
     <div class="px-4 lg:px-20">
       <header class="max-w-7xl mx-auto lg:px-8 lg:pt-8 pb-8 lg:pb-16">
@@ -364,6 +335,7 @@
       </div>
     </div>
   </section>
+  -->
   <section class="mt-20">
     <div class="px-4 lg:px-20">
       <div class="max-w-7xl mx-auto lg:py-10">
@@ -390,7 +362,7 @@
 {{ end }}
 
 {{ define "script" }}
-<script src="https://cdn.jsdelivr.net/npm/keen-slider@6.6.3/keen-slider.js" defer></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/keen-slider@6.6.3/keen-slider.js" defer></script> -->
 {{ $globalJS := resources.Get "js/global.js" | minify }}
 {{ $homeJS := resources.Get "js/home.js" | minify }}
 <script type="text/javascript" src="{{ $globalJS.RelPermalink }}" defer></script>
