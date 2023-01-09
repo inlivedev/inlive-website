@@ -12,6 +12,7 @@ menu:
     name: Subscribe to channel server
     weight: 3001
     parent: Real-Time Widget API
+draft: true
 ---
 # How to subscribe to our Channel Server using SSE
 

@@ -13,6 +13,7 @@ menu:
     name: Building banner widget with Real-Time Widget API
     weight: 4005
     parent: Tutorial
+draft: true
 ---
 
 # How to build an interaction tracker banner widget with Real-Time Widget API

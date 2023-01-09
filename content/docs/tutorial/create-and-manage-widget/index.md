@@ -12,6 +12,7 @@ menu:
     name: Creating and managing widget
     weight: 4002
     parent: Tutorial
+draft: true
 ---
 # How to Create & Manage your Widget
 ### Introduction
