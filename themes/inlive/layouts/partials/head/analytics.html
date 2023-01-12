@@ -24,10 +24,10 @@
 </script>
 {{ end }}
 
+{{ $apiOrigin := getenv "_HUGO_INLIVE_API_ORIGIN" }}
 
 <!-- Mixpanel Analytics -->
 {{ $mixpanelToken := getenv "_HUGO_MIXPANEL_PROJECT_TOKEN" }}
-{{ $mixpanelProxyDomain := getenv "_HUGO_MIXPANEL_PROXY_DOMAIN" }}
 
 {{ if gt (len $mixpanelToken) 0 }}
 <script type="text/javascript">
@@ -37,9 +37,9 @@
 
   mixpanel.init('{{ $mixpanelToken }}', {
     debug: Boolean('{{ cond (eq hugo.Environment "production") "false" "true" }}'),
-    // api_host: '{{ $mixpanelProxyDomain }}'
+    api_host: '{{ $apiOrigin }}/analytics'
   });
 
-  mixpanel.track('Sign up');
+  mixpanel.track('Open page');
   </script>
 {{ end }}
