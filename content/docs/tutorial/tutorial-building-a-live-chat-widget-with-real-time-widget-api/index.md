@@ -13,6 +13,7 @@ menu:
     name: Building a live chat widget with Real-Time Widget API
     weight: 4003
     parent: Tutorial
+draft: true
 ---
 
 # How to build a simple live chat widget with Real-Time Widget API
