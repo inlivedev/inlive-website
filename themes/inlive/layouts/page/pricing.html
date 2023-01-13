@@ -86,7 +86,7 @@
   </section>
 
   <section>
-    <h1 class="font-bold text-2xl leading-8 mt-32 lg:mt-64 mb-[46px] text-center">Frequently Asked Questions</h1>
+    <h1 class="font-bold text-2xl leading-8 mt-20 lg:mt-36 mb-[46px] text-center">Frequently Asked Questions</h1>
 
     <div class="max-w-[580px] mx-auto">
         <!-- faq 1 -->
@@ -160,27 +160,8 @@
         </div>
     </div>
   </section>
-
-  <!-- footer -->
-  <section class="mt-[120px]">
-    <div class="px-4 lg:px-20">
-      <div class="max-w-7xl mx-auto lg:py-16">
-        <h2 class="mb-4 font-extrabold text-3xl lg:text-4xl text-blue-900 text-center">
-          Try inLive today
-        </h2>
-        <p class="max-w-3xl text-base text-gray-600 mx-auto mb-6 lg:mb-8 text-center">Explore Developer Portal to get up
-          and running with inLive API as easy as count 1-2-3, or create an account in inLive Studio to start live
-          streaming from your browser.</p>
-        <div class="flex flex-col sm:flex-row gap-4 text-center justify-center">
-          <a href="/docs/introduction/"
-            class="min-w-[180px] w-full sm:w-auto py-2 px-4 bg-blue-100 rounded-md font-medium text-sm text-blue-700">Visit Our Documentation</a>
-          <a href="mailto:{{ $inliveEmail }}" target="_blank" rel="noopener noreferrer"
-            class="min-w-[180px] w-full sm:w-auto py-2 px-4 bg-blue-100 rounded-md font-medium text-sm text-blue-700">Contact Us</a>
-        </div>
-      </div>
-    </div>
-  </section>
 </main>
+{{ partial "cta/try-inlive.html" . }}
 {{ end }}
 
 {{ define "footer" }}
