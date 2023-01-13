@@ -1,6 +1,5 @@
 {{ define "main" }}
 {{ partial "header/header.html" . }}
-{{ $inliveStudioOrigin := getenv "_HUGO_INLIVE_STUDIO_ORIGIN" }}
 <main class="mb-20 max-w-5xl mx-auto">
   <article class="px-4 lg:px-28 pt-4 lg:pt-8">
     <a href="/blog/" class="inline-flex items-center rounded pl-1 pr-2 py-1.5 font-semibold text-sm text-blue-700 hover:bg-blue-100">
@@ -12,23 +11,12 @@
       Back to Blog
     </a>
     <time datetime="{{ .Date.Format `2006-01-02T00:00` }}" class="mt-10 lg:mt-16 mb-2 block text-center text-sm text-gray-500">{{ .Date.Format "02 January 2006" }}</time>
-    <article id="blog-content" class="pb-20 lg:pb-24 max-w-none prose prose-blue prose-a:no-underline hover:prose-a:underline first:prose-h1:text-center first:prose-h1:text-3xl lg:first:prose-h1:text-4xl first:prose-h1:tracking-tight first:prose-h1:pb-10 lg:first:prose-h1:pb-16 first:prose-h1:mb-10 lg:first:prose-h1:mb-16 first:prose-h1:border-b first:prose-h1:border-gray-300 prose-blockquote:not-italic prose-quoteless">
+    <article id="blog-content" class="max-w-none prose prose-blue prose-a:no-underline hover:prose-a:underline first:prose-h1:text-center first:prose-h1:text-3xl lg:first:prose-h1:text-4xl first:prose-h1:tracking-tight first:prose-h1:pb-10 lg:first:prose-h1:pb-16 first:prose-h1:mb-10 lg:first:prose-h1:mb-16 first:prose-h1:border-b first:prose-h1:border-gray-300 prose-blockquote:not-italic prose-quoteless">
       {{ .Content }}
     </article>
   </article>
-  <div class="px-4 lg:px-28 pt-16 pb-12 lg:py-16">
-    <section class="max-w-3xl mx-auto">
-      <h2 class="mb-4 font-extrabold text-3xl lg:text-4xl text-blue-900 text-center">Try inLive today</h2>
-      <p class="text-base text-gray-600 mx-auto mb-6 lg:mb-8 text-center">
-        Explore our documentations to get up and running with inLive API as easy as count 1-2-3, or create an account in inLive Studio to start live streaming from your browser.
-      </p>
-    </section>
-    <nav class="max-w-3xl mx-auto flex flex-col sm:flex-row gap-4 text-center justify-center">
-      <a href="/docs/introduction/" class="w-full sm:w-auto py-2 px-4 bg-blue-100 rounded-md font-medium text-sm text-blue-700">Visit Our Docs</a>
-      <a href="{{ $inliveStudioOrigin }}/login" class="w-full sm:w-auto py-2 px-4 bg-blue-100 rounded-md font-medium text-sm text-blue-700">Open inLive Studio</a>
-    </nav>
-  </div>
 </main>
+{{ partial "cta/try-inlive.html" . }}
 {{ end }}
 
 {{ define "footer" }}
