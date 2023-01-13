@@ -7,8 +7,8 @@
 {{ if gt (len $mixpanelToken) 0 }}
 <script type="text/javascript">
   const MIXPANEL_PROJECT_TOKEN = '{{ $mixpanelToken }}';
-  const MIXPANEL_PROXY_URL = '{{ $apiOrigin }}/analytics';
-  const MIXPANEL_CUSTOM_LIB_URL = MIXPANEL_PROXY_URL + '/lib.min.js';
+  // const MIXPANEL_PROXY_URL = '{{ $apiOrigin }}/analytics';
+  // const MIXPANEL_CUSTOM_LIB_URL = MIXPANEL_PROXY_URL + '/lib.min.js';
 
   /**
    * Load the Mixpanel JS library asyncronously via the js snippet
@@ -20,7 +20,7 @@
   mixpanel.init(MIXPANEL_PROJECT_TOKEN, {
     debug: JSON.parse('{{ cond (eq $appEnv "production") "false" "true" }}'),
     cross_subdomain_cookie: JSON.parse('{{ cond (eq $appEnv "production") "true" "false" }}'),
-    api_host: MIXPANEL_PROXY_URL
+    // api_host: MIXPANEL_PROXY_URL
   });
 
   mixpanel.track('Open page', {
