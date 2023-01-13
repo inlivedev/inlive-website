@@ -42,23 +42,23 @@
             <div class="my-10 self-start">
               <span class="text-4xl leading-10">$</span><span class="text-6xl leading-none font-extrabold">{{ $item.price }}</span><span class="text-xl leading-10">/mo</span>
             </div>
-            <p class="text-sm leading-5 px-8 self-start h-[61px]">{{ $item.description }}</p>
+            <p class="text-sm leading-5 px-8 self-start min-h-[5rem]">{{ $item.description }}</p>
             {{ if eq $index 0 }}
-              <a href="{{ $linkStudioOrigin }}/login" aria-label="link-to-studio" target="_blank" rel="noopener noreferrer" class="my-10">
-                <button aria-label="getStarted" type="button" class="bg-white text-blue-600 border border-blue-600 hover:bg-blue-600 hover:text-white rounded-md hover:shadow-lg active:shadow-lg py-[13px] px-[25px] text-center">Get Started</button>
-              </a>
+              <div class="my-10">
+                <a href="{{ $linkStudioOrigin }}/login" target="_blank" rel="noopener noreferrer" class="inline-block text-blue-600 border border-blue-600 hover:bg-blue-600 hover:text-white rounded-md hover:shadow-lg active:shadow-lg py-3 px-6 text-center" data-tracking-event="open-link" data-tracking-label="{{ $item.name }} plan on the pricing page">Get Started</a>
+              </div>
             {{ else if eq $index 1 }}
-              <a href="{{ $linkStudioOrigin }}/login" aria-label="link-to-studio" target="_blank" rel="noopener noreferrer" class="my-10">
-                <button aria-label="startTrial" type="button" class="bg-white text-blue-600 border border-blue-600 hover:bg-blue-600 hover:text-white rounded-md hover:shadow-lg active:shadow-lg py-[13px] px-[25px] text-center">Start Trial</button>
-              </a>
+              <div class="my-10">
+                <a href="{{ $linkStudioOrigin }}/login" target="_blank" rel="noopener noreferrer" class="inline-block text-blue-600 border border-blue-600 hover:bg-blue-600 hover:text-white rounded-md hover:shadow-lg active:shadow-lg py-3 px-6 text-center" data-tracking-event="open-link" data-tracking-label="{{ $item.name }} plan on the pricing page">Start Trial</a>
+              </div>
             {{ else if eq $index 2 }}
-              <a href="{{ $linkStudioOrigin }}/login" aria-label="link-to-studio" target="_blank" rel="noopener noreferrer" class="my-10">
-                <button aria-label="startTrial" type="button" class="bg-white text-blue-600 border border-blue-600 hover:bg-blue-600 hover:text-white rounded-md hover:shadow-lg active:shadow-lg py-[13px] px-[25px] text-center">Start Trial</button>
-              </a>
+              <div class="my-10">
+                <a href="{{ $linkStudioOrigin }}/login" target="_blank" rel="noopener noreferrer" class="inline-block text-blue-600 border border-blue-600 hover:bg-blue-600 hover:text-white rounded-md hover:shadow-lg active:shadow-lg py-3 px-6 text-center" data-tracking-event="open-link" data-tracking-label="{{ $item.name }} plan on the pricing page">Start Trial</a>
+              </div>
             {{ else }}
-              <a href="mailto:{{ $inliveEmail }}" aria-label="link-to-studio" target="_blank" rel="noopener noreferrer" class="my-10">
-                <button aria-label="startTrial" type="button" class="bg-white text-blue-600 border border-blue-600 hover:bg-blue-600 hover:text-white rounded-md hover:shadow-lg active:shadow-lg py-[13px] px-[25px] text-center">Contact Us</button>
-              </a>
+              <div class="my-10">
+                <a href="mailto:{{ $inliveEmail }}" target="_blank" rel="noopener noreferrer" class="inline-block text-blue-600 border border-blue-600 hover:bg-blue-600 hover:text-white rounded-md hover:shadow-lg active:shadow-lg py-3 px-6 text-center" data-tracking-event="open-link" data-tracking-label="{{ $item.name }} plan on the pricing page">Contact Us</a>
+              </div>
             {{ end }}
           </div>
           <div class="flex justify-center py-10 border-t border-t-gray-300">
