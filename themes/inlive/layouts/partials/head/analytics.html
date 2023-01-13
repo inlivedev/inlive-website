@@ -12,6 +12,7 @@
 
   mixpanel.init('{{ $mixpanelToken }}', {
     debug: JSON.parse('{{ cond (eq $appEnv "production") "false" "true" }}'),
+    cross_subdomain_cookie: JSON.parse('{{ cond (eq $appEnv "production") "true" "false" }}'),
     api_host: '{{ $apiOrigin }}/analytics'
   });
 
