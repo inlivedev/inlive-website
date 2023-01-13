@@ -16,6 +16,9 @@
     api_host: '{{ $apiOrigin }}/analytics'
   });
 
-  mixpanel.track('Open page');
+  mixpanel.track('Open page', {
+    title: document.title || '-',
+    description: document.querySelector('meta[name="description"]')?.content || '-'
+  });
   </script>
 {{ end }}
