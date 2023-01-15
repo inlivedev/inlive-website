@@ -11,3 +11,8 @@ theme = 'inlive'
 [caches.getjson]
 dir = ":cacheDir/:project"
 maxAge = "10s"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
