@@ -35,4 +35,4 @@ Check our [documentation](/docs/tutorial/tutorial-app-with-webrtc/) about develo
 ## Summary
 For now, we only support WebRTC as our video ingestion, we have RTMP in development but we can’t say when it will be available because we currently focus on live streaming use cases for mobile, which mostly will prioritize latency over quality.
 
-If you want to use RTMP for your use case and are willing to use our live streaming APIs for that, [please let us know](mailto:{{< getenv env="_HUGO_INLIVE_EMAIL" >}}) so we can prioritize and let you know when the RTMP can be available for you.
+If you want to use RTMP for your use case and are willing to use our live streaming APIs for that, <a href="mailto:{{< getenv env=`_HUGO_INLIVE_EMAIL` >}}" target="_blank" rel="noopener noreferrer" data-tracking-event="open-link" data-tracking-label="Contact email link">please let us know</a> so we can prioritize and let you know when the RTMP can be available for you.
