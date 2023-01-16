@@ -1,0 +1,18 @@
+{{ $inliveEmail := getenv "_HUGO_INLIVE_EMAIL" }}
+
+<article class="my-20 px-4 lg:px-20">
+  <div class="max-w-7xl mx-auto lg:py-16">
+    <h2 class="mb-4 font-extrabold text-3xl lg:text-4xl text-blue-900 text-center">
+      Try inLive today
+    </h2>
+    <p class="max-w-3xl text-base text-gray-600 mx-auto mb-6 lg:mb-8 text-center">Explore Developer Portal to get up
+      and running with inLive API as easy as count 1-2-3, or create an account in <strong class="font-medium">inLive Studio</strong> to start live
+      streaming from your browser.</p>
+    <section class="flex flex-col sm:flex-row gap-4 text-center justify-center">
+      <a href="/docs/introduction/"
+        class="min-w-[180px] w-full sm:w-auto py-2 px-4 bg-blue-100 rounded-md font-medium text-sm text-blue-700" data-tracking-event="open-link" data-tracking-label="CTA visit our documentation">Visit our documentation</a>
+      <a href="mailto:{{ $inliveEmail }}" target="_blank" rel="noopener noreferrer"
+        class="min-w-[180px] w-full sm:w-auto py-2 px-4 bg-blue-100 rounded-md font-medium text-sm text-blue-700" data-tracking-event="open-link" data-tracking-label="CTA contact us link">Contact us</a>
+    </section>
+  </div>
+</article>
