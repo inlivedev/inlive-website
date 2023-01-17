@@ -70,7 +70,7 @@ async function apiRequest(apiKey, url, method, body){
 }
 ```
 
-Then we use the function above to create a create stream function that will binded to create stream button. When the button clicked, the function will called and create a stream with a stream name `my first stream`.
+Then we use the function above to create a create stream function that will be binded to create stream button. When the button clicked, the function will called and create a stream with a stream name `my first stream`.
 
 ```js
 let streamId;
@@ -169,7 +169,68 @@ async function prepareStream(id){
 
 ### 5. Initiate the WebRTC connection by sending offer SDP and receiving an answer from inLive API
 Once the video stream input is available, we're ready to send the video stream to Inlive encoder and start publishing our live video stream. To send the video, these are the steps we need to follow:
-1. Create `RTCPeerConnection` object and add the media stream tracks to this RTCPeerConnection. This is an important step to make sure the Offer SDP that we will generate will have information about our media tracks, like video and audio codec information. The RTCPeerConnection also will need to have a media track before being able to start the ice gathering process.
+
+1. Prepare the ice candidate exchange function. To exchange our ice-candidate between your brower and inLive WebRTC server, we will use two endpoints, `/v1/streams/{id}/events` endpoint to receive the remote ice-candidate from inLive WebRTC server, and `/v1/streams/{id}/ice` endpoint to send our local ice-candidate to inLive WebRTC server. To do this here are the functions we need:
+   
+   1. Create a function to listen to stream events through `/v1/streams/{id}/events` endpoint using [Server-Sent Events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events). From this endpoint, we will receive all stream related events including ice-candidate from remote peer connection on inLive WebRTC server. We need to add this ice-candidate using 9RTCPeerConnection.addIceCandidate()](https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/addIceCandidate) method.
+
+        But before listen to the stream events, we need to generate an event key that will allow us to listen the event as authenticated user. This is required to receive the WebRTC events like ice-candidate. Without this event key, we only receive stream state events like ready, started, ended, and error. To get the event key we create a function like this:
+
+        ```js
+        async function getEventKey(id){
+        const url = `${options.origin}/${options.apiVersion}/streams/${id}/eventkey`
+        try{
+                const resp = await apiRequest(options.apiKey, url, 'POST')
+                if (resp.code !== 200) {
+                        throw new Error('Failed to prepare stream session')
+                }
+
+                return resp.data
+            } catch(err) {
+            console.error(err)
+            }
+        }   
+        ```
+
+        The function will return a JWT token string with only 1 hour lifetime. The server-sent event can't use authorization header, so we need to pass this key token to URL endpoint.  
+    
+    2. To listen for the stream events as authenticated user, we create another function like below:
+
+        ```js
+        async function subscribeEvents(id,peerConnection,eventKey) {
+            const url = `${options.origin}/${options.apiVersion}/streams/${id}/events/${eventKey}`
+            const evtSource = new EventSource(url, {
+                withCredentials: true,
+            });
+
+
+            // we're waiting the iceCandidate event from the server and add the remote ice-candidate to our RTCPeerConnection
+            evtSource.addEventListener('iceCandidate',(event) => {
+                peerConnection.addIceCandidate(event.data)
+            })
+        }
+
+        ```
+
+    3. Create a function to send the local ice-candidate to inLive WebRTC server.
+
+        ```js
+        async function sendIceCandidate(streamId,iceCandidate){
+        const url = `${options.origin}/${options.apiVersion}/streams/${streamId}/ice`
+        try{
+                const resp = await apiRequest(options.apiKey, url, 'POST',iceCandidate.toJSON())
+                if (resp.code !== 200) {
+                        throw new Error('Failed to post ice candidate')
+                }
+
+                return true
+            } catch(err) {
+            console.error(err)
+            }
+        }   
+        ```
+
+2. Create `RTCPeerConnection` object and add the media stream tracks to this RTCPeerConnection. This is an important step to make sure the Offer SDP that we will generate will have information about our media tracks, like video and audio codec information. The RTCPeerConnection also will need to have a media track before being able to start the ice gathering process.
 
     We modify the start stream function and added some lines to send the video through WebRTC connection. We also need to call the `prepare` API endpoint, by passing stream `id` from create stream as its parameter, first before start capturing the video camera.
 
@@ -196,7 +257,7 @@ Once the video stream input is available, we're ready to send the video stream t
                 iceServers: [
                     { urls: 'stun:stun.l.google.com:19302' },
                     {
-                        urls: 'turn:34.101.121.241:3478',
+                        urls: 'turn:turn.inlive.app:3478',
                         username: 'username',
                         credential: 'password'
                     }
@@ -205,21 +266,25 @@ Once the video stream input is available, we're ready to send the video stream t
 
             const peerConnection = new RTCPeerConnection(servers);
 
-            peerConnection.oniceconnectionstatechange = () => {
-                // handle state change (disconnect, connected)
-                const iceConnectionState = peerConnection.iceConnectionState;
-                console.log('iceConnectionState', iceConnectionState);
+            // get the stream event key to listen for stream events as authenticated user
+            const eventKey = await getEventKey(streamId)
 
-            }
+            // waiting for remote ice candidate and add it to our RTCPeerConnection
+            subscribeEvents(streamId,peerConnection,eventKey)
 
-            peerConnection.onicecandidate = async (event) => {
-                // initiate the stream process once ice gathering is finished, using stream id as one of parameters
-                // start the stream process after initiate, using stream id as parameter
-                if (event.candidate === null) {
-                    await initStream(streamId,peerConnection,options);
-                    await startStreaming(streamId)
+            // waiting the WebRTC connection state change to connected before we start the live stream
+            peerConnection.addEventListener('connectionstatechange', (event) => {
+                if (peerConnection.connectionState==='connected'){
+                    startStreaming(streamId)
                 }
-            }
+            })
+
+            // waiting for the local ice candidate event and send it to the server if not null
+            peerConnection.addEventListener('icecandidate', async (event) => {
+                if (event.candidate !== null) {
+                    sendIceCandidate(streamId,event.candidate)
+                }
+            })
 
             // we use stream from the webcam that we captured from previous step
             localStream.getTracks().forEach((track) => {
@@ -234,13 +299,8 @@ Once the video stream input is available, we're ready to send the video stream t
     }
     ```
 
-2. If you see `peerConnection.onicecandidate` line above, there is an `initStream` function called after the ice candidate gathering is finished. The `event.candidate === null` means the gathering process is finished. The `initStream` function is called to initiate a WebRTC connection with the inLive server by sending an HTTP POST request to API endpoint 
-    ```
-    https://api.inlive.app/v1/streams/${streamid}/init
-    ```
+3. To initate the WebRTC connection we will create `initStream` function by sending an HTTP POST request to `/v1/streams/${streamid}/init` endpoint 
 
-    Then we create `initStream` function that use that `APIRequest` function.
-    
     ```js
     async function initStream(id,peerConnection,options){
         const body = {
@@ -272,13 +332,13 @@ Once the video stream input is available, we're ready to send the video stream t
     peerConnection.setRemoteDescription(answerSDP)
     ```
 
-3. Once the RTCPeerConnection is set with both offer and answer SDP, it will initiate the connection to the remote peer, and the 
+4. Once the RTCPeerConnection is set with both offer and answer SDP, it will initiate the connection to the remote peer, and the 
     ```
     peerConnection.oniceconnectionstatechange
     ```
     will be triggered if the connection state is changing.
 
-4. After `initStream` function runs, we need to call `startStreaming` function to be able to go livestream by sending an HTTP POST request to API endpoint, it sends chunk video to dash server using FFMPEG. 
+5. After `initStream` function runs, we need to call `startStreaming` function to be able to go livestream by sending an HTTP POST request to API endpoint, it sends chunk video to dash server using FFMPEG. 
     ```
     https://api.inlive.app/v1/streams/${streamid}/start
     ``` 
