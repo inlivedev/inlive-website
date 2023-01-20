@@ -187,10 +187,11 @@
       </div>
       <section class="max-w-7xl mx-auto lg:px-8">
         <div class="rounded-2xl">
-          <img class="hidden lg:block" src="/images/home/illustration-why-choose-inlive-desktop.svg" width="1216" height="400" loading="lazy"
-            alt="Why choose inLive" class="object-cover w-full h-auto">
-          <img class="block lg:hidden" src="/images/home/illustration-why-choose-inlive-mobile.svg" width="1216" height="400" loading="lazy"
-          alt="Why choose inLive" class="object-cover w-full h-auto">
+          <picture>
+            <source srcset="/images/home/illustration-why-choose-inlive-desktop.svg" media="(min-width: 1024px)">
+            <source srcset="/images/home/illustration-why-choose-inlive-mobile.svg" media="(min-width: 0px)">
+            <img class="object-cover w-full h-auto max-w-md lg:max-w-none mx-auto" src="/images/home/illustration-why-choose-inlive-desktop.svg" alt="Why choose inLive" width="1216" height="400" loading="lazy">
+          </picture>
         </div>
       </section>
     </section>
