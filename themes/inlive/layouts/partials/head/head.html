@@ -9,6 +9,11 @@
 {{ if .Description }} <meta name="description" content="{{ .Description }}"> {{ end }}
 <meta property="og:title" content="{{ if .Title }}{{ .Title }} — {{ end }}{{ .Site.Title }}">
 {{ if .Description }} <meta property="og:description" content="{{ .Description }}"> {{ end }}
+{{ if isset .Params "canonical" }}
+  <link rel="canonical" href="{{ .Params.canonical }}">
+{{ else }}
+  <link rel="canonical" href="{{ print (getenv `_HUGO_APP_CANONICAL_ORIGIN`) .RelPermalink }}">
+{{ end }}
 
 {{/* This will greatly speedup build times in development which is required due to hack for rebuilding / regenerating the tailwind styles https://github.com/gohugoio/hugo/issues/8343#issuecomment-1019383325 */}}
 {{ partialCached "head/css.html" . }}
