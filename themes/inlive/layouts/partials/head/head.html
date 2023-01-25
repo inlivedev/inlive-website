@@ -10,10 +10,14 @@
 <meta property="og:title" content="{{ if .Title }}{{ .Title }} — {{ end }}{{ .Site.Title }}">
 {{ if .Description }} <meta property="og:description" content="{{ .Description }}"> {{ end }}
 {{ if isset .Params "canonical" }}
-  <link rel="canonical" href="{{ .Params.canonical }}">
+<link rel="canonical" href="{{ .Params.canonical }}">
 {{ else }}
-  <link rel="canonical" href="{{ print (getenv `_HUGO_APP_CANONICAL_ORIGIN`) .RelPermalink }}">
+<link rel="canonical" href="{{ print (getenv `_HUGO_APP_CANONICAL_ORIGIN`) .RelPermalink }}">
 {{ end }}
+<link rel="icon" href="/images/favicon/favicon.ico" sizes="any">
+<link rel="icon" href="/images/favicon/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/images/favicon/apple-touch-icon.png">
+<link rel="manifest" href="/images/favicon/manifest.webmanifest">
 
 {{/* This will greatly speedup build times in development which is required due to hack for rebuilding / regenerating the tailwind styles https://github.com/gohugoio/hugo/issues/8343#issuecomment-1019383325 */}}
 {{ partialCached "head/css.html" . }}
