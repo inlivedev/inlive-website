@@ -7,7 +7,7 @@ const handleToggleNavMenu = () => {
 }
 
 window.addEventListener('load', () => {
-  if (mixpanel) {
+  if (window.mixpanel) {
     const openLinkTrackers = document.querySelectorAll('[data-tracking-event="open-link"]');
 
     if (openLinkTrackers.length > 0) {
