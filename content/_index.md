@@ -1,5 +1,5 @@
 ---
 date: 2022-02-22
 title: Build your own affordable live streaming app today
-description: Live streaming infrastructure as solutions for your business to move forward. Save your time to focus on video content you want to deliver, we handle the rest.
+description: Reaching a larger audience that fits your budget has never been this easy. Affordable solution to start streaming and no more worry about overspending costs.
 ---
