@@ -15,30 +15,10 @@
   }
 </style>
 
-{{ $inliveStudioOrigin := getenv "_HUGO_INLIVE_STUDIO_ORIGIN" }}
-
+<section class="px-4 lg:px-16 bg-blue-50">
+  {{ partial "header/beta.html" . }}
+</section>
 <section class="w-full sticky top-0 z-10 bg-white">
-  <section class="flex flex-col lg:flex-row gap-3 lg:gap-6 lg:justify-between px-4 py-2 lg:py-3 lg:px-16 bg-blue-50 text-sm">
-    <section>
-      <strong class="font-semibold uppercase text-xs text-gray-900">We're now in beta</strong>
-      <p class="mt-0.5 max-w-lg text-xs text-gray-700">We want you to join us in improving our product.
-        <a href="https://github.com/orgs/inlivedev/discussions" class="underline whitespace-nowrap" target="_blank" rel="noopener noreferrer" data-tracking-event="open-link" data-tracking-label="Beta GitHub discussion feedback link">
-          Tell us your experience on GitHub!
-        </a>
-      </p>
-    </section>
-    <section class="flex items-center">
-      <a href="{{ $inliveStudioOrigin }}/login" class="uppercase flex gap-1 items-center hover:underline text-xs text-gray-700 font-medium" data-tracking-event="open-link" data-tracking-label="Try business plan for free link">
-        <span>Try business plan for free</span>
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-          <path d="M5 12l14 0"></path>
-          <path d="M13 18l6 -6"></path>
-          <path d="M13 6l6 6"></path>
-        </svg>
-      </a>
-    </section>
-  </section>
   <header class="flex p-4 lg:px-16 lg:py-8 items-center justify-between header-content">
     <div class="flex items-center">
       <a href="/" class="block leading-6 text-gray-700 text-lg font-extrabold tracking-wide" aria-label="InLive header logo">
@@ -67,7 +47,7 @@
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16" />
       </svg>
     </button>
-    {{- partial "navbar/navbar.html" . -}}
+    {{ partial "navbar/navbar.html" . }}
   </header>
 </section>
-{{- partial "navbar/mobile-navbar.html" . -}}
+{{ partial "navbar/mobile-navbar.html" . }}
