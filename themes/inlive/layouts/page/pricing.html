@@ -62,21 +62,43 @@
             {{ end }}
           </div>
           <div class="flex justify-center py-10 border-t border-t-gray-300">
-            <ul class="list-disc text-left text-sm leading-7">
-              <li><b>{{div $item.time_quota 60}}</b> streaming hours</li>
+            <ul class="list-none text-center text-sm">
+              <li>
+                <b>Streaming hours</b>
+                <div>{{div $item.time_quota 60}} hours</div>
+              </li>
+              {{ $byteToGB := div $item.bandwidth_quota (mul 1000 (mul 1000 1000))}}
+              <li class="mt-8">
+                <b>Bandwidth</b>
+                <div>{{ lang.FormatNumberCustom 0 $byteToGB }} GB</div>
+              </li>
+              <li class="mt-8">
+                <b>Quality</b>
+                <div>{{ print $item.quality "p" }}</div>
+              </li>
 
-              {{ if eq $index 0 }}
-                <li>Bandwidth <b>100 GB</b></li>
-                <li>Quality <b>360p</b></li>
-              {{ else if eq $index 1 }}
-                <li>Bandwidth <b>4,000 GB</b></li>
-                <li>Quality <b>720p</b></li>
-              {{ else if eq $index 2 }}
-                <li>Bandwidth <b>12,000 GB</b></li>
-                <li>Quality <b>720p</b></li>
+              {{ if eq (int $item.id) 4 }}
+              <li class="mt-8">
+                <b>Streaming overage</b>
+                <div>$0.525 / hour</div>
+              </li>
               {{ else }}
-                <li>Bandwidth <b>25,000 GB</b></li>
-                <li>Quality <b>720p</b></li>
+              <li class="mt-8">
+                <b>Streaming overage</b>
+                <div>Not allowed</div>
+              </li>
+              {{ end }}
+
+              {{ if eq (int $item.id) 4 }}
+              <li class="mt-8">
+                <b>Bandwidth overage</b>
+                <div>$0.009 / GB</div>
+              </li>
+              {{ else }}
+              <li class="mt-8">
+                <b>Bandwidth overage</b>
+                <div>Not allowed</div>
+              </li>
               {{ end }}
             </ul>
           </div>
