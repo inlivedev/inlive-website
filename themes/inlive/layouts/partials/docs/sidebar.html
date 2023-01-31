@@ -1,13 +1,6 @@
-<section class="h-14 w-full sticky top-[158px] lg:hidden bg-white px-4 py-3 flex items-center justify-between z-10 border-b border-b-gray-300">
+<section class="h-14 w-full sticky top-14 lg:hidden bg-white px-4 py-3 flex items-center justify-between z-10 border-b border-b-gray-300">
   <strong class="font-semibold text-sm leading-8 text-gray-600">Developer Portal</strong>
   <div class="grid grid-cols-1 items-center gap-x-4">
-    {{/*
-    <button type="button" class="p-1 text-gray-500" aria-label="open search bar" onclick="handleToggleSearchBar()">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-      </svg>
-    </button>
-    */}}
     <button type="button" class="p-1 text-gray-500" aria-label="open sidebar navigation menu" onclick="handleToggleSideNavMenu()">
       <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
@@ -15,15 +8,9 @@
     </button>
   </div>
 </section>
+
 {{/*  Sidebar Navigation  */}}
 <style>
-  input[type="search"]::-webkit-search-decoration,
-  input[type="search"]::-webkit-search-cancel-button,
-  input[type="search"]::-webkit-search-results-button,
-  input[type="search"]::-webkit-search-results-decoration {
-    -webkit-appearance:none;
-  }
-
   #side-nav-menu.show {
     transform: translateX(0);
     z-index: 50;
@@ -33,22 +20,12 @@
   class="hidden lg:hidden fixed top-0 left-0 bottom-0 right-0 w-full h-full bg-black bg-opacity-30 z-40">
 </div>
 
-<!-- filling the fixed sidebar width -->
-<div class="hidden lg:block w-72"></div>
-
-<nav id="side-nav-menu" class="fixed top-0 left-0 -translate-x-80 lg:translate-x-0 lg:pt-[134px] w-80 lg:w-72 h-full flex flex-col overflow-y-auto bg-white">
-  {{/* search bar desktop */}}
-  {{/*
-  <div class="p-8 pr-6 pb-6 hidden lg:block">
-    <input type="search" id="search-input" placeholder="Quick search..." aria-label="Search docs for..." autocomplete="off" spellcheck="false" class="appearance-none block w-full py-2 px-3 bg-white border border-gray-300 rounded-md shadow-sm text-sm text-gray-900 outline-none placeholder:text-gray-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-200">
-  </div>
-  */}}
-
+<nav id="side-nav-menu" class="fixed h-full top-0 left-0 -translate-x-80 lg:translate-x-0 lg:sticky lg:top-[70px] lg:h-[calc(100vh-70px)] w-80 lg:w-72 overflow-y-auto bg-white">
   {{ $currentPage := . }}
 
   {{/* menu */}}
   {{ if gt (len .Site.Menus.docs_sidebar) 0 }}
-    <ul class="p-6 pb-20 lg:pt-2 lg:pr-6 lg:pl-8 flex-1">
+    <ul class="p-6 lg:pb-0 lg:pt-2 lg:pr-6 lg:pl-8 flex-1">
       {{ range $index, $pages := .Site.Menus.docs_sidebar }}
         {{ if .HasChildren }}
         <li>
@@ -71,7 +48,7 @@
 
           {{ if eq $index 0 }}
             {{/* close button */}}
-            <button type="button" class="z-10 p-1 text-gray-500 absolute top-4 right-4" aria-label="close sidebar navigation menu" onclick="handleToggleSideNavMenu()">
+            <button type="button" class="lg:hidden z-10 p-1 text-gray-500 absolute top-4 right-4" aria-label="close sidebar navigation menu" onclick="handleToggleSideNavMenu()">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
               </svg>
