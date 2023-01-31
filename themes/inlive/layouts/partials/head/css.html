@@ -7,4 +7,4 @@
 {{ else if .Site.IsServer }}
   {{ $styles = $styles | resources.ExecuteAsTemplate (printf "tailwind.%v.css" now.UnixMilli) .}}
 {{ end }}
-<link href="{{ $styles.RelPermalink }}" rel="stylesheet" />
+<link href="{{ $styles.RelPermalink }}" rel="stylesheet">
