@@ -35,7 +35,7 @@
         {{ $apiOriginLink := getenv "_HUGO_INLIVE_API_ORIGIN"}}
         {{ $linkAPI := printf "%s/v1/package/" $apiOriginLink }}
         {{ $items := getJSON $linkAPI }}
-        {{ range $index, $item := sort $items.data "id" "asc"}}
+        {{ range $item := sort $items.data "id" "asc"}}
         <div class="text-center w-[280px] border border-gray-300 rounded-2xl min-h-[586px]">
           <h2 class="bg-blue-200 font-bold text-2xl leading-8 rounded-t-2xl text-center py-5 capitalize">{{ $item.name }}</h2>
           <div class="grid items-end">
@@ -43,19 +43,19 @@
               <span class="text-4xl leading-10">$</span><span class="text-6xl leading-none font-extrabold">{{ $item.price }}</span><span class="text-xl leading-10">/mo</span>
             </div>
             <p class="text-sm leading-5 px-8 self-start min-h-[5rem]">{{ $item.description }}</p>
-            {{ if eq $index 0 }}
+            {{ if eq (int $item.id) 1 }}
               <div class="my-10">
                 <a href="{{ $linkStudioOrigin }}/login" target="_blank" rel="noopener noreferrer" class="inline-block text-blue-600 border border-blue-600 hover:bg-blue-600 hover:text-white rounded-md hover:shadow-lg active:shadow-lg py-3 px-6 text-center" data-tracking-event="open-link" data-tracking-label="{{ $item.name }} plan on the pricing page">Get Started</a>
               </div>
-            {{ else if eq $index 1 }}
+            {{ else if eq (int $item.id) 2 }}
               <div class="my-10">
                 <a href="{{ $linkStudioOrigin }}/login" target="_blank" rel="noopener noreferrer" class="inline-block text-blue-600 border border-blue-600 hover:bg-blue-600 hover:text-white rounded-md hover:shadow-lg active:shadow-lg py-3 px-6 text-center" data-tracking-event="open-link" data-tracking-label="{{ $item.name }} plan on the pricing page">Start Trial</a>
               </div>
-            {{ else if eq $index 2 }}
+            {{ else if eq (int $item.id) 3 }}
               <div class="my-10">
                 <a href="{{ $linkStudioOrigin }}/login" target="_blank" rel="noopener noreferrer" class="inline-block text-blue-600 border border-blue-600 hover:bg-blue-600 hover:text-white rounded-md hover:shadow-lg active:shadow-lg py-3 px-6 text-center" data-tracking-event="open-link" data-tracking-label="{{ $item.name }} plan on the pricing page">Start Trial</a>
               </div>
-            {{ else }}
+            {{ else if eq (int $item.id) 4 }}
               <div class="my-10">
                 <a href="mailto:{{ $inliveEmail }}" target="_blank" rel="noopener noreferrer" class="inline-block text-blue-600 border border-blue-600 hover:bg-blue-600 hover:text-white rounded-md hover:shadow-lg active:shadow-lg py-3 px-6 text-center" data-tracking-event="open-link" data-tracking-label="{{ $item.name }} plan on the pricing page">Contact Us</a>
               </div>
