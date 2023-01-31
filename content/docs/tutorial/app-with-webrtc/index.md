@@ -21,7 +21,7 @@ This tutorial will show you how to create a streamer client and viewer page.
 We will create a web page for the streamer client to capture our webcam directly and send it to Inlive encoder as a video source input once the user clicks the start button.
 We will create a web page that can use by live stream viewers to watch the live video stream.
 
-The example code for this tutorial is available on our [simple livestream Glitch app](https://glitch.com/~inlive-live-stream-app) demo. 
+The example code for this tutorial is available on our [simple livestream Glitch app](https://glitch.com/~inlive-live-stream-app) demo.
 
 ## A. Requirement
 Before coding your web app, you need to create an application key as stated in our [getting started documentation](/docs/getting-started). Please make sure you write down that key after you create it because it is used in this web app that we will create.
@@ -30,10 +30,10 @@ Before coding your web app, you need to create an application key as stated in o
 A streamer client will be using a video capture to capture your webcam video and send it to Inlive encoder. Inlive encoder will encode and publish the video that we watch later with a video player. In this tutorial we will create a streamer client that will create a stream with the name with set, then start a stream.
 
 ### 1. Create a live stream
-Before going live, a streamer will always need to create a live stream. This live stream is unique, and it will provide single video input and single video output that can watch through a video player. To create a live stream, use 
+Before going live, a streamer will always need to create a live stream. This live stream is unique, and it will provide single video input and single video output that can watch through a video player. To create a live stream, use
 ```
 https://api.inlive.app/v1/streams/create
-``` 
+```
 endpoint to create a stream. But before interacting with the API, first, we need to create a function called `APIRequest` and default options for customized and reusable API request function.
 
 ```js
@@ -111,8 +111,8 @@ Since we've already made a create stream function, then when we click on the `Cr
         "slug": "my-first-stream",
         "start_time": null,
         "end_time": null,
-        "hls_manifest_path": "",
-        "dash_manifest_path": "",
+        "hls_url": "",
+        "dash_url": "",
         "description": "",
         "billing_start": null,
         "billing_end": null,
@@ -171,7 +171,7 @@ async function prepareStream(id){
 Once the video stream input is available, we're ready to send the video stream to Inlive encoder and start publishing our live video stream. To send the video, these are the steps we need to follow:
 
 1. Prepare the ice candidate exchange function. To exchange our ice-candidate between your brower and inLive WebRTC server, we will use two endpoints, `/v1/streams/{id}/events` endpoint to receive the remote ice-candidate from inLive WebRTC server, and `/v1/streams/{id}/ice` endpoint to send our local ice-candidate to inLive WebRTC server. To do this here are the functions we need:
-   
+
    1. Create a function to listen to stream events through `/v1/streams/{id}/events` endpoint using [Server-Sent Events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events). From this endpoint, we will receive all stream related events including ice-candidate from remote peer connection on inLive WebRTC server. We need to add this ice-candidate using [RTCPeerConnection.addIceCandidate()](https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/addIceCandidate) method.
 
         But before listen to the stream events, we need to generate an event key that will allow us to listen the event as authenticated user. This is required to receive the WebRTC events like ice-candidate. Without this event key, we only receive stream state events like ready, started, ended, and error. To get the event key we create a function like this:
@@ -189,11 +189,11 @@ Once the video stream input is available, we're ready to send the video stream t
             } catch(err) {
             console.error(err)
             }
-        }   
+        }
         ```
 
-        The function will return a JWT token string with only 1 hour lifetime. The server-sent event can't use authorization header, so we need to pass this key token to URL endpoint.  
-    
+        The function will return a JWT token string with only 1 hour lifetime. The server-sent event can't use authorization header, so we need to pass this key token to URL endpoint.
+
     2. To listen for the stream events as authenticated user, we create another function like below:
 
         ```js
@@ -227,7 +227,7 @@ Once the video stream input is available, we're ready to send the video stream t
             } catch(err) {
             console.error(err)
             }
-        }   
+        }
         ```
 
 2. Create `RTCPeerConnection` object and add the media stream tracks to this RTCPeerConnection. This is an important step to make sure the Offer SDP that we will generate will have information about our media tracks, like video and audio codec information. The RTCPeerConnection also will need to have a media track before being able to start the ice gathering process.
@@ -239,7 +239,7 @@ Once the video stream input is available, we're ready to send the video stream t
         try {
             // call the prepare endpoint first, using stream id
             await prepareStream(streamId);
-            
+
             const videoEl = document.querySelector('video');
             const constraints = {
                     video: {
@@ -299,7 +299,7 @@ Once the video stream input is available, we're ready to send the video stream t
     }
     ```
 
-3. To initate the WebRTC connection we will create `initStream` function by sending an HTTP POST request to `/v1/streams/${streamid}/init` endpoint 
+3. To initate the WebRTC connection we will create `initStream` function by sending an HTTP POST request to `/v1/streams/${streamid}/init` endpoint
 
     ```js
     async function initStream(id,peerConnection,options){
@@ -327,23 +327,23 @@ Once the video stream input is available, we're ready to send the video stream t
     }
     ```
 
-    As you see above, once we got the response from the init endpoint, we set the `peerConnection` with the answer SDP that we extract from the response by calling 
+    As you see above, once we got the response from the init endpoint, we set the `peerConnection` with the answer SDP that we extract from the response by calling
     ```
     peerConnection.setRemoteDescription(answerSDP)
     ```
 
-4. Once the RTCPeerConnection is set with both offer and answer SDP, it will initiate the connection to the remote peer, and the 
+4. Once the RTCPeerConnection is set with both offer and answer SDP, it will initiate the connection to the remote peer, and the
     ```
     peerConnection.oniceconnectionstatechange
     ```
     will be triggered if the connection state is changing.
 
-5. After `initStream` function runs, we need to call `startStreaming` function to be able to go livestream by sending an HTTP POST request to API endpoint, it sends chunk video to dash server using FFMPEG. 
+5. After `initStream` function runs, we need to call `startStreaming` function to be able to go livestream by sending an HTTP POST request to API endpoint, it sends chunk video to dash server using FFMPEG.
     ```
     https://api.inlive.app/v1/streams/${streamid}/start
-    ``` 
+    ```
 
-    
+
 
     We create `startStreaming` function :
     ```js
@@ -369,10 +369,10 @@ Once the video stream input is available, we're ready to send the video stream t
 
 ### 6. Get the video
 Once we streamed the video from our webcam through WebRTC, we can watch the video by getting the video URL through the stream detail endpoint.
-Get the stream detail by sending HTTP GET request to the API endpoint 
+Get the stream detail by sending HTTP GET request to the API endpoint
 ```
 https://api.inlive.app/v1/streams/${streamid}
-``` 
+```
 
 Let's create a get stream function that we can call later
 ```js
@@ -399,8 +399,8 @@ The API response will return data like this:
         "slug": "my-first-stream",
         "start_time": "2022-09-06T02:11:39.954264Z",
         "end_time": "2022-09-06T02:38:50.746014Z",
-        "hls_manifest_path": "https://bifrost.inlive.app/streams/2/master.m3u8",
-        "dash_manifest_path": "https://bifrost.inlive.app/streams/2/manifest.mpd",
+        "hls_url": "https://bifrost.inlive.app/streams/2/master.m3u8",
+        "dash_url": "https://bifrost.inlive.app/streams/2/manifest.mpd",
         "description": "",
         "billing_start": "2022-09-06T02:10:49.746014Z",
         "billing_end": "2022-09-06T02:38:50.746014Z",
@@ -409,8 +409,7 @@ The API response will return data like this:
         "prepared_at": "2022-09-06T02:10:49.746014Z",
         "updated_by": null,
         "updated_at": "2022-09-06T02:38:50.746014Z",
-        "quality": "360",
-        "viewer_count": 0
+        "quality": "360"
     }
 }
 ```
