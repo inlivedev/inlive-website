@@ -100,6 +100,50 @@
                 <div>Not allowed</div>
               </li>
               {{ end }}
+
+              {{ if eq (int $item.id) 1 }}
+              <li class="mt-8">
+                <b>Average viewers per stream</b>
+                <div>Allow up to 33 viewers</div>
+              </li>
+              {{ else if eq (int $item.id) 2 }}
+              <li class="mt-8">
+                <b>Average viewers per stream</b>
+                <div>Allow up to 200 viewers</div>
+              </li>
+              {{ else if eq (int $item.id) 3 }}
+              <li class="mt-8">
+                <b>Average viewers per stream</b>
+                <div>Allow up to 240 viewers</div>
+              </li>
+              {{ else if eq (int $item.id) 4 }}
+              <li class="mt-8">
+                <b>Average viewers per stream</b>
+                <div>Allow up to 267 viewers</div>
+              </li>
+              {{ end }}
+
+              {{ if eq (int $item.id) 1 }}
+              <li class="mt-8">
+                <b>Total viewers</b>
+                <div>Allow up to 100 viewers</div>
+              </li>
+              {{ else if eq (int $item.id) 2 }}
+              <li class="mt-8">
+                <b>Total viewers</b>
+                <div>Allow up to 800 viewers</div>
+              </li>
+              {{ else if eq (int $item.id) 3 }}
+              <li class="mt-8">
+                <b>Total viewers</b>
+                <div>Allow up to 2,400 viewers</div>
+              </li>
+              {{ else if eq (int $item.id) 4 }}
+              <li class="mt-8">
+                <b>Total viewers</b>
+                <div>Allow up to 6,400 viewers</div>
+              </li>
+              {{ end }}
             </ul>
           </div>
         </div>
