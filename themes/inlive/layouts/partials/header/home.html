@@ -14,34 +14,24 @@
     box-shadow: 0px 4px 6px -1px rgba(0, 0, 0, 0.1), 0px 2px 4px -1px rgba(0, 0, 0, 0.06);
   }
 </style>
-<header class="w-full sticky top-0 z-10 bg-white flex p-4 lg:px-16 lg:py-8 items-center justify-between header-content">
-  <div class="flex items-center">
-    <a href="/" class="block leading-6 text-gray-700 text-lg font-extrabold tracking-wide" aria-label="InLive header logo">
-      <svg width="100" height="30" viewBox="0 0 100 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <g clip-path="url(#clip0_1995_2073)">
-        <path d="M19.1914 10.5035H24.6313V27.9108H19.1914V10.5035Z" fill="#C42323"/>
-        <path d="M26.0103 10.5035H31.4502V13.0194H31.5183C32.4361 11.4214 34.1366 9.95938 37.2303 9.95938C40.596 9.95938 42.8743 12.1696 42.8743 16.1475V27.9117H37.4343V17.8808C37.4343 15.2624 36.5165 14.379 34.7144 14.379C32.6402 14.379 31.4502 15.4329 31.4502 17.8472V27.9108H26.0103V10.5035Z" fill="#C42323"/>
-        <path d="M50.9988 10.6573V22.9126H57.0085V27.9108H44.8787V10.6573H50.9988Z" fill="#C42323"/>
-        <path d="M58.725 10.5035H64.1649V27.9108H58.725V10.5035Z" fill="#C42323"/>
-        <path d="M70.4467 10.5035L73.9829 21.9956H74.0509L77.5872 10.5035H82.9591L76.9414 27.9108H70.9573L64.9396 10.5035H70.4467Z" fill="#C42323"/>
-        <path d="M81.8628 19.2067C81.8628 14.1069 85.0589 9.92493 90.9069 9.92493C96.823 9.92493 99.8151 13.4267 99.8151 19.8525V20.6687H87.3036C87.3372 23.0831 89.0032 24.409 91.0439 24.409C92.982 24.409 93.7974 23.5247 94.1375 22.6414H99.679C98.6932 26.1776 95.8027 28.4894 90.9069 28.4894C85.2621 28.4885 81.8628 24.6467 81.8628 19.2067ZM87.3363 17.303H94.3398C94.3398 15.0592 93.0138 13.8693 90.9061 13.8693C88.8327 13.8693 87.4723 15.0592 87.3363 17.303Z" fill="#C42323"/>
-        <path d="M8.28865 16.0141C11.4511 16.0141 14.0148 13.4504 14.0148 10.288C14.0148 7.12551 11.4511 4.56183 8.28865 4.56183C5.12618 4.56183 2.5625 7.12551 2.5625 10.288C2.5625 13.4504 5.12618 16.0141 8.28865 16.0141Z" fill="#C42323"/>
-        <path d="M8.28799 18.576C12.8653 18.576 16.576 14.8653 16.576 10.288C16.576 5.71066 12.8653 2 8.28799 2C3.71066 2 0 5.71066 0 10.288C0 14.8653 3.71066 18.576 8.28799 18.576Z" stroke="#C42323" stroke-width="0.265018" stroke-miterlimit="10"/>
-        </g>
-        <defs>
-        <clipPath id="clip0_1995_2073">
-        <rect width="100" height="30" fill="white"/>
-        </clipPath>
-        </defs>
+
+<section class="px-4 lg:px-16 bg-blue-50 z-10">
+  {{ partial "header/beta.html" . }}
+</section>
+<section class="w-full sticky top-0 z-10 bg-white">
+  <header class="flex p-4 lg:px-16 lg:py-8 items-center justify-between header-content">
+    <div class="flex items-center">
+      <a href="/" class="block leading-6 text-gray-700 text-lg font-extrabold tracking-wide" aria-label="InLive header logo">
+        {{ partial "logo/logo.html" }}
+      </a>
+    </div>
+    <!-- Hamburger menu -->
+    <button type="button" class="block lg:hidden p-1 text-gray-500" aria-label="open navigation menu" onclick="handleToggleNavMenu()">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16" />
       </svg>
-    </a>
-  </div>
-  <!-- Hamburger menu -->
-  <button type="button" class="block lg:hidden p-1 text-gray-500" aria-label="open navigation menu" onclick="handleToggleNavMenu()">
-    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16" />
-    </svg>
-  </button>
-  {{- partial "navbar/navbar.html" . -}}
-</header>
-{{- partial "navbar/mobile-navbar.html" . -}}
+    </button>
+    {{ partial "navbar/navbar.html" . }}
+  </header>
+</section>
+{{ partial "navbar/mobile-navbar.html" . }}
