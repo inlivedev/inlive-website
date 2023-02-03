@@ -6,6 +6,7 @@ title: Real-Time Widget API announcement
 description: inLive announces the beta version release of Real-Time Widget API that let users focus on building their interactive widgets by providing the server.
 slug: real-time-widget-api-announcement
 summary: We are excited to introduce to you the beta version of Real-Time Widget API, which saves you time to develop interactive widgets for your live stream by providing the server while you can focus on building your widgets.
+draft: true
 ---
 
 # Introducing inLive Real-Time Widget API: Interaction beyond likes and comments

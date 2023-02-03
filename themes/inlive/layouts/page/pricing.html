@@ -25,58 +25,127 @@
   </header>
 
   <section class="flex justify-center items-center mb-10">
-    <div class="bg-emerald-100 border border-emerald-300 w-full sm:w-2/3 rounded-lg py-4 sm:py-7 px-4 sm:px-10 text-center">
-      <p class="text-emerald-800 text-base leading-6 sm:leading-7 font-medium">During our beta phase, you can get business package for free, and our streaming quota will <b>still use streaming hours</b> as its metrics, not bandwidth.</p>
+    <div class="bg-emerald-100 border border-emerald-300 w-full sm:w-2/3 rounded-lg py-4 sm:py-6 px-4 sm:px-6">
+      <p class="text-emerald-800 leading-6 sm:leading-7 font-medium text-center">
+        You can get a free 1 month of business plan coupon.
+        <b><a href="https://docs.google.com/forms/d/e/1FAIpQLScdo7fm1XbfaW9_O59IqU2GX7qy9f6huZBybWLMnsY_rML66A/viewform" class="underline" target="_blank" rel="noopener noreferrer" data-tracking-event="open-link" data-tracking-label="1 month of business plan form at pricing page">Fill out this form </a></b> to check if you're eligible.
+      </p>
     </div>
   </section>
   <section class="mt-4">
       <div class="grid overflow-x-auto gap-5" style="grid-template-columns: repeat(4, 1fr);">
         {{ $linkStudioOrigin := getenv "_HUGO_INLIVE_STUDIO_ORIGIN" }}
         {{ $apiOriginLink := getenv "_HUGO_INLIVE_API_ORIGIN"}}
-        {{ $linkAPI := printf "%s/v1/package/" $apiOriginLink }}
+        {{ $linkAPI := printf "%s/v1/package" $apiOriginLink }}
         {{ $items := getJSON $linkAPI }}
-        {{ range $index, $item := sort $items.data "id" "asc"}}
+        {{ range $item := sort $items.data "id" "asc"}}
         <div class="text-center w-[280px] border border-gray-300 rounded-2xl min-h-[586px]">
           <h2 class="bg-blue-200 font-bold text-2xl leading-8 rounded-t-2xl text-center py-5 capitalize">{{ $item.name }}</h2>
           <div class="grid items-end">
             <div class="my-10 self-start">
               <span class="text-4xl leading-10">$</span><span class="text-6xl leading-none font-extrabold">{{ $item.price }}</span><span class="text-xl leading-10">/mo</span>
             </div>
-            <p class="text-sm leading-5 px-8 self-start h-[61px]">{{ $item.description }}</p>
-            {{ if eq $index 0 }}
-              <a href="{{ $linkStudioOrigin }}/login" aria-label="link-to-studio" target="_blank" rel="noopener noreferrer" class="my-10">
-                <button aria-label="getStarted" type="button" class="bg-white text-blue-600 border border-blue-600 hover:bg-blue-600 hover:text-white rounded-md hover:shadow-lg active:shadow-lg py-[13px] px-[25px] text-center">Get Started</button>
-              </a>
-            {{ else if eq $index 1 }}
-              <a href="{{ $linkStudioOrigin }}/login" aria-label="link-to-studio" target="_blank" rel="noopener noreferrer" class="my-10">
-                <button aria-label="startTrial" type="button" class="bg-white text-blue-600 border border-blue-600 hover:bg-blue-600 hover:text-white rounded-md hover:shadow-lg active:shadow-lg py-[13px] px-[25px] text-center">Start Trial</button>
-              </a>
-            {{ else if eq $index 2 }}
-              <a href="{{ $linkStudioOrigin }}/login" aria-label="link-to-studio" target="_blank" rel="noopener noreferrer" class="my-10">
-                <button aria-label="startTrial" type="button" class="bg-white text-blue-600 border border-blue-600 hover:bg-blue-600 hover:text-white rounded-md hover:shadow-lg active:shadow-lg py-[13px] px-[25px] text-center">Start Trial</button>
-              </a>
-            {{ else }}
-              <a href="mailto:{{ $inliveEmail }}" aria-label="link-to-studio" target="_blank" rel="noopener noreferrer" class="my-10">
-                <button aria-label="startTrial" type="button" class="bg-white text-blue-600 border border-blue-600 hover:bg-blue-600 hover:text-white rounded-md hover:shadow-lg active:shadow-lg py-[13px] px-[25px] text-center">Contact Us</button>
-              </a>
+            <p class="text-sm leading-5 px-8 self-start min-h-[5rem]">{{ $item.description }}</p>
+            {{ if eq (int $item.id) 1 }}
+              <div class="my-10">
+                <a href="{{ $linkStudioOrigin }}/login" target="_blank" rel="noopener noreferrer" class="inline-block text-blue-600 border border-blue-600 hover:bg-blue-600 hover:text-white rounded-md hover:shadow-lg active:shadow-lg py-3 px-6 text-center" data-tracking-event="open-link" data-tracking-label="{{ $item.name }} plan on the pricing page">Get Started</a>
+              </div>
+            {{ else if eq (int $item.id) 2 }}
+              <div class="my-10">
+                <a href="{{ $linkStudioOrigin }}/login" target="_blank" rel="noopener noreferrer" class="inline-block text-blue-600 border border-blue-600 hover:bg-blue-600 hover:text-white rounded-md hover:shadow-lg active:shadow-lg py-3 px-6 text-center" data-tracking-event="open-link" data-tracking-label="{{ $item.name }} plan on the pricing page">Start Trial</a>
+              </div>
+            {{ else if eq (int $item.id) 3 }}
+              <div class="my-10">
+                <a href="{{ $linkStudioOrigin }}/login" target="_blank" rel="noopener noreferrer" class="inline-block text-blue-600 border border-blue-600 hover:bg-blue-600 hover:text-white rounded-md hover:shadow-lg active:shadow-lg py-3 px-6 text-center" data-tracking-event="open-link" data-tracking-label="{{ $item.name }} plan on the pricing page">Start Trial</a>
+              </div>
+            {{ else if eq (int $item.id) 4 }}
+              <div class="my-10">
+                <a href="mailto:{{ $inliveEmail }}" target="_blank" rel="noopener noreferrer" class="inline-block text-blue-600 border border-blue-600 hover:bg-blue-600 hover:text-white rounded-md hover:shadow-lg active:shadow-lg py-3 px-6 text-center" data-tracking-event="open-link" data-tracking-label="{{ $item.name }} plan on the pricing page">Contact Us</a>
+              </div>
             {{ end }}
           </div>
           <div class="flex justify-center py-10 border-t border-t-gray-300">
-            <ul class="list-disc text-left text-sm leading-7">
-              <li><b>{{div $item.quota 60}}</b> streaming hours</li>
-  
-              {{ if eq $index 0 }}
-                <li>Bandwidth <b>100 GB</b></li>
-                <li>Quality <b>360p</b></li>
-              {{ else if eq $index 1 }}
-                <li>Bandwidth <b>4,000 GB</b></li>
-                <li>Quality <b>720p</b></li>
-              {{ else if eq $index 2 }}
-                <li>Bandwidth <b>12,000 GB</b></li>
-                <li>Quality <b>720p</b></li>
+            <ul class="list-none text-center text-sm">
+              <li>
+                <b>Streaming hours</b>
+                <div>{{div $item.time_quota 60}} hours</div>
+              </li>
+              {{ $byteToGB := div $item.bandwidth_quota (mul 1000 (mul 1000 1000))}}
+              <li class="mt-8">
+                <b>Bandwidth</b>
+                <div>{{ lang.FormatNumberCustom 0 $byteToGB }} GB</div>
+              </li>
+              <li class="mt-8">
+                <b>Quality</b>
+                <div>{{ print $item.quality "p" }}</div>
+              </li>
+
+              {{ if eq (int $item.id) 4 }}
+              <li class="mt-8">
+                <b>Streaming overage</b>
+                <div>$0.525/hour</div>
+              </li>
               {{ else }}
-                <li>Bandwidth <b>25,000 GB</b></li>
-                <li>Quality <b>720p</b></li>
+              <li class="mt-8">
+                <b>Streaming overage</b>
+                <div>Not allowed</div>
+              </li>
+              {{ end }}
+
+              {{ if eq (int $item.id) 4 }}
+              <li class="mt-8">
+                <b>Bandwidth overage</b>
+                <div>$0.009/GB</div>
+              </li>
+              {{ else }}
+              <li class="mt-8">
+                <b>Bandwidth overage</b>
+                <div>Not allowed</div>
+              </li>
+              {{ end }}
+
+              {{ if eq (int $item.id) 1 }}
+              <li class="mt-8">
+                <b>Average viewers per stream</b>
+                <div>Allow up to 33 viewers</div>
+              </li>
+              {{ else if eq (int $item.id) 2 }}
+              <li class="mt-8">
+                <b>Average viewers per stream</b>
+                <div>Allow up to 200 viewers</div>
+              </li>
+              {{ else if eq (int $item.id) 3 }}
+              <li class="mt-8">
+                <b>Average viewers per stream</b>
+                <div>Allow up to 240 viewers</div>
+              </li>
+              {{ else if eq (int $item.id) 4 }}
+              <li class="mt-8">
+                <b>Average viewers per stream</b>
+                <div>Allow up to 267 viewers</div>
+              </li>
+              {{ end }}
+
+              {{ if eq (int $item.id) 1 }}
+              <li class="mt-8">
+                <b>Total viewers</b>
+                <div>Allow up to 100 viewers</div>
+              </li>
+              {{ else if eq (int $item.id) 2 }}
+              <li class="mt-8">
+                <b>Total viewers</b>
+                <div>Allow up to 800 viewers</div>
+              </li>
+              {{ else if eq (int $item.id) 3 }}
+              <li class="mt-8">
+                <b>Total viewers</b>
+                <div>Allow up to 2,400 viewers</div>
+              </li>
+              {{ else if eq (int $item.id) 4 }}
+              <li class="mt-8">
+                <b>Total viewers</b>
+                <div>Allow up to 6,400 viewers</div>
+              </li>
               {{ end }}
             </ul>
           </div>
@@ -86,30 +155,20 @@
   </section>
 
   <section>
-    <h1 class="font-bold text-2xl leading-8 mt-32 lg:mt-64 mb-[46px] text-center">Frequently Asked Questions</h1>
+    <h1 class="font-bold text-2xl leading-8 mt-20 lg:mt-36 mb-[46px] text-center">Frequently Asked Questions</h1>
 
     <div class="max-w-[580px] mx-auto">
         <!-- faq 1 -->
         <div class="border-y border-y-gray-300 py-3.5">
           <button class="accordion font-bold text-gray-800 text-lg leading-7 text-left w-full flex items-center justify-between" style="transition: 0.4s;">
-            <span class="w-11/12 md:w-full">Is there any promotion for beta users?</span>
+            <span class="w-11/12 md:w-full">How much is the cost of bandwidth or viewer minutes?</span>
           </button>
           <div class="panel overflow-hidden text-left text-gray-600">
-            <p class="text-base leading-6 mt-3.5 mr-5 lg:mr-[3.75rem]">So right now we provide beta users to apply with our Business Plan. And the good thing is it's <b>free</b>. It is valid until <b>30 September 2022</b>.</p>
+            <p class="text-base leading-6 mt-3.5 mr-5 lg:mr-[3.75rem]">The bandwidth and viewer minutes is the biggest factor in live streaming cost, we're working to make this more affordable so small startups and indie hackers can afford to build a live streaming app.</p>
           </div>
         </div>
 
         <!-- faq 2 -->
-        <div class="border-b border-b-gray-300 py-3.5">
-          <button class="accordion font-bold text-gray-800 text-lg leading-7 text-left w-full flex items-center justify-between" style="transition: 0.4s;">
-            <span class="w-11/12 md:w-full">How much is the cost of bandwidth or viewer minutes?</span>
-          </button>
-          <div class="panel overflow-hidden text-left text-gray-600">
-            <p class="text-base leading-6 mt-3.5 mr-5 lg:mr-[3.75rem]">The bandwidth and viewer minutes is the biggest factor in live streaming cost, we're working to make this more affordable so small startups and indie hackers can afford to build a live streaming app. In the meantime, the bandwidth or viewer minutes is free during beta.</p>
-          </div>
-        </div>
-
-        <!-- faq 3 -->
         <div class="border-b border-b-gray-300 py-3.5">
             <button class="accordion font-bold text-gray-800 text-lg leading-7 text-left w-full flex items-center justify-between" style="transition: 0.4s;">
               <span class="w-11/12 md:w-full">What if I only want to host a single event?</span>
@@ -119,7 +178,7 @@
             </div>
         </div>
 
-        <!-- faq 4 -->
+        <!-- faq 3 -->
         <div class="border-b border-b-gray-300 py-3.5">
             <button class="accordion font-bold text-gray-800 text-lg leading-7 text-left w-full flex items-center justify-between" style="transition: 0.4s;">
               <span class="w-11/12 md:w-full">Can I upgrade/downgrade my plan at a later date?</span>
@@ -129,7 +188,7 @@
             </div>
         </div>
 
-        <!-- faq 5 -->
+        <!-- faq 4 -->
         <div class="border-b border-b-gray-300 py-3.5">
             <button class="accordion font-bold text-gray-800 text-lg leading-7 text-left w-full flex items-center justify-between" style="transition: 0.4s;">
               <span class="w-11/12 md:w-full">Can I cancel my subscription at any time?</span>
@@ -139,7 +198,7 @@
             </div>
         </div>
 
-        <!-- faq 6 -->
+        <!-- faq 5 -->
         <div class="border-b border-b-gray-300 py-3.5">
           <button class="accordion font-bold text-gray-800 text-lg leading-7 text-left w-full flex items-center justify-between" style="transition: 0.4s;">
             <span class="w-11/12 md:w-full">How many days is inLive billing cycle?</span>
@@ -149,7 +208,7 @@
           </div>
         </div>
 
-        <!-- faq 7 -->
+        <!-- faq 6 -->
         <div class="border-b border-b-gray-300 py-3.5">
           <button class="accordion font-bold text-gray-800 text-lg leading-7 text-left w-full flex items-center justify-between" style="transition: 0.4s;">
             <span class="w-11/12 md:w-full">What if my quota is still available but the cycle has ended?</span>
@@ -160,27 +219,8 @@
         </div>
     </div>
   </section>
-
-  <!-- footer -->
-  <section class="mt-[120px]">
-    <div class="px-4 lg:px-20">
-      <div class="max-w-7xl mx-auto lg:py-16">
-        <h2 class="mb-4 font-extrabold text-3xl lg:text-4xl text-blue-900 text-center">
-          Try inLive today
-        </h2>
-        <p class="max-w-3xl text-base text-gray-600 mx-auto mb-6 lg:mb-8 text-center">Explore Developer Portal to get up
-          and running with inLive API as easy as count 1-2-3, or create an account in inLive Studio to start live
-          streaming from your browser.</p>
-        <div class="flex flex-col sm:flex-row gap-4 text-center justify-center">
-          <a href="/docs/introduction/"
-            class="min-w-[180px] w-full sm:w-auto py-2 px-4 bg-blue-100 rounded-md font-medium text-sm text-blue-700">Visit Our Documentation</a>
-          <a href="mailto:{{ $inliveEmail }}" target="_blank" rel="noopener noreferrer"
-            class="min-w-[180px] w-full sm:w-auto py-2 px-4 bg-blue-100 rounded-md font-medium text-sm text-blue-700">Contact Us</a>
-        </div>
-      </div>
-    </div>
-  </section>
 </main>
+{{ partial "cta/try-inlive.html" . }}
 {{ end }}
 
 {{ define "footer" }}

@@ -12,6 +12,7 @@ menu:
     name: Communication scheme and formatting
     weight: 3003
     parent: Real-Time Widget API
+draft: true
 ---
 # Communication Scheme and Formatting
 To make our Real Time Communication work, we have standardized how clients and our server format their messages when sending them. The standard format of our messages in the channel server is as follows:

@@ -13,6 +13,7 @@ menu:
     name: Building viewer counter widget with Real-Time Widget API
     weight: 4004
     parent: Tutorial
+draft: true
 ---
 
 # How to build a simple viewer counter widget with Real-Time Widget API

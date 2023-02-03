@@ -9,13 +9,13 @@
           <strong class="font-semibold text-gray-900">Inside inLive</strong>
         </li>
         <li class="mb-2 text-sm leading-6">
-          <a href="mailto:{{ $inliveEmail }}" target="_blank" rel="noopener noreferrer" class="text-gray-500">Contact</a>
+          <a href="mailto:{{ $inliveEmail }}" target="_blank" rel="noopener noreferrer" class="text-gray-500" data-tracking-event="open-link" data-tracking-label="Contact link on the footer">Contact</a>
         </li>
         <li class="mb-2 text-sm leading-6">
-          <a href="/pricing" class="text-gray-500">Pricing</a>
+          <a href="/pricing" class="text-gray-500" data-tracking-event="open-link" data-tracking-label="Pricing navigation link on the footer">Pricing</a>
         </li>
         <li class="text-sm leading-6">
-          <a href="{{ $inliveStudioOrigin }}/login" class="text-gray-500">inLive Studio</a>
+          <a href="{{ $inliveStudioOrigin }}/login" class="text-gray-500" data-tracking-event="open-link" data-tracking-label="InLive studio login navigation link on the footer">inLive Studio</a>
         </li>
       </ul>
     </nav>
@@ -25,14 +25,14 @@
           <strong class="font-semibold text-gray-900">Resources</strong>
         </li>
         <li class="text-sm leading-6">
-          <a href="/docs/introduction/" class="text-gray-500">Docs</a>
+          <a href="/docs/introduction/" class="text-gray-500" data-tracking-event="open-link" data-tracking-label="Docs navigation link on the footer">Docs</a>
         </li>
       </ul>
     </nav>
   </div>
   <div class="flex-1 max-w-xs md:order-1">
     <div class="text-[0]">
-      <a href="/" class="inline-block text-gray-700 text-5xl font-extrabold tracking-wide">
+      <a href="/" class="inline-block text-gray-700 text-5xl font-extrabold tracking-wide" aria-label="InLive footer logo">
         <svg width="160" height="48" viewBox="0 0 160 48" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g opacity="0.5" clip-path="url(#clip0_1995_1676)">
           <path d="M30.707 16.8057H39.4109V44.6573H30.707V16.8057Z" fill="#121212"/>

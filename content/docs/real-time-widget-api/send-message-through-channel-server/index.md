@@ -12,6 +12,7 @@ menu:
     name: Send message through channel server
     weight: 3002
     parent: Real-Time Widget API
+draft: true
 ---
 # How to send or publish messages through the Channel Server
 

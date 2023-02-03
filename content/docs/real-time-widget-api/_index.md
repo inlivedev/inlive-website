@@ -11,6 +11,7 @@ menu:
     identifier: Real-Time Widget API
     name: Real-Time Widget API
     weight: 3000
+draft: true
 ---
 # About Inlive Widget
 Here at Inlive, our mission is to unlock the interactivity beyond likes and comments. Our Real-Time Widget API allows you to save your time developing an interactive widget by providing a low-latency communication scheme.

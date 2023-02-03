@@ -1,3 +1,4 @@
+/*
 window.addEventListener('load', () => {
   new KeenSlider('#slider', {
     loop: true,
@@ -10,6 +11,7 @@ window.addEventListener('load', () => {
     },
   });
 });
+*/
 
 window.addEventListener('scroll', () => {
   if (window.pageYOffset > 20) {
