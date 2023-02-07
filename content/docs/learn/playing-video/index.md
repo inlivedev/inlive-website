@@ -40,9 +40,9 @@ In spite of HLS providing low latency streaming right now, currently our Inlive 
 Both HLS and MPEG-DASH support adaptive bitrate feature so users can receive the best quality video based on what their internet connection can handle. Also, both HLS and MPEG-DASH support [HDR](https://www.haivision.com/blog/all/what-is-hdr-how-you-can-contribute-live-broadcast-content-in-hdr/) (High Dynamic Range) which deliver a wider color gamut and better tonal rendition. Currently, our Inlive’s MPEG-DASH and HLS are using same video codec which is H264 because it is the most supported codec on all platforms.
 
 As we know, [video bitrate](https://golightstream.com/what-is-video-bitrate/) affects the video quality. For now, Inlive provides adaptive video with 3 different qualities: 
-- 360 p with 1000kb bitrate
-- 480p with 2000kb bitrate
-- 720p with 3000kb bitrate 
+- 360 p with 800kb bitrate
+- 480p with 1350kb bitrate
+- 720p with 2500kb bitrate 
 
 With these 3 qualities, your video player can change the bitrate according to the network and device so the users don’t have to face buffering time while watching live streaming. To achieve adaptive bitrate qualities that are already supported on Inlive, you can use a video player that supports adaptive bitrate automation. In [our tutorial](/docs/tutorial/tutorial-app-with-webrtc/#6-get-the-video), we’re using Shaka Player because it handles video quality adjustment automatically. To learn more about utilizing these multiple bitrates and maximize its capability, you could read this [article](https://youtube-eng.googleblog.com/2018/04/making-high-quality-video-efficient.html) and also check out this [one](https://bloggeek.me/tweaking-webrtc-video-quality-unpacking-bitrate-resolution-and-frame-rates/) on how to tune webRTC video quality.
 
