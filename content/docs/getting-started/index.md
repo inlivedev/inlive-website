@@ -36,7 +36,7 @@ With our SDK, going live is simple as this code below:
 import {InliveStream, InliveApp} from '@inlivedev/inlive-js-sdk'
 
 const app = InliveApp.init({apiKey:'<your-api-key>'})
-const stream = InliveStream.createStream(app,{name:'my first stream'})
+const stream = await InliveStream.createStream(app,{name:'my first stream'})
 
 const media = await InliveStream.media.getUserMedia()
 media.attachTo(document.querySelector('video'))
@@ -46,7 +46,7 @@ await stream.init(media.stream)
 await stream.start()
 
 // or use getStream for viewer client
-const stream = InliveStream.getStream(app,streamID)
+const stream = await InliveStream.getStream(app,streamID)
 
 console.log(stream.manifests)
 // {
