@@ -10,7 +10,9 @@ draft: false
 
 # Product Hunt Launching and JavaScript SDK Released
 
-In the last couple of months, we've been prepared to launch inLive at Product Hunt to gain more awareness. We don't want this launch to be just another promotion; we want to provide an easy way for our users to try our service. 
+In the last couple of months, we've been prepared to launch inLive at Product Hunt to gain more awareness. We don't want this launch to be just another promotion; we want to provide an easy way for our users to try our service. Check out our [Product Hunt launching](https://www.producthunt.com/posts/inlive) and don't forget to vote.
+
+<p class="flex justify-center mt-10"><a href="https://www.producthunt.com/posts/inlive?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-inlive" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=377699&theme=light" alt="inLive - Build&#0032;your&#0032;WebRTC&#0032;to&#0032;Dash&#0047;HLS&#0032;with&#0032;54&#0037;&#0032;less&#0032;cost&#0046; | Product Hunt" style="width: 250px; height: 54px;text-align: center;" width="250" height="54" /></a></p>
 
 So together with this Product Hunt launching, we also release our [JavaScript SDK](https://www.npmjs.com/package/@inlivedev/inlive-js-sdk) that can help you develop a WebRTC broadcasting client with a simple code. Check out [this YouTube video](https://www.youtube.com/watch?v=GziYce--4jY) where Yohan, CTO of inLive, shows you how to create a simple WebRTC to Dash/HLS broadcasting client using CodePen.
 
