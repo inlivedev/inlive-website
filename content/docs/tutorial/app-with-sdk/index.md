@@ -21,7 +21,7 @@ This tutorial will show you how to create a streamer client and viewer page with
 We will create a web page for the streamer client to capture our webcam directly and send it to Inlive encoder as a video source input once the user clicks the start button.
 We will create a web page that can use by live stream viewers to watch the live video stream.
 
-The example code for this tutorial is available on our [Github repo](https://github.com/inlivedev/inlive-app-with-sdk). 
+The example code for this tutorial is available on our [Github repo](https://github.com/inlivedev/live-stream-with-sdk).
 
 ## A. Requirement
 ### 1. Get the API key
@@ -162,17 +162,17 @@ async function startStream(){
 
   const media = await InliveStream.media.getUserMedia(constraints);
   const videoEl = document.querySelector('video')
-  
+
   media.attachTo(videoEl)
 }
 ```
 
 ### 4. Prepare the live stream
-We need you to call this `prepare` API endpoint before starting to initiate the WebRTC connection. This is to start your live stream session, and this is where the billing will start counting your live streaming duration. This method will take a little bit time to complete because we need to start a WebRTC stream server. 
+We need you to call this `prepare` API endpoint before starting to initiate the WebRTC connection. This is to start your live stream session, and this is where the billing will start counting your live streaming duration. This method will take a little bit time to complete because we need to start a WebRTC stream server.
 
 We will call the prepare endpoint before we initiate the WebRTC connection that will be explain next.
 
-Please note that when we call `stream.prepare()` method, it also will start waiting the ice-candidate events from the API server using server-sent events. The ice-candidate events is used for WebRTC connection. To make sure the event listener is keep alive, the sequence call between `stream.prepare()` and the next call of `stream.init()` should be from the same `stream` instance. 
+Please note that when we call `stream.prepare()` method, it also will start waiting the ice-candidate events from the API server using server-sent events. The ice-candidate events is used for WebRTC connection. To make sure the event listener is keep alive, the sequence call between `stream.prepare()` and the next call of `stream.init()` should be from the same `stream` instance.
 
 ### 5. Initiate the WebRTC connection and start the live stream
 Once the prepare method is complete, we're ready to send the video stream to Inlive WebRTC server and start publishing our live video stream. We will do two steps in one button click. Once the start button is clicked, we will do this steps:
@@ -180,8 +180,8 @@ Once the prepare method is complete, we're ready to send the video stream to Inl
 1. Listen for `streamStarted` event use `stream.on()` method, so we know when the live video is ready to watch. This method also can be use from the viewer side to know when we should start the live stream video in the player.
 2. Call the `stream.prepare()` to prepare the stream server as explain before.
 3. Send the live video stream by calling `stream.init()` method and passing the video stream that we got from `InliveStream.media.getUserMedia` above.
-4. After `stream.init()` has completed, we need to call `stream.start()` method to start broadcast the live stream video. 
-   
+4. After `stream.init()` has completed, we need to call `stream.start()` method to start broadcast the live stream video.
+
 
 The three steps below will be put together in one function.
 
@@ -211,7 +211,7 @@ async function startStreaming(){
 From our code above, the page should append a anchor element to the page that include a link to another HTML page where we can watch the live stream video. Let's create this page in the next step.
 
 ### 6. Create a page to watch the live stream
-Once we streamed the video from our webcam through WebRTC, we can watch the video by getting the video URL through `InliveStream.getStream()` method. 
+Once we streamed the video from our webcam through WebRTC, we can watch the video by getting the video URL through `InliveStream.getStream()` method.
 
 Remember on `startStream` function that we created above, we pass the `stream.id` through URL query. Let's create a get stream function use that streamId.
 ```js
@@ -252,7 +252,7 @@ There are two options to play the video, and you can [read more detail here](/do
       // get the id parameter from the url link for the manifestUri
       let params = new URL(document.location).searchParams;
       let streamId = parseInt(params.get('id'));
-      
+
 
       function initApp() {
         shaka.polyfill.installAll();
