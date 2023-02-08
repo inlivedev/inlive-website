@@ -30,10 +30,10 @@ Before coding your web app, you need to create an application key as stated in o
 ### 2. Install inLive JS SDK
 inLive JS SDK is distributed through NPM library. Means you need to have [NPM installed and setup](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) before able to install our SDK. For development you can import the published SDK directly like this:
 ```js
-import { InliveStream } from 'https://cdn.jsdelivr.net/npm/@inlivedev/inlive-js-sdk/dist/inlive-js-sdk.js
+import { InliveStream } from 'https://cdn.jsdelivr.net/npm/@inlivedev/inlive-js-sdk/dist/inlive-js-sdk.js'
 ```
 But for production, it is recommended to host it by your self. To install the SDK using NPM you can run the command below in your terminal:
-```js
+```sh
 npm i @inlivedev/inlive-js-sdk
 ```
 
