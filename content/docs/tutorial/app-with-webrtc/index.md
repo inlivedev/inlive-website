@@ -21,8 +21,6 @@ This tutorial will show you how to create a streamer client and viewer page.
 We will create a web page for the streamer client to capture our webcam directly and send it to Inlive encoder as a video source input once the user clicks the start button.
 We will create a web page that can use by live stream viewers to watch the live video stream.
 
-The example code for this tutorial is available on our [simple livestream Glitch app](https://glitch.com/~inlive-live-stream-app) demo.
-
 ## A. Requirement
 Before coding your web app, you need to create an application key as stated in our [getting started documentation](/docs/getting-started). Please make sure you write down that key after you create it because it is used in this web app that we will create.
 
