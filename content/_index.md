@@ -1,5 +1,5 @@
 ---
 date: 2022-02-22
-title: Build your WebRTC to Dash/HLS with 54% less cost
-description: Reaching a larger audience that fits your budget has never been this easy. Affordable solution to start streaming and no more worry about overspending costs.
+title: WebRTC to Dash/HLS live streaming API with 54% less cost
+description: Develop your live streaming application with inLive API. Affordable solution to start streaming and save up to 54% of your cost with bandwidth usage pricing.
 ---
