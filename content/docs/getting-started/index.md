@@ -36,17 +36,14 @@ With our SDK, going live is simple as this code below:
 import {InliveStream, InliveApp} from '@inlivedev/inlive-js-sdk'
 
 const app = InliveApp.init({apiKey:'<your-api-key>'})
-const stream = InliveStream.createStream(app,{name:'my first stream'})
+const stream = await InliveStream.createStream(app,{name:'my first stream'})
 
 const media = await InliveStream.media.getUserMedia()
 media.attachTo(document.querySelector('video'))
 
 await stream.prepare()
 await stream.init(media.stream)
-await stream.start()
-
-// or use getStream for viewer client
-const stream = InliveStream.getStream(app,streamID)
+await stream.live()
 
 console.log(stream.manifests)
 // {
@@ -54,6 +51,22 @@ console.log(stream.manifests)
 //   "dash":"manifest.mpd"
 // }
 
+```
+
+In the viewer page, you can get the video manifests with this:
+
+```js
+import {InliveStream, InliveApp} from '@inlivedev/inlive-js-sdk'
+
+const app = InliveApp.init({apiKey:'<your-api-key>'})
+
+const stream = await InliveStream.getStream(app,streamID)
+
+console.log(stream.manifests)
+// {
+//   "hls": "master.m8eu"
+//   "dash":"manifest.mpd"
+// }
 ```
 
 Check out our [tutorial with SDK](../tutorial/app-with-sdk/index.md) for more details.

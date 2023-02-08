@@ -2,16 +2,14 @@
 {{ $inliveEmail := getenv "_HUGO_INLIVE_EMAIL" }}
 <footer
   class="bg-gray-50 py-8 lg:pt-10 lg:pb-20 px-4 lg:px-16 flex flex-col md:flex-row gap-16 md:gap-8">
-  <div class="md:order-2 flex-1 flex gap-y-6 gap-x-4 md:gap-8">
-    <nav class="flex-1 max-w-[160px] lg:max-w-[240px]">
-      <ul>
-        <li class="mb-3 text-sm leading-6">
-          <strong class="font-semibold text-gray-900">Inside inLive</strong>
-        </li>
-        <li class="mb-2 text-sm leading-6">
+  <div class="md:order-2 flex-1 flex flex-col sm:flex-row gap-y-6 gap-x-4 md:gap-8">
+    <nav class="flex-1 lg:max-w-[240px]">
+      <b class="block mb-3 text-sm leading-6 font-semibold text-gray-900">Inside inLive</b>
+      <ul class="flex flex-row sm:flex-col gap-4 sm:gap-2">
+        <li class="text-sm leading-6">
           <a href="mailto:{{ $inliveEmail }}" target="_blank" rel="noopener noreferrer" class="text-gray-500" data-tracking-event="open-link" data-tracking-label="Contact link on the footer">Contact</a>
         </li>
-        <li class="mb-2 text-sm leading-6">
+        <li class="text-sm leading-6">
           <a href="/pricing" class="text-gray-500" data-tracking-event="open-link" data-tracking-label="Pricing navigation link on the footer">Pricing</a>
         </li>
         <li class="text-sm leading-6">
@@ -19,18 +17,24 @@
         </li>
       </ul>
     </nav>
-    <nav class="flex-1 max-w-[160px] lg:max-w-[240px]">
-      <ul>
-        <li class="mb-3 text-sm leading-6">
-          <strong class="font-semibold text-gray-900">Resources</strong>
-        </li>
+    <nav class="flex-1 lg:max-w-[240px]">
+      <b class="block mb-3 text-sm leading-6 font-semibold text-gray-900">Resources</b>
+      <ul class="flex flex-row sm:flex-col gap-4 sm:gap-2">
         <li class="text-sm leading-6">
           <a href="/docs/introduction/" class="text-gray-500" data-tracking-event="open-link" data-tracking-label="Docs navigation link on the footer">Docs</a>
         </li>
       </ul>
     </nav>
+    <nav class="flex-1 lg:max-w-[240px]">
+      <b class="block mb-3 text-sm leading-6 font-semibold text-gray-900">Social Networks</b>
+      <ul class="flex flex-row sm:flex-col gap-4 sm:gap-2">
+        <li class="text-sm leading-6">
+          <a href="https://twitter.com/inliveapp" class="text-gray-500" data-tracking-event="open-link" data-tracking-label="Twitter navigation link on the footer" target="_blank" rel="noopener noreferrer">Twitter</a>
+        </li>
+      </ul>
+    </nav>
   </div>
-  <div class="flex-1 max-w-xs md:order-1">
+  <div class="flex-1 max-w-[280px] lg:max-w-xs md:order-1">
     <div class="text-[0]">
       <a href="/" class="inline-block text-gray-700 text-5xl font-extrabold tracking-wide" aria-label="InLive footer logo">
         <svg width="160" height="48" viewBox="0 0 160 48" fill="none" xmlns="http://www.w3.org/2000/svg">
