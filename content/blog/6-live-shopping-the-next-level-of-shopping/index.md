@@ -77,6 +77,8 @@ Bloomingdale's took a unique spin on live shopping. They mixed in giveaways and 
 
 Live shopping is already becoming a trend worldwide, revolutionizing the online shopping landscape. Early adopters of the trend have enjoyed the benefit of increased reach and impact. Customers love the more engaging experience these events bring and companies love the higher conversion rates that go along with it. If you are selling products offline or online, live shopping is a trend that you want to get in on.
 
-***About InLive***
-<br>
-*InLive is a platform that focuses on live streaming as a service. InLive uses simple REST APIs with the latest low-latency streaming technology with no complicated server setup, ensuring a quick and easy process to start your first live stream. For more information visit https://inlive.app.*
+---
+
+## About InLive
+
+*InLive is a platform that focuses on live streaming as a service. InLive uses simple REST APIs with the latest low-latency streaming technology with no complicated server setup, ensuring a quick and easy process to start your first live stream.*

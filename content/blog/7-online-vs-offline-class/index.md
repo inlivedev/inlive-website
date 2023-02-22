@@ -68,6 +68,8 @@ With the world transitioning back to normal, online learning remains one of the 
 
 The ability to create an engaging and equally effective online learning experience is very important to ensure the students and instructors are getting the most out of each class. The article covers a few ways instructors can spice up their class utilizing different tools. Teaching itself is already a huge undertaking. Teaching while having to manage these different tools can quickly become an overwhelming task.
 
-***About InLive***
-<br>
-*InLive is a platform that focuses on live streaming as a service. InLive uses simple REST APIs with the latest low-latency streaming technology with no complicated server setup, ensuring a quick and easy process to start your first live stream. For more information visit https://inlive.app.*
+---
+
+## About InLive
+
+*InLive is a platform that focuses on live streaming as a service. InLive uses simple REST APIs with the latest low-latency streaming technology with no complicated server setup, ensuring a quick and easy process to start your first live stream.*
