@@ -41,3 +41,16 @@
   })(window, document, "clarity", "script", "{{ $clarityID }}");
 </script>
 {{ end }}
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+{{ $googleAnalyticsID := getenv "_HUGO_GOOGLE_ANALYTICS_TRACKING_ID" }}
+{{ if gt (len $googleAnalyticsID) 0 }}
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ $googleAnalyticsID }}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '{{ $googleAnalyticsID }}');
+</script>
+{{ end }}
