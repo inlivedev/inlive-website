@@ -1,4 +1,4 @@
-baseURL = '/'
+baseURL = 'https://inlive.app/'
 languageCode = 'en-us'
 title = 'inLive'
 theme = 'inlive'
