@@ -27,6 +27,30 @@
     title: document.title || '-',
     description: document.querySelector('meta[name="description"]')?.content || '-'
   });
+  
+  // register UTM if exists
+  if(window.URL){
+    const url = new URL(window.location.href)
+    const source=url.searchParams.get("utm_source")
+    
+    if(source!==null){
+      const utm = {}
+      const medium=url.searchParams.get("utm_medium")
+      const campaign=url.searchParams.get("utm_campaign")
+      const content=url.searchParams.get("utm_content")
+      const term=url.searchParams.get("utm_term")
+
+      utm["utm_source"] = source
+      
+      if(medium!==null) utm["utm_medium"] = medium
+      if(campaign!==null) utm["utm_campaign"] = campaign
+      if(content!==null) utm["utm_content"] = content
+      if(term!==null) utm["utm_term"] = term
+
+      mixpanel.register_once(utm);
+    } 
+  }
+
   </script>
 {{ end }}
 
