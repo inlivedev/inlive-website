@@ -40,4 +40,4 @@ Our upcoming Video Transcoding & Hosting API feature is currently in the plannin
 
 That is all of our latest update for now and it's only the beginning. We'll start shipping new things and features like Live Shopping template, Live Event template, and more.
 
-Also we look forward to hearing from you. You can reach us anytime from whatever ways that are comfortable for you (Email, GitHub, Twitter). Your feedback is essential to us and we appreciate your help in making our product even better for you.
+Also we look forward to hearing from you. You can reach us anytime from whatever ways that are comfortable for you (<a href="mailto:{{< getenv env=`_HUGO_INLIVE_EMAIL` >}}" target="_blank" rel="noopener noreferrer">Email</a>, <a href="https://github.com/orgs/inlivedev/discussions" target="_blank" rel="noopener noreferrer">GitHub</a>, <a href="https://twitter.com/inliveapp" target="_blank" rel="noopener noreferrer">Twitter</a>). Your feedback is essential to us and we appreciate your help in making our product even better for you.
