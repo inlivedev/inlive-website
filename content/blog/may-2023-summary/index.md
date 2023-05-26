@@ -3,9 +3,9 @@
 date: 2023-05-26
 lastmod: 2023-05-26
 title: Update Summary - May 2023
-description: May 2023 Summary
+description: We have been working on different things in the last few months. See what we are working on and we are planning to develop next.
 slug: may-2023-summary
-summary: #Please remove this if you don't need custom summary
+summary: We have been working on different things in the last few months. Today, we're thrilled to announce the updates about what we are working on and we are planning to develop next.
 ---
 
 # Update Summary - May 2023
