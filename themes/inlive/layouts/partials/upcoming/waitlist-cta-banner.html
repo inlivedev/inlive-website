@@ -1,0 +1,30 @@
+<section class="my-10">
+  <div class="py-10">
+    <div class="lg:py-8 px-4 lg:px-28 relative">
+      <div class="max-w-3xl mx-auto text-center">
+        <div class="flex flex-col gap-2 lg:gap-4">
+          {{ if .heading }}
+          <div>
+            <h2 class="font-bold text-2xl lg:text-4xl text-slate-800">
+              {{ .heading }}
+            </h2>
+          </div>
+          {{ end }}
+          {{ if .paragraph }}
+          <div>
+            <p class="font-medium text-base text-slate-700">
+              {{ .paragraph }}
+            </p>
+          </div>
+          {{ end }}
+          <div class="mt-2">
+            <button data-open-dialog="waitlist-form"
+              class="py-2 px-4 bg-slate-900 rounded-md font-medium text-sm text-slate-100 waitlist-cta">
+              Join waitlist
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
