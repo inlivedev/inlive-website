@@ -51,9 +51,9 @@ To begin with, we will need a simple HTML file as our web app. Create a file nam
 </head>
 <body>
     <h1>inLive WHIP Tutorial</h1>
-    <video id="video" controls></video>
+    <video id="video" autoplay muted></video>
     <button>Go live</button>
-    <script src="app.js"></script>
+    <script type="module" src="app.js"></script>
 </body>
 </html>
 ```
