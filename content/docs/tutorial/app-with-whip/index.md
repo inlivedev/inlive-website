@@ -25,12 +25,13 @@ This tutorial will show you how to build a live video stream web app using WHIP 
 Before starting, you need to prepare the following things:
 1. API key generated from [inLive Studio](https://studio.inlive.app)
 2. WHIP JS library. There are several options for WHIP library like
+   * [medooze/whip-whep-js](https://github.com/medooze/whip-whep-js) (JavaScript)
    * [@eyevinn/whip-web-client](https://www.npmjs.com/package/@eyevinn/whip-web-client) (Typescript)
    * [whip-go](https://github.com/ggarber/whip-go) (Go)
    * [gst-plugins-rs](https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs) (Gstreamer plugins, written in Rust)
    * [Larix Broadcaster](https://softvelum.com/larix/)  (free apps for iOS and Android with WebRTC based on Pion, SDK available)
 
-    For this tutorial we will be using [@eyevinn/whip-web-client](https://www.npmjs.com/package/@eyevinn/whip-web-client) 
+    For this tutorial we will be using [medooze/whip-whep-js](https://github.com/medooze/whip-whep-js) 
 3. Understand the flow of doing a live streaming with inLive which are:
    1. Create a live stream
    2. Prepare the live stream
@@ -51,7 +52,6 @@ To begin with, we will need a simple HTML file as our web app. Create a file nam
 <body>
     <h1>inLive WHIP Tutorial</h1>
     <video id="video" controls></video>
-    <script src="https://cdn.jsdelivr.net/npm/@eyevinn/whip-web-client"></script>
     <button>Go live</button>
     <script src="app.js"></script>
 </body>
@@ -60,10 +60,19 @@ To begin with, we will need a simple HTML file as our web app. Create a file nam
 
 Our HTML file only have a video element and a button. The video element will be used to display the live stream. The button will be used to start the live stream. We also include the WHIP JS library in the HTML file. We will use this library to publish the video stream to our server.
 
+## Download the WHIP JS library and put it in the same folder as the HTML file
+Download the WHIP JS library from [medooze/whip-whep-js](https://github.com/medooze/whip-whep-js/blob/main/whip.js) and put it in the same folder as the HTML file.
+
+Then in the `app.js` file, we will import the WHIP JS library. Put the following code in `app.js`:
+```js
+import { WHIPClient } from "./whip.js"
+```
+
 ## Get the API key from inLive Dashboard 
-Before we start writing the JavaScript function. We need the API key that you can get from inLive Dashboard. Put the API key as global variable in `app.js`
+Before we start writing the JavaScript function. We need the API key that you can get from inLive Dashboard. Put the API key as global variable in `app.js`. We also put the `API_ORIGIN` variable to make it easier to change the API origin in the future. Put the following code in `app.js`:
 ````js
 const API_KEY = '<api-key-here>'
+const API_ORIGIN = 'https://api.inlive.app'
 ````
 
 
@@ -73,7 +82,7 @@ Before able to publish the video stream, we need to create a live stream first. 
 Create a Javascript file named `app.js` and put the following code in it:
 ```js
 async function createStream(){
-    const resp = await fetch('https://api.inlive.app/v1/streams/create',{
+    const resp = await fetch(`${API_ORIGIN}/v1/streams/create`,{
         method: 'POST',
         mode: "cors",
         headers: {
@@ -100,7 +109,7 @@ Next we add the go live function. This function will be called when the button i
 ```js
 async function WHIP(stream, mediaStream){
     const client = new WHIPClient({
-    endpoint: `https://api.inlive.app/v1/streams/${stream.id}/whip`,
+    endpoint: `${API_ORIGIN}/v1/streams/${stream.id}/whip`,
     opts: { 
             debug: true, 
             iceServers: [{ urls: "stun:stun.l.google.com:19320" }],
@@ -118,7 +127,7 @@ Next we add the go live function. This function will be called when the button i
 
 ```js
 async function startStream(stream, mediaStream){
-    const resp = await fetch(`https://api.inlive.app/v1/streams/${stream.id}/start`, {
+    const resp = await fetch(`${API_ORIGIN}/v1/streams/${stream.id}/start`, {
         method: 'POST',
         mode: "cors",
         headers: {
@@ -169,4 +178,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 ## Run the app
 Now we have everything we need. We just need to open the web app, allow the browser to access the camera and microphone, and click the button to go live. You can see the live stream in the video element and you can also open the link to watch the live stream in a new tab.
 
-We put together the example code above in CodePen. You can see the example [here](https://codepen.io/eyevinn-technology/pen/abJjJZq).
+## Conclusion
+We put together the example code above in our [Github repository](https://github.com/inlivedev/inlivedev.github.io/tree/main/examples/whip-webrtc-dash-hls). You can clone the repository and run the app in your local machine.
+
