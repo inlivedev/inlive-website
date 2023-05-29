@@ -9,5 +9,48 @@
   @apply mb-6 text-lg lg:text-xl lg:leading-8 text-gray-600
 }
 
+.blink {
+  margin-right: 0.6em;
+}
+
+.blink::after {
+  margin-right: -0.6em;
+  content: '';
+  display: inline-block;
+  width: 0.6em;
+  height: 0.2em;
+  background-color: #CAD4E0;
+  -webkit-animation: blink 1s step-end infinite;
+  animation: blink 1s step-end infinite;
+}
+
+@-webkit-keyframes blink {
+  0% {
+    opacity: 1.0;
+  }
+
+  50% {
+    opacity: 0.0;
+  }
+
+  100% {
+    opacity: 1.0;
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1.0;
+  }
+
+  50% {
+    opacity: 0.0;
+  }
+
+  100% {
+    opacity: 1.0;
+  }
+}
+
 /* put below to ensure utilities can still override the styles */
 @tailwind utilities;
