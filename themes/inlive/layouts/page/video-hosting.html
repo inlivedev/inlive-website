@@ -19,7 +19,7 @@
       </p>
     </div>
   </section>
-  {{ partial "upcoming/waitlist-cta-banner.html" (
+  {{ partial "landing/waitlist-cta-banner.html" (
   dict "context" .
   "paragraph" "Join our growing waitlist and our team will reach out to you as soon as this feature available."
   ) }}
@@ -48,7 +48,7 @@
       <div class="mt-10 lg:mt-20">
         <ul class="grid grid-cols-1 gap-6 sm:grid-cols-6 sm:grid-rows-6 sm:gap-4 lg:grid-cols-3 lg:grid-rows-1">
           <li class="sm:col-span-3 sm:row-span-6 lg:col-span-1 lg:row-span-1">
-            {{ partial "upcoming/feature-item.html" (
+            {{ partial "landing/feature-item.html" (
             dict "context" .
             "src" "images/video-hosting/instant-playable.png"
             "alt" "The image of nearly instant playable"
@@ -57,7 +57,7 @@
             ) }}
           </li>
           <li class="sm:col-span-3 sm:row-span-6 lg:col-span-1 lg:row-span-1">
-            {{ partial "upcoming/feature-item.html" (
+            {{ partial "landing/feature-item.html" (
             dict "context" .
             "src" "images/video-hosting/smallest-size.png"
             "alt" "The image of smallest size"
@@ -66,7 +66,7 @@
             ) }}
           </li>
           <li class="sm:col-span-3 sm:row-span-6 lg:col-span-1 lg:row-span-1">
-            {{ partial "upcoming/feature-item.html" (
+            {{ partial "landing/feature-item.html" (
             dict "context" .
             "src" "images/video-hosting/adaptive.png"
             "alt" "The image of adaptive bitrate"
@@ -75,42 +75,42 @@
             ) }}
           </li>
           <li class="sm:col-span-3 sm:row-span-2 lg:col-span-1 lg:row-span-1">
-            {{ partial "upcoming/feature-item.html" (
+            {{ partial "landing/feature-item.html" (
             dict "context" .
             "heading" "Deliver Anywhere"
             "paragraph" "Lorem ipsum dolor sit amet consectetur. Ultricies vestibulum hendrerit aenean sed."
             ) }}
           </li>
           <li class="sm:col-span-3 sm:row-span-2 lg:col-span-1 lg:row-span-1">
-            {{ partial "upcoming/feature-item.html" (
+            {{ partial "landing/feature-item.html" (
             dict "context" .
             "heading" "Easier upload"
             "paragraph" "Lorem ipsum dolor sit amet consectetur. Ultricies vestibulum hendrerit aenean sed."
             ) }}
           </li>
           <li class="sm:col-span-3 sm:row-span-2 lg:col-span-1 lg:row-span-1">
-            {{ partial "upcoming/feature-item.html" (
+            {{ partial "landing/feature-item.html" (
             dict "context" .
             "heading" "Large storage"
             "paragraph" "Lorem ipsum dolor sit amet consectetur. Ultricies vestibulum hendrerit aenean sed."
             ) }}
           </li>
           <li class="sm:col-span-3 lg:col-span-1 lg:row-span-1">
-            {{ partial "upcoming/feature-item.html" (
+            {{ partial "landing/feature-item.html" (
             dict "context" .
             "heading" "Quick up and running"
             "paragraph" "Lorem ipsum dolor sit amet consectetur. Ultricies vestibulum hendrerit aenean sed."
             ) }}
           </li>
           <li class="sm:col-span-3 lg:col-span-1 lg:row-span-1">
-            {{ partial "upcoming/feature-item.html" (
+            {{ partial "landing/feature-item.html" (
             dict "context" .
             "heading" "SDK available"
             "paragraph" "Lorem ipsum dolor sit amet consectetur. Ultricies vestibulum hendrerit aenean sed."
             ) }}
           </li>
           <li class="sm:col-span-3 lg:col-span-1 lg:row-span-1">
-            {{ partial "upcoming/feature-item.html" (
+            {{ partial "landing/feature-item.html" (
             dict "context" .
             "heading" "Learn and support"
             "paragraph" "Lorem ipsum dolor sit amet consectetur. Ultricies vestibulum hendrerit aenean sed."
@@ -121,14 +121,14 @@
     </div>
   </section>
 
-  {{ partial "upcoming/waitlist-cta-banner.html" (
+  {{ partial "landing/waitlist-cta-banner.html" (
   dict "context" .
   "heading" "Be one of the first to use"
   "paragraph" "Join our growing waitlist and our team will reach out to you as soon as this feature available."
   ) }}
 </main>
 
-{{ partial "upcoming/waitlist-dialog.html" . }}
+{{ partial "landing/waitlist-dialog.html" . }}
 {{ end }}
 
 {{ define "footer" }}
