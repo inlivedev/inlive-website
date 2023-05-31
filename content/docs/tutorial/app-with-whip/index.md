@@ -48,12 +48,20 @@ To begin with, we will need a simple HTML file as our web app. Create a file nam
 <head>
     <meta charset="UTF-8">
     <title>inLive WHIP Tutorial</title>
+    <style>
+        video{
+            max-width:100%;
+            height:300px;
+            background:#000;
+            margin:2em auto
+        }
+    </style>
 </head>
 <body>
     <h1>inLive WHIP Tutorial</h1>
-    <video id="video" autoplay muted></video>
+    <video id="video" autoplay playsinline muted></video>
     <button>Go live</button>
-    <script type="module" src="app.js"></script>
+    <script src="app.js" type="module"></script>
 </body>
 </html>
 ```
@@ -82,19 +90,19 @@ Before able to publish the video stream, we need to create a live stream first. 
 Create a Javascript file named `app.js` and put the following code in it:
 ```js
 async function createStream(){
-    const resp = await fetch(`${API_ORIGIN}/v1/streams/create`,{
+    const resp = await fetch(`${API_HOST}/v1/streams/create`,{
         method: 'POST',
         mode: "cors",
         headers: {
             'Content-Type': 'application/json',
-            'Authentication': `Bearer ${API_KEY}`
+            'Authorization': `Bearer ${API_KEY}`
         },
         body: JSON.stringify({
             name: 'My live stream',
         })
     })
 
-    if (resp.status === 200){
+    if (resp.ok){
         const respJSON = await resp.json()
         return respJSON.data
     } else {
@@ -108,17 +116,18 @@ Next we add the go live function. This function will be called when the button i
 
 ```js
 async function WHIP(stream, mediaStream){
-    const client = new WHIPClient({
-    endpoint: `${API_ORIGIN}/v1/streams/${stream.id}/whip`,
-    opts: { 
-            debug: true, 
-            iceServers: [{ urls: "stun:stun.l.google.com:19320" }],
-            authkey: API_KEY
-        }
-    });
+    const pc = new RTCPeerConnection();
 
-    await client.setIceServersFromEndpoint();
-    await client.ingest(mediaStream);
+    //Send all tracks
+    for (const track of mediaStream.getTracks()) {
+        //You could add simulcast too here
+        pc.addTrack(track);
+    }
+
+    //Create whip client
+    const whip = new WHIPClient();
+    const url  = `${API_HOST}/v1/streams/${stream.id}/whip`
+    await whip.publish(pc, url, API_KEY);
 }
 ```
 
@@ -127,12 +136,12 @@ Next we add the go live function. This function will be called when the button i
 
 ```js
 async function startStream(stream, mediaStream){
-    const resp = await fetch(`${API_ORIGIN}/v1/streams/${stream.id}/start`, {
+    const resp = await fetch(`${API_HOST}/v1/streams/${stream.id}/start`, {
         method: 'POST',
         mode: "cors",
         headers: {
             'Content-Type': 'application/json',
-            'Authentication': `Bearer ${API_KEY}`
+            'Authorization': `Bearer ${API_KEY}`
         }
     })
 
@@ -166,8 +175,8 @@ document.addEventListener('DOMContentLoaded', async () => {
         const stream = await createStream()
         await WHIP(stream, mediaStream)
         const manifest = await startStream(stream)
-        document.CreateElement('a')
-        a.href = manifest
+        const a = document.createElement('a')
+        a.href = `https://players.akamai.com/players/dashjs?streamUrl=${manifest.dash}`
         a.innerText = 'Watch live stream'
         a.target = '_blank'
         document.body.appendChild(a)
