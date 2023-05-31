@@ -18,7 +18,7 @@ We learned a lot from that and committed to continuing to innovate and improve o
 
 ### Beta release for WebRTC WHIP ingress
 
-Our team has been hard at work developing a beta version of WHIP endpoint to follow the current working WebRTC WHIP ingress on OBS. We think this will be a game-changer for our users who want to take advantage of the latest WebRTC technology for their live streaming needs.
+Our team has been hard at work developing a beta version of WHIP endpoint to follow the current working WebRTC WHIP ingress on OBS. We think this will be a game-changer for our users who want to take advantage of the latest WebRTC technology for their live streaming needs. [Read how to use it in our documentation](/docs/tutorial/tutorial-app-with-whip/).
 
 ### We’re considering to bring the Flutter-based client SDK for mobile development support
 
