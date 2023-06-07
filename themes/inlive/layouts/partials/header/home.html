@@ -15,18 +15,20 @@
   }
 </style>
 
-<section class="px-4 lg:px-16 bg-blue-50 z-10">
+<section class="px-4 lg:px-8 bg-blue-50 z-10">
   {{ partial "header/beta.html" . }}
 </section>
 <section class="w-full sticky top-0 z-10 bg-white">
-  <header class="flex p-4 lg:px-16 lg:py-8 items-center justify-between header-content">
+  <header class="p-3 lg:px-8 lg:py-5 flex items-center justify-between header-content">
     <div class="flex items-center">
-      <a href="/" class="block leading-6 text-gray-700 text-lg font-extrabold tracking-wide" aria-label="InLive header logo">
+      <a href="/" class="block leading-6 text-gray-700 text-lg font-extrabold tracking-wide"
+        aria-label="InLive header logo">
         {{ partial "logo/logo.html" }}
       </a>
     </div>
     <!-- Hamburger menu -->
-    <button type="button" class="block lg:hidden p-1 text-gray-500" aria-label="open navigation menu" onclick="handleToggleNavMenu()">
+    <button type="button" class="block lg:hidden p-1 text-gray-500" aria-label="open navigation menu"
+      onclick="handleToggleNavMenu()">
       <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16" />
       </svg>
