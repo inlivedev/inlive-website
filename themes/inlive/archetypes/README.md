@@ -41,6 +41,8 @@
 
 - description: Description of the blog page. This is used for meta description.
 
+- ogimage: Blog open graph image.
+
 - slug: Blog page's slug.
 
 - summary: A blog post summary. If this is empty, Hugo will automatically takes the first 70 words from the content.

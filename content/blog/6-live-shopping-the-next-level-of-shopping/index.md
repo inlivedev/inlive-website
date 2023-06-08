@@ -4,6 +4,7 @@ date: 2023-02-22
 lastmod: 2023-02-22
 title: "Live Shopping: The Next Level of Shopping"
 description: "Live shopping is a new trend that is revolutionizing the e-commerce space. It combines online shopping with live streaming to create a more engaging customer experience."
+ogimage: /blog/live-shopping-is-the-next-level-of-shopping/images/og-image.png
 slug: "live-shopping-is-the-next-level-of-shopping"
 summary: "Live shopping is a new trend that is revolutionizing the e-commerce space. It combines online shopping with live streaming to create a more engaging customer experience."
 ---

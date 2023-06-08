@@ -9,6 +9,9 @@
 {{ if .Description }} <meta name="description" content="{{ .Description }}"> {{ end }}
 <meta property="og:title" content="{{ if .Title }}{{ .Title }} — {{ end }}{{ .Site.Title }}">
 {{ if .Description }} <meta property="og:description" content="{{ .Description }}"> {{ end }}
+{{ if isset .Params "ogimage" }}
+<meta property="og:image" content="{{ print (getenv `_HUGO_APP_CANONICAL_ORIGIN`) .Params.ogimage }}">
+{{ end }}
 {{ if isset .Params "canonical" }}
 <link rel="canonical" href="{{ .Params.canonical }}">
 {{ else }}
