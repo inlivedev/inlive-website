@@ -14,6 +14,7 @@ During pandemic, we saw a lot of SFU API developed and released to the market. M
 
 When we're decided to work on SFU, these are some of the usecases that we have in mind:
 - Call center, a single button in the app that will connect you to the agent. The agent will be able to see you and talk to you. The agent will be able to share their screen to you. The agent will be able to invite another agent to join the call.
+- AI conversation, allowing an AI bot to join the room and interact to the other participants in the room. The AI bot will be able to see and hear the other participants in the room, even to have conversation or responds questions from the participants.
 - Monitoring and surveillance automation, a camera that will automatically detect a specific object and notify if needed. 
 - A possibility to relay the video stream to another server for further processing. For example, you can relay the video stream to a server that will do the face recognition and send the result back to the SFU. The SFU will then relay the result to the client. The server should be close enough to the SFU to minimize the latency.
 - PBX replacement for enterprise, an app that will connect you to the other person in the company. The app will be able to do the call forwarding, call transfer, call waiting, etc.
@@ -23,7 +24,7 @@ When we're decided to work on SFU, these are some of the usecases that we have i
 When we're thinking about those use case, then what we have in mind is our V1 SFU should be able to do the following:
 - A basic feature SFU should be able to connect to any client that support WebRTC into a room where they can interact with the other clients by publishing and subscribing to the audio/video stream.
 - The SFU should be able to trigger events on any activities related to the room, like when a new client join the room, when a client leave the room, when a client publish a new stream, when a client stop publishing a stream, when a client subscribe to a stream, when a client unsubscribe to a stream, etc.
-- The SFU should provide any possible data through API that can be tracked and used by the app developer to build their app. For example, the API should provide the list of the clients in the room, the list of the streams in the room, participants data like duration of connected
+- The SFU should provide any possible data through real-time API that can be tracked and used by the app developer to build their app. For example, the API should provide the list of the clients in the room, the list of the streams in the room, participants data like duration of connected
 
 ## Our vision
 ### Automate your real time communication app
