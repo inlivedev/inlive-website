@@ -4,6 +4,7 @@ date: {{ now.Format "2006-01-02" }}
 lastmod: {{ now.Format "2006-01-02" }}
 title: {{ .Name | humanize | title }}
 description: {{ .Name | humanize | title }}
+ogimage: # Relative og image URL
 slug: {{ .Name }}
-summary: #Please remove this if you don't need custom summary
+summary: # Please remove this if you don't need custom summary
 ---

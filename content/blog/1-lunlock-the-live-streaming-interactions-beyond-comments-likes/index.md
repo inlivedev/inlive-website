@@ -3,6 +3,7 @@
 date: 2022-03-01
 lastmod: 2022-03-01
 title : To unlock the live streaming interactions beyond comments and likes
+ogimage: /blog/unlock-the-live-streaming-interactions-beyond-comments-likes/images/og-image.png
 slug : unlock-the-live-streaming-interactions-beyond-comments-likes
 summary: inLive is going to unlock the live streaming interactions beyond comments and likes. We want to help more startups and developers to build products around live streaming and help us discover new way to interact through live streaming.
 ---

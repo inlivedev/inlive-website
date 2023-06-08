@@ -3,6 +3,7 @@ date: 2023-02-08
 lastmod: 2023-02-08
 title: Product Hunt Launching and JavaScript SDK Released
 description: inLive launched at Product Hunt and release JavaScript SDK
+ogimage: /blog/product-hunt-launching-js-sdk-released/images/og-image.png
 slug: product-hunt-launching-js-sdk-released
 summary: We are launching at Product Hunt, and together with this launching we also release our JavaScript SDK that can help you develop a WebRTC broadcasting client with a simple code.
 draft: false
