@@ -4,6 +4,7 @@ date: 2023-02-22
 lastmod: 2023-02-22
 title: Online vs Offline Class
 description: The rise of online classes during the pandemic sparked a debate in the education community surrounding which approach is better and whether online learning could effectively replace their offline counterpart. Learn about the benefits and drawbacks of online and offline classes and how modern streaming platforms like InLive help bridge the gap between online and offline learning experience.
+ogimage: /blog/online-vs-offline-class/images/og-image.png
 slug: online-vs-offline-class
 summary: The rise of online classes during the pandemic sparked a debate in the education community surrounding which approach is better and whether online learning could effectively replace their offline counterpart. Learn about the benefits and drawbacks of online and offline classes and how modern streaming platforms like InLive help bridge the gap between online and offline learning experience.
 ---
