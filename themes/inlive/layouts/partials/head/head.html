@@ -23,7 +23,12 @@
 {{ if isset .Params "ogimage" }}
   <meta property="og:image" content="{{ print (getenv `_HUGO_APP_CANONICAL_ORIGIN`) .Params.ogimage }}">
 {{ end }}
+
+{{ if or (eq .Section "blog") (eq .Section "docs") }}
+<meta property="og:type" content="article">
+{{ else }}
 <meta property="og:type" content="website">
+{{ end }}
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
