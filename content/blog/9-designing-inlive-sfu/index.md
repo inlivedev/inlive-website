@@ -2,15 +2,15 @@
 # Refer to the themes/inlive/archetypes/README.md
 date: 2023-02-22
 lastmod: 2023-02-22
-title: Designing inLive SFU(Selective Forwarding Unit)
+title: Designing inLive Hub, an automated and extendable WebRTC SFU(Selective Forwarding Unit)
 description: How we design the inlive SFU to be unique and different from other SFU. 
 slug: designing-inlive-sfu
-summary: There are many SFU out there, but we saw they're still lack of automation and data driven to develop a new real time communication app beyond video conference. We want to build a SFU that can be used for any real time communication app, not just video conference.
+summary: There are many SFU out there, but we saw they're still lack of automation and data driven to develop a new real time interaction app beyond video conference. We want to build a SFU that can be used for any real time app, not just video conference.
 ---
 
-# Designing inLive SFU(Selective Forwarding Unit)
+# Designing inLive Hub
 
-During pandemic, we saw a lot of SFU API developed and released to the market. Most of them focus on the conference app usecase where a participant will join into a room and interact with the other participants in the room. Basically the API will help you develop a Zoom/Google Meet like app. But real time communication app is beyond conference app. We want to build a SFU that can be used for any real time communication app, not just video conference. To be able to do that, we want to focus on automation and data driven SFU.
+During pandemic, we saw a lot of WebRTC SFU(Selective Forwarding Unit) API developed and released to the market. Most of them focus on the conference app usecase where a participant will join into a room and interact with the other participants in the room. Basically the API will help you develop a Zoom/Google Meet like app. But a real time interaction app is beyond conference app. We want to build a SFU that can be used for any real-time use cases, not just video conference. To be able to do that, we want to focus on automation and data driven SFU.
 
 When we're decided to work on SFU, these are some of the usecases that we have in mind:
 - Call center, a single button in the app that will connect you to the agent. The agent will be able to see you and talk to you. The agent will be able to share their screen to you. The agent will be able to invite another agent to join the call.
@@ -20,14 +20,14 @@ When we're decided to work on SFU, these are some of the usecases that we have i
 - PBX replacement for enterprise, an app that will connect you to the other person in the company. The app will be able to do the call forwarding, call transfer, call waiting, etc.
 
 ## The basic features
-
 When we're thinking about those use case, then what we have in mind is our V1 SFU should be able to do the following:
 - A basic feature SFU should be able to connect to any client that support WebRTC into a room where they can interact with the other clients by publishing and subscribing to the audio/video stream.
+- The room also should support exchanging data between the clients in the room. The data can be anything, like a text message, a file, or even a binary data.
 - The SFU should be able to trigger events on any activities related to the room, like when a new client join the room, when a client leave the room, when a client publish a new stream, when a client stop publishing a stream, when a client subscribe to a stream, when a client unsubscribe to a stream, etc.
 - The SFU should provide any possible data through real-time API that can be tracked and used by the app developer to build their app. For example, the API should provide the list of the clients in the room, the list of the streams in the room, participants data like duration of connected
 
 ## Our vision
-### Automate your real time communication app
+### Automate your real time interaction app
 To enable the automation, data and events are the main ingridients. To allow developers develop an automation easily, all the data and events will be available through API, webhook, and server sent event(SSE). The app developer can choose how to use those data and events to build their automation in realtime.
 
 When the goal is automation, the event and data driven is not enough. Processing those events and data, including the media streams, should be automated as well. The main challenge will be the latency when pre processing the media streams, there are two possible caused of the latency:
@@ -47,7 +47,7 @@ Or to get the live transcription the audio stream in the room, you can call this
 ```
 https://api.inlive.app/hub/v1/room/<room-id>/transcription
 ```
-Which will return a Server Sent Event(SSE) stream that will send the transcription result in real time, or a full transcript when the room session is ended. Behind the screen the SFU will relay the audio stream to the pre processing server, the pre processing server will do the transcription before send it to the client through  SSE.
+Which will return a Server Sent Event(SSE) stream that will send the transcription result in real time, or a full transcript when the room session is ended. Behind the screen the SFU will relay the audio stream to the pre processing server, the pre processing server will do the transcription before send it to the client through  SSE. When the transcription can be done in real time, you can build a live captioning app, or an AI assistent that will respond to a command like "Hey Google" or "Hey Siri".
 
 By having a standard way to plug in the pre and post processing server, everyone can easily extend the functionality of this SFU. Combining with the real-time data and events, we can build a real time communication app that can be customize and extend easily.
 
