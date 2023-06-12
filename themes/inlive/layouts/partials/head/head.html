@@ -6,21 +6,56 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" crossorigin="anonymous">
 <title>{{ if .Title }}{{ .Title }} — {{ end }}{{ .Site.Title }}</title>
 <meta name="title" content="{{ if .Title }}{{ .Title }} — {{ end }}{{ .Site.Title }}">
-{{ if .Description }} <meta name="description" content="{{ .Description }}"> {{ end }}
-<meta property="og:title" content="{{ if .Title }}{{ .Title }} — {{ end }}{{ .Site.Title }}">
-{{ if .Description }} <meta property="og:description" content="{{ .Description }}"> {{ end }}
-{{ if isset .Params "ogimage" }}
-<meta property="og:image" content="{{ print (getenv `_HUGO_APP_CANONICAL_ORIGIN`) .Params.ogimage }}">
+{{ if .Description }}
+  <meta name="description" content="{{ .Description }}">
 {{ end }}
+
+<!-- Open Graph -->
+<meta property="og:title" content="{{ if .Title }}{{ .Title }} — {{ end }}{{ .Site.Title }}">
+{{ if .Description }}
+  <meta property="og:description" content="{{ .Description }}">
+{{ end }}
+{{ if isset .Params "canonical" }}
+  <meta property="og:url" content="{{ .Params.canonical }}">
+{{ else }}
+  <meta property="og:url" content="{{ print (getenv `_HUGO_APP_CANONICAL_ORIGIN`) .RelPermalink }}">
+{{ end }}
+{{ if isset .Params "ogimage" }}
+  <meta property="og:image" content="{{ print (getenv `_HUGO_APP_CANONICAL_ORIGIN`) .Params.ogimage }}">
+{{ end }}
+
+{{ if or (eq .Section "blog") (eq .Section "docs") }}
+<meta property="og:type" content="article">
+{{ else }}
+<meta property="og:type" content="website">
+{{ end }}
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ if .Title }}{{ .Title }} — {{ end }}{{ .Site.Title }}">
+{{ if .Description }}
+  <meta name="twitter:description" content="{{ .Description }}">
+{{ end }}
+{{ if isset .Params "canonical" }}
+  <meta property="twitter:url" content="{{ .Params.canonical }}">
+{{ else }}
+  <meta property="twitter:url" content="{{ print (getenv `_HUGO_APP_CANONICAL_ORIGIN`) .RelPermalink }}">
+{{ end }}
+{{ if isset .Params "ogimage" }}
+  <meta name="twitter:image" content="{{ print (getenv `_HUGO_APP_CANONICAL_ORIGIN`) .Params.ogimage }}">
+{{ end }}
+<meta name="twitter:site" content="@inliveapp">
+<meta name="twitter:creator" content="@inliveapp">
+
+<link rel="icon" href="/images/favicon/favicon.ico" sizes="any">
+<link rel="icon" href="/images/favicon/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/images/favicon/apple-touch-icon.png">
+<link rel="manifest" href="/images/favicon/manifest.webmanifest">
 {{ if isset .Params "canonical" }}
 <link rel="canonical" href="{{ .Params.canonical }}">
 {{ else }}
 <link rel="canonical" href="{{ print (getenv `_HUGO_APP_CANONICAL_ORIGIN`) .RelPermalink }}">
 {{ end }}
-<link rel="icon" href="/images/favicon/favicon.ico" sizes="any">
-<link rel="icon" href="/images/favicon/favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="/images/favicon/apple-touch-icon.png">
-<link rel="manifest" href="/images/favicon/manifest.webmanifest">
 
 {{/* This will greatly speedup build times in development which is required due to hack for rebuilding / regenerating the tailwind styles https://github.com/gohugoio/hugo/issues/8343#issuecomment-1019383325 */}}
 {{ partialCached "head/css.html" . }}
