@@ -1,22 +1,23 @@
 {{ define "main" }}
 <div class="min-h-screen flex flex-col">
   {{ partial "header/header.html" . }}
-  <div class="lg:flex lg:flex-1">
+  <div class="lg:flex flex-1 max-w-7xl lg:mx-auto w-full">
     {{ partial "docs/sidebar.html" . }}
-    {{/*  Main Content  */}}
-    <div class="lg:flex-1 min-w-0 px-4 lg:px-10 pt-6 lg:pt-8">
+    {{/* Main Content */}}
+    <div class="lg:flex-1 min-w-0 px-4 lg:px-8 pt-6 lg:pt-8">
       <main>
         {{ partial "docs/breadcrumbs.html" . }}
-        <article id="docs-content" class="prose prose-sm lg:prose-base max-w-none prose-blue prose-a:no-underline hover:prose-a:underline prose-blockquote:not-italic prose-quoteless">
+        <article id="docs-content"
+          class="prose prose-sm lg:prose-base max-w-none prose-blue prose-a:no-underline hover:prose-a:underline prose-blockquote:not-italic prose-quoteless">
           {{ .Content }}
         </article>
       </main>
       {{ partial "docs/pagination.html" . }}
       {{ partial "docs/footer.html" . }}
     </div>
-    <div class="hidden xl:block w-64">
-      {{/* partial "docs/table-of-content.html" . */}}
-    </div>
+    {{/* <div class="hidden xl:block w-64">
+      {{ partial "docs/table-of-content.html" . }}
+    </div> */}}
   </div>
 </div>
 {{ end }}
