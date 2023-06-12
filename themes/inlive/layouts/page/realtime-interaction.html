@@ -1,0 +1,165 @@
+{{ define "main" }}
+{{ partial "header/header.html" . }}
+
+<main>
+  <section class="mt-16 lg:mt-52 mx-auto max-w-7xl px-4 lg:px-8">
+    <div class="max-w-[600px]">
+      <div
+        class="inline-block mb-4 py-1 px-3 text-center bg-emerald-100 rounded-3xl text-xs font-semibold text-emerald-700">
+        Available for trial
+      </div>
+      <h1 class="blink font-bold text-3xl lg:text-6xl -tracking-wide text-slate-800">
+        Automate your video, audio, and data interaction with our real-time API
+      </h1>
+      <p class="mt-4 lg:mt-6 font-medium text-base text-slate-500">
+        inLive Hub, a real-time communication platform for multi-participants to exchange live video, audio, and data. You can use inLive hub to build and automate online interactions like telemedicine, online class, or customer support.
+      </p>
+    </div>
+  </section>
+
+  {{ partial "landing/waitlist-dialog.html" . }}
+  
+  <style>
+    .bg-gradient {
+      background: linear-gradient(to bottom, hsla(0, 0%, 100%, 1), hsla(0, 0%, 100%, 1), hsla(210, 25%, 98%, 1), hsla(210, 25%, 98%, 1));
+    }
+  </style>
+
+<section class="mt-10 bg-gradient pb-12 lg:pb-32">
+  <div class="mx-auto max-w-7xl px-4 lg:px-8">
+    <div class="md:text-center lg:max-w-3xl mx-auto flex flex-col gap-2 lg:gap-4">
+      <div>
+        <h2 class="font-bold text-3xl lg:text-4xl text-slate-800 leading-tight">
+          Affordable platform with fair pricing model
+        </h2>
+      </div>
+      <div>
+        <p class="font-medium text-base lg:text-lg leading-6 text-slate-500">
+          Part of inLive mission is to provide an affordable alternative for media technology, we provide a fair and transparent pricing model. We charge based on the cost structure, like bandwidth and server compute time.
+        </p>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <section class="mt-10 bg-gradient pb-12 lg:pb-32">
+    <div class="mx-auto max-w-7xl px-4 lg:px-8">
+      <div class="md:text-center lg:max-w-3xl mx-auto flex flex-col gap-2 lg:gap-4">
+        <div>
+          <h2 class="font-bold text-3xl lg:text-4xl text-slate-800 leading-tight">
+           What you will able to build with inLive Hub
+          </h2>
+        </div>
+      </div>
+      <style>
+        @media (min-width: 768px) {
+          .feature-list {
+            grid-template-columns: repeat(2, minmax(0, 400px));
+            justify-content: center;
+          }
+        }
+      </style>
+
+      <div class="mt-10 lg:mt-20">
+        <ul class="feature-list grid gap-6 sm:gap-4">
+          <li class="sm:col-span-1">
+            {{ partial "landing/feature-item.html" (
+            dict "context" .
+            "heading" `Live conference room`
+            "paragraph" `Create a secure conference room with a simple REST API and bring multiple participants together
+            to interact in real-time.`
+            ) }}
+          </li>
+          <li class="sm:col-span-1">
+            {{ partial "landing/feature-item.html" (
+            dict "context" .
+            "heading" `AI assistant`
+            "paragraph" `Connect a LLM(Large Language Model) with Voice To Text and Text To Voice to create a live AI bot that can interact with your participants.`
+            ) }}
+          </li>
+          <li class="sm:col-span-1">
+            {{ partial "landing/feature-item.html" (
+            dict "context" .
+            "heading" `Automate your conference room`
+            "paragraph" `Use real-time events to automate your conference room, like record the participants attendance`
+            ) }}
+          </li>
+          <li class="sm:col-span-1">
+            {{ partial "landing/feature-item.html" (
+            dict "context" .
+            "heading" `Smart monitoring and surveillance`
+            "paragraph" `Create a smart monitoring system with real-time object detection, and trigger an action when a specific object is detected.`
+            ) }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="mt-10 bg-gradient pb-12 lg:pb-32">
+    <div class="mx-auto max-w-7xl px-4 lg:px-8">
+      <div class="md:text-center lg:max-w-3xl mx-auto flex flex-col gap-2 lg:gap-4">
+        <div>
+          <h2 class="font-bold text-3xl lg:text-4xl text-slate-800 leading-tight">
+           Core Features
+          </h2>
+        </div>
+      </div>
+      <style>
+        @media (min-width: 768px) {
+          .feature-list {
+            grid-template-columns: repeat(2, minmax(0, 400px));
+            justify-content: center;
+          }
+        }
+      </style>
+
+      <div class="mt-10 lg:mt-20">
+        <ul class="feature-list grid gap-6 sm:gap-4">
+          <li class="sm:col-span-1">
+            {{ partial "landing/feature-item.html" (
+            dict "context" .
+            "heading" `Online room`
+            "paragraph" `Bring multiple participants to join an online room, and let them publish anything in the room, from video, audio, or data to other participants.`
+            ) }}
+          </li>
+          <li class="sm:col-span-1">
+            {{ partial "landing/feature-item.html" (
+            dict "context" .
+            "heading" `Reliable connection`
+            "paragraph" `Build in WebRTC feature to allow participants to interact in any network condition, even when switching networks.`
+            ) }}
+          </li>
+          <li class="sm:col-span-1">
+            {{ partial "landing/feature-item.html" (
+            dict "context" .
+            "heading" `Real-time events and data`
+            "paragraph" `Get all events in real-time through webhook and SSE(server-sent-event) HTTP request for your backend or frontend applications`
+            ) }}
+          </li>
+          <li class="sm:col-span-1">
+            {{ partial "landing/feature-item.html" (
+            dict "context" .
+            "heading" `Analytics and custom data`
+            "paragraph" `Built-in room, participant, and stream analytics data for your automation. Or add custom data to build a custom logic on top of it.`
+            ) }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  {{ partial "landing/feedback.html" . }}
+</main>
+
+{{ partial "landing/waitlist-dialog.html" . }}
+{{ end }}
+
+{{ define "footer" }}
+{{ partial "footer/footer.html" . }}
+{{ end }}
+
+{{ define "script" }}
+{{ $globalJS := resources.Get "js/global.js" | minify }}
+<script type="text/javascript" src="{{ $globalJS.RelPermalink }}" defer></script>
+{{ end }}
