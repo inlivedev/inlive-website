@@ -3,8 +3,9 @@
 date: 2023-02-22
 lastmod: 2023-02-22
 title: Designing inLive Hub, an automated and extendable WebRTC SFU(Selective Forwarding Unit)
-description: How we design the inlive SFU to be unique and different from other SFU. 
-slug: designing-inlive-sfu
+description: How we design the inlive SFU to be unique and different from other SFU.
+ogimage: /blog/designing-inlive-hub/images/og-image.png
+slug: designing-inlive-hub
 summary: There are many SFU out there, but we saw they're still lack of automation and data driven to develop a new real time interactive app beyond video conference. We want to build a SFU that can be used for any real time app, not just video conference.
 ---
 
@@ -15,7 +16,7 @@ During pandemic, we saw a lot of WebRTC SFU(Selective Forwarding Unit) API devel
 When we're decided to work on SFU, these are some of the usecases that we have in mind:
 - Call center, a single button in the app that will connect you to the agent. The agent will be able to see you and talk to you. The agent will be able to share their screen to you. The agent will be able to invite another agent to join the call.
 - AI conversation, allowing an AI bot to join the room and interact to the other participants in the room. The AI bot will be able to see and hear the other participants in the room, even to have conversation or responds questions from the participants.
-- Monitoring and surveillance automation, a camera that will automatically detect a specific object and notify if needed. 
+- Monitoring and surveillance automation, a camera that will automatically detect a specific object and notify if needed.
 - A possibility to relay the video stream to another server for further processing. For example, you can relay the video stream to a server that will do the face recognition and send the result back to the SFU. The SFU will then relay the result to the client. The server should be close enough to the SFU to minimize the latency.
 - PBX replacement for enterprise, an app that will connect you to the other person in the company. The app will be able to do the call forwarding, call transfer, call waiting, etc.
 
