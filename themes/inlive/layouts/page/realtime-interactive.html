@@ -3,17 +3,32 @@
 
 <main>
   <section class="mt-16 lg:mt-52 mx-auto max-w-7xl px-4 lg:px-8">
-    <div class="max-w-[600px]">
-      <div
-        class="inline-block mb-4 py-1 px-3 text-center bg-emerald-100 rounded-3xl text-xs font-semibold text-emerald-700">
-        Available for trial
+    <div>
+      <div class="flex flex-col gap-10 lg:flex-row">
+        <div class="flex-1 max-w-[600px]">
+          <div
+            class="inline-block mb-4 py-1 px-3 text-center bg-emerald-100 rounded-3xl text-xs font-semibold text-emerald-700">
+            Available for trial
+          </div>
+          <h1 class="blink font-bold text-3xl lg:text-6xl -tracking-wide text-slate-800">
+            Automate your video, audio, and data interactions with our real-time API
+          </h1>
+          <p class="mt-4 lg:mt-6 font-medium text-base text-slate-500">
+            inLive Hub, a real-time interactive platform for multi-participants to exchange live video, audio, and data.
+            Built on top of WebRTC SFU(Selective Forwarding Unit) technology, you can use inLive hub to develop and
+            automate
+            online interactions like telemedicine, online class, or customer support.
+          </p>
+        </div>
+        <div class="flex-1 flex lg:justify-end">
+          <div class="max-w-xs lg:max-w-lg w-full aspect-square">
+            <video autoplay muted loop class="w-full h-full">
+              <source src="/videos/realtime-interactive/inlive-hub.webm" type="video/webm">
+              <source src="/videos/realtime-interactive/inlive-hub.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
       </div>
-      <h1 class="blink font-bold text-3xl lg:text-6xl -tracking-wide text-slate-800">
-        Automate your video, audio, and data interactions with our real-time API
-      </h1>
-      <p class="mt-4 lg:mt-6 font-medium text-base text-slate-500">
-        inLive Hub, a real-time interactive platform for multi-participants to exchange live video, audio, and data. Built on top of WebRTC SFU(Selective Forwarding Unit) technology, you can use inLive hub to develop and automate online interactions like telemedicine, online class, or customer support.
-      </p>
     </div>
   </section>
 
@@ -23,7 +38,7 @@
     }
   </style>
 
-<section class="mt-10 bg-gradient pb-12 lg:pb-32">
+<section class="bg-gradient py-12 lg:py-32">
   <div class="mx-auto max-w-7xl px-4 lg:px-8">
     <div class="md:text-center lg:max-w-3xl mx-auto flex flex-col gap-2 lg:gap-4">
       <div>
