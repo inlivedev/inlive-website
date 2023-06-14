@@ -3,7 +3,7 @@
 
 <style>
   @media (min-width: 640px) {
-    .feature-list {
+    .feature-list, .use-case {
       grid-template-columns: repeat(2, minmax(0, 400px));
       justify-content: center;
     }
@@ -84,35 +84,58 @@
       </div>
 
       <div class="mt-10 lg:mt-20">
-        <ul class="feature-list grid gap-6 sm:gap-4">
+        <ul class="use-case grid gap-6 sm:gap-4">
           <li class="sm:col-span-1">
-            {{ partial "landing/feature-item.html" (
-            dict "context" .
-            "heading" `Live conference room`
-            "paragraph" `Create a secure conference room with a simple REST API and bring multiple participants together
-            to interact in real-time with video, audio, or text.`
-            ) }}
+            <div class="w-full h-full border border-slate-200 rounded-xl bg-white overflow-hidden flex flex-col gap-1 lg:gap-2">
+              <div class="p-5 lg:p-6">
+                <img class="w-12 lg:w-16 h-12 lg:h-16" src="/images/realtime-interactive/live-conference-icon.svg" alt="" loading="lazy">
+              </div>
+              <div class="px-5 lg:px-6 pb-5">
+                <h3 class="font-semibold text-xl text-slate-700">Live conference room</h3>
+                <p class="mt-4 text-slate-500">
+                  Create a secure conference room with a simple REST API and bring multiple participants together to interact in real-time with video, audio, or text.
+                </p>
+              </div>
+            </div>
           </li>
           <li class="sm:col-span-1">
-            {{ partial "landing/feature-item.html" (
-            dict "context" .
-            "heading" `AI assistant`
-            "paragraph" `Connect a LLM(Large Language Model) with Voice To Text and Text To Voice to create a live AI bot that can interact with your participants.`
-            ) }}
+            <div class="w-full h-full border border-slate-200 rounded-xl bg-white overflow-hidden flex flex-col gap-1 lg:gap-2">
+              <div class="p-5 lg:p-6">
+                <img class="w-12 lg:w-16 h-12 lg:h-16" src="/images/realtime-interactive/ai-assistant-icon.svg" alt="" loading="lazy">
+              </div>
+              <div class="px-5 lg:px-6 pb-5">
+                <h3 class="font-semibold text-xl text-slate-700">AI assistant</h3>
+                <p class="mt-4 text-slate-500">
+                  Connect a LLM(Large Language Model) with Voice To Text and Text To Voice to create a live AI bot that can interact with your participants.
+                </p>
+              </div>
+            </div>
           </li>
           <li class="sm:col-span-1">
-            {{ partial "landing/feature-item.html" (
-            dict "context" .
-            "heading" `Automate your conference room`
-            "paragraph" `Use real-time events to automate your conference room, like record the participants attendance`
-            ) }}
+            <div class="w-full h-full border border-slate-200 rounded-xl bg-white overflow-hidden flex flex-col gap-1 lg:gap-2">
+              <div class="p-5 lg:p-6">
+                <img class="w-12 lg:w-16 h-12 lg:h-16" src="/images/realtime-interactive/automation-icon.svg" alt="" loading="lazy">
+              </div>
+              <div class="px-5 lg:px-6 pb-5">
+                <h3 class="font-semibold text-xl text-slate-700">Automate your conference room</h3>
+                <p class="mt-4 text-slate-500">
+                  Use real-time events to automate your conference room, like record the participants attendance.
+                </p>
+              </div>
+            </div>
           </li>
           <li class="sm:col-span-1">
-            {{ partial "landing/feature-item.html" (
-            dict "context" .
-            "heading" `Smart monitoring and surveillance`
-            "paragraph" `Create a smart monitoring system with real-time object detection, and trigger an action when a specific object is detected.`
-            ) }}
+            <div class="w-full h-full border border-slate-200 rounded-xl bg-white overflow-hidden flex flex-col gap-1 lg:gap-2">
+              <div class="p-5 lg:p-6">
+                <img class="w-12 lg:w-16 h-12 lg:h-16" src="/images/realtime-interactive/smart-monitoring-icon.svg" alt="" loading="lazy">
+              </div>
+              <div class="px-5 lg:px-6 pb-5">
+                <h3 class="font-semibold text-xl text-slate-700">Smart monitoring and surveillance</h3>
+                <p class="mt-4 text-slate-500">
+                  Create a smart monitoring system with real-time object detection, and trigger an action when a specific object is detected.
+                </p>
+              </div>
+            </div>
           </li>
         </ul>
       </div>
