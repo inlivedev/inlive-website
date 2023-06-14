@@ -42,16 +42,16 @@
           <input type="text" name="b_78e08e378494afa75f8349864_db21dfbf2f" tabindex="-1" value="">
         </div>
       </div>
-      <div style="position: absolute; left: -10000px;" aria-hidden="true">
-        <strong>Type</strong>
+      <div style="position: absolute; left: -10000px;" aria-hidden="true" class="mt-4 flex flex-col gap-1 text-sm text-slate-700">
+        <strong class="font-medium">Subscription Type</strong>
         <ul>
           <li>
-            <input type="radio" value="1" name="group[346244]" id="mce-group[346244]-346244-0" {{ if eq .type `video-hosting` }} checked="checked" {{ end }} onclick="return false;">
-            <label for="mce-group[346244]-346244-0">Video Hosting</label>
+            <input type="checkbox" value="1" name="group[346256][1]" id="mce-group[346256]-346256-0" {{ if eq .type `inlive-hub` }} checked="checked" {{ end }} onclick="return false;">
+            <label for="mce-group[346256]-346256-0">InLive Hub</label>
           </li>
           <li>
-            <input type="radio" value="2" name="group[346244]" id="mce-group[346244]-346244-1" {{ if eq .type `inlive-hub` }} checked="checked" {{ end }} onclick="return false;">
-            <label for="mce-group[346244]-346244-1">InLive Hub (SFU)</label>
+            <input type="checkbox" value="2" name="group[346256][2]" id="mce-group[346256]-346256-1" {{ if eq .type `video-hosting` }} checked="checked" {{ end }} onclick="return false;">
+            <label for="mce-group[346256]-346256-1">Video Hosting</label>
           </li>
         </ul>
       </div>
