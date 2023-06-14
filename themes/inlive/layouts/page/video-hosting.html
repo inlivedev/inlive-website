@@ -128,7 +128,10 @@
   ) }}
 </main>
 
-{{ partial "landing/waitlist-dialog.html" . }}
+{{ partial "landing/waitlist-dialog.html" (
+dict "context" .
+"type" "video-hosting"
+) }}
 {{ end }}
 
 {{ define "footer" }}

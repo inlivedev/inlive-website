@@ -21,7 +21,7 @@
     <form
       action="https://app.us8.list-manage.com/subscribe/post?u=78e08e378494afa75f8349864&amp;id=db21dfbf2f&amp;f_id=00287be0f0"
       method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate max-w-xs"
-      target="_self">
+      target="_blank">
       <h2 class="font-bold text-lg md:text-xl text-center text-slate-900">
         Join Waitlist and Keep Updated
       </h2>
@@ -38,9 +38,22 @@
             id="mce-EMAIL" required placeholder="Enter your email">
         </div>
         <!-- real people should not fill this in and expect good things - do not remove this or risk from bot signups-->
-        <div style="position: absolute; left: -5000px;" aria-hidden="true">
+        <div style="position: absolute; left: -10000px;" aria-hidden="true">
           <input type="text" name="b_78e08e378494afa75f8349864_db21dfbf2f" tabindex="-1" value="">
         </div>
+      </div>
+      <div style="position: absolute; left: -10000px;" aria-hidden="true">
+        <strong>Type</strong>
+        <ul>
+          <li>
+            <input type="radio" value="1" name="group[346244]" id="mce-group[346244]-346244-0" {{ if eq .type `video-hosting` }} checked="checked" {{ end }} onclick="return false;">
+            <label for="mce-group[346244]-346244-0">Video Hosting</label>
+          </li>
+          <li>
+            <input type="radio" value="2" name="group[346244]" id="mce-group[346244]-346244-1" {{ if eq .type `inlive-hub` }} checked="checked" {{ end }} onclick="return false;">
+            <label for="mce-group[346244]-346244-1">InLive Hub (SFU)</label>
+          </li>
+        </ul>
       </div>
       <div class="mt-6">
         <button id="mc-embedded-subscribe" type="submit" name="subscribe" value="Subscribe"
