@@ -41,13 +41,18 @@
     </div>
   </section>
 
+  {{ partial "landing/waitlist-cta-banner.html" (
+  dict "context" .
+  "paragraph" "Join our growing waitlist and our team will reach out to you as soon as this feature available."
+  ) }}
+
   <style>
     .bg-gradient {
       background: linear-gradient(to bottom, hsla(0, 0%, 100%, 1), hsla(0, 0%, 100%, 1), hsla(210, 25%, 98%, 1), hsla(210, 25%, 98%, 1));
     }
   </style>
 
-<section class="bg-gradient py-12 lg:py-32">
+<section class="py-10">
   <div class="mx-auto max-w-7xl px-4 lg:px-8">
     <div class="md:text-center lg:max-w-3xl mx-auto flex flex-col gap-2 lg:gap-4">
       <div>
@@ -68,7 +73,7 @@
     </div>
   </section>
 
-  <section class="pt-10 bg-gradient pb-20 lg:pb-40">
+  <section class="pt-20 bg-gradient pb-20 lg:pb-32">
     <div class="mx-auto max-w-7xl px-4 lg:px-8">
       <div class="md:text-center lg:max-w-3xl mx-auto flex flex-col gap-2 lg:gap-4">
         <div>
@@ -114,7 +119,7 @@
     </div>
   </section>
 
-  <section class="pt-10 bg-gradient pb-20 lg:pb-40">
+  <section class="pt-20 bg-gradient pb-20 lg:pb-32">
     <div class="mx-auto max-w-7xl px-4 lg:px-8">
       <div class="md:text-center lg:max-w-3xl mx-auto flex flex-col gap-2 lg:gap-4">
         <div>
@@ -168,6 +173,12 @@
 
   {{ partial "landing/feedback.html" . }}
 </main>
+
+{{ partial "landing/waitlist-dialog.html" (
+dict "context" .
+"type" "inlive-hub"
+) }}
+
 {{ end }}
 
 {{ define "footer" }}
