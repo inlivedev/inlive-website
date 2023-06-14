@@ -1,0 +1,38 @@
+<section class="my-10">
+  <div class="py-10 relative mx-auto max-w-7xl">
+    <div class="hidden lg:block w-full h-full absolute top-0 left-0 lg:px-8 -z-10">
+      <div class="w-full h-full relative">
+        <div class="dashed-vertical-line absolute left-0"></div>
+        <div class="dashed-vertical-line absolute right-0"></div>
+      </div>
+    </div>
+    <div class="py-8 px-4 lg:px-8 lg:text-center relative overflow-hidden">
+      <div class="dashed-horizontal-line absolute top-0"></div>
+      <div class="block lg:inline-block">
+        <div class="flex flex-col gap-2 lg:gap-4">
+          {{ if .heading }}
+          <div>
+            <h2 class="font-bold text-2xl lg:text-4xl text-slate-800">
+              {{ .heading }}
+            </h2>
+          </div>
+          {{ end }}
+          {{ if .paragraph }}
+          <div>
+            <p class="font-medium text-base text-slate-700">
+              {{ .paragraph }}
+            </p>
+          </div>
+          {{ end }}
+          <div class="mt-2">
+            <button data-open-dialog="waitlist-form"
+              class="py-2 px-4 bg-slate-900 rounded-md font-medium text-base text-slate-100 waitlist-cta">
+              Join waitlist
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="dashed-horizontal-line absolute bottom-0"></div>
+    </div>
+  </div>
+</section>

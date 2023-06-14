@@ -1,34 +1,45 @@
 {{ $inliveStudioOrigin := getenv "_HUGO_INLIVE_STUDIO_ORIGIN" }}
 <nav class="hidden lg:block">
   <ul class="flex items-center">
-    <li class="mr-8 font-semibold text-sm leading-6">
+    <li class="mr-6 xl:mr-10 font-semibold text-sm leading-6">
       <a href="/#how-to-develop" class="inline-block text-gray-700 hover:text-blue-600">How to Develop</a>
     </li>
-    <li class="mr-8 font-semibold text-sm leading-6">
+    <li class="mr-6 xl:mr-10 font-semibold text-sm leading-6">
       <a href="/#why" class="inline-block text-gray-700 hover:text-blue-600">Why</a>
     </li>
-    <li class="mr-8 font-semibold text-sm leading-6">
+    <li class="mr-6 xl:mr-10 font-semibold text-sm leading-6">
       <a href="/#our-mission" class="inline-block text-gray-700 hover:text-blue-600">Our Mission</a>
     </li>
-    <li class="mr-8 font-semibold text-sm leading-6">
-      <a href="/pricing/" class="inline-block text-gray-700 hover:text-blue-600" data-tracking-event="open-link" data-tracking-label="Pricing navigation link on the desktop header">Pricing</a>
+    <li class="mr-6 xl:mr-10 font-semibold text-sm leading-6">
+      <a href="/realtime-interactive/" class="inline-block text-gray-700 hover:text-blue-600">Realtime Interactive</a>
+    </li>
+    {{/*  <li class="mr-6 xl:mr-10 font-semibold text-sm leading-6">
+      <a href="/video-hosting/" class="inline-block text-gray-700 hover:text-blue-600">Video Hosting</a>
+    </li>  */}}
+    <li class="mr-6 xl:mr-10 font-semibold text-sm leading-6">
+      <a href="/pricing/" class="inline-block text-gray-700 hover:text-blue-600" data-tracking-event="open-link"
+        data-tracking-label="Pricing navigation link on the desktop header">Pricing</a>
     </li>
     <!--
-    <li class="mr-8 font-semibold text-sm leading-6">
+    <li class="mr-6 xl:mr-10 font-semibold text-sm leading-6">
       <a href="/interactive-widget/" class="inline-block text-gray-700 hover:text-blue-600">Widget</a>
     </li>
     -->
-    <li class="mr-8 font-semibold text-sm leading-6">
-      <a href="/docs/introduction/" class="inline-block text-gray-700 hover:text-blue-600" data-tracking-event="open-link" data-tracking-label="Docs navigation link on the desktop header">Docs</a>
+    <li class="mr-6 xl:mr-10 font-semibold text-sm leading-6">
+      <a href="/docs/introduction/" class="inline-block text-gray-700 hover:text-blue-600"
+        data-tracking-event="open-link" data-tracking-label="Docs navigation link on the desktop header">Docs</a>
     </li>
-    <li class="mr-8 font-semibold text-sm leading-6">
-      <a href="/blog/" class="inline-block text-gray-700 hover:text-blue-600" data-tracking-event="open-link" data-tracking-label="Blog navigation link on the desktop header">Blog</a>
+    <li class="mr-6 xl:mr-10 font-semibold text-sm leading-6">
+      <a href="/blog/" class="inline-block text-gray-700 hover:text-blue-600" data-tracking-event="open-link"
+        data-tracking-label="Blog navigation link on the desktop header">Blog</a>
     </li>
-    <li class="mr-8 font-semibold text-sm leading-6">
+    <li class="mr-6 xl:mr-10 font-semibold text-sm leading-6">
       <hr class="w-[1px] border-none h-6 bg-gray-300">
     </li>
     <li class="font-semibold text-sm leading-6">
-      <a href="{{ $inliveStudioOrigin }}/login" class="inline-block text-gray-700 hover:text-blue-600" data-tracking-event="open-link" data-tracking-label="InLive studio login navigation link on the desktop header">Login</a>
+      <a href="{{ $inliveStudioOrigin }}/login" class="inline-block text-gray-700 hover:text-blue-600"
+        data-tracking-event="open-link"
+        data-tracking-label="InLive studio login navigation link on the desktop header">Login</a>
     </li>
   </ul>
 </nav>

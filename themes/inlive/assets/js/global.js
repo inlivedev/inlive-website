@@ -28,3 +28,34 @@ window.addEventListener('load', () => {
     }
   }
 })
+
+document.addEventListener('DOMContentLoaded', () => {
+  const waitlistCTAs = document.querySelectorAll('.waitlist-cta');
+  /** @type {HTMLDialogElement} */
+  const waitlistFormDialog = document.querySelector('dialog[data-dialog="waitlist-form"]')
+  const closeWaitListForm = document.querySelector('[data-dialog-close="waitlist-form"]')
+
+  if (waitlistCTAs || waitlistCTAs.length > 0) {
+    waitlistCTAs.forEach((cta) => {
+      cta.addEventListener('click', () => {
+        waitlistFormDialog.showModal()
+      })
+    })
+  }
+
+  if (waitlistFormDialog) {
+    waitlistFormDialog.addEventListener('click', (event) => {
+      if (event.target.nodeName === 'DIALOG') {
+        waitlistFormDialog.close();
+      }
+    })
+  }
+
+  if (closeWaitListForm) {
+    closeWaitListForm.addEventListener('click', (event) => {
+      if (event.target.nodeName === 'BUTTON') {
+        waitlistFormDialog.close();
+      }
+    })
+  }
+})
