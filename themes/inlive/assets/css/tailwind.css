@@ -9,6 +9,10 @@
   @apply mb-6 text-lg lg:text-xl lg:leading-8 text-gray-600
 }
 
+#blog-content img {
+  @apply mx-auto mb-6
+}
+
 .blink {
   margin-right: 0.6em;
 }
