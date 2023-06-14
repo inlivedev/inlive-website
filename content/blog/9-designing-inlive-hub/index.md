@@ -1,7 +1,7 @@
 ---
 # Refer to the themes/inlive/archetypes/README.md
-date: 2023-06-13
-lastmod: 2023-06-13
+date: 2023-06-14
+lastmod: 2023-06-14
 title: Designing inLive Hub, an automated and extendable WebRTC SFU(Selective Forwarding Unit)
 description: How we design the inlive SFU to be unique and different from other SFU.
 ogimage: /blog/designing-inlive-hub/images/og-image.png
