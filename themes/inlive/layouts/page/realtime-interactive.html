@@ -136,13 +136,17 @@
           <li class="sm:col-span-1">
             {{ partial "landing/feature-item.html" (
             dict "context" .
+            "src" `/images/realtime-interactive/illust-feature-room.svg`
+            "alt" `The illustration of online room feature`
             "heading" `Online room`
-            "paragraph" `Bring multiple participants to join an online room, and let them publish anything in the room, from video, audio, or data to other participants.`
+            "paragraph" `Bring multiple participants to join an online room, and let them publish video, audio, data, or anything to other participants in the room.`
             ) }}
           </li>
           <li class="sm:col-span-1">
             {{ partial "landing/feature-item.html" (
             dict "context" .
+            "src" `/images/realtime-interactive/illust-feature-webrtc.svg`
+            "alt" `The illustration of reliable connection feature`
             "heading" `Reliable connection`
             "paragraph" `Build in WebRTC feature to allow participants to interact in any network condition, even when switching networks.`
             ) }}
@@ -150,6 +154,8 @@
           <li class="sm:col-span-1">
             {{ partial "landing/feature-item.html" (
             dict "context" .
+            "src" `/images/realtime-interactive/illust-feature-real-time.svg`
+            "alt" `The illustration of real-time events and data feature`
             "heading" `Real-time events and data`
             "paragraph" `Get all events in real-time through webhook and SSE(server-sent-event) HTTP request for your backend or frontend applications`
             ) }}
@@ -157,8 +163,10 @@
           <li class="sm:col-span-1">
             {{ partial "landing/feature-item.html" (
             dict "context" .
+            "src" `/images/realtime-interactive/illust-feature-analytics.svg`
+            "alt" `The illustration of analytics and custom data feature`
             "heading" `Analytics and custom data`
-            "paragraph" `Built-in room, participant, and stream analytics data for your automation. Or add custom data to build a custom logic on top of it.`
+            "paragraph" `Built-in room, participant, and stream analytics for your automation or add custom data to build a custom logic on top of it.`
             ) }}
           </li>
         </ul>
