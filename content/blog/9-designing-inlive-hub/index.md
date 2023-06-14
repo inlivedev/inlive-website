@@ -9,8 +9,9 @@ slug: designing-inlive-hub
 summary: There are many SFU out there, but we saw they're still lack of automation and data driven to develop a new real time interactive app beyond video conference. We want to build a SFU that can be used for any real time app, not just video conference.
 ---
 
-# Designing inLive Hub
+# Designing inLive Hub, an automated and extendable WebRTC SFU
 
+![Designing inLive Hub](/images/realtime-interactive/illust-feature-room.svg "Designing inLive Hub")
 During pandemic, we saw a lot of WebRTC SFU(Selective Forwarding Unit) API developed and released to the market. Most of them focus on the conference app usecase where a participant will join into a room and interact with the other participants in the room. Basically the API will help you develop a Zoom/Google Meet like app. But a real time interactive app is beyond conference app. We want to build a SFU that can be used for any real-time use cases, not just video conference. To be able to do that, we want to focus on automation and data driven SFU.
 
 When we're decided to work on SFU, these are some of the usecases that we have in mind:
@@ -55,5 +56,6 @@ Which will return a Server Sent Event(SSE) stream that will send the transcripti
 By having a standard way to plug in the pre and post processing server, everyone can easily extend the functionality of this SFU. Combining with the real-time data and events, we can build a real time communication app that can be customize and extend easily.
 
 
-## Let us know what you think
-The SFU already available for limited users. If you're a developer who is interesting with what we're building, you can join our waitlist here. We will keep you updated with our progress and you will be the first to try our SFU when it's ready.
+## Join the waitlist for trial
+The SFU will be available for limited users for trial on July 2023. If you're a developer and interested to build a new interactive real-time app with inLive Hub, you can [join our waitlist at the SFU page](/realtime-interactive/). We will keep you updated with our progress and you will be the first to try our SFU when it's ready.
+
