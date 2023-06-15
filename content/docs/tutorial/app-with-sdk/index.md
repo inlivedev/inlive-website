@@ -4,6 +4,7 @@ lastmod: 2022-09-06
 name: Tutorial with inLive JS SDK
 title: Tutorial building a live stream app with inLive JS SDK
 description: This tutorial will show you how to build a live video stream web app using inLive JS SDK.
+ogimage: /images/docs/og-image.png
 slug: tutorial-app-with-inlive-js-sdk
 weight: 4002
 menu:

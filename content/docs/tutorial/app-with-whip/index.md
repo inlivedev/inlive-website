@@ -4,6 +4,7 @@ lastmod: 2023-05-26
 name: Tutorial with WHIP
 title: Tutorial building a live stream app with WHIP standard
 description: This tutorial will show you how to build a live video stream web app using WHIP standard.
+ogimage: /images/docs/og-image.png
 slug: tutorial-app-with-whip
 weight: 4003
 menu:
@@ -31,7 +32,7 @@ Before starting, you need to prepare the following things:
    * [gst-plugins-rs](https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs) (Gstreamer plugins, written in Rust)
    * [Larix Broadcaster](https://softvelum.com/larix/)  (free apps for iOS and Android with WebRTC based on Pion, SDK available)
 
-    For this tutorial we will be using [medooze/whip-whep-js](https://github.com/medooze/whip-whep-js) 
+    For this tutorial we will be using [medooze/whip-whep-js](https://github.com/medooze/whip-whep-js)
 3. Understand the flow of doing a live streaming with inLive which are:
    1. Create a live stream
    2. Prepare the live stream
@@ -76,7 +77,7 @@ Then in the `app.js` file, we will import the WHIP JS library. Put the following
 import { WHIPClient } from "./whip.js"
 ```
 
-## Get the API key from inLive Dashboard 
+## Get the API key from inLive Dashboard
 Before we start writing the JavaScript function. We need the API key that you can get from inLive Dashboard. Put the API key as global variable in `app.js`. We also put the `API_ORIGIN` variable to make it easier to change the API origin in the future. Put the following code in `app.js`:
 ````js
 const API_KEY = '<api-key-here>'
@@ -155,7 +156,7 @@ async function startStream(stream, mediaStream){
 ```
 
 ## Handle on load page and button click
-Last, we are wired everything into a load event that will be triggered when the page is loaded. The page will load the media stream from camera and microphone when page loaded, and we will go live when the button is clicked. 
+Last, we are wired everything into a load event that will be triggered when the page is loaded. The page will load the media stream from camera and microphone when page loaded, and we will go live when the button is clicked.
 
 When the button is clicked and we succesfully go live, we will get the Dash and HLS manifest. We will create a link to watch the live stream with the manifest and open it in a new tab.
 
@@ -170,7 +171,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const video = document.getElementById('video')
     video.srcObject = mediaStream
     const button = document.querySelector('button')
-    
+
     button.addEventListener('click', async () => {
         const stream = await createStream()
         await WHIP(stream, mediaStream)
@@ -189,4 +190,3 @@ Now we have everything we need. We just need to open the web app, allow the brow
 
 ## Conclusion
 We put together the example code above in our [Github repository](https://github.com/inlivedev/inlivedev.github.io/tree/main/examples/whip-webrtc-dash-hls). You can clone the repository and run the app in your local machine.
-
