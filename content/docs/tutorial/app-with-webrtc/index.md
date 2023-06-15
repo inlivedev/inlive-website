@@ -4,6 +4,7 @@ lastmod: 2022-09-06
 name: Tutorial with WebRTC
 title: Tutorial building a live stream app with WebRTC
 description: This tutorial will show you how to build a live video stream web app with WebRTC video source input.
+ogimage: /images/docs/og-image.png
 slug: tutorial-app-with-webrtc
 weight: 4001
 menu:

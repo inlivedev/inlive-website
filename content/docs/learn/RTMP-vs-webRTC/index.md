@@ -4,6 +4,7 @@ lastmod: 2022-05-31
 name: Choosing RTMP vs WebRTC
 title: Choosing RTMP vs WebRTC
 description: Inlive uses WebRTC which supports video ingestion on all platforms including web, has better latency than RTMP, and can be used to build your own OBS client.
+ogimage: /images/docs/og-image.png
 slug: rtmp-vs-webrtc
 weight: 5001
 menu:

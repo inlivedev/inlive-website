@@ -1,9 +1,10 @@
 ---
 date: 2022-06-07
 lastmod: 2022-06-07
-name: Playing Video with HLS and MPEG-DASH 
-title: Playing Video with HLS and MPEG-DASH 
+name: Playing Video with HLS and MPEG-DASH
+title: Playing Video with HLS and MPEG-DASH
 description: Inlive supports HLS and MPEG-DASH streaming protocol formats which offers 3 types adaptive bitrate qualities for playing video through a video player.
+ogimage: /images/docs/og-image.png
 slug: playing-video
 weight: 5003
 menu:
@@ -29,20 +30,20 @@ Therefore, which one is better for video players?
 Of course, both have good and bad points. Let’s break through it one by one.
 
 ### 1. Compatibility through devices
-HLS supports a wide range of devices, but MPEG-DASH is not supported only at iOS Safari browser which is a downside because it’s important for iOS Safari users. ​​This MPEG-DASH compatibility problem because the [Media Source API](https://developer.mozilla.org/en-US/docs/Web/API/Media_Source_Extensions_API) is only enabled on Safari desktop and iPad, not in iOS. 
+HLS supports a wide range of devices, but MPEG-DASH is not supported only at iOS Safari browser which is a downside because it’s important for iOS Safari users. ​​This MPEG-DASH compatibility problem because the [Media Source API](https://developer.mozilla.org/en-US/docs/Web/API/Media_Source_Extensions_API) is only enabled on Safari desktop and iPad, not in iOS.
 
 ### 2. Latency
 Although HLS supports widest compatibility for streaming, it is known to create a high latency stream previously. It is because HLS file (.m3u8) segments are usually much longer so each segment needs to be encoded at different bitrates. That is why it is commonly said that HLS prioritizes quality over low latency before Apple announced that HLS finally can support low latency streaming ([LL-HLS](https://developer.apple.com/documentation/http_live_streaming/enabling_low-latency_http_live_streaming_hls)) in 2019. Different from HLS, MPEG-DASH typically has lower latency as the file segments are much smaller so no need to encode them at different bitrates.
 
-In spite of HLS providing low latency streaming right now, currently our Inlive doesn’t support LL-HLS because we are using FFmpeg for encoding which can't be done through FFmpeg. Our Inlive’s HLS format is still using community version (.m3u8) instead of the Apple version (LL-HLS), while our Inlive’s MPEG-DASH format is already using [low latency DASH](https://dashif.org/news/low-latency-dash/), so the latency can reach up to 1-3 seconds only. Therefore, to achieve lower latency, you should always prioritize using Inlive MPEG-DASH format instead of HLS format. As mentioned earlier, since our Inlive API supports both formats, it is recommended to do capability testing (for example, using [window.MediaSource](https://github.com/shaka-project/shaka-player/issues/3037#issuecomment-742701187)) whether the Media Source is enabled, so it can support MPEG-DASH format on your video player. If Media Source API is disabled, then you can use the HLS format for your video player. 
+In spite of HLS providing low latency streaming right now, currently our Inlive doesn’t support LL-HLS because we are using FFmpeg for encoding which can't be done through FFmpeg. Our Inlive’s HLS format is still using community version (.m3u8) instead of the Apple version (LL-HLS), while our Inlive’s MPEG-DASH format is already using [low latency DASH](https://dashif.org/news/low-latency-dash/), so the latency can reach up to 1-3 seconds only. Therefore, to achieve lower latency, you should always prioritize using Inlive MPEG-DASH format instead of HLS format. As mentioned earlier, since our Inlive API supports both formats, it is recommended to do capability testing (for example, using [window.MediaSource](https://github.com/shaka-project/shaka-player/issues/3037#issuecomment-742701187)) whether the Media Source is enabled, so it can support MPEG-DASH format on your video player. If Media Source API is disabled, then you can use the HLS format for your video player.
 
 ### 3. Adaptive Video
 Both HLS and MPEG-DASH support adaptive bitrate feature so users can receive the best quality video based on what their internet connection can handle. Also, both HLS and MPEG-DASH support [HDR](https://www.haivision.com/blog/all/what-is-hdr-how-you-can-contribute-live-broadcast-content-in-hdr/) (High Dynamic Range) which deliver a wider color gamut and better tonal rendition. Currently, our Inlive’s MPEG-DASH and HLS are using same video codec which is H264 because it is the most supported codec on all platforms.
 
-As we know, [video bitrate](https://golightstream.com/what-is-video-bitrate/) affects the video quality. For now, Inlive provides adaptive video with 3 different qualities: 
+As we know, [video bitrate](https://golightstream.com/what-is-video-bitrate/) affects the video quality. For now, Inlive provides adaptive video with 3 different qualities:
 - 360 p with 800kb bitrate
 - 480p with 1350kb bitrate
-- 720p with 2500kb bitrate 
+- 720p with 2500kb bitrate
 
 With these 3 qualities, your video player can change the bitrate according to the network and device so the users don’t have to face buffering time while watching live streaming. To achieve adaptive bitrate qualities that are already supported on Inlive, you can use a video player that supports adaptive bitrate automation. In [our tutorial](/docs/tutorial/tutorial-app-with-webrtc/#6-get-the-video), we’re using Shaka Player because it handles video quality adjustment automatically. To learn more about utilizing these multiple bitrates and maximize its capability, you could read this [article](https://youtube-eng.googleblog.com/2018/04/making-high-quality-video-efficient.html) and also check out this [one](https://bloggeek.me/tweaking-webrtc-video-quality-unpacking-bitrate-resolution-and-frame-rates/) on how to tune webRTC video quality.
 

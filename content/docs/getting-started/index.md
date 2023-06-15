@@ -4,6 +4,7 @@ lastmod: 2022-03-08
 name: Getting Started
 title: Getting Started
 description: To start developing with Inlive, you will need three simple steps to integrate inlive with your app.
+ogimage: /images/docs/og-image.png
 slug: getting-started
 weight: 2000
 menu:
@@ -87,7 +88,7 @@ const request = await fetch('https://api.inlive.app/v1/streams',{
 const streams = await request.json();
 ```
 
-Check [other endpoints](https://api.inlive.app/apidocs) to know the HTTP method, body, or URL parameters used to make different API requests. 
+Check [other endpoints](https://api.inlive.app/apidocs) to know the HTTP method, body, or URL parameters used to make different API requests.
 
 With our SDK, you only need to pass the application key to `InliveApp.init()` like this:
 

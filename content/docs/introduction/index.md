@@ -4,6 +4,7 @@ lastmod: 2022-03-08
 name: Introduction
 title: Introduction
 description: Inlive is an infrastructure as a service that allows a developer to develop a live video capability in their web or app.
+ogimage: /images/docs/og-image.png
 slug: introduction
 weight: 1000
 menu:

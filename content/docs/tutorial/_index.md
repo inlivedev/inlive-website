@@ -4,6 +4,7 @@ lastmod: 2022-03-11
 name: Tutorial
 title: Tutorial
 description: List of tutorials that we created for you
+ogimage: /images/docs/og-image.png
 slug: tutorial
 weight: 4000
 menu:
