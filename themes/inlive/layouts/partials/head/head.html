@@ -22,6 +22,8 @@
 {{ end }}
 {{ if isset .Params "ogimage" }}
   <meta property="og:image" content="{{ print (getenv `_HUGO_APP_CANONICAL_ORIGIN`) .Params.ogimage }}">
+{{ else if eq .Section "docs" }}
+  <meta property="og:image" content="/images/docs/og-image.png">
 {{ end }}
 
 {{ if or (eq .Section "blog") (eq .Section "docs") }}
@@ -43,6 +45,8 @@
 {{ end }}
 {{ if isset .Params "ogimage" }}
   <meta name="twitter:image" content="{{ print (getenv `_HUGO_APP_CANONICAL_ORIGIN`) .Params.ogimage }}">
+{{ else if eq .Section "docs" }}
+  <meta name="twitter:image" content="/images/docs/og-image.png">
 {{ end }}
 <meta name="twitter:site" content="@inliveapp">
 <meta name="twitter:creator" content="@inliveapp">
