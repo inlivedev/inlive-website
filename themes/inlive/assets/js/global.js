@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const waitlistCTAs = document.querySelectorAll('.waitlist-cta');
   /** @type {HTMLDialogElement} */
   const waitlistFormDialog = document.querySelector('dialog[data-dialog="waitlist-form"]')
+  /** @type {HTMLButtonElement} */
   const closeWaitListForm = document.querySelector('[data-dialog-close="waitlist-form"]')
 
   if (waitlistCTAs || waitlistCTAs.length > 0) {
@@ -57,5 +58,22 @@ document.addEventListener('DOMContentLoaded', () => {
         waitlistFormDialog.close();
       }
     })
+  }
+
+  if (window.mixpanel) {
+    /** @type {HTMLFormElement} */
+    const waitlistForm = document.querySelector('dialog[data-dialog="waitlist-form"] form');
+
+    if (waitlistForm) {
+      waitlistForm.addEventListener('submit', (event) => {
+        const form = event.target;
+        const checkedCheckbox = form.querySelector('.waitlist-group:checked')
+        const waitlist = checkedCheckbox ? checkedCheckbox.getAttribute('data-label') : null;
+
+        window.mixpanel.track('Submit waitlist form', {
+          waitlist: waitlist
+        });
+      })
+    }
   }
 })
