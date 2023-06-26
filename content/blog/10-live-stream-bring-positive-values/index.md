@@ -17,9 +17,9 @@ One of the ways of creating and delivering more value to your product is using l
 
 ## Live stream aspects which can bring positive values to your product and user
 
-### 1. The online format makes easy access for a global audience to see the product you offer
+### 1. User-generated live stream as an additional way for enhancing user conversion in your product
 
-Offline services and activities are great. However, they require participants to spend more energy and time to join and involve. The activities are also only accessible to users within a certain area. If you have a product that promotes a service or activity to the user and doesn’t require participants to be physically present, then you can consider using a live stream as a way to deliver your product service and activity. The combination of live and online formats can bring easy access for the global community to reach your service or activity. You also need to give a good online user experience for the user so you can give a similar experience to the user.
+A single live stream broadcaster is good to enhance user conversion in a product that doesn't involve user-generated content. However, when building a product that creates a user-generated content ecosystem, such as social media, online marketplaces, or online entertainment platforms, incorporating live streaming as an additional channel to facilitate user-generated content can be highly advantageous for enhancing user conversion. User-generated live streams have the potential to attract new users to your product. By allowing users to create and share their own live streams, your product can obtain the creativity, diversity, and unique perspectives of its user base.
 
 ### 2. Live product launches can boost audience excitement and expectation feeling toward your product
 
