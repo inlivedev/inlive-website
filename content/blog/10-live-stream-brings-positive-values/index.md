@@ -4,7 +4,7 @@ date: 2023-06-26
 lastmod: 2023-06-26
 title: Bring Positive Values to Product and Users with Live Stream
 description: Whether your product is centered around live streaming or not, the live streaming technology can be an invaluable opportunity to enhance your product’s value.
-ogimage: # Relative og image URL
+ogimage: /blog/live-stream-brings-positive-values/images/og-image.png
 slug: live-stream-brings-positive-values
 summary: Whether your product is centered around live streaming or not, the continuous growth of live streaming technology can be an invaluable opportunity to enhance your product's value. We will see several aspects of live stream that can bring value to your product and user.
 ---
