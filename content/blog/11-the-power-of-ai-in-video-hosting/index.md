@@ -1,7 +1,7 @@
 ---
 # Refer to the themes/inlive/archetypes/README.md
-date: 2023-07-02
-lastmod: 2023-07-02
+date: 2023-07-03
+lastmod: 2023-07-03
 title: "The Power of AI in Video Hosting: Unlocking Possibilities of Content Enhancements Automation"
 description: "AI can bring big changes to video hosting in education, unlocking possibilities that make the content viewing and learning experience better."
 ogimage: # Relative og image URL
