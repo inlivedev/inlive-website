@@ -4,7 +4,7 @@ date: 2023-07-03
 lastmod: 2023-07-03
 title: "The Power of AI in Video Hosting: Unlocking Possibilities of Content Enhancements Automation"
 description: "AI can bring big changes to video hosting in education, unlocking possibilities that make the content viewing and learning experience better."
-ogimage: # Relative og image URL
+ogimage: /blog/the-power-of-ai-in-video-hosting/images/og-image.png
 slug: the-power-of-ai-in-video-hosting
 summary: "Through the power of AI, we can create captivating and better content, making it more engaging and enjoyable for audiences. With AI-driven video hosting, valuable details can be added, and video content can be more organized in less time and automated."
 ---
