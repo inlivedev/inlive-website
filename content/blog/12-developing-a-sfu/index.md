@@ -9,6 +9,8 @@ slug: how-sfu-works-developing-webrtc-sfu-part-1
 summary: Lesson learned from developing a WebRTC SFU, how a WebRTC SFU works, and what you need to know when developing a WebRTC SFU
 ---
 
+# How a WebRTC SFU works Part 1 - Developing a WebRTC SFU 
+
 ![Selective Forwarder Unit(SFU)](/blog/how-sfu-works-developing-webrtc-sfu-part-1/images/sfu.png "Selective Forwarder Unit(SFU)")
 
 ## Opening
