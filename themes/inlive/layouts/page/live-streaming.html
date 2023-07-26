@@ -1,0 +1,229 @@
+{{ define "main" }}
+{{ partial "header/header.html" . }}
+
+<style>
+  @media (min-width: 640px) {
+    .feature-list, .use-case {
+      grid-template-columns: repeat(2, minmax(0, 400px));
+      justify-content: center;
+    }
+  }
+</style>
+
+<main>
+  <section class="mt-16 lg:mt-52 mx-auto max-w-7xl px-4 lg:px-8">
+    <div>
+      <div class="flex flex-col gap-10 lg:flex-row">
+        <div class="flex-1 max-w-[600px]">
+          <div
+            class="inline-block mb-4 py-1 px-3 text-center bg-emerald-100 rounded-3xl text-xs font-semibold text-emerald-700">
+            Ready to use
+          </div>
+          <h1 class="blink font-bold text-3xl lg:text-6xl -tracking-wide text-slate-800">
+            Scaleable video live streaming with affordable cost 
+          </h1>
+          <p class="mt-4 lg:mt-6 font-medium text-gray-500 lg:text-lg">
+            inLive Live Streaming API, a WebRTC to Dash/HLS live streaming API with up to 54% less cost compare with other similar services. Utilizing CDN networks, the video can be stream to million viewers in scalable and cost efficient way.
+          </p>
+          <div class="mt-4 lg:mt-6">
+            <a href="/docs/getting-started" class="w-auto font-semibold text-lg border border-blue-800 rounded-[10px] pl-3 pr-3.5 py-2.5 inline-flex justify-center items-center gap-3 text-blue-700 min-w-[250px] md:min-w-0" data-tracking-event="open-link" data-tracking-label="CTA get started">
+              <span class="text-blue-600">
+                <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M11.25 4.533A9.707 9.707 0 006 3a9.735 9.735 0 00-3.25.555.75.75 0 00-.5.707v14.25a.75.75 0 001 .707A8.237 8.237 0 016 18.75c1.995 0 3.823.707 5.25 1.886V4.533zM12.75 20.636A8.214 8.214 0 0118 18.75c.966 0 1.89.166 2.75.47a.75.75 0 001-.708V4.262a.75.75 0 00-.5-.707A9.735 9.735 0 0018 3a9.707 9.707 0 00-5.25 1.533v16.103z" />
+                </svg>
+              </span>
+              <span>Get started</span>
+            </a>
+          </div>
+        </div>
+        <div class="flex-1 flex justify-center lg:justify-end">
+          <div class="max-w-xs lg:max-w-xl w-full aspect-square">
+            <video autoplay loop muted playsinline class="w-full h-full">
+              <source src="/videos/realtime-interactive/inlive-hub.webm" type="video/webm">
+              <source src="/videos/realtime-interactive/inlive-hub.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<section class="py-10">
+  <div class="mx-auto max-w-7xl px-4 lg:px-8">
+    <div class="md:text-center lg:max-w-3xl mx-auto">
+      <div>
+        <h2 class="font-bold text-3xl lg:text-4xl text-slate-800 leading-tight">
+          Why you will need inLive Live Streaming API
+        </h2>
+      </div>
+      <div class="mt-4 lg:mt-6">
+        <p class="font-medium mb-5 text-gray-500 lg:text-lg leading-6">
+          If you want to host your own live streaming video outside platforms like Youtube, Facebook, or Twitch but keep the cost lower, you will need a live streaming API to convert your video to Dash/HLS format and distribute it to your viewers through CDN to keep it cost efficient. Or if you like to have a broadcast quality focus live streaming where a slight delay is acceptable, inLive Live Streaming API is the right choice for you.
+        </p>
+      </div>
+      <div class="mt-4 lg:mt-6">
+        <a href="https://codepen.io/inlive/pen/BaPExzJ" class="w-auto font-semibold text-lg border border-gray-800 rounded-[10px] pl-3 pr-3.5 py-2.5 inline-flex justify-center items-center gap-3 text-gray-700 min-w-[250px] md:min-w-0" target="_blank" rel="noopener noreferrer" data-tracking-event="open-link" data-tracking-label="CTA try it on codepen">
+          <span>
+            <svg class="w-8 h-8" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g clip-path="url(#clip0_97_347)">
+                <path d="M32 16C32 24.8366 24.8366 32 16 32C7.16344 32 0 24.8366 0 16C0 7.16344 7.16344 0 16 0C24.8366 0 32 7.16344 32 16Z" fill="#111111"/>
+                <path d="M7.25 13.1V18.9L16 24.75L24.75 18.9V13.1L16 7.25L7.25 13.1Z" stroke="#E6E6E6" stroke-width="1.65" stroke-linejoin="round"/>
+                <path d="M7.25 13.1L16 18.9L24.75 13.1M16 7.25V13.1" stroke="#E6E6E6" stroke-width="1.65" stroke-linejoin="round"/>
+                <path d="M7.25 18.9L16 13.1L24.75 18.9M16 24.75V18.9" stroke="#E6E6E6" stroke-width="1.65" stroke-linejoin="round"/>
+              </g>
+              <defs>
+                <clipPath id="clip0_97_347">
+                <rect width="32" height="32" fill="white"/>
+                </clipPath>
+              </defs>
+            </svg>
+          </span>
+          <span>Try it on CodePen</span>
+        </a>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <section class="pt-20 bg-gradient pb-20 lg:pb-32">
+    <div class="mx-auto max-w-7xl px-4 lg:px-8">
+      <div class="md:text-center lg:max-w-3xl mx-auto flex flex-col gap-2 lg:gap-4">
+        <div>
+          <h2 class="font-bold text-3xl lg:text-4xl text-slate-800 leading-tight">
+           Possible use cases
+          </h2>
+        </div>
+      </div>
+
+      <div class="mt-10 lg:mt-20">
+        <ul class="use-case grid gap-6 sm:gap-4">
+          <li class="sm:col-span-1">
+            <div class="w-full h-full lg:h-[180px] border border-slate-200 rounded-xl bg-white overflow-hidden flex flex-col gap-1 relative lg:gap-2 group">
+              <div class="h-full lg:absolute transition-all duration-300 group-hover:lg:-translate-y-[110px]">
+                <div class="p-5 lg:p-8">
+                  <img class="w-12 lg:w-16 h-12 lg:h-16" src="/images/realtime-interactive/live-conference-icon.svg" alt="" loading="lazy">
+                </div>
+                <div class="px-5 lg:px-6 pb-5">
+                  <h3 class="font-semibold text-xl text-slate-700">Live shopping</h3>
+                  <p class="mt-4 lg:mt-5 lg:group-hover:mt-4 text-slate-500">
+                    Create a live shopping experience with with 
+                  </p>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="sm:col-span-1">
+            <div class="w-full h-full lg:h-[180px] border border-slate-200 rounded-xl bg-white overflow-hidden flex flex-col gap-1 relative lg:gap-2 group">
+              <div class="h-full lg:absolute transition-all duration-300 group-hover:lg:-translate-y-[110px]">
+                <div class="p-5 lg:p-8">
+                  <img class="w-12 lg:w-16 h-12 lg:h-16" src="/images/realtime-interactive/ai-assistant-icon.svg" alt="" loading="lazy">
+                </div>
+                <div class="px-5 lg:px-6 pb-5">
+                  <h3 class="font-semibold text-xl text-slate-700">Paid per view video</h3>
+                  <p class="mt-4 lg:mt-5 lg:group-hover:mt-4 text-slate-500">
+                    Protect your live streaming with encyrption and authentication, and charge your viewers per view.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="sm:col-span-1">
+            <div class="w-full h-full lg:h-[180px] border border-slate-200 rounded-xl bg-white overflow-hidden flex flex-col gap-1 relative lg:gap-2 group">
+              <div class="h-full lg:absolute transition-all duration-300 group-hover:lg:-translate-y-[110px]">
+                <div class="p-5 lg:p-8">
+                  <img class="w-12 lg:w-16 h-12 lg:h-16" src="/images/realtime-interactive/automation-icon.svg" alt="" loading="lazy">
+                </div>
+                <div class="px-5 lg:px-6 pb-5">
+                  <h3 class="font-semibold text-xl text-slate-700">Online event</h3>
+                  <p class="mt-4 lg:mt-5 lg:group-hover:mt-4 text-slate-500">
+                    Extend your event with live streaming to millions of viewers, and protect the event live streaming only to paid participants.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="sm:col-span-1">
+            <div class="w-full h-full lg:h-[180px] border border-slate-200 rounded-xl bg-white overflow-hidden flex flex-col gap-1 relative lg:gap-2 group">
+              <div class="h-full lg:absolute transition-all duration-300 group-hover:lg:-translate-y-[110px]">
+                <div class="p-5 lg:p-8">
+                  <img class="w-12 lg:w-16 h-12 lg:h-16" src="/images/realtime-interactive/smart-monitoring-icon.svg" alt="" loading="lazy">
+                </div>
+                <div class="px-5 lg:px-6 pb-5">
+                  <h3 class="font-semibold text-xl text-slate-700">Media Broadcasting</h3>
+                  <p class="mt-4 lg:mt-5 lg:group-hover:mt-4 text-slate-500">
+                    Broadcast your media content to millions of viewers with low latency and high quality video.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="pt-20 bg-gradient pb-20 lg:pb-32">
+    <div class="mx-auto max-w-7xl px-4 lg:px-8">
+      <div class="md:text-center lg:max-w-3xl mx-auto flex flex-col gap-2 lg:gap-4">
+        <div>
+          <h2 class="font-bold text-3xl lg:text-4xl text-slate-800 leading-tight">
+           Features
+          </h2>
+        </div>
+      </div>
+      <div class="mt-10 lg:mt-20">
+        <ul class="feature-list grid gap-6 sm:gap-4">
+          <li class="sm:col-span-1">
+            {{ partial "landing/feature-item.html" (
+            dict "context" .
+            "src" `/images/realtime-interactive/illust-feature-room.svg`
+            "alt" `The illustration of online room feature`
+            "heading" `Secure video`
+            "paragraph" `Protect your live video from unauthorized access with encryption and authentication.`
+            ) }}
+          </li>
+          <li class="sm:col-span-1">
+            {{ partial "landing/feature-item.html" (
+            dict "context" .
+            "src" `/images/realtime-interactive/illust-feature-webrtc.svg`
+            "alt" `The illustration of reliable connection feature`
+            "heading" `Adaptive Bitrate Streaming`
+            "paragraph" `Allow viewers watch the live streaming smoothly with any network condition.`
+            ) }}
+          </li>
+          <li class="sm:col-span-1">
+            {{ partial "landing/feature-item.html" (
+            dict "context" .
+            "src" `/images/realtime-interactive/illust-feature-real-time.svg`
+            "alt" `The illustration of real-time events and data feature`
+            "heading" `Real-time events and data`
+            "paragraph" `Get all events in real-time through webhook and SSE (server-sent-event) HTTP request for your backend or frontend applications`
+            ) }}
+          </li>
+          <li class="sm:col-span-1">
+            {{ partial "landing/feature-item.html" (
+            dict "context" .
+            "src" `/images/realtime-interactive/illust-feature-analytics.svg`
+            "alt" `The illustration of analytics and custom data feature`
+            "heading" `Detailed analytics and custom data`
+            "paragraph" `Built-in stream analytics and log to analyze your live streaming performance.`
+            ) }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  {{ partial "landing/feedback.html" . }}
+</main>
+
+{{ end }}
+
+{{ define "footer" }}
+{{ partial "footer/footer.html" . }}
+{{ end }}
+
+{{ define "script" }}
+{{ $globalJS := resources.Get "js/global.js" | minify }}
+<script type="text/javascript" src="{{ $globalJS.RelPermalink }}" defer></script>
+{{ end }}
