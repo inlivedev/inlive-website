@@ -11,6 +11,7 @@ menu:
     identifier: live-stream-api-tutorials
     name: Live Stream API
     parent: tutorials
+    weight: 1
 pagination:
   prev:
     text: Tutorials
