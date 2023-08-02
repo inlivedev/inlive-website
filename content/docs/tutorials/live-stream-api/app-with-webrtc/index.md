@@ -1,18 +1,24 @@
 ---
 date: 2022-03-11
-lastmod: 2022-09-06
-name: Tutorial with WebRTC
+lastmod: 2023-08-02
+name: live-stream-app-with-webrtc
 title: Tutorial building a live stream app with WebRTC
 description: This tutorial will show you how to build a live video stream web app with WebRTC video source input.
 ogimage: /images/docs/og-image.png
 slug: tutorial-app-with-webrtc
-weight: 4001
 menu:
   docs_sidebar:
-    identifier: Tutorial with WebRTC
-    name: Tutorial with WebRTC
-    weight: 4001
-    parent: Tutorial
+    identifier: live-stream-app-with-webrtc
+    name: Live Stream App with WebRTC
+    parent: live-stream-api-tutorials
+    weight: 1
+pagination:
+  prev:
+    text: Live Stream API Tutorials
+    link: /docs/tutorials/live-stream-api/
+  next:
+    text: Live Stream App with JavaScript SDK
+    link: /docs/tutorials/live-stream-api/tutorial-app-with-inlive-js-sdk/
 ---
 # Tutorial building a live stream app with WebRTC
 
