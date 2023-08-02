@@ -1,18 +1,23 @@
 ---
 date: 2022-03-11
-lastmod: 2022-03-11
-name: Video Input
+lastmod: 2023-08-02
+name: video-input
 title: Video Input
 description: Inlive supports 2 ways to sending the video source input to our encoder. You can use either WebRTC or RTMP.
 ogimage: /images/docs/og-image.png
 slug: video-input
-weight: 5002
 menu:
   docs_sidebar:
-    identifier: Video Input
-    name: Video Input
-    weight: 5002
-    parent: Learn
+    identifier: video-input
+    parent: learn
+    weight: 2
+pagination:
+  prev:
+    text: Choosing RTMP vs WebRTC
+    link: /docs/learn/rtmp-vs-webrtc/
+  next:
+    text: Playing Video with HLS and MPEG-DASH
+    link: /docs/learn/playing-video-with-hls-and-mpeg-dash/
 ---
 
 # Video Input
