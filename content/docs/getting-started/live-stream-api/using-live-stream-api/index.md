@@ -10,6 +10,13 @@ menu:
   docs_sidebar:
     identifier: using-live-stream-api
     parent: getting-started-live-stream-api
+pagination:
+  prev:
+    text: Live Stream API
+    link: /docs/getting-started/live-stream-api/
+  next:
+    text: Tutorials
+    link: /docs/tutorials/
 ---
 # Get Started
 To start developing with Inlive, you will need three simple steps to integrate inlive with your app.
