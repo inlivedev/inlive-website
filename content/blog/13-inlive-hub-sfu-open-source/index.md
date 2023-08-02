@@ -1,7 +1,7 @@
 ---
 # Refer to the themes/inlive/archetypes/README.md
-date: 2023-08-2
-lastmod: 2023-08-2
+date: 2023-08-02
+lastmod: 2023-08-02
 title: Open sourcing our inLive Hub SFU
 description: Release of open source inLive Hub SFU
 ogimage: /blog/how-sfu-works-developing-webrtc-sfu-part-1/images/sfu.png
