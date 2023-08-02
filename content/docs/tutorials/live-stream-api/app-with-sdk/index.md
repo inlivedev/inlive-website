@@ -1,19 +1,26 @@
 ---
 date: 2022-03-11
-lastmod: 2022-09-06
-name: Tutorial with inLive JS SDK
+lastmod: 2023-08-02
+name: live-stream-app-with-sdk
 title: Tutorial building a live stream app with inLive JS SDK
 description: This tutorial will show you how to build a live video stream web app using inLive JS SDK.
 ogimage: /images/docs/og-image.png
 slug: tutorial-app-with-inlive-js-sdk
-weight: 4002
 menu:
   docs_sidebar:
-    identifier: Tutorial with SDK
-    name: Tutorial with SDK
-    weight: 4002
-    parent: Tutorial
+    identifier: live-stream-app-with-sdk
+    name: Live Stream App with JavaScript SDK
+    parent: live-stream-api-tutorials
+    weight: 2
+pagination:
+  prev:
+    text: Live Stream App with WebRTC
+    link: /docs/tutorials/live-stream-api/tutorial-app-with-webrtc/
+  next:
+    text: Live Stream App with WHIP
+    link: /docs/tutorials/live-stream-api/tutorial-app-with-whip/
 ---
+
 # Tutorial building a live stream app with inLive JS SDK
 
 The previous tutorial with WebRTC, is showing you how to interact directly with inLive API using WebRTC API. To make it easier, we're provide a JavaScript SDK, so you don't need to write that much codes. This tutorial will guide you how to use the inLive JavaScript SDK to build the a live streaming web app.
