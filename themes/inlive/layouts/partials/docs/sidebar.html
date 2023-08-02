@@ -1,7 +1,9 @@
-<section class="h-14 w-full sticky top-16 lg:hidden bg-white px-4 py-3 flex items-center justify-between z-10 border-b border-b-gray-300">
+<section
+  class="h-14 w-full sticky top-16 lg:hidden bg-white px-4 py-3 flex items-center justify-between z-10 border-b border-b-gray-300">
   <strong class="font-semibold text-sm leading-8 text-gray-600">Developer Portal</strong>
   <div class="grid grid-cols-1 items-center gap-x-4">
-    <button type="button" class="p-1 text-gray-500" aria-label="open sidebar navigation menu" onclick="handleToggleSideNavMenu()">
+    <button type="button" class="p-1 text-gray-500" aria-label="open sidebar navigation menu"
+      onclick="handleToggleSideNavMenu()">
       <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
       </svg>
@@ -9,7 +11,7 @@
   </div>
 </section>
 
-{{/*  Sidebar Navigation  */}}
+{{/* Sidebar Navigation */}}
 <style>
   #side-nav-menu.show {
     transform: translateX(0);
@@ -20,43 +22,97 @@
   class="hidden lg:hidden fixed top-0 left-0 bottom-0 right-0 w-full h-full bg-black bg-opacity-30 z-40">
 </div>
 
-<nav id="side-nav-menu" class="fixed h-full top-0 left-0 -translate-x-80 lg:translate-x-0 lg:sticky lg:top-[70px] lg:h-[calc(100vh-70px)] w-80 lg:w-72 overflow-y-auto bg-white">
-  {{ $currentPage := . }}
+<nav id="side-nav-menu"
+  class="fixed h-full top-0 left-0 -translate-x-80 lg:translate-x-0 lg:sticky lg:top-[70px] lg:h-[calc(100vh-70px)] w-80 lg:w-72 overflow-y-auto bg-white">
+  {{ $context := . }}
+
+  {{ $menuEntries := .Site.Menus.docs_sidebar }}
 
   {{/* menu */}}
-  {{ if gt (len .Site.Menus.docs_sidebar) 0 }}
-    <ul class="p-6 lg:pb-0 lg:pt-2 lg:pr-6 lg:pl-8 flex-1">
-      {{ range $index, $pages := .Site.Menus.docs_sidebar }}
-        {{ if .HasChildren }}
-        <li>
-          <a href="{{ .URL }}" title="{{ .Title }}" class="pt-3 pb-2 lg:pb-1 block text-base lg:text-sm leading-6 lg:leading-6 {{ if and ($currentPage.HasMenuCurrent `docs_sidebar` .) ($currentPage.IsMenuCurrent `docs_sidebar` .) }} font-semibold text-blue-600 hover:text-blue-600 {{ else if ($currentPage.HasMenuCurrent `docs_sidebar` .) }} font-semibold text-gray-800 hover:text-gray-800 {{ else }} font-medium text-gray-700 hover:text-gray-900 {{ end }}">
-            <h5>{{ .Name }}</h5>
+  {{ if gt (len $menuEntries) 0 }}
+  <ul class="p-6 lg:pb-0 lg:pt-2 lg:pr-4 lg:pl-8 flex-1">
+    {{ range $index, $level1 := $menuEntries }}
+
+    {{ if $level1.HasChildren }}
+    <li>
+      {{ $hasMenuCurrent := $context.HasMenuCurrent .Menu . }}
+      {{ $isMenuCurrent := $context.IsMenuCurrent .Menu . }}
+
+      <a href="{{ $level1.URL }}" title="{{ $level1.Title }}" class="block text-base lg:text-sm leading-6 lg:leading-6">
+        <span
+          class="pt-3 pb-2 lg:pb-1 block font-medium {{ if $isMenuCurrent }} text-blue-600 {{ else if $hasMenuCurrent }} text-gray-800 {{ else }} text-gray-700 hover:text-gray-900 {{ end }}">
+          {{ $level1.Name }}
+        </span>
+      </a>
+
+      <ul>
+        {{ range $index, $level2 := $level1.Children }}
+
+        {{ $isMenuCurrent := $context.IsMenuCurrent .Menu . }}
+
+        {{ if $level2.HasChildren }}
+        <li class="border-l border-gray-200">
+          <a href="{{ $level2.URL }}" title="{{ $level2.Title }}"
+            class="ml-5 block text-base lg:text-sm leading-6 lg:leading-6">
+            <span
+              class="block py-2 lg:py-1 font-medium {{ if $isMenuCurrent }} text-blue-600 {{ else if $hasMenuCurrent }} text-gray-800 {{ else }} text-gray-700 hover:text-gray-900 {{ end }}">
+              {{ $level2.Name }}
+            </span>
           </a>
           <ul>
-            {{ range .Children }}
-              <li>
-                <a href="{{ .URL }}" title="{{ .Title }}" class="py-2 lg:py-1 pl-4 lg:border-l block text-base lg:text-sm leading-6 lg:leading-6 {{ if ($currentPage.IsMenuCurrent `docs_sidebar` .) }} border-blue-600 hover:border-blue-600 font-medium text-blue-600 hover:text-blue-600 {{ else }} border-gray-200 hover:border-gray-600 font-normal text-gray-600 hover:text-gray-900 {{ end }}">{{ .Name }}</a>
-              </li>
+            {{ range $index, $level3 := $level2.Children }}
+
+            {{ $isMenuCurrent := $context.IsMenuCurrent .Menu . }}
+            <li>
+              <a href="{{ $level3.URL }}" title="{{ $level3.Title }}"
+                class="ml-5 block text-base lg:text-sm leading-6 lg:leading-6">
+                <span
+                  class="block py-2 lg:py-1 pl-5 border-l font-medium {{ if $isMenuCurrent }} border-blue-600 text-blue-600 {{ else }} border-gray-200 hover:border-gray-600 text-gray-600 hover:text-gray-900 {{ end }}">
+                  {{ $level3.Name }}
+                </span>
+              </a>
+            </li>
             {{ end }}
           </ul>
         </li>
         {{ else }}
         <li>
-          <a href="{{ .URL }}" title="{{ .Title }}" class="{{ if not (eq $index 0) }} pt-3 {{ end }} pb-2 lg:pt-3 lg:pb-1 mr-6 block text-base lg:text-sm leading-6 lg:leading-6 {{ if ($currentPage.IsMenuCurrent `docs_sidebar` .) }} font-semibold text-blue-600 hover:text-blue-600 {{ else }} font-medium text-gray-700 hover:text-gray-900 {{ end }}">
-            <h5>{{ .Name }}</h5>
+          <a href="{{ $level2.URL }}" title="{{ $level2.Title }}"
+            class="block text-base lg:text-sm leading-6 lg:leading-6">
+            <span
+              class="block py-2 lg:py-1 pl-5 border-l font-medium {{ if $isMenuCurrent }} border-blue-600 text-blue-600 {{ else }} border-gray-200 hover:border-gray-600 text-gray-600 hover:text-gray-900 {{ end }}">
+              {{ $level2.Name }}
+            </span>
           </a>
-
-          {{ if eq $index 0 }}
-            {{/* close button */}}
-            <button type="button" class="lg:hidden z-10 p-1 text-gray-500 absolute top-4 right-4" aria-label="close sidebar navigation menu" onclick="handleToggleSideNavMenu()">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-          {{end}}
         </li>
         {{ end }}
-      {{ end }}
-    </ul>
+        {{ end }}
+      </ul>
+    </li>
+    {{ else }}
+    <li>
+      {{ $isMenuCurrent := $context.IsMenuCurrent .Menu . }}
+
+      <a href="{{ $level1.URL }}" title="{{ $level1.Title }}" class="block text-base lg:text-sm leading-6 lg:leading-6">
+        <span
+          class="pt-3 pb-2 lg:pb-1 block font-medium {{ if eq $index 0 }} mr-6 pt-0 lg:pt-3 {{ end }} {{ if $isMenuCurrent }}  text-blue-600 {{ else }} text-gray-700 hover:text-gray-900 {{ end }}">
+          {{ $level1.Name }}
+        </span>
+      </a>
+
+      {{ if eq $index 0 }}
+      {{/* close button */}}
+      <button type="button" class="lg:hidden z-10 p-1 text-gray-500 absolute top-4 right-4"
+        aria-label="close sidebar navigation menu" onclick="handleToggleSideNavMenu()">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+          stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+      {{end}}
+    </li>
+    {{ end }}
+    {{ end }}
+  </ul>
   {{ end }}
 </nav>
