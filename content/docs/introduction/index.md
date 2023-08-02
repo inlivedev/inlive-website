@@ -9,11 +9,11 @@ slug: introduction
 menu:
   docs_sidebar:
     identifier: introduction
-    name: Introduction
+    text: Introduction
     weight: 1
 pagination:
   next:
-    name: Using Live Stream API
+    text: Using Live Stream API
     link: /docs/getting-started/live-stream-api/using-live-stream-api/
 ---
 # Introduction

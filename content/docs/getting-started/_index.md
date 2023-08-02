@@ -13,10 +13,10 @@ menu:
     weight: 2
 pagination:
   prev:
-    name: Introduction
+    text: Introduction
     link: /docs/introduction/
   next:
-    name: Live Stream API
+    text: Live Stream API
     link: /docs/getting-started/live-stream-api/
 ---
 
