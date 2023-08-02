@@ -5,14 +5,14 @@
 
 <!-- templates -->
 {{ define "breadcrumbs" }}
-  {{ $split := index (split .currentPage.Parent.File.Dir "/") }}
-  {{ $parentSection := index $split (sub (len $split) 2) }}
+{{ $split := index (split .currentPage.Parent.File.Dir "/") }}
+{{ $parentSection := index $split (sub (len $split) 2) }}
 
-  {{ if and (.currentPage.Parent) (and (not .currentPage.Parent.IsHome) (ne $parentSection nil)) }}
-    {{ template "breadcrumbs" dict "currentPage" .currentPage.Parent }}
-  {{ end }}
-  <li class="group flex items-center text-blue-600 font-bold text-sm">
-    <a href="{{ .currentPage.RelPermalink }}" class="block hover:underline">{{ .currentPage.Params.Name }}</a>
-    <span class="block mx-1 group-last:hidden">/</span>
-  </li>
+{{ if and (.currentPage.Parent) (and (not .currentPage.Parent.IsHome) (ne $parentSection nil)) }}
+{{ template "breadcrumbs" dict "currentPage" .currentPage.Parent }}
+{{ end }}
+<li class="group flex items-center text-blue-600 font-bold text-sm">
+  <a href="{{ .currentPage.RelPermalink }}" class="block hover:underline">{{ .currentPage.Params.Title }}</a>
+  <span class="block mx-1 group-last:hidden">/</span>
+</li>
 {{ end }}
