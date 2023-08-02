@@ -33,7 +33,7 @@ The example code for this tutorial is available on our [Github repo](https://git
 
 ## A. Requirement
 ### 1. Get the API key
-Before coding your web app, you need to create an application key as stated in our [getting started documentation](/docs/getting-started). Please make sure you write down that key after you create it because it is used in this web app that we will create.
+Before coding your web app, you need to create an application key as stated in our [getting started documentation](/docs/getting-started/live-stream-api/using-live-stream-api/). Please make sure you write down that key after you create it because it is used in this web app that we will create.
 
 ### 2. Install inLive JS SDK
 inLive JS SDK is distributed through NPM library. Means you need to have [NPM installed and setup](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) before able to install our SDK. For development you can import the published SDK directly like this:
@@ -236,7 +236,7 @@ async function getStream(slug,options){
 
 When the functionc called our `stream` variable will contain the stream instance that we can use to access the adaptive video manifest at `stream.manifests.dash` or `stream.manifests.hls`. This adaptive video manifest can be use to play the video.
 
-There are two options to play the video, and you can [read more detail here](/docs/learn/playing-video). But in this tutorial, we will use the shaka player to embed the video player to our website. The code below will show you how to use `stream.manifests.dash` to play it with Shaka Player. We use the modified version of [Shaka basic tutorial example](https://shaka-player-demo.appspot.com/docs/api/tutorial-basic-usage.html) for this. Create a new page and use the code below:
+There are two options to play the video, and you can [read more detail here](/docs/learn/playing-video-with-hls-and-mpeg-dash/). But in this tutorial, we will use the shaka player to embed the video player to our website. The code below will show you how to use `stream.manifests.dash` to play it with Shaka Player. We use the modified version of [Shaka basic tutorial example](https://shaka-player-demo.appspot.com/docs/api/tutorial-basic-usage.html) for this. Create a new page and use the code below:
 
 ```html
 <!DOCTYPE html>
@@ -334,6 +334,6 @@ Once we have the manifests, we play the video by load the manifest into Shaka pl
 
 ## Summary
 
-The tutorial above shows you how we use the SDK to create a live stream client where you can capture video and audio from your browser and send it for live streaming using WebRTC. The tutorial is only applied for web application, but using the basic WebRTC as explain in this[WebRTC tutorial](../app-with-webrtc/index.md) you can easily build a live streaming client for Android or iOS by use directly our API endpoints for WebRTC connection.
+The tutorial above shows you how we use the SDK to create a live stream client where you can capture video and audio from your browser and send it for live streaming using WebRTC. The tutorial is only applied for web application, but using the basic WebRTC as explain in this [WebRTC tutorial](/docs/tutorials/live-stream-api/tutorial-app-with-webrtc/) you can easily build a live streaming client for Android or iOS by use directly our API endpoints for WebRTC connection.
 
 Let us knows if you have any question by posting your question to our [Github Discussion](https://github.com/orgs/inlivedev/discussions/categories/q-a).

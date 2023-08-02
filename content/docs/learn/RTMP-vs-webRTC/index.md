@@ -36,7 +36,7 @@ As we mentioned before the main reason why we choose WebRTC as our first option 
 
 You might be thinking the web is not as capable as OBS as a streaming client that allows the video to be filtered or modified on the fly before ingesting it to the streaming server. For example, you want to stack multiple layers of videos, one is your camera that captures your face, and another one is the screen capture that captures your screen. This is possible to build on the web, and the user doesn’t need to install anything to use this feature. You only need to develop a streaming client with your JavaScript skills to do this. You can capture each video frame with [requestVideoFrameCallback()](https://web.dev/requestvideoframecallback-rvfc/) API, put it in canvas, and render it as a video with [HTMLCanvasElement.captureStream()](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/captureStream) that you can use as a video stream that you can send through WebRTC with our APIs. With this, you can build your own simple OBS client.
 
-Check our [documentation](/docs/tutorial/tutorial-app-with-webrtc/) about developing a broadcast client on the web and use it with our inLive live streaming APIs.
+Check our [documentation](/docs/tutorials/live-stream-api/tutorial-app-with-webrtc/) about developing a broadcast client on the web and use it with our inLive live streaming APIs.
 
 ## Summary
 For now, we only support WebRTC as our video ingestion, we have RTMP in development but we can’t say when it will be available because we currently focus on live streaming use cases for mobile, which mostly will prioritize latency over quality.

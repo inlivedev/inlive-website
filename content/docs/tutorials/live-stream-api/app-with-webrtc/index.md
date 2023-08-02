@@ -29,7 +29,7 @@ We will create a web page for the streamer client to capture our webcam directly
 We will create a web page that can use by live stream viewers to watch the live video stream.
 
 ## A. Requirement
-Before coding your web app, you need to create an application key as stated in our [getting started documentation](/docs/getting-started). Please make sure you write down that key after you create it because it is used in this web app that we will create.
+Before coding your web app, you need to create an application key as stated in our [getting started documentation](/docs/getting-started/live-stream-api/using-live-stream-api/). Please make sure you write down that key after you create it because it is used in this web app that we will create.
 
 ## B. Create a streamer client
 A streamer client will be using a video capture to capture your webcam video and send it to Inlive encoder. Inlive encoder will encode and publish the video that we watch later with a video player. In this tutorial we will create a streamer client that will create a stream with the name with set, then start a stream.
@@ -419,7 +419,7 @@ The API response will return data like this:
 }
 ```
 
-There are two options to play the video, and you can [read more detail here](/docs/learn/playing-video). But in this tutorial, we will use the shaka player to embed the video player to our website. The code below will show you how to use DASH manifest URL playlist from API to play it with Shaka Player. We use the modified version of [Shaka basic tutorial example](https://shaka-player-demo.appspot.com/docs/api/tutorial-basic-usage.html) for this. Create a new page and use the code below:
+There are two options to play the video, and you can [read more detail here](/docs/learn/playing-video-with-hls-and-mpeg-dash/). But in this tutorial, we will use the shaka player to embed the video player to our website. The code below will show you how to use DASH manifest URL playlist from API to play it with Shaka Player. We use the modified version of [Shaka basic tutorial example](https://shaka-player-demo.appspot.com/docs/api/tutorial-basic-usage.html) for this. Create a new page and use the code below:
 
 ```html
 <html>

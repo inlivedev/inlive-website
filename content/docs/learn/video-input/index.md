@@ -26,7 +26,7 @@ Inlive is support 2 ways to send the video source input to our encoder. You can 
 ## WebRTC
 WebRTC is a web standard protocol for video communication that is used by Google Meet. It's a UDP-based network transport by default which is known to reduce latency, but we still can make it work through TCP if needed. The better latency is the main reason why we focus on WebRTC input first instead of the RTMP that is already standard input in the live streaming app. Another reason is WebRTC can work everywhere including in the browser, something that RTMP can't do. With this, we can build a live streaming broadcaster app like OBS but on the web. No need to install anything.
 
-So if you want to build a live streaming app that can capture the camera on all platforms, not only in the mobile apps but also on the web, then WebRTC is your choice. Check out [our tutorial](/docs/tutorial/tutorial-app-with-webrtc/) on how to capture a camera on the web and send it as a video stream input. For mobiles, there are some tutorials and examples that you can use as well.
+So if you want to build a live streaming app that can capture the camera on all platforms, not only in the mobile apps but also on the web, then WebRTC is your choice. Check out [our tutorial](/docs/tutorials/live-stream-api/tutorial-app-with-webrtc/) on how to capture a camera on the web and send it as a video stream input. For mobiles, there are some tutorials and examples that you can use as well.
 
 
 ## RTMP
