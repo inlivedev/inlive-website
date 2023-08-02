@@ -12,8 +12,8 @@ menu:
     weight: 1
 pagination:
   next:
-    text: Using Live Stream API
-    link: /docs/getting-started/live-stream-api/using-live-stream-api/
+    text: Getting Started
+    link: /docs/getting-started/
 ---
 # Introduction
 Inlive is an infrastructure as a service that allows a developer to develop a live video capability in their web or app. We provide APIs to create a live stream, send video input, and watch the live video. Developers can use our APIs without thinking about server requirements, scalability, and video hosting.
