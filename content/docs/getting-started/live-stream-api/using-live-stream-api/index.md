@@ -1,17 +1,15 @@
 ---
 date: 2022-03-08
-lastmod: 2022-03-08
-name: Getting Started
-title: Getting Started
-description: To start developing with Inlive, you will need three simple steps to integrate inlive with your app.
+lastmod: 2023-08-02
+name: using-live-stream-api
+title: Using Live Stream API
+description: Start integrating inLive live stream API into your app with three simple steps.
 ogimage: /images/docs/og-image.png
-slug: getting-started
-weight: 2000
+slug: using-live-stream-api
 menu:
   docs_sidebar:
-    identifier: Getting Started
-    name: Getting Started
-    weight: 2000
+    identifier: using-live-stream-api
+    parent: getting-started-live-stream-api
 ---
 # Get Started
 To start developing with Inlive, you will need three simple steps to integrate inlive with your app.

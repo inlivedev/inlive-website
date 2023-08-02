@@ -9,7 +9,6 @@ slug: getting-started
 menu:
   docs_sidebar:
     identifier: getting-started
-    name: Getting Started
     weight: 2
 pagination:
   prev:
