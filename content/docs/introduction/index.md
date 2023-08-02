@@ -1,17 +1,20 @@
 ---
 date: 2022-03-08
 lastmod: 2022-03-08
-name: Introduction
+name: introduction
 title: Introduction
 description: Inlive is an infrastructure as a service that allows a developer to develop a live video capability in their web or app.
 ogimage: /images/docs/og-image.png
 slug: introduction
-weight: 1000
 menu:
   docs_sidebar:
-    identifier: Introduction
+    identifier: introduction
     name: Introduction
-    weight: 1000
+    weight: 1
+pagination:
+  next:
+    name: Using Live Stream API
+    link: /docs/getting-started/live-stream-api/using-live-stream-api/
 ---
 # Introduction
 Inlive is an infrastructure as a service that allows a developer to develop a live video capability in their web or app. We provide APIs to create a live stream, send video input, and watch the live video. Developers can use our APIs without thinking about server requirements, scalability, and video hosting.
