@@ -10,6 +10,7 @@ menu:
   docs_sidebar:
     identifier: choosing-rtmp-vs-webrtc
     parent: learn
+    weight: 1
 pagination:
   prev:
     text: Learn
