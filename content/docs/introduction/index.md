@@ -9,7 +9,6 @@ slug: introduction
 menu:
   docs_sidebar:
     identifier: introduction
-    text: Introduction
     weight: 1
 pagination:
   next:
