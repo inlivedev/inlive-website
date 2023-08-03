@@ -15,8 +15,8 @@ pagination:
     text: Introduction
     link: /docs/introduction/
   next:
-    text: Live Stream API
-    link: /docs/getting-started/live-stream-api/
+    text: Using Live Stream API
+    link: /docs/getting-started/using-live-stream-api/
 ---
 
 # Getting started with inLive

@@ -16,7 +16,7 @@ pagination:
     text: Getting Started
     link: /docs/getting-started/
   next:
-    text: Hub API
+    text: Using Hub API
     link: /docs/getting-started/using-hub-api/
 ---
 # Using Live Stream API
