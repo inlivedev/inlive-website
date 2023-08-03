@@ -9,11 +9,12 @@ slug: using-hub-api
 menu:
   docs_sidebar:
     identifier: using-hub-api
-    parent: getting-started-hub-api
+    parent: getting-started
+    weight: 2
 pagination:
   prev:
-    text: Hub API
-    link: /docs/getting-started/hub-api/
+    text: Using Live Stream API
+    link: /docs/getting-started/using-live-stream-api/
   next:
     text: Tutorials
     link: /docs/tutorials/

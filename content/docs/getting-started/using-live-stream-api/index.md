@@ -9,14 +9,15 @@ slug: using-live-stream-api
 menu:
   docs_sidebar:
     identifier: using-live-stream-api
-    parent: getting-started-live-stream-api
+    parent: getting-started
+    weight: 1
 pagination:
   prev:
-    text: Live Stream API
-    link: /docs/getting-started/live-stream-api/
+    text: Getting Started
+    link: /docs/getting-started/
   next:
     text: Hub API
-    link: /docs/getting-started/hub-api/
+    link: /docs/getting-started/using-hub-api/
 ---
 # Using Live Stream API
 
