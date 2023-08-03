@@ -23,6 +23,16 @@ pagination:
 
 Learn how to use and integrate the Hub API into your application
 
+## About Hub API
+
+The Hub API provides ways to enable real-time online interactions between multiple hosts and participants inside a room. It is built on top of WebRTC SFU (Selective Forwarding Unit) technology which will route the media stream from one peer to another peer in the same group with very low latency.
+
+The current Hub API supports the basic features such as:
+- Multi group, a possibility to create multi room for different group of peers.
+- Group call, where all peers in the same group can send and receive media stream to each other.
+- Real-time signaling channel, that enables client to receive an event from the channel server in a real-time.
+- Perfect negotiation, enable to add additional track in the middle of the session such as screen sharing track.
+
 ## Making a request
 
 The Hub API can be accessed from `https://hub.inlive.app`. To make a request for a specific feature, you need to identify the specific API endpoint you want to use and provide any requirements that the endpoint may require. You can check our list of Hub API endpoints within our [API reference docs](https://hub.inlive.app/apidocs/index.html).
@@ -43,6 +53,4 @@ curl --request POST \
 - Read the [API reference docs](https://hub.inlive.app/apidocs/index.html)
 - Read an [example tutorial about developing a conference app](/docs/tutorials/hub-api/conference-app-with-hub-api/) using Hub API.
 - Check out the [code example in GitHub](https://github.com/inlivedev/inlivedev.github.io/tree/main/examples/)
-- Explore our [Hub SFU library in GitHub](https://github.com/inlivedev/sfu)
-
-<!-- Concept -->
+- Explore our open source[Hub SFU library in GitHub](https://github.com/inlivedev/sfu)
