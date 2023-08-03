@@ -9,6 +9,7 @@ slug: video-input
 menu:
   docs_sidebar:
     identifier: video-input
+    name: Video Input
     parent: learn
     weight: 2
 pagination:

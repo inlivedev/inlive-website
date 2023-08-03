@@ -9,6 +9,7 @@ slug: rtmp-vs-webrtc
 menu:
   docs_sidebar:
     identifier: choosing-rtmp-vs-webrtc
+    name: Choosing RTMP vs WebRTC
     parent: learn
     weight: 1
 pagination:

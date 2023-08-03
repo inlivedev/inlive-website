@@ -9,6 +9,7 @@ slug: using-live-stream-api
 menu:
   docs_sidebar:
     identifier: using-live-stream-api
+    name: Using Live Stream API
     parent: getting-started
     weight: 1
 pagination:

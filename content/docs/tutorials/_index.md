@@ -9,6 +9,7 @@ slug: tutorials
 menu:
   docs_sidebar:
     identifier: tutorials
+    name: Tutorials
     weight: 3
 pagination:
   prev:

@@ -9,6 +9,7 @@ slug: learn
 menu:
   docs_sidebar:
     identifier: learn
+    name: Learn
     weight: 4
 pagination:
   prev:

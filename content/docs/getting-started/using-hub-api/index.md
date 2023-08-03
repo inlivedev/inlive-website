@@ -9,6 +9,7 @@ slug: using-hub-api
 menu:
   docs_sidebar:
     identifier: using-hub-api
+    name: Using Hub API
     parent: getting-started
     weight: 2
 pagination:

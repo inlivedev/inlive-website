@@ -46,7 +46,7 @@
       </a>
 
       <ul>
-        {{ range $index, $level2 := $level1.Children }}
+        {{ range $index, $level2 := sort $level1.Children ".Name" "asc" }}
 
         {{ $isMenuCurrent := $context.IsMenuCurrent .Menu . }}
 
@@ -62,7 +62,7 @@
             </span>
           </a>
           <ul>
-            {{ range $index, $level3 := $level2.Children }}
+            {{ range $index, $level3 := sort $level2.Children ".Name" "asc" }}
 
             {{ $isMenuCurrent := $context.IsMenuCurrent .Menu . }}
             <li>
