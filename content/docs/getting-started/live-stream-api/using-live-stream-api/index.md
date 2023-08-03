@@ -15,11 +15,12 @@ pagination:
     text: Live Stream API
     link: /docs/getting-started/live-stream-api/
   next:
-    text: Tutorials
-    link: /docs/tutorials/
+    text: Hub API
+    link: /docs/getting-started/hub-api/
 ---
-# Get Started
-To start developing with Inlive, you will need three simple steps to integrate inlive with your app.
+# Using Live Stream API
+
+Learn how to use and integrate the live stream API into your application
 
 ## Get an application key
 To allow your app to access the Inlive APIs, you need an application key. This API key is unique per application, and you will need to use it will all your API request. Follow these steps to create your application key:

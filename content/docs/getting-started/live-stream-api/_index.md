@@ -10,6 +10,7 @@ menu:
   docs_sidebar:
     identifier: getting-started-live-stream-api
     parent: getting-started
+    weight: 1
 pagination:
   prev:
     text: Getting Started
