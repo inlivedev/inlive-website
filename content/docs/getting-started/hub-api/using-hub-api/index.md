@@ -53,4 +53,4 @@ curl --request POST \
 - Read the [API reference docs](https://hub.inlive.app/apidocs/index.html)
 - Read an [example tutorial about developing a conference app](/docs/tutorials/hub-api/conference-app-with-hub-api/) using Hub API.
 - Check out the [code example in GitHub](https://github.com/inlivedev/inlivedev.github.io/tree/main/examples/)
-- Explore our open source[Hub SFU library in GitHub](https://github.com/inlivedev/sfu)
+- Explore our open source [Hub SFU library in GitHub](https://github.com/inlivedev/sfu)
