@@ -12,13 +12,6 @@ menu:
     name: Conference App with Hub API
     parent: hub-api
     weight: 1
-pagination:
-  prev:
-    text: Hub API
-    link: /docs/tutorials/hub-api/
-  next:
-    text: Learn
-    link: /docs/learn/
 ---
 
 # Conference App with Hub API

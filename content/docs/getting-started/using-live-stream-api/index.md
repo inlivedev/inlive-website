@@ -12,13 +12,6 @@ menu:
     name: Using Live Stream API
     parent: getting-started
     weight: 1
-pagination:
-  prev:
-    text: Getting Started
-    link: /docs/getting-started/
-  next:
-    text: Using Hub API
-    link: /docs/getting-started/using-hub-api/
 ---
 # Using Live Stream API
 

@@ -12,13 +12,6 @@ menu:
     name: Video Input
     parent: learn
     weight: 2
-pagination:
-  prev:
-    text: Choosing RTMP vs WebRTC
-    link: /docs/learn/rtmp-vs-webrtc/
-  next:
-    text: Playing Video with HLS and MPEG-DASH
-    link: /docs/learn/playing-video-with-hls-and-mpeg-dash/
 ---
 
 # Video Input

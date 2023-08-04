@@ -12,13 +12,6 @@ menu:
     name: Live Stream API
     parent: tutorials
     weight: 1
-pagination:
-  prev:
-    text: Tutorials
-    link: /docs/tutorials/
-  next:
-    text: Live Stream App with WebRTC
-    link: /docs/tutorials/live-stream-api/tutorial-app-with-webrtc/
 ---
 
 # Live Stream API Tutorials

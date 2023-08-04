@@ -11,13 +11,6 @@ menu:
     identifier: learn
     name: Learn
     weight: 4
-pagination:
-  prev:
-    text: Conference App with Hub API
-    link: /docs/tutorials/hub-api/conference-app-with-hub-api/
-  next:
-    text: Choosing RTMP vs WebRTC
-    link: /docs/learn/rtmp-vs-webrtc/
 ---
 # Learn
 List of supporting articles related to Inlive that we have created for you

@@ -12,10 +12,6 @@ menu:
     name: Playing Video with HLS and MPEG-DASH
     parent: learn
     weight: 3
-pagination:
-  prev:
-    text: Video Input
-    link: /docs/learn/video-input/
 ---
 
 # Playing Video with HLS and MPEG-DASH

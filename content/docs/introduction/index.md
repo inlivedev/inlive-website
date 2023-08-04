@@ -11,21 +11,17 @@ menu:
     identifier: introduction
     name: Introduction
     weight: 1
-pagination:
-  next:
-    text: Getting Started
-    link: /docs/getting-started/
 ---
 # Introduction
 ## Why
 We started Inlive because when we need to develop a video live streaming app, we figure out it's hard to scale and the cost is very expensive. The infrastructure cost make the end user cost too expensive for who are live in developing countries. The pricing model also not fair, instead of based on the cost structure like bandwidth and server usage, most of the solution will cost you per viewer. Thinking this from the business perspective, it's hard to figure out how to monetize the app if the end user cost or price is too expensive.
 
-We also saw that the COVID-19 pandemic is a transition point where we will see more and more people will work remotely and interact with each other online. We believe more online interaction will be invented in the future. And to create a new online interaction model, we need to have an easy to use video and real-time infrastructure that accesible for everyone especially for developers in developing countries. 
+We also saw that the COVID-19 pandemic is a transition point where we will see more and more people will work remotely and interact with each other online. We believe more online interaction will be invented in the future. And to create a new online interaction model, we need to have an easy to use video and real-time infrastructure that accesible for everyone especially for developers in developing countries.
 
 ## What is Inlive
-Inlive is an infrastructure as a service(IaaS) that allows a developer to develop a live video capability in their web or app. We provide APIs to create a live stream, invite other to join, and let others to watch. We also provide a client SDK to make it easier to integrate with your web or app. 
+Inlive is an infrastructure as a service(IaaS) that allows a developer to develop a live video capability in their web or app. We provide APIs to create a live stream, invite other to join, and let others to watch. We also provide a client SDK to make it easier to integrate with your web or app.
 
-We currently have 2 products that you can use from total 3 products that we planned to build. 
+We currently have 2 products that you can use from total 3 products that we planned to build.
 1. The first product is a single input live streaming API that allows you to create a live stream and let others to watch with up to 2 second latency. This is based on CDN and HLS/Dash technology, which allow you to utilize the existing CDN infrastructure to deliver the video stream to million of viewers.
 2. The second product is a multi input live streaming API, where you can create a live stream and invite others to join with less than 500ms latency. This is based on WebRTC Selective Forwarder Unit (SFU)technology, which allow you to develop a real-time interactive app like Google Meet or Zoom.
 3. The third product is still in design phase is a video hosting API that allows you to upload a video and the API will convert it to an optimal stream format, and store it in the cloud. This will allow you to develop a video on demand app like Youtube or Netflix.

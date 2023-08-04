@@ -11,13 +11,6 @@ menu:
     identifier: tutorials
     name: Tutorials
     weight: 3
-pagination:
-  prev:
-    text: Using Live Stream API
-    link: /docs/getting-started/live-stream-api/using-live-stream-api/
-  next:
-    text: Live Stream API Tutorials
-    link: /docs/tutorials/live-stream-api/
 ---
 
 # Tutorial

@@ -12,13 +12,6 @@ menu:
     name: Choosing RTMP vs WebRTC
     parent: learn
     weight: 1
-pagination:
-  prev:
-    text: Learn
-    link: /docs/learn/
-  next:
-    text: Video Input
-    link: /docs/learn/video-input/
 ---
 
 # WebRTC vs RTMP Video Ingestion

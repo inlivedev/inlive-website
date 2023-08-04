@@ -12,13 +12,6 @@ menu:
     name: Live Stream App with WebRTC
     parent: live-stream-api-tutorials
     weight: 1
-pagination:
-  prev:
-    text: Live Stream API Tutorials
-    link: /docs/tutorials/live-stream-api/
-  next:
-    text: Live Stream App with JavaScript SDK
-    link: /docs/tutorials/live-stream-api/tutorial-app-with-inlive-js-sdk/
 ---
 # Tutorial building a live stream app with WebRTC
 

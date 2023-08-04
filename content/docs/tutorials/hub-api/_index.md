@@ -12,13 +12,6 @@ menu:
     name: Hub API
     parent: tutorials
     weight: 2
-pagination:
-  prev:
-    text: Live Stream App with WHIP
-    link: /docs/tutorials/live-stream-api/tutorial-app-with-whip/
-  next:
-    text: Conference App with Hub API
-    link: /docs/tutorials/hub-api/conference-app-with-hub-api/
 ---
 
 # Hub API Tutorials

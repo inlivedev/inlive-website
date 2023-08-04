@@ -12,13 +12,6 @@ menu:
     name: Live Stream App with WHIP
     parent: live-stream-api-tutorials
     weight: 3
-pagination:
-  prev:
-    text: Live Stream App with JavaScript SDK
-    link: /docs/tutorials/live-stream-api/tutorial-app-with-inlive-js-sdk/
-  next:
-    text: Hub API
-    link: /docs/tutorials/hub-api/
 ---
 # Tutorial building a live stream app with WHIP
 
