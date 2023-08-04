@@ -12,7 +12,7 @@
 {{ template "breadcrumbs" dict "currentPage" .currentPage.Parent }}
 {{ end }}
 <li class="group flex items-center text-blue-600 font-bold text-sm">
-  <a href="{{ .currentPage.RelPermalink }}" class="block hover:underline">{{ .currentPage.Params.Title }}</a>
+  <a href="{{ .currentPage.RelPermalink }}" class="block hover:underline">{{ .currentPage.Params.menu.docs_sidebar.name }}</a>
   <span class="block mx-1 group-last:hidden">/</span>
 </li>
 {{ end }}
