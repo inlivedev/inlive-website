@@ -17,10 +17,11 @@ maxAge = "10s"
     [markup.goldmark.renderer]
       unsafe = true
 
+# The below menus don't have actual page
 [menu]
   [[menu.docs_sidebar]]
     identifier = "api-references"
-    name = "Live Stream API Reference"
+    name = "API Reference"
     weight = 5
     [menu.docs_sidebar.params]
       disabled = true
