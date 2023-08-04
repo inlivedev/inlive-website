@@ -15,7 +15,10 @@
 {{ define "partials/inline-recursive-menu.html" }}
   {{ $menu := .menu }}
   {{ $appendedMenus := .appendedMenus }}
-  {{ $appendedMenus = $appendedMenus | append $menu }}
+
+  {{ if and (not $menu.Params.external) (not $menu.Params.disabled) }}
+    {{ $appendedMenus = $appendedMenus | append $menu }}
+  {{ end }}
 
   {{ if $menu.HasChildren }}
     {{ range $index, $children := $menu.Children }}
