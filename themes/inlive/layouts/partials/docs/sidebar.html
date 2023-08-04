@@ -38,7 +38,7 @@
     {{ $isMenuCurrent := $context.IsMenuCurrent .Menu . }}
 
     <li>
-      <a href="{{ $level1.URL }}" title="{{ $level1.Title }}" class="block text-base lg:text-sm leading-6 lg:leading-6">
+      <a href="{{ $level1.URL }}" title="{{ $level1.Title }}" class="block text-base lg:text-sm leading-6 lg:leading-6 {{ if $level1.Params.disabled }} pointer-events-none {{ end }}" aria-disabled="{{ if $level1.Params.disabled }} true {{ else }} false {{ end }}">
         <span
           class="pt-3 pb-2 lg:pb-1 block {{ if $isMenuCurrent }} font-semibold text-blue-600 {{ else if $hasMenuCurrent }} font-semibold text-gray-800 {{ else }} font-medium text-gray-600 hover:text-gray-900 {{ end }}">
           {{ $level1.Name }}
@@ -46,7 +46,7 @@
       </a>
 
       <ul>
-        {{ range $index, $level2 := sort $level1.Children ".Name" "asc" }}
+        {{ range $index, $level2 := $level1.Children }}
 
         {{ $isMenuCurrent := $context.IsMenuCurrent .Menu . }}
 
@@ -55,19 +55,19 @@
 
         <li class="border-l border-gray-200">
           <a href="{{ $level2.URL }}" title="{{ $level2.Title }}"
-            class="ml-5 block text-base lg:text-sm leading-6 lg:leading-6">
+            class="ml-5 block text-base lg:text-sm leading-6 lg:leading-6 {{ if $level1.Params.disabled }} pointer-events-none {{ end }}" aria-disabled="{{ if $level1.Params.disabled }} true {{ else }} false {{ end }}">
             <span
               class="block py-2 lg:py-1 {{ if $isMenuCurrent }} font-semibold text-blue-600 {{ else if $hasMenuCurrent }} font-semibold text-gray-800 {{ else }} font-medium text-gray-600 hover:text-gray-900 {{ end }}">
               {{ $level2.Name }}
             </span>
           </a>
           <ul>
-            {{ range $index, $level3 := sort $level2.Children ".Name" "asc" }}
+            {{ range $index, $level3 := $level2.Children }}
 
             {{ $isMenuCurrent := $context.IsMenuCurrent .Menu . }}
             <li>
-              <a href="{{ $level3.URL }}" title="{{ $level3.Title }}"
-                class="ml-5 block text-base lg:text-sm leading-6 lg:leading-6">
+              <a href="{{ $level3.URL }}"
+                title="{{ $level3.Title }}" class="ml-5 block text-base lg:text-sm leading-6 lg:leading-6" {{ if eq .Params.external true }} target="_blank" rel="noopener noreferrer" {{ end }}>
                 <span
                   class="block py-2 lg:py-1 pl-4 border-l {{ if $isMenuCurrent }} border-blue-600 font-medium text-blue-600 {{ else }} border-gray-200 hover:border-gray-600 text-gray-500 hover:text-gray-800 {{ end }}">
                   {{ $level3.Name }}
@@ -79,8 +79,8 @@
         </li>
         {{ else }}
         <li>
-          <a href="{{ $level2.URL }}" title="{{ $level2.Title }}"
-            class="block text-base lg:text-sm leading-6 lg:leading-6">
+          <a href="{{ $level2.URL }}"
+            title="{{ $level2.Title }}" class="block text-base lg:text-sm leading-6 lg:leading-6" {{ if eq .Params.external true }} target="_blank" rel="noopener noreferrer" {{ end }}>
             <span
               class="block py-2 lg:py-1 pl-4 border-l {{ if $isMenuCurrent }} font-medium border-blue-600 text-blue-600 {{ else }} border-gray-200 hover:border-gray-600 text-gray-500 hover:text-gray-800 {{ end }}">
               {{ $level2.Name }}
@@ -95,7 +95,8 @@
     <li>
       {{ $isMenuCurrent := $context.IsMenuCurrent .Menu . }}
 
-      <a href="{{ $level1.URL }}" title="{{ $level1.Title }}" class="block text-base lg:text-sm leading-6 lg:leading-6">
+      <a href="{{ $level1.URL }}"
+        title="{{ $level1.Title }}" class="block text-base lg:text-sm leading-6 lg:leading-6" {{ if eq .Params.external true }} target="_blank" rel="noopener noreferrer" {{ end }}>
         <span
           class="pt-3 pb-2 lg:pb-1 block {{ if eq $index 0 }} mr-6 pt-0 lg:pt-3 {{ end }} {{ if $isMenuCurrent }} font-semibold text-blue-600 {{ else }} font-medium text-gray-600 hover:text-gray-900 {{ end }}">
           {{ $level1.Name }}
