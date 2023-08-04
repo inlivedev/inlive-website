@@ -21,7 +21,9 @@ pagination:
 
 # Getting started with inLive
 
-To start develop your app with inLive, you need to choose which API that fit with your usecase. As explained before in the introduction, we have 2 products that you can use from total 3 products that we planned to build.
+To start develop your app with inLive, you need to choose which API that fit with your usecase. This document will help you to choose which API that fit with your usecase.
+
+As explained before in the introduction, we have 2 products that you can use from total 3 products that we planned to build.
 
 1. Single input live streaming API that allows you to create a live stream and let others to watch with up to 2 second latency. This is based on CDN and HLS/Dash technology, which allow you to utilize the existing CDN infrastructure to deliver the video stream to million of viewers.
 2. Multi input live streaming API, where you can create a live stream and invite others to join with less than 500ms latency. This is based on WebRTC Selective Forwarder Unit (SFU)technology, which allow you to develop a real-time interactive app like Google Meet or Zoom.
