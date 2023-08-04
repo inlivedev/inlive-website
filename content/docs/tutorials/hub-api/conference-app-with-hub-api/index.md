@@ -11,6 +11,7 @@ menu:
     identifier: conference-app-with-hub-api
     name: Conference App with Hub API
     parent: hub-api
+    weight: 1
 pagination:
   prev:
     text: Hub API
