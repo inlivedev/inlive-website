@@ -20,7 +20,7 @@
 <nav class="py-16">
   <ul class="grid grid-cols-1 lg:grid-cols-2 justify-between gap-4">
     <li>
-      {{ if and $prev.URL $prev.Name }}
+      {{ if $prev }}
       <a href="{{ $prev.URL }}"
         class="w-full h-full px-4 py-3 lg:p-4 flex justify-between gap-x-4 border border-gray-300 hover:border-blue-400 rounded-lg font-medium text-base text-blue-600">
         <span>
@@ -34,7 +34,7 @@
       {{ end }}
     </li>
     <li>
-      {{ if and $next.URL $next.Name }}
+      {{ if $next }}
       <a href="{{ $next.URL }}"
         class="w-full h-full px-4 py-3 lg:p-4 flex justify-between gap-x-4 border border-gray-300 hover:border-blue-400 rounded-lg font-medium text-base text-blue-600">
         <span class="flex-1 text-left">{{ $next.Name}}</span>
