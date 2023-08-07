@@ -30,7 +30,7 @@
 
   {{/* menu */}}
   {{ if gt (len $menuEntries) 0 }}
-  <ul class="py-8 px-6 lg:pr-2 lg:pl-8 flex-1">
+  <ul class="py-8 lg:pb-10 px-6 lg:pr-2 lg:pl-8 flex-1">
     {{ range $index, $level1 := $menuEntries }}
 
     {{ if $level1.HasChildren }}
