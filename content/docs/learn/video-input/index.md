@@ -3,7 +3,7 @@ date: 2022-03-11
 lastmod: 2023-08-02
 name: video-input
 title: Video Input
-description: Inlive supports 2 ways to sending the video source input to our encoder. You can use either WebRTC or RTMP.
+description: We will learn the difference between WebRTC and RTMP as the two popular live video input protocols
 ogimage: /images/docs/og-image.png
 slug: video-input
 menu:
@@ -15,10 +15,10 @@ menu:
 ---
 
 # Video Input
-Inlive is support 2 ways to send the video source input to our encoder. You can use either [WebRTC](https://webrtc.org/)(Web Real Time Communication) or RTMP(Real-Time Messaging Protocol - coming soon). This page will explain the difference between these two and how you can choose which input method fits your case.
+WebRTC (Web Real Time Communication) and RTMP (Real-Time Messaging Protocol) are two popular live video input protocols which enable live video streaming over the internet. This page will explain the difference between these two and how you can choose which input protocol that fits your case.
 
 ## WebRTC
-WebRTC is a web standard protocol for video communication that is used by Google Meet. It's a UDP-based network transport by default which is known to reduce latency, but we still can make it work through TCP if needed. The better latency is the main reason why we focus on WebRTC input first instead of the RTMP that is already standard input in the live streaming app. Another reason is WebRTC can work everywhere including in the browser, something that RTMP can't do. With this, we can build a live streaming broadcaster app like OBS but on the web. No need to install anything.
+WebRTC is a web standard protocol for video communication that is used by Google Meet. It's a UDP-based network transport by default which is known to reduce latency, but we still can make it work through TCP if needed. The better latency is the main reason why we focus on WebRTC input instead of the RTMP which is already standard input in the live streaming app. Another reason is WebRTC can work everywhere including in the browser, something that RTMP can't do. With this, we can build a live streaming broadcaster app like OBS but on the web. No need to install anything.
 
 So if you want to build a live streaming app that can capture the camera on all platforms, not only in the mobile apps but also on the web, then WebRTC is your choice. Check out [our tutorial](/docs/tutorials/live-stream-api/tutorial-app-with-webrtc/) on how to capture a camera on the web and send it as a video stream input. For mobiles, there are some tutorials and examples that you can use as well.
 
