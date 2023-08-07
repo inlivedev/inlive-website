@@ -15,7 +15,7 @@ menu:
 ---
 # Tutorial building a live stream app with WebRTC
 
-This tutorial will show you how to build a live video stream web app with WebRTC video source input. Please read it on [video input documentation](/docs/learn/video-input/) to understand what the WebRTC is and how it's compared with RTMP.
+This tutorial will show you how to build a live video stream web app with WebRTC video source input. Please read it on [video input documentation](/docs/learn/video-input/) to understand what the WebRTC is.
 
 This tutorial will show you how to create a streamer client and viewer page.
 We will create a web page for the streamer client to capture our webcam directly and send it to Inlive encoder as a video source input once the user clicks the start button.
