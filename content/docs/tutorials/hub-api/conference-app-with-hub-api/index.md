@@ -321,28 +321,40 @@ function establishPeerConnection(roomId, clientId, mediaStream) {
     // ...
 
     peer.addEventListener('negotiationneeded', async () => {
-        const offer = await peer.createOffer();
-        await peer.setLocalDescription(offer);
-
-        const response = await fetch(`${apiOrigin}/${apiVersion}/rooms/${roomId}/negotiate/${clientId}`, {
-            method: 'PUT',
-            headers: {
-                'Content-Type':'application/json'
-            },
-            body: JSON.stringify(peer.localDescription.toJSON())
+        const allowNegotiateResponse = await fetch(`${apiOrigin}/${apiVersion}/rooms/${roomId}/isallownegotiate/${clientId}`, {
+            method: 'POST',
         });
 
-        const responseJSON = await response.json();
-        const answer = responseJSON.data.answer;
-        const sdpAnswer = new RTCSessionDescription(answer);
-        await peer.setRemoteDescription(sdpAnswer);
+        if (allowNegotiateResponse.ok) {
+            if (!peer) return;
+
+            const offer = await peer.createOffer();
+            await peer.setLocalDescription(offer);
+
+            const negotiateResponse = await fetch(`${apiOrigin}/${apiVersion}/rooms/${roomId}/negotiate/${clientId}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(peer.localDescription.toJSON())
+            });
+
+            const negotiateJSON = await negotiateResponse.json();
+            const answer = negotiateJSON.data.answer;
+            const sdpAnswer = new RTCSessionDescription(answer);
+            await peer.setRemoteDescription(sdpAnswer);
+        }
     });
 
     // ...
 }
 ```
 
-When `negotiationneeded` event happens, the peer will create and set the local offer SDP for local peer connection, and then send the offer SDP to the `/rooms/<ROOM_ID>/negotiate/<CLIENT_ID>` endpoint using `PUT` method. The endpoint will have a response that contains the remote answer SDP which also needs the SDP be set to the local peer connection.
+Both local client and Hub API server sides can initiate the SDP negotiation exchange and since there's a possibility the negotiation is requested from the Hub API, we need to check if the request to do a negotiation to Hub API is allowed when  `negotiationneeded` event happens. We can check by sending a request to the endpoint   `/rooms/<ROOM_ID>/isallownegotiate/<CLIENT_ID>` using `POST` method. If the Hub API sends back an [ok response](https://developer.mozilla.org/en-US/docs/Web/API/Response/ok), then the client is allowed to request a negotiation.
+
+If the client is allowed to request a negotiation, the peer will create and set the local offer SDP for local peer connection, and then send the offer SDP to the `/rooms/<ROOM_ID>/negotiate/<CLIENT_ID>` endpoint using `PUT` method. The endpoint will have a response that contains the remote answer SDP which also needs the SDP be set to the local peer connection.
+
+If the client is not allowed to request negotiation, there is a possibility the negotiation request is sent by the Hub API to the client instead. What the client needs to do in this scenario is to wait for an `offer` SSE from the Hub API signaling channel and handle the request negotiation after the `offer` event received. We will cover the `offer` SSE in the next section.
 
 ### Handle peer connection icecandidate event
 
@@ -443,7 +455,7 @@ async function join() {
 
 ### Receive offer SDP from SSE signaling channel to repeat the negotiation process
 
-Incoming and leaving participant connections in the room are managed by Hub API. You need to understand that every time a new participant is connected or disconnected from the room, we may need to repeat the negotiation process. The Hub API will start the renegotiation process by sending a new remote offer SDP to all participants using server-sent event. The event is called `offer` event and what we need to do after receiving the remote offer SDP from the event is to answer back with the answer SDP created by local peer connection and send the answer SDP to the `/rooms/<ROOM_ID>/negotiate/<CLIENT_ID>` endpoint using HTTP `PUT` method.
+Incoming and leaving participant connections in the room are managed by Hub API. You need to understand that every time a new participant is connected or disconnected from the room, we may need to repeat the negotiation process. The Hub API will start the renegotiation process by sending a new remote offer SDP to all participants using server-sent event. The event is called `offer` event and what we need to do after receiving the remote offer SDP from this event is to answer back with the answer SDP created by local peer connection and send the answer SDP to the `/rooms/<ROOM_ID>/negotiate/<CLIENT_ID>` endpoint using HTTP `PUT` method.
 
 We need to listen the server-sent `offer` event sent by Hub API signaling channel. Let's add the handler inside the `establishPeerConnection()` function from the step 4.
 
