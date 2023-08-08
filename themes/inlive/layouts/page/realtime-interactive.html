@@ -17,7 +17,7 @@
         <div class="flex-1 max-w-[600px]">
           <div
             class="inline-block mb-4 py-1 px-3 text-center bg-emerald-100 rounded-3xl text-xs font-semibold text-emerald-700">
-            Available for trial on July 2023
+            Available for trial now
           </div>
           <h1 class="blink font-bold text-3xl lg:text-6xl -tracking-wide text-slate-800">
             Automate your video, audio, and data interactions with our real-time API
@@ -40,11 +40,6 @@
       </div>
     </div>
   </section>
-
-  {{ partial "landing/waitlist-cta-banner.html" (
-  dict "context" .
-  "paragraph" "Join our growing waitlist and our team will reach out to you as soon as this feature available."
-  ) }}
 
   <style>
     .bg-gradient {
@@ -204,11 +199,6 @@
 
   {{ partial "landing/feedback.html" . }}
 </main>
-
-{{ partial "landing/waitlist-dialog.html" (
-dict "context" .
-"type" "inlive-hub"
-) }}
 
 {{ end }}
 
