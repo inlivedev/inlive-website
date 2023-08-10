@@ -43,9 +43,18 @@ curl --request POST \
   --data '{ "name": "My room" }'
 ```
 
+### Get the room data
+
+When the room is successfully created, you will receive a room `id` data which you can use it to run some available actions in the room. For example, you can get the data of the new room you just created by using the the room ID with this command.
+
+```bash
+curl --request GET \
+  https://hub.inlive.app/v1/rooms/<YOUR_ROOM_ID>
+```
+
 ## Resources
 
-- Read the [API reference docs](https://hub.inlive.app/apidocs/index.html)
+- Read the [Hub API reference docs](https://hub.inlive.app/apidocs/index.html)
 - Read an [example tutorial about developing a conference app](/docs/tutorials/hub-api/conference-app-with-hub-api/) using Hub API.
 - Check out the [code example in GitHub](https://github.com/inlivedev/inlivedev.github.io/tree/main/examples/)
 - Explore our open source [Hub SFU library in GitHub](https://github.com/inlivedev/sfu)
