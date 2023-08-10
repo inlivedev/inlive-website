@@ -19,19 +19,11 @@
 {{ partial "header/header.html" . }}
 {{ $inliveEmail := getenv "_HUGO_INLIVE_EMAIL" }}
 <main class="px-4 lg:px-8 sm:mb-20 xl:flex xl:flex-col xl:justify-center xl:items-center mx-auto mb-12">
-  <header class="text-center mt-16 mb-10">
+  <header class="text-center mt-20 mb-12">
     <h1 class="font-extrabold text-3xl leading-9 mb-2">Choose Your Plan</h1>
     <p class="text-lg leading-7 text-gray-700 px-6">Flexible pricing plans for teams of all sizes and pay by month.</p>
   </header>
 
-  <section class="flex justify-center items-center mb-10">
-    <div class="bg-emerald-100 border border-emerald-300 w-full max-w-4xl rounded-lg py-4 sm:py-6 px-4 sm:px-6">
-      <p class="text-emerald-800 leading-7 font-medium text-center">
-        You can get a free 3 months of business plan coupon.
-        <b><a href="https://docs.google.com/forms/d/e/1FAIpQLScdo7fm1XbfaW9_O59IqU2GX7qy9f6huZBybWLMnsY_rML66A/viewform" class="underline" target="_blank" rel="noopener noreferrer" data-tracking-event="open-link" data-tracking-label="3 months of business plan form at pricing page">Fill out this form </a></b> to check if you're eligible.
-      </p>
-    </div>
-  </section>
   <section class="mt-4">
       <div class="grid overflow-x-auto gap-5" style="grid-template-columns: repeat(4, 1fr);">
         {{ $linkStudioOrigin := getenv "_HUGO_INLIVE_STUDIO_ORIGIN" }}
@@ -155,7 +147,7 @@
   </section>
 
   <section>
-    <h1 class="font-bold text-2xl leading-8 mt-20 lg:mt-36 mb-[46px] text-center">Frequently Asked Questions</h1>
+    <h1 class="font-bold text-2xl leading-8 mt-20 lg:mt-36 mb-12 text-center">Frequently Asked Questions</h1>
 
     <div class="max-w-[580px] mx-auto">
         <!-- faq 1 -->

@@ -13,7 +13,7 @@
         </article>
         <section>
           <ul>
-            {{ range .Pages }}
+            {{ range sort .Pages ".Params.menu.docs_sidebar.weight" "asc" }}
             <li class="mb-6 last:mb-0">
               <a href="{{ .RelPermalink }}"
                 class="p-4 lg:p-6 bg-white border border-gray-300 hover:border-blue-400 rounded-lg flex">
@@ -28,7 +28,7 @@
                   </svg>
                 </div>
                 <p class="ml-3 lg:ml-4 flex-1 font-semibold text-base lg:text-xl lg:leading-8 text-blue-700">
-                  {{ .Params.Name }}
+                  {{ .Params.menu.docs_sidebar.name }}
                 </p>
               </a>
             </li>
