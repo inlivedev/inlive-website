@@ -1,18 +1,17 @@
 ---
 date: 2023-05-26
-lastmod: 2023-05-26
-name: Tutorial with WHIP
+lastmod: 2023-08-02
+name: live-stream-app-with-whip
 title: Tutorial building a live stream app with WHIP standard
 description: This tutorial will show you how to build a live video stream web app using WHIP standard.
 ogimage: /images/docs/og-image.png
 slug: tutorial-app-with-whip
-weight: 4003
 menu:
   docs_sidebar:
-    identifier: Tutorial with WHIP
-    name: Tutorial with WHIP
-    weight: 4003
-    parent: Tutorial
+    identifier: live-stream-app-with-whip
+    name: Live Stream App with WHIP
+    parent: live-stream-api-tutorials
+    weight: 3
 ---
 # Tutorial building a live stream app with WHIP
 

@@ -1,0 +1,33 @@
+{{ $context := .context }}
+{{ $appendedMenus := slice }}
+{{ $menuEntries := .menuEntries }}
+
+{{ range $index, $menu := $menuEntries }}
+  {{ $appendedMenus = partial "partials/inline-recursive-menu.html" (dict
+  "menu" $menu
+  "appendedMenus" $appendedMenus
+  ) }}
+{{ end }}
+
+{{ return $appendedMenus }}
+
+
+{{ define "partials/inline-recursive-menu.html" }}
+  {{ $menu := .menu }}
+  {{ $appendedMenus := .appendedMenus }}
+
+  {{ if and (not $menu.Params.external) (not $menu.Params.disabled) }}
+    {{ $appendedMenus = $appendedMenus | append $menu }}
+  {{ end }}
+
+  {{ if $menu.HasChildren }}
+    {{ range $index, $children := $menu.Children }}
+      {{ $appendedMenus = partial "partials/inline-recursive-menu.html" (dict
+      "menu" $children
+      "appendedMenus" $appendedMenus
+      ) }}
+    {{ end }}
+  {{ end }}
+
+  {{ return $appendedMenus }}
+{{ end }}

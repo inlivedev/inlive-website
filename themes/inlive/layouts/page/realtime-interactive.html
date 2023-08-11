@@ -3,7 +3,8 @@
 
 <style>
   @media (min-width: 640px) {
-    .feature-list, .use-case {
+    .feature-list,
+    .use-case {
       grid-template-columns: repeat(2, minmax(0, 400px));
       justify-content: center;
     }
@@ -17,7 +18,7 @@
         <div class="flex-1 max-w-[600px]">
           <div
             class="inline-block mb-4 py-1 px-3 text-center bg-emerald-100 rounded-3xl text-xs font-semibold text-emerald-700">
-            Available for trial on July 2023
+            Available for trial now
           </div>
           <h1 class="blink font-bold text-3xl lg:text-6xl -tracking-wide text-slate-800">
             Automate your video, audio, and data interactions with our real-time API
@@ -28,9 +29,33 @@
             automate
             online interactions like telemedicine, online class, or call center.
           </p>
+          <div class="flex flex-row flex-wrap items-center gap-8 mt-8 lg:mt-10">
+            <div>
+              <a href="https://www.producthunt.com/posts/inlive-hub?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-inlive&#0045;hub"
+                target="_blank">
+                <img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=408641&theme=light"
+                  alt="inLive&#0032;Hub - Automate&#0032;your&#0032;real&#0045;time&#0032;video&#0044;&#0032;audio&#0044;&#0032;and&#0032;data&#0032;interactions | Product Hunt"
+                  class="w-[210px] h-[45px] lg:w-[230px] lg:h-[50px]" fetchpriority="high" />
+              </a>
+            </div>
+            <div>
+              <a href="/docs/getting-started/using-hub-api/"
+                class="font-semibold text-lg border border-blue-800 rounded-[10px] pl-3 pr-3.5 py-2.5 inline-flex justify-center items-center gap-3 text-blue-700 min-w-0 h-[45px] lg:h-[50px]"
+                data-tracking-event="open-link" data-tracking-label="CTA get started with hub api">
+                <span class="text-blue-600">
+                  <svg class="w-7 h-7 md:w-8 md:h-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                    fill="currentColor">
+                    <path
+                      d="M11.25 4.533A9.707 9.707 0 006 3a9.735 9.735 0 00-3.25.555.75.75 0 00-.5.707v14.25a.75.75 0 001 .707A8.237 8.237 0 016 18.75c1.995 0 3.823.707 5.25 1.886V4.533zM12.75 20.636A8.214 8.214 0 0118 18.75c.966 0 1.89.166 2.75.47a.75.75 0 001-.708V4.262a.75.75 0 00-.5-.707A9.735 9.735 0 0018 3a9.707 9.707 0 00-5.25 1.533v16.103z" />
+                  </svg>
+                </span>
+                <span>Get started</span>
+              </a>
+            </div>
+          </div>
         </div>
         <div class="flex-1 flex justify-center lg:justify-end">
-          <div class="max-w-xs lg:max-w-xl w-full aspect-square">
+          <div class="max-w-xs lg:max-w-xl lg:max-h-[576px] aspect-square">
             <video autoplay loop muted playsinline class="w-full h-full">
               <source src="/videos/realtime-interactive/inlive-hub.webm" type="video/webm">
               <source src="/videos/realtime-interactive/inlive-hub.mp4" type="video/mp4">
@@ -41,35 +66,35 @@
     </div>
   </section>
 
-  {{ partial "landing/waitlist-cta-banner.html" (
-  dict "context" .
-  "paragraph" "Join our growing waitlist and our team will reach out to you as soon as this feature available."
-  ) }}
-
   <style>
     .bg-gradient {
       background: linear-gradient(to bottom, hsla(0, 0%, 100%, 1), hsla(0, 0%, 100%, 1), hsla(210, 25%, 98%, 1), hsla(210, 25%, 98%, 1));
     }
   </style>
 
-<section class="py-10">
-  <div class="mx-auto max-w-7xl px-4 lg:px-8">
-    <div class="md:text-center lg:max-w-3xl mx-auto">
-      <div>
-        <h2 class="font-bold text-3xl lg:text-4xl text-slate-800 leading-tight">
-          Why you will need inLive Hub?
-        </h2>
-      </div>
-      <div class="mt-4 lg:mt-6">
-        <p class="font-medium mb-5 text-gray-500 lg:text-lg leading-6">
-          Develop and managing your own WebRTC SFU server is too complex, from make it work behind router and firewall, handle reconnection and unstable network, or scale it to handle thousands of participants. inLive Hub is a real-time interactive platform that you can use to build your own real-time application without worrying about the infrastructure.
-        </p>
+  <section class="mt-20 py-10">
+    <div class="mx-auto max-w-7xl px-4 lg:px-8">
+      <div class="md:text-center lg:max-w-3xl mx-auto">
+        <div>
+          <h2 class="font-bold text-3xl lg:text-4xl text-slate-800 leading-tight">
+            Why you will need inLive Hub?
+          </h2>
+        </div>
+        <div class="mt-4 lg:mt-6">
+          <p class="font-medium mb-5 text-gray-500 lg:text-lg leading-6">
+            Develop and managing your own WebRTC SFU server is too complex, from make it work behind router and
+            firewall, handle reconnection and unstable network, or scale it to handle thousands of participants. inLive
+            Hub is a real-time interactive platform that you can use to build your own real-time application without
+            worrying about the infrastructure.
+          </p>
 
-        <p class="font-medium text-gray-500 lg:text-lg leading-6">
-          Learn more about why we build inLive Hub and how we design it on this <a class="font-medium underline text-red-700 hover:text-red-600 hover:no-underline" href="/blog/designing-inlive-hub/">blog post</a>.
-        </p>
+          <p class="font-medium text-gray-500 lg:text-lg leading-6">
+            Learn more about why we build inLive Hub and how we design it on this <a
+              class="font-medium underline text-red-700 hover:text-red-600 hover:no-underline"
+              href="/blog/designing-inlive-hub/">blog post</a>.
+          </p>
+        </div>
       </div>
-    </div>
     </div>
   </section>
 
@@ -78,7 +103,7 @@
       <div class="md:text-center lg:max-w-3xl mx-auto flex flex-col gap-2 lg:gap-4">
         <div>
           <h2 class="font-bold text-3xl lg:text-4xl text-slate-800 leading-tight">
-           Possible use cases
+            Possible use cases
           </h2>
         </div>
       </div>
@@ -86,40 +111,48 @@
       <div class="mt-10 lg:mt-20">
         <ul class="use-case grid gap-6 sm:gap-4">
           <li class="sm:col-span-1">
-            <div class="w-full h-full lg:h-[180px] border border-slate-200 rounded-xl bg-white overflow-hidden flex flex-col gap-1 relative lg:gap-2 group">
+            <div
+              class="w-full h-full lg:h-[180px] border border-slate-200 rounded-xl bg-white overflow-hidden flex flex-col gap-1 relative lg:gap-2 group">
               <div class="h-full lg:absolute transition-all duration-300 group-hover:lg:-translate-y-[110px]">
                 <div class="p-5 lg:p-8">
-                  <img class="w-12 lg:w-16 h-12 lg:h-16" src="/images/realtime-interactive/live-conference-icon.svg" alt="" loading="lazy">
+                  <img class="w-12 lg:w-16 h-12 lg:h-16" src="/images/realtime-interactive/live-conference-icon.svg"
+                    alt="" loading="lazy">
                 </div>
                 <div class="px-5 lg:px-6 pb-5">
                   <h3 class="font-semibold text-xl text-slate-700">Live conference room</h3>
                   <p class="mt-4 lg:mt-5 lg:group-hover:mt-4 text-slate-500">
-                    Create a secure conference room with a simple REST API and bring multiple participants together to interact in real-time with video, audio, or text.
+                    Create a secure conference room with a simple REST API and bring multiple participants together to
+                    interact in real-time with video, audio, or text.
                   </p>
                 </div>
               </div>
             </div>
           </li>
           <li class="sm:col-span-1">
-            <div class="w-full h-full lg:h-[180px] border border-slate-200 rounded-xl bg-white overflow-hidden flex flex-col gap-1 relative lg:gap-2 group">
+            <div
+              class="w-full h-full lg:h-[180px] border border-slate-200 rounded-xl bg-white overflow-hidden flex flex-col gap-1 relative lg:gap-2 group">
               <div class="h-full lg:absolute transition-all duration-300 group-hover:lg:-translate-y-[110px]">
                 <div class="p-5 lg:p-8">
-                  <img class="w-12 lg:w-16 h-12 lg:h-16" src="/images/realtime-interactive/ai-assistant-icon.svg" alt="" loading="lazy">
+                  <img class="w-12 lg:w-16 h-12 lg:h-16" src="/images/realtime-interactive/ai-assistant-icon.svg" alt=""
+                    loading="lazy">
                 </div>
                 <div class="px-5 lg:px-6 pb-5">
                   <h3 class="font-semibold text-xl text-slate-700">AI assistant</h3>
                   <p class="mt-4 lg:mt-5 lg:group-hover:mt-4 text-slate-500">
-                    Connect a LLM (Large Language Model) with Voice To Text and Text To Voice to create a live AI bot that can interact with your participants.
+                    Connect a LLM (Large Language Model) with Voice To Text and Text To Voice to create a live AI bot
+                    that can interact with your participants.
                   </p>
                 </div>
               </div>
             </div>
           </li>
           <li class="sm:col-span-1">
-            <div class="w-full h-full lg:h-[180px] border border-slate-200 rounded-xl bg-white overflow-hidden flex flex-col gap-1 relative lg:gap-2 group">
+            <div
+              class="w-full h-full lg:h-[180px] border border-slate-200 rounded-xl bg-white overflow-hidden flex flex-col gap-1 relative lg:gap-2 group">
               <div class="h-full lg:absolute transition-all duration-300 group-hover:lg:-translate-y-[110px]">
                 <div class="p-5 lg:p-8">
-                  <img class="w-12 lg:w-16 h-12 lg:h-16" src="/images/realtime-interactive/automation-icon.svg" alt="" loading="lazy">
+                  <img class="w-12 lg:w-16 h-12 lg:h-16" src="/images/realtime-interactive/automation-icon.svg" alt=""
+                    loading="lazy">
                 </div>
                 <div class="px-5 lg:px-6 pb-5">
                   <h3 class="font-semibold text-xl text-slate-700">Automate your conference room</h3>
@@ -131,15 +164,18 @@
             </div>
           </li>
           <li class="sm:col-span-1">
-            <div class="w-full h-full lg:h-[180px] border border-slate-200 rounded-xl bg-white overflow-hidden flex flex-col gap-1 relative lg:gap-2 group">
+            <div
+              class="w-full h-full lg:h-[180px] border border-slate-200 rounded-xl bg-white overflow-hidden flex flex-col gap-1 relative lg:gap-2 group">
               <div class="h-full lg:absolute transition-all duration-300 group-hover:lg:-translate-y-[110px]">
                 <div class="p-5 lg:p-8">
-                  <img class="w-12 lg:w-16 h-12 lg:h-16" src="/images/realtime-interactive/smart-monitoring-icon.svg" alt="" loading="lazy">
+                  <img class="w-12 lg:w-16 h-12 lg:h-16" src="/images/realtime-interactive/smart-monitoring-icon.svg"
+                    alt="" loading="lazy">
                 </div>
                 <div class="px-5 lg:px-6 pb-5">
                   <h3 class="font-semibold text-xl text-slate-700">Smart monitoring and surveillance</h3>
                   <p class="mt-4 lg:mt-5 lg:group-hover:mt-4 text-slate-500">
-                    Create a smart monitoring system with real-time object detection, and trigger an action when a specific object is detected.
+                    Create a smart monitoring system with real-time object detection, and trigger an action when a
+                    specific object is detected.
                   </p>
                 </div>
               </div>
@@ -155,7 +191,7 @@
       <div class="md:text-center lg:max-w-3xl mx-auto flex flex-col gap-2 lg:gap-4">
         <div>
           <h2 class="font-bold text-3xl lg:text-4xl text-slate-800 leading-tight">
-           Core Features
+            Core Features
           </h2>
         </div>
       </div>
@@ -167,7 +203,8 @@
             "src" `/images/realtime-interactive/illust-feature-room.svg`
             "alt" `The illustration of online room feature`
             "heading" `Online room`
-            "paragraph" `Bring multiple participants to join an online room, and let them publish video, audio, data, or anything to other participants in the room.`
+            "paragraph" `Bring multiple participants to join an online room, and let them publish video, audio, data, or
+            anything to other participants in the room.`
             ) }}
           </li>
           <li class="sm:col-span-1">
@@ -176,7 +213,8 @@
             "src" `/images/realtime-interactive/illust-feature-webrtc.svg`
             "alt" `The illustration of reliable connection feature`
             "heading" `Reliable connection`
-            "paragraph" `Build in WebRTC feature to allow participants to interact in any network condition, even when switching networks.`
+            "paragraph" `Build in WebRTC feature to allow participants to interact in any network condition, even when
+            switching networks.`
             ) }}
           </li>
           <li class="sm:col-span-1">
@@ -185,7 +223,8 @@
             "src" `/images/realtime-interactive/illust-feature-real-time.svg`
             "alt" `The illustration of real-time events and data feature`
             "heading" `Real-time events and data`
-            "paragraph" `Get all events in real-time through webhook and SSE (server-sent-event) HTTP request for your backend or frontend applications`
+            "paragraph" `Get all events in real-time through webhook and SSE (server-sent-event) HTTP request for your
+            backend or frontend applications`
             ) }}
           </li>
           <li class="sm:col-span-1">
@@ -194,7 +233,8 @@
             "src" `/images/realtime-interactive/illust-feature-analytics.svg`
             "alt" `The illustration of analytics and custom data feature`
             "heading" `Analytics and custom data`
-            "paragraph" `Built-in room, participant, and stream analytics for your automation or add custom data to build a custom logic on top of it.`
+            "paragraph" `Built-in room, participant, and stream analytics for your automation or add custom data to
+            build a custom logic on top of it.`
             ) }}
           </li>
         </ul>
@@ -204,11 +244,6 @@
 
   {{ partial "landing/feedback.html" . }}
 </main>
-
-{{ partial "landing/waitlist-dialog.html" (
-dict "context" .
-"type" "inlive-hub"
-) }}
 
 {{ end }}
 
