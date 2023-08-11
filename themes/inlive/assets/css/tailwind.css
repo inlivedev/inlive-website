@@ -1,6 +1,10 @@
 @tailwind base;
 @tailwind components;
 
+body {
+  @apply selection:bg-red-100
+}
+
 #docs-content h1:first-child {
   @apply font-bold text-3xl lg:text-4xl text-gray-900 mb-4 lg:mb-8
 }
