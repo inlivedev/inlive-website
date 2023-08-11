@@ -1,24 +1,18 @@
-{{ define "head" }}
-<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/keen-slider@6.6.3/keen-slider.min.css"> -->
-{{ end }}
-
 {{ define "main" }}
 {{ partial "header/home.html" . }}
 {{ $inliveStudioOrigin := getenv "_HUGO_INLIVE_STUDIO_ORIGIN" }}
 
 <main class="mb-20">
-  {{/* Hero */}}
-  <section class="px-4 lg:px-20 lg:pb-14">
-    <div class="max-w-7xl mx-auto lg:px-8 pt-20">
+  <section id="hero" class="px-4 lg:px-20">
+    <div class="max-w-7xl mx-auto lg:px-8 py-20">
       <h1 class="max-w-3xl lg:max-w-5xl mx-auto text-center font-extrabold text-3xl lg:text-6xl text-gray-900">
         Video infrastructure as a service with up-to
         <strong class="relative inline-block">
           54% less
-          <svg class="absolute -bottom-0.5 lg:-bottom-1.5 left-0 -z-10 w-full max-w-full" viewBox="0 0 245 26"
-            fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg class="absolute -bottom-0.5 lg:-bottom-1.5 left-0 -z-10 w-full max-w-full" viewBox="0 0 245 26" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
               d="M8.31784 17.7103C38.1109 13.7296 67.9265 11.5527 97.9615 10.0381C112.591 9.30042 127.241 8.70361 141.89 8.56745C160.148 8.39775 178.278 9.27736 196.471 10.5242C209.698 11.4307 222.978 12.5072 236.083 14.4412"
-              stroke="#93C5FD" stroke-width="16" stroke-linecap="round" />
+              stroke="#FDC9C9" stroke-width="16" stroke-linecap="round" />
           </svg>
         </strong> cost
       </h1>
@@ -27,15 +21,20 @@
         Develop your live streaming application with inLive API and save up to 54% of your cost.
       </p>
       <div class="flex flex-col md:flex-row flex-wrap items-center justify-center mt-10 gap-8">
-        <div>
-          <a href="https://www.producthunt.com/posts/inlive?utm_source=badge-top-post-topic-badge&utm_medium=badge&utm_souce=badge-inlive" target="_blank">
-            <img src="https://api.producthunt.com/widgets/embed-image/v1/top-post-topic-badge.svg?post_id=377699&theme=light&period=monthly&topic_id=237" alt="inLive - WebRTC&#0032;to&#0032;Dash&#0047;HLS&#0032;live&#0032;streaming&#0032;API&#0032;with&#0032;54&#0037;&#0032;less&#0032;cost | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" fetchpriority="high">
+        {{/* <div>
+          <a href="https://www.producthunt.com/posts/inlive?utm_source=badge-top-post-topic-badge&utm_medium=badge&utm_souce=badge-inlive"
+            target="_blank">
+            <img
+              src="https://api.producthunt.com/widgets/embed-image/v1/top-post-topic-badge.svg?post_id=377699&theme=light&period=monthly&topic_id=237"
+              alt="inLive - WebRTC&#0032;to&#0032;Dash&#0047;HLS&#0032;live&#0032;streaming&#0032;API&#0032;with&#0032;54&#0037;&#0032;less&#0032;cost | Product Hunt"
+              style="width: 250px; height: 54px;" width="250" height="54" fetchpriority="high">
           </a>
-        </div>
+        </div> */}}
         <div>
-          <a href="/docs/getting-started" class="w-auto font-semibold text-lg border border-blue-800 rounded-[10px] pl-3 pr-3.5 py-2.5 inline-flex justify-center items-center gap-3 text-blue-700 min-w-[250px] md:min-w-0" data-tracking-event="open-link" data-tracking-label="CTA get started">
-            <span class="text-blue-600">
-              <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+          <a href="/docs/getting-started" class="w-auto font-semibold bg-slate-900 text-base lg:text-lg text-slate-50 rounded-[10px] pl-3 pr-3.5 py-2 lg:py-2.5 inline-flex justify-center items-center gap-3 min-w-[250px] lg:min-w-0"
+            data-tracking-event="open-link" data-tracking-label="CTA get started">
+            <span>
+              <svg class="w-7 lg:w-8 h-7 lg:h-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M11.25 4.533A9.707 9.707 0 006 3a9.735 9.735 0 00-3.25.555.75.75 0 00-.5.707v14.25a.75.75 0 001 .707A8.237 8.237 0 016 18.75c1.995 0 3.823.707 5.25 1.886V4.533zM12.75 20.636A8.214 8.214 0 0118 18.75c.966 0 1.89.166 2.75.47a.75.75 0 001-.708V4.262a.75.75 0 00-.5-.707A9.735 9.735 0 0018 3a9.707 9.707 0 00-5.25 1.533v16.103z" />
               </svg>
             </span>
@@ -44,30 +43,68 @@
         </div>
       </div>
   </section>
-  
-  <section id="products" class="mt-20 gap-8 px-12 md:px-4 mx-auto flex flex-col md:flex-row items-center justify-center">
-      <div class="flex-1">
-        <h3 class="font-extrabold text-2xl lg:text-2xl leading-tight lg:leading-tight text-gray-900">Live streaming API</h3>
-        <div>
-          Live streaming with Dash/HLS. Scaleable and cost efficient solution for one way live streaming by utilizing CDN.
-        </div>
-        <a href="/docs/live-streaming-api/" class="mt-4 text-blue-600">Learn more</a>
-      </div>
-      <div class="flex-1">
-        <h3 class="font-extrabold text-2xl lg:text-2xl leading-tight lg:leading-tight text-gray-900">Real-time Interactive API</h3>
-        <div>
-          Multi participant real-time interactive video. Build your own video conferencing, live class, or interactive live streaming application.
-        </div>
-        <a href="/realtime-interactive" class="mt-4 text-blue-600">Learn more</a>
-      </div>
-      <div class="flex-1">
-        <h3 class="font-extrabold text-2xl lg:text-2xl leading-tight lg:leading-tight text-gray-900">Video API</h3>
-        <div>
-          Serve your own video directly from your website/app with up to 40% less cost, and let us handle the transcoding and storage.
-        </div>
-        <a href="/video-storage" class="mt-4 text-blue-600">Learn more</a>
+
+  {{/*  background: linear-gradient(180deg, rgba(247, 249, 251, 0.00) 0%, rgba(247, 249, 251, 0.00) 50.01%, rgba(247, 249, 251, 0.75) 100%);  */}}
+
+  <section id="products" class="px-4 lg:px-20">
+    <div class="max-w-7xl mx-auto lg:px-8 py-10">
+      <ul class="border border-slate-200 rounded-xl w-full flex flex-col lg:flex-row">
+        <li class="bg-gradient-to-t from-slate-50 py-5 px-4 flex flex-col gap-6 justify-between">
+          <div>
+            <b class="block text-xl font-semibold text-slate-900 mb-2">
+              Live streaming API
+            </b>
+            <p class="text-slate-500 text-base">
+              Live streaming with Dash/HLS. Scaleable and cost efficient solution for one way live streaming by utilizing CDN.
+            </p>
+          </div>
+          <a href="/live-streaming/" class="text-red-700 font-medium text-base flex items-center">
+            <span>Learn more</span>
+            <span>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+              </svg>
+            </span>
+          </a>
+        </li>
+        <li class="border-t lg:border-t-0 lg:border-l border-slate-200 bg-gradient-to-t from-slate-50 py-5 px-4 flex flex-col gap-6 justify-between">
+          <div>
+            <b class="block text-xl font-semibold text-slate-900 mb-2">
+              Real-time Interactive API
+            </b>
+            <p class="text-slate-500 text-base">
+              Multi participant real-time interactive video. Build your own video conferencing, live class, or interactive live streaming application.
+            </p>
+          </div>
+          <a href="/realtime-interactive/" class="text-red-700 font-medium text-base flex items-center">
+            <span>Learn more</span>
+            <span>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+              </svg>
+            </span>
+          </a>
+        </li>
+        <li class="border-t lg:border-t-0 lg:border-l border-slate-200 bg-gradient-to-t from-slate-50 py-5 px-4 flex flex-col gap-6 justify-between">
+          <div>
+            <b class="block text-xl font-semibold text-slate-900 mb-2">
+              Video API
+            </b>
+            <p class="text-slate-500 text-base">
+              Serve your own video directly from your website/app with up to 40% less cost, and let us handle the transcoding and storage.
+            </p>
+          </div>
+          <a href="/video-storage/" class="text-red-700 font-medium text-base flex items-center">
+            <span>Learn more</span>
+            <span>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+              </svg>
+            </span>
+          </a>
+        </li>
+      </ul>
     </div>
-    
   </section>
 
   <section id="comparison" class="mt-20 mx-20">
@@ -83,7 +120,6 @@
         </div>
       </div>
     </div>
-  </div>
   </section>
 
   <section id="how-to-develop" class="mt-20">
@@ -252,7 +288,7 @@
           <div class="absolute top-4 left-4 lg:left-2">
             <svg class="w-8 h-8 lg:w-16 lg:h-16" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd" clip-rule="evenodd" d="M4.73499 53.3209C4.73499 55.8908 6.81652 57.9729 9.38651 57.9729H24.5047C27.0748 57.9729 29.1566 55.8908 29.1566 53.3209V34.7139C29.1566 32.1438 27.0748 30.0621 24.5047 30.0621H17.0387C15.7473 30.0621 14.713 29.0154 14.713 27.7363C14.713 27.3177 14.8173 27.027 14.8173 27.027C16.5151 21.3979 20.8058 16.8859 26.3068 14.8859L26.3299 14.8626C27.9935 14.1535 29.1565 12.5017 29.1565 10.5827C29.1565 8.01282 27.0747 5.93103 24.5046 5.93103C23.8766 5.93103 23.284 6.05877 22.7377 6.27957L22.5272 6.36149C12.119 10.4199 4.73499 20.5376 4.73499 32.3879V53.3209ZM34.9715 53.3209C34.9715 55.8908 37.0531 57.9729 39.6232 57.9729H54.7415C57.3115 57.9729 59.393 55.8908 59.393 53.3209V34.7139C59.393 32.1438 57.3115 30.0621 54.7415 30.0621H47.2753C45.984 30.0621 44.9496 29.0154 44.9496 27.7363C44.9496 27.306 45.0537 27.027 45.0537 27.027C46.7519 21.3979 51.0424 16.8859 56.5436 14.8859L56.5667 14.8626C58.23 14.1535 59.393 12.5017 59.393 10.5827C59.393 8.01282 57.3115 5.93103 54.7415 5.93103C54.1135 5.93103 53.5207 6.05877 52.9745 6.27957L52.764 6.36149C42.3556 10.4199 34.9715 20.5376 34.9715 32.3879V53.3209Z" fill="#DBEAFE"/>
-              </svg>
+            </svg>
           </div>
           <p class="text-base lg:text-2xl text-gray-500 text-center">
             inLive is in the mission to make the video technology accessible for everyone. We start by providing an affordable self service video infrastructure and tools for developers to build their next video based application.
@@ -260,7 +296,7 @@
           <div class="absolute bottom-4 right-4 lg:right-2">
             <svg class="w-8 h-8 lg:w-16 lg:h-16" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd" clip-rule="evenodd" d="M59.2651 10.6791C59.2651 8.10917 57.1836 6.02712 54.6136 6.02712H39.4954C36.9253 6.02712 34.8435 8.10917 34.8435 10.6791L34.8435 29.2861C34.8435 31.8562 36.9253 33.9379 39.4954 33.9379H46.9614C48.2528 33.9379 49.2872 34.9846 49.2872 36.2637C49.2872 36.6823 49.1828 36.973 49.1828 36.973C47.485 42.6021 43.1944 47.1141 37.6933 49.1141L37.6703 49.1374C36.0066 49.8465 34.8436 51.4983 34.8436 53.4173C34.8436 55.9872 36.9254 58.069 39.4955 58.069C40.1235 58.069 40.7161 57.9412 41.2624 57.7204L41.4729 57.6385C51.8811 53.5801 59.2651 43.4624 59.2651 31.6121L59.2651 10.6791ZM29.0286 10.6791C29.0286 8.10917 26.9471 6.02712 24.3769 6.02712H9.25861C6.68862 6.02712 4.60709 8.10917 4.60709 10.6791L4.60709 29.2861C4.60709 31.8562 6.68862 33.9379 9.25861 33.9379L16.7248 33.9379C18.0161 33.9379 19.0505 34.9846 19.0505 36.2637C19.0505 36.694 18.9464 36.973 18.9464 36.973C17.2482 42.6021 12.9577 47.1141 7.45649 49.1141L7.43345 49.1374C5.77009 49.8465 4.60709 51.4983 4.60709 53.4173C4.60709 55.9872 6.68862 58.069 9.25861 58.069C9.88658 58.069 10.4795 57.9412 11.0256 57.7204L11.2361 57.6385C21.6445 53.5801 29.0286 43.4624 29.0286 31.6121L29.0286 10.6791Z" fill="#DBEAFE"/>
-              </svg>
+            </svg>
           </div>
         </div>
         <div class="mt-12 rounded-2xl">
@@ -496,7 +532,6 @@
 {{ end }}
 
 {{ define "script" }}
-<!-- <script src="https://cdn.jsdelivr.net/npm/keen-slider@6.6.3/keen-slider.js" defer></script> -->
 {{ $globalJS := resources.Get "js/global.js" | minify }}
 {{ $homeJS := resources.Get "js/home.js" | minify }}
 <script type="text/javascript" src="{{ $globalJS.RelPermalink }}" defer></script>
