@@ -1,6 +1,5 @@
 ---
-title : "Vidoe Hosting and Transcoding"
+title : "Vidoe Hosting and Transcoding API"
 description: ""
 layout: "video-hosting"
-draft: true
 ---
