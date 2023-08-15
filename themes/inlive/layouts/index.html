@@ -44,12 +44,10 @@
       </div>
   </section>
 
-  {{/*  background: linear-gradient(180deg, rgba(247, 249, 251, 0.00) 0%, rgba(247, 249, 251, 0.00) 50.01%, rgba(247, 249, 251, 0.75) 100%);  */}}
-
   <section id="products" class="px-4 lg:px-20">
     <div class="max-w-7xl mx-auto lg:px-8 py-10">
       <ul class="border border-slate-200 rounded-xl w-full flex flex-col lg:flex-row">
-        <li class="bg-gradient-to-t from-slate-50 py-5 px-4 flex flex-col gap-6 justify-between">
+        <li class="bg-gradient-to-t from-slate-50 py-10 px-8 flex flex-col gap-6 justify-between">
           <div>
             <b class="block text-xl font-semibold text-slate-900 mb-2">
               Live streaming API
@@ -58,7 +56,7 @@
               Live streaming with Dash/HLS. Scaleable and cost efficient solution for one way live streaming by utilizing CDN.
             </p>
           </div>
-          <a href="/live-streaming/" class="text-red-700 font-medium text-base flex items-center">
+          <a href="/live-streaming/" class="text-red-700 font-medium text-base flex items-center hover:underline underline-offset-8">
             <span>Learn more</span>
             <span>
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -67,7 +65,7 @@
             </span>
           </a>
         </li>
-        <li class="border-t lg:border-t-0 lg:border-l border-slate-200 bg-gradient-to-t from-slate-50 py-5 px-4 flex flex-col gap-6 justify-between">
+        <li class="border-t lg:border-t-0 lg:border-l border-slate-200 bg-gradient-to-t from-slate-50 py-10 px-8 flex flex-col gap-6 justify-between">
           <div>
             <b class="block text-xl font-semibold text-slate-900 mb-2">
               Real-time Interactive API
@@ -76,7 +74,7 @@
               Multi participant real-time interactive video. Build your own video conferencing, live class, or interactive live streaming application.
             </p>
           </div>
-          <a href="/realtime-interactive/" class="text-red-700 font-medium text-base flex items-center">
+          <a href="/realtime-interactive/" class="text-red-700 font-medium text-base flex items-center hover:underline underline-offset-8">
             <span>Learn more</span>
             <span>
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -85,7 +83,7 @@
             </span>
           </a>
         </li>
-        <li class="border-t lg:border-t-0 lg:border-l border-slate-200 bg-gradient-to-t from-slate-50 py-5 px-4 flex flex-col gap-6 justify-between">
+        <li class="border-t lg:border-t-0 lg:border-l border-slate-200 bg-gradient-to-t from-slate-50 py-10 px-8 flex flex-col gap-6 justify-between">
           <div>
             <b class="block text-xl font-semibold text-slate-900 mb-2">
               Video API
@@ -94,7 +92,7 @@
               Serve your own video directly from your website/app with up to 40% less cost, and let us handle the transcoding and storage.
             </p>
           </div>
-          <a href="/video-storage/" class="text-red-700 font-medium text-base flex items-center">
+          <a href="/video-storage/" class="text-red-700 font-medium text-base flex items-center hover:underline underline-offset-8">
             <span>Learn more</span>
             <span>
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -106,9 +104,9 @@
       </ul>
     </div>
   </section>
-
-  <section id="comparison" class="mt-20 mx-20">
-    <div class="mt-20 xl:px-6 flex flex-col lg:flex-row justify-center items-center gap-10 lg:gap-6 xl:gap-12">
+  {{/*  <div class="max-w-7xl mx-auto lg:px-8 py-20">  */}}
+  <section id="comparison" class="px-4 lg:px-20">
+    <div class="max-w-7xl mx-auto lg:px-8 py-20 flex flex-col lg:flex-row justify-center items-center gap-10 lg:gap-6 xl:gap-12">
       <div class="max-w-md lg:max-w-lg lg:order-2 lg:flex-1">
         <div class="mx-auto w-full">
           <img src="/images/home/pricing-comparison.png" width="512" height="190" alt="Pricing comparison image" fetchpriority="high">
@@ -116,7 +114,7 @@
       </div>
       <div class="max-w-md lg:max-w-sm xl:max-w-[400px] lg:order-1">
         <div class="mx-auto w-full">
-          <img src="/images/home/livestream.svg" width="400" height="300" alt="Live stream image" fetchpriority="low">
+          <img src="/images/home/livestream.svg" width="512" height="384" alt="Live stream image" fetchpriority="low">
         </div>
       </div>
     </div>
@@ -125,10 +123,10 @@
   <section id="how-to-develop" class="mt-20">
     <div class="px-4 lg:px-20">
       <header class="max-w-7xl mx-auto lg:px-8 lg:pt-8 pb-8 lg:pb-16">
-        <h2 class="mb-4 font-semibold text-base text-blue-600 uppercase flex items-center">
-          <span class="bg-blue-600 h-[2px] w-4 lg:w-6 mr-2"></span>Built for developers
+        <h2 class="mb-4 font-semibold text-base text-red-700 uppercase flex items-center">
+          <span class="bg-red-700 h-[2px] w-4 lg:w-6 mr-2"></span>Built for developers
         </h2>
-        <h3 class="mb-8 font-extrabold text-3xl lg:text-4xl leading-tight lg:leading-tight text-gray-900">
+        <h3 class="mb-8 font-extrabold text-3xl lg:text-4xl leading-tight lg:leading-tight text-slate-900">
           Self-serving live streaming infrastructure.
         </h3>
         <p class="max-w-3xl text-base leading-7 text-gray-500">
@@ -138,7 +136,7 @@
     </div>
     <div class="px-4 lg:px-20 relative">
       <div
-        class="bg-gradient-to-b from-blue-50 to-white absolute w-full h-[calc(100%-3rem)] top-12 left-0 right-0 -z-10">
+        class="bg-gradient-to-b from-red-50 to-white absolute w-full h-[calc(100%-3rem)] top-12 left-0 right-0 -z-10">
       </div>
       <div class="max-w-7xl mx-auto lg:px-8">
         <div
@@ -152,54 +150,38 @@
           <ul class="xl:order-1 px-4 md:px-0 xl:px-8 py-8 lg:py-14 max-w-2xl w-full mx-auto">
             <li class="flex items-center font-medium text-base lg:text-lg mb-8 lg:mb-10">
               <span class="mr-4">
-                <svg class="w-12 h-12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M5 13a8 8 0 0 1 8-8h22a8 8 0 0 1 8 8v22a8 8 0 0 1-8 8H13a8 8 0 0 1-8-8V13Z" fill="#DBEAFE"
-                    stroke="#60A5FA" stroke-width="1.5" />
-                  <path
-                    d="m25.06 30.01-2.828 2.829a4 4 0 0 1-5.657 0l-.707-.707-.707-.707a4 4 0 0 1 0-5.657l2.829-2.829 1.767 1.768 3.536 3.536 1.768 1.767Z"
-                    fill="#3B82F6" fill-opacity=".5" />
-                  <path
-                    d="m15.868 32.132-.707-.707a4 4 0 0 1 0-5.657l2.829-2.829 1.767 1.768m-3.889 7.425.707.707a4 4 0 0 0 5.657 0l2.829-2.829-1.768-1.767m-7.425 3.889-4.596 4.596m12.02-8.485 2.122-2.122m-2.121 2.122-3.536-3.536m0 0 2.122-2.121"
-                    stroke="#3B82F6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                  <path
-                    d="m30.01 25.06-.53.531a.75.75 0 0 0 1.06 0l-.53-.53Zm-7.07-7.07-.53-.53a.75.75 0 0 0 0 1.06l.53-.53Zm2.828-2.829-.53-.53.53.53Zm7.07 1.414.531-.53-.53.53Zm-.706-.707-.53.53.53-.53Zm5.126-4.066a.75.75 0 1 0-1.06-1.06l1.06 1.06Zm-4.95 9.9L29.48 24.53l1.06 1.061 2.83-2.828-1.061-1.061Zm-1.767 2.828-7.071-7.07-1.06 1.06 7.07 7.071 1.06-1.06Zm-7.071-6.01 2.828-2.829-1.06-1.06-2.829 2.828 1.06 1.06Zm2.828-2.829a3.25 3.25 0 0 1 4.596 0l1.061-1.06a4.75 4.75 0 0 0-6.717 0l1.06 1.06Zm7.071 7.072a4.75 4.75 0 0 0 0-6.718l-1.06 1.06a3.25 3.25 0 0 1 0 4.597l1.06 1.06Zm-2.475-7.072.707.708 1.061-1.061-.707-.707-1.06 1.06Zm.707.708.708.707 1.06-1.06-.707-.708-1.06 1.06Zm1.061 0 4.596-4.597-1.06-1.06-4.597 4.596 1.061 1.06Z"
-                    fill="#93C5FD" />
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 13C5 10.8783 5.84285 8.84344 7.34315 7.34315C8.84344 5.84285 10.8783 5 13 5H35C37.1217 5 39.1566 5.84285 40.6569 7.34315C42.1571 8.84344 43 10.8783 43 13V35C43 37.1217 42.1571 39.1566 40.6569 40.6569C39.1566 42.1571 37.1217 43 35 43H13C10.8783 43 8.84344 42.1571 7.34315 40.6569C5.84285 39.1566 5 37.1217 5 35V13Z" fill="#FDE1E1" stroke="#F77171" stroke-width="1.5"/>
+                  <path d="M25.0608 30.0104L22.2324 32.8389C20.6703 34.401 18.1376 34.401 16.5755 32.8389L15.8684 32.1318L15.1613 31.4247C13.5992 29.8626 13.5992 27.3299 15.1613 25.7678L17.9897 22.9394L19.7575 24.7071L23.293 28.2427L25.0608 30.0104Z" fill="#EE4444" fill-opacity="0.5"/>
+                  <path d="M15.8684 32.1318L15.1613 31.4247C13.5992 29.8626 13.5992 27.3299 15.1613 25.7678L17.9897 22.9394L19.7575 24.7071M15.8684 32.1318L16.5755 32.8389C18.1376 34.401 20.6703 34.401 22.2324 32.8389L25.0608 30.0104L23.293 28.2427M15.8684 32.1318L11.2722 36.728M23.293 28.2427L25.4144 26.1213M23.293 28.2427L19.7575 24.7071M19.7575 24.7071L21.8788 22.5858" stroke="#EE4444" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M32.1318 15.8683L31.4247 15.1612C29.8626 13.5991 27.33 13.5991 25.7679 15.1612L22.9395 17.9896L30.0105 25.0607L32.8389 22.2322C34.401 20.6702 34.401 18.1375 32.8389 16.5754L32.1318 15.8683ZM32.1318 15.8683L36.728 11.2721" stroke="#FBA4A4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               </span>
-              <a href="/docs/tutorial/tutorial-app-with-inlive-js-sdk/" class="text-blue-600">Check out  our tutorial</a>
+              <a href="/docs/tutorial/tutorial-app-with-inlive-js-sdk/" class="text-slate-900 hover:text-red-600">Check out  our tutorial</a>
             </li>
             <li class="flex items-center font-medium text-base lg:text-lg mb-8 lg:mb-10">
               <span class="mr-4">
-                <svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M5 13a8 8 0 0 1 8-8h22a8 8 0 0 1 8 8v22a8 8 0 0 1-8 8H13a8 8 0 0 1-8-8V13Z" fill="#DBEAFE"
-                    stroke="#60A5FA" stroke-width="1.5" />
-                  <path d="M13.75 17.37 24 12.369l10.25 5.003L24 22.368 13.75 17.37Z" fill="#3B82F6"
-                    fill-opacity=".5" />
-                  <path
-                    d="m13.75 17.37-.329-.673a.75.75 0 0 0 0 1.348l.329-.674ZM24 12.369l.329-.674a.75.75 0 0 0-.658 0l.329.674Zm10.25 5.003.329.674a.75.75 0 0 0 0-1.348l-.329.674ZM24 22.368l-.329.674a.75.75 0 0 0 .658 0L24 22.368Zm-9.921-4.323 10.25-5.003-.658-1.348-10.25 5.003.658 1.348Zm9.592-5.003 10.25 5.003.658-1.348-10.25-5.003-.658 1.348Zm.658 8.652-10.25-4.997-.658 1.348 10.25 4.997.658-1.349Zm9.592-4.997-10.25 4.997.658 1.348 10.25-4.997-.658-1.348Z"
-                    fill="#3B82F6" />
-                  <path
-                    d="m24 29.368-.329.674a.75.75 0 0 0 .658 0L24 29.368ZM13.75 24.37l-.329-.674a.75.75 0 0 0 0 1.348l.329-.674Zm20.5 0 .329.674a.75.75 0 0 0 0-1.348l-.329.674ZM17.94 23.16a.75.75 0 0 0-.657-1.348l.658 1.348Zm12.777-1.348a.75.75 0 1 0-.658 1.348l.658-1.348Zm-6.388 6.881-10.25-4.997-.658 1.349 10.25 4.997.658-1.349Zm9.592-4.997-10.25 4.997.658 1.349 10.25-4.997-.658-1.349ZM14.08 25.046l3.862-1.885-.658-1.348-3.862 1.885.658 1.348Zm15.98-1.885 3.862 1.885.658-1.348-3.862-1.885-.658 1.348ZM24 36.368l-.329.674a.75.75 0 0 0 .658 0L24 36.368ZM13.75 31.37l-.329-.674a.75.75 0 0 0 0 1.348l.329-.674Zm20.5 0 .329.674a.75.75 0 0 0 0-1.348l-.329.674ZM17.94 30.16a.75.75 0 0 0-.657-1.348l.658 1.348Zm12.777-1.348a.75.75 0 1 0-.658 1.348l.658-1.348Zm-6.388 6.881-10.25-4.996-.658 1.348 10.25 4.997.658-1.349Zm9.592-4.996-10.25 4.997.658 1.348 10.25-4.997-.658-1.349ZM14.08 32.044l3.862-1.885-.658-1.348-3.862 1.885.658 1.348Zm15.98-1.885 3.862 1.885.658-1.348-3.862-1.885-.658 1.348Z"
-                    fill="#93C5FD" />
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 13C5 10.8783 5.84285 8.84344 7.34315 7.34315C8.84344 5.84285 10.8783 5 13 5H35C37.1217 5 39.1566 5.84285 40.6569 7.34315C42.1571 8.84344 43 10.8783 43 13V35C43 37.1217 42.1571 39.1566 40.6569 40.6569C39.1566 42.1571 37.1217 43 35 43H13C10.8783 43 8.84344 42.1571 7.34315 40.6569C5.84285 39.1566 5 37.1217 5 35V13Z" fill="#FDE1E1" stroke="#F77171" stroke-width="1.5"/>
+                  <path d="M13.75 17.3707L24 12.3676L34.25 17.3707L24 22.3676L13.75 17.3707Z" fill="#EE4444" fill-opacity="0.5"/>
+                  <path d="M13.75 17.3707L24 12.3676L34.25 17.3707L24 22.3676L13.75 17.3707Z" stroke="#EE4444" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M17.6118 22.4857L13.75 24.3707L24 29.3676L34.25 24.3707L30.3882 22.4857" stroke="#FBA4A4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M17.6118 29.4857L13.75 31.3707L24 36.3676L34.25 31.3707L30.3882 29.4857" stroke="#FBA4A4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               </span>
-              <a href="https://www.npmjs.com/package/@inlivedev/inlive-js-sdk" class="text-blue-600">Try our JavaScript SDK</a>
+              <a href="https://www.npmjs.com/package/@inlivedev/inlive-js-sdk" class="text-slate-900 hover:text-red-600">Try our JavaScript SDK</a>
             </li>
             <li class="flex items-center font-medium text-base lg:text-lg">
               <span class="mr-4">
-                <svg class="w-12 h-12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M5 13a8 8 0 0 1 8-8h22a8 8 0 0 1 8 8v22a8 8 0 0 1-8 8H13a8 8 0 0 1-8-8V13Z" fill="#DBEAFE"
-                    stroke="#60A5FA" stroke-width="1.5" />
-                  <path
-                    d="m31 19.656-.383-.645a.75.75 0 0 0-.367.645H31Zm0 8.688h-.75c0 .265.14.51.367.645l.383-.645Zm5.49 3.26.382-.646-.383.645Zm0-15.207.382.645-.383-.645ZM15 15.25h12v-1.5H15v1.5Zm15.25 3.25v11h1.5v-11h-1.5ZM27 32.75H15v1.5h12v-1.5ZM11.75 29.5v-11h-1.5v11h1.5ZM15 32.75a3.25 3.25 0 0 1-3.25-3.25h-1.5A4.75 4.75 0 0 0 15 34.25v-1.5Zm15.25-3.25A3.25 3.25 0 0 1 27 32.75v1.5a4.75 4.75 0 0 0 4.75-4.75h-1.5ZM27 15.25a3.25 3.25 0 0 1 3.25 3.25h1.5A4.75 4.75 0 0 0 27 13.75v1.5Zm-12-1.5a4.75 4.75 0 0 0-4.75 4.75h1.5A3.25 3.25 0 0 1 15 15.25v-1.5Zm16.383 6.55 5.49-3.258-.766-1.29-5.49 3.259.766 1.29Zm5.867-3.043v13.486h1.5V17.257h-1.5Zm-.378 13.701-5.49-3.258-.765 1.29 5.49 3.258.765-1.29Zm-5.122-2.614v-8.688h-1.5v8.688h1.5Zm5.5 2.4a.25.25 0 0 1-.378.214l-.765 1.29c1.166.693 2.643-.148 2.643-1.505h-1.5Zm-.378-13.702a.25.25 0 0 1 .378.215h1.5c0-1.357-1.477-2.198-2.643-1.505l.765 1.29Z"
-                    fill="#93C5FD" />
-                  <path d="M24.5 24a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z" fill="#3B82F6" fill-opacity=".5" />
-                  <path
-                    d="M16.003 19.842A6.474 6.474 0 0 0 14.5 24c0 1.58.564 3.029 1.502 4.155m9.995-8.313A6.474 6.474 0 0 1 27.5 24c0 1.581-.565 3.031-1.503 4.158M24.5 24a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
-                    stroke="#3B82F6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 13C5 10.8783 5.84285 8.84344 7.34315 7.34315C8.84344 5.84285 10.8783 5 13 5H35C37.1217 5 39.1566 5.84285 40.6569 7.34315C42.1571 8.84344 43 10.8783 43 13V35C43 37.1217 42.1571 39.1566 40.6569 40.6569C39.1566 42.1571 37.1217 43 35 43H13C10.8783 43 8.84344 42.1571 7.34315 40.6569C5.84285 39.1566 5 37.1217 5 35V13Z" fill="#FDE1E1" stroke="#F77171" stroke-width="1.5"/>
+                  <path d="M11 18.5C11 16.2909 12.7909 14.5 15 14.5H27C29.2091 14.5 31 16.2909 31 18.5V29.5C31 31.7091 29.2091 33.5 27 33.5H15C12.7909 33.5 11 31.7091 11 29.5V18.5Z" stroke="#FBA4A4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M31 19.6556L36.4895 16.3967C37.1561 16.001 38 16.4814 38 17.2566V30.7434C38 31.5186 37.1561 31.999 36.4895 31.6033L31 28.3444V19.6556Z" stroke="#FBA4A4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M24.5 24C24.5 25.933 22.933 27.5 21 27.5C19.067 27.5 17.5 25.933 17.5 24C17.5 22.067 19.067 20.5 21 20.5C22.933 20.5 24.5 22.067 24.5 24Z" fill="#EE4444" fill-opacity="0.5"/>
+                  <path d="M16.0035 19.8422C15.0647 20.9691 14.5 22.4186 14.5 24C14.5 25.5803 15.0639 27.0288 16.0015 28.1554M25.9965 19.8422C26.9353 20.9691 27.5 22.4186 27.5 24C27.5 25.5814 26.9353 27.0309 25.9965 28.1578M24.5 24C24.5 25.933 22.933 27.5 21 27.5C19.067 27.5 17.5 25.933 17.5 24C17.5 22.067 19.067 20.5 21 20.5C22.933 20.5 24.5 22.067 24.5 24Z" stroke="#EE4444" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               </span>
-              <a href="https://codepen.io/inlive/details/BaPExzJ" class="text-blue-600">Go live just with less than 10 lines of codes</a>
+              <a href="https://codepen.io/inlive/details/BaPExzJ" class="text-slate-900 hover:text-red-600">Go live just with less than 10 lines of codes</a>
             </li>
           </ul>
         </div>
@@ -209,10 +191,10 @@
   <section id="why" class="mt-20">
     <section class="px-4 lg:px-20">
       <div class="max-w-7xl mx-auto lg:px-8 lg:pt-8 pb-8 lg:pb-16">
-        <h2 class="mb-4 font-semibold text-base text-blue-600 uppercase flex items-center">
-          <span class="bg-blue-600 h-[2px] w-4 lg:w-6 mr-2"></span>Why
+        <h2 class="mb-4 font-semibold text-base text-red-700 uppercase flex items-center">
+          <span class="bg-red-700 h-[2px] w-4 lg:w-6 mr-2"></span>Why
         </h2>
-        <h3 class="mb-8 font-extrabold text-3xl lg:text-4xl leading-tight lg:leading-tight text-gray-900">
+        <h3 class="mb-8 font-extrabold text-3xl lg:text-4xl leading-tight lg:leading-tight text-slate-900">
           Issue with live streaming cost and how it's not affordable for developing countries.
         </h3>
         <div class="flex flex-col lg:flex-row gap-8 xl:gap-10">
@@ -229,7 +211,7 @@
                 <li>Indonesia $2.34</li>
                 <li>India $2.39</li>
               </ul>
-              <p class="mt-6">Taken from <a href="https://www.statistica.com" target="_blank" rel="noopener noreferrer" class="text-blue-600">statistica.com</a></p>
+              <p class="mt-6">Taken from <a href="https://www.statistica.com" target="_blank" rel="noopener noreferrer" class="text-red-600">statistica.com</a></p>
             </div>
           </div>
         </div>
@@ -237,7 +219,7 @@
     </section>
     <section class="px-4 lg:px-20 lg:pb-16">
       <div class="max-w-7xl mx-auto lg:px-8 pt-8 lg:pt-16">
-        <h3 class="mb-10 font-extrabold text-3xl lg:text-4xl leading-tight lg:leading-tight text-gray-900">
+        <h3 class="mb-10 font-extrabold text-3xl lg:text-4xl leading-tight lg:leading-tight text-slate-900">
           Comparison pricing between live streaming vendors.
         </h3>
         <div class="flex flex-col lg:flex-row gap-10 lg:gap-0">
@@ -261,7 +243,7 @@
         </div>
         <div class="mt-6 xl:-mt-10 relative text-center lg:text-left">
           <a href="/pricing/"
-            class="min-w-[180px] inline-block sm:w-auto py-2.5 px-4 bg-blue-100 rounded-md font-medium text-sm text-blue-700" data-tracking-event="open-link" data-tracking-label="CTA check out our pricing">
+            class="min-w-[180px] inline-block sm:w-auto py-2.5 px-4 bg-red-100 rounded-md font-medium text-sm text-red-700" data-tracking-event="open-link" data-tracking-label="CTA check out our pricing">
             Check out our pricing
           </a>
         </div>
@@ -271,31 +253,31 @@
   <section id="our-mission" class="mt-20">
     <div class="px-4 lg:px-20">
       <header class="max-w-7xl mx-auto lg:p-8 lg:pb-0">
-        <h2 class="mb-4 font-semibold text-base text-blue-600 uppercase flex items-center">
-          <span class="bg-blue-600 h-[2px] w-4 lg:w-6 mr-2"></span>Our Mission
+        <h2 class="mb-4 font-semibold text-base text-red-700 uppercase flex items-center">
+          <span class="bg-red-700 h-[2px] w-4 lg:w-6 mr-2"></span>Our Mission
         </h2>
-        <h3 class="mb-16 font-extrabold text-3xl lg:text-4xl leading-tight lg:leading-tight text-gray-900">
+        <h3 class="mb-16 font-extrabold text-3xl lg:text-4xl leading-tight lg:leading-tight text-slate-900">
           Making the audio video technology accesible for everyone
         </h3>
       </header>
     </div>
     <div class="px-4 lg:px-20 relative">
       <div
-      class="bg-gradient-to-b from-blue-50 to-white absolute w-full h-[calc(100%-3rem)] top-12 left-0 right-0 -z-10">
+      class="bg-gradient-to-b from-red-50 to-white absolute w-full h-[calc(100%-3rem)] top-12 left-0 right-0 -z-10">
       </div>
       <div class="max-w-7xl mx-auto lg:px-8">
         <div class="bg-white border border-gray-300 rounded-2xl py-16 lg:py-10 px-4 lg:px-20 mx-auto relative">
-          <div class="absolute top-4 left-4 lg:left-2">
+          <div class="absolute top-4 left-4 lg:left-2 text-red-50">
             <svg class="w-8 h-8 lg:w-16 lg:h-16" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M4.73499 53.3209C4.73499 55.8908 6.81652 57.9729 9.38651 57.9729H24.5047C27.0748 57.9729 29.1566 55.8908 29.1566 53.3209V34.7139C29.1566 32.1438 27.0748 30.0621 24.5047 30.0621H17.0387C15.7473 30.0621 14.713 29.0154 14.713 27.7363C14.713 27.3177 14.8173 27.027 14.8173 27.027C16.5151 21.3979 20.8058 16.8859 26.3068 14.8859L26.3299 14.8626C27.9935 14.1535 29.1565 12.5017 29.1565 10.5827C29.1565 8.01282 27.0747 5.93103 24.5046 5.93103C23.8766 5.93103 23.284 6.05877 22.7377 6.27957L22.5272 6.36149C12.119 10.4199 4.73499 20.5376 4.73499 32.3879V53.3209ZM34.9715 53.3209C34.9715 55.8908 37.0531 57.9729 39.6232 57.9729H54.7415C57.3115 57.9729 59.393 55.8908 59.393 53.3209V34.7139C59.393 32.1438 57.3115 30.0621 54.7415 30.0621H47.2753C45.984 30.0621 44.9496 29.0154 44.9496 27.7363C44.9496 27.306 45.0537 27.027 45.0537 27.027C46.7519 21.3979 51.0424 16.8859 56.5436 14.8859L56.5667 14.8626C58.23 14.1535 59.393 12.5017 59.393 10.5827C59.393 8.01282 57.3115 5.93103 54.7415 5.93103C54.1135 5.93103 53.5207 6.05877 52.9745 6.27957L52.764 6.36149C42.3556 10.4199 34.9715 20.5376 34.9715 32.3879V53.3209Z" fill="#DBEAFE"/>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M4.73499 53.3209C4.73499 55.8908 6.81652 57.9729 9.38651 57.9729H24.5047C27.0748 57.9729 29.1566 55.8908 29.1566 53.3209V34.7139C29.1566 32.1438 27.0748 30.0621 24.5047 30.0621H17.0387C15.7473 30.0621 14.713 29.0154 14.713 27.7363C14.713 27.3177 14.8173 27.027 14.8173 27.027C16.5151 21.3979 20.8058 16.8859 26.3068 14.8859L26.3299 14.8626C27.9935 14.1535 29.1565 12.5017 29.1565 10.5827C29.1565 8.01282 27.0747 5.93103 24.5046 5.93103C23.8766 5.93103 23.284 6.05877 22.7377 6.27957L22.5272 6.36149C12.119 10.4199 4.73499 20.5376 4.73499 32.3879V53.3209ZM34.9715 53.3209C34.9715 55.8908 37.0531 57.9729 39.6232 57.9729H54.7415C57.3115 57.9729 59.393 55.8908 59.393 53.3209V34.7139C59.393 32.1438 57.3115 30.0621 54.7415 30.0621H47.2753C45.984 30.0621 44.9496 29.0154 44.9496 27.7363C44.9496 27.306 45.0537 27.027 45.0537 27.027C46.7519 21.3979 51.0424 16.8859 56.5436 14.8859L56.5667 14.8626C58.23 14.1535 59.393 12.5017 59.393 10.5827C59.393 8.01282 57.3115 5.93103 54.7415 5.93103C54.1135 5.93103 53.5207 6.05877 52.9745 6.27957L52.764 6.36149C42.3556 10.4199 34.9715 20.5376 34.9715 32.3879V53.3209Z" fill="currentcolor"/>
             </svg>
           </div>
           <p class="text-base lg:text-2xl text-gray-500 text-center">
             inLive is in the mission to make the video technology accessible for everyone. We start by providing an affordable self service video infrastructure and tools for developers to build their next video based application.
           </p>
-          <div class="absolute bottom-4 right-4 lg:right-2">
+          <div class="absolute bottom-4 right-4 lg:right-2 text-red-50">
             <svg class="w-8 h-8 lg:w-16 lg:h-16" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M59.2651 10.6791C59.2651 8.10917 57.1836 6.02712 54.6136 6.02712H39.4954C36.9253 6.02712 34.8435 8.10917 34.8435 10.6791L34.8435 29.2861C34.8435 31.8562 36.9253 33.9379 39.4954 33.9379H46.9614C48.2528 33.9379 49.2872 34.9846 49.2872 36.2637C49.2872 36.6823 49.1828 36.973 49.1828 36.973C47.485 42.6021 43.1944 47.1141 37.6933 49.1141L37.6703 49.1374C36.0066 49.8465 34.8436 51.4983 34.8436 53.4173C34.8436 55.9872 36.9254 58.069 39.4955 58.069C40.1235 58.069 40.7161 57.9412 41.2624 57.7204L41.4729 57.6385C51.8811 53.5801 59.2651 43.4624 59.2651 31.6121L59.2651 10.6791ZM29.0286 10.6791C29.0286 8.10917 26.9471 6.02712 24.3769 6.02712H9.25861C6.68862 6.02712 4.60709 8.10917 4.60709 10.6791L4.60709 29.2861C4.60709 31.8562 6.68862 33.9379 9.25861 33.9379L16.7248 33.9379C18.0161 33.9379 19.0505 34.9846 19.0505 36.2637C19.0505 36.694 18.9464 36.973 18.9464 36.973C17.2482 42.6021 12.9577 47.1141 7.45649 49.1141L7.43345 49.1374C5.77009 49.8465 4.60709 51.4983 4.60709 53.4173C4.60709 55.9872 6.68862 58.069 9.25861 58.069C9.88658 58.069 10.4795 57.9412 11.0256 57.7204L11.2361 57.6385C21.6445 53.5801 29.0286 43.4624 29.0286 31.6121L29.0286 10.6791Z" fill="#DBEAFE"/>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M59.2651 10.6791C59.2651 8.10917 57.1836 6.02712 54.6136 6.02712H39.4954C36.9253 6.02712 34.8435 8.10917 34.8435 10.6791L34.8435 29.2861C34.8435 31.8562 36.9253 33.9379 39.4954 33.9379H46.9614C48.2528 33.9379 49.2872 34.9846 49.2872 36.2637C49.2872 36.6823 49.1828 36.973 49.1828 36.973C47.485 42.6021 43.1944 47.1141 37.6933 49.1141L37.6703 49.1374C36.0066 49.8465 34.8436 51.4983 34.8436 53.4173C34.8436 55.9872 36.9254 58.069 39.4955 58.069C40.1235 58.069 40.7161 57.9412 41.2624 57.7204L41.4729 57.6385C51.8811 53.5801 59.2651 43.4624 59.2651 31.6121L59.2651 10.6791ZM29.0286 10.6791C29.0286 8.10917 26.9471 6.02712 24.3769 6.02712H9.25861C6.68862 6.02712 4.60709 8.10917 4.60709 10.6791L4.60709 29.2861C4.60709 31.8562 6.68862 33.9379 9.25861 33.9379L16.7248 33.9379C18.0161 33.9379 19.0505 34.9846 19.0505 36.2637C19.0505 36.694 18.9464 36.973 18.9464 36.973C17.2482 42.6021 12.9577 47.1141 7.45649 49.1141L7.43345 49.1374C5.77009 49.8465 4.60709 51.4983 4.60709 53.4173C4.60709 55.9872 6.68862 58.069 9.25861 58.069C9.88658 58.069 10.4795 57.9412 11.0256 57.7204L11.2361 57.6385C21.6445 53.5801 29.0286 43.4624 29.0286 31.6121L29.0286 10.6791Z" fill="currentcolor"/>
             </svg>
           </div>
         </div>
@@ -312,17 +294,17 @@
   <section id="how-to-get-started" class="mt-20">
     <div class="px-4 lg:px-20">
       <header class="max-w-7xl mx-auto lg:p-8 lg:pb-0">
-        <h2 class="mb-4 font-semibold text-base text-blue-600 uppercase flex items-center">
-          <span class="bg-blue-600 h-[2px] w-4 lg:w-6 mr-2"></span>How to get started
+        <h2 class="mb-4 font-semibold text-base text-red-700 uppercase flex items-center">
+          <span class="bg-red-700 h-[2px] w-4 lg:w-6 mr-2"></span>How to get started
         </h2>
-        <h3 class="mb-16 font-extrabold text-3xl lg:text-4xl leading-tight lg:leading-tight text-gray-900">
+        <h3 class="mb-16 font-extrabold text-3xl lg:text-4xl leading-tight lg:leading-tight text-slate-900">
           Here's a quick guide to getting started.
         </h3>
       </header>
     </div>
     <div class="px-4 lg:px-20 relative">
       <div
-      class="bg-gradient-to-b from-blue-50 to-white absolute w-full h-[calc(100%-3rem)] max-h-80 top-12 left-0 right-0 -z-10">
+      class="bg-gradient-to-b from-red-50 to-white absolute w-full h-[calc(100%-3rem)] max-h-80 top-12 left-0 right-0 -z-10">
       </div>
       <div class="max-w-7xl mx-auto lg:px-8">
         <div class="bg-white border border-gray-300 rounded-2xl py-8 px-4 lg:py-14 lg:px-8">
@@ -337,7 +319,7 @@
                     Sign up for an account
                   </h4>
                   <p class="text-base text-gray-500">
-                    First things first, you'll need to create an account by clicking <a href="{{ $inliveStudioOrigin }}/login" class="inline-block text-blue-600 font-semibold hover:underline" data-tracking-event="open-link" data-tracking-label="Studio login navigation link on getting started section">"Login"</a> in the menu. You'll be prompted to choose between Google or GitHub to log in. Once you've completed this step, you'll be able to log in to your account.
+                    First things first, you'll need to create an account by clicking <a href="{{ $inliveStudioOrigin }}/login" class="inline-block text-red-600 font-semibold hover:underline" data-tracking-event="open-link" data-tracking-label="Studio login navigation link on getting started section">"Login"</a> in the menu. You'll be prompted to choose between Google or GitHub to log in. Once you've completed this step, you'll be able to log in to your account.
                   </p>
                 </div>
               </div>
@@ -369,7 +351,7 @@
                     Develop your live stream
                   </h4>
                   <p class="text-base text-gray-500">
-                    To start streaming, you'll need to develop your live streaming features in your application using our <a href="https://www.npmjs.com/package/@inlivedev/inlive-js-sdk" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">SDK library</a>. You can find detailed instructions and sample code on our developer <a href="/docs/tutorial/tutorial-app-with-inlive-js-sdk" class="text-blue-600 hover:underline">documentation page</a>. The documentation page also includes guides for integration, troubleshooting, and other development-related topics.
+                    To start streaming, you'll need to develop your live streaming features in your application using our <a href="https://www.npmjs.com/package/@inlivedev/inlive-js-sdk" target="_blank" rel="noopener noreferrer" class="text-red-600 hover:underline">SDK library</a>. You can find detailed instructions and sample code on our developer <a href="/docs/tutorial/tutorial-app-with-inlive-js-sdk" class="text-red-600 hover:underline">documentation page</a>. The documentation page also includes guides for integration, troubleshooting, and other development-related topics.
                   </p>
                 </div>
               </div>
@@ -416,14 +398,14 @@
             </p>
           </div>
           <div class="mt-4 lg:mt-0 lg:ml-20 lg:flex lg:items-center lg:justify-end">
-            <a href="/interactive-widget/" class="inline-block whitespace-nowrap py-3 px-6 bg-white border border-blue-600 rounded-md font-medium text-base text-blue-600">See how it works</a>
+            <a href="/interactive-widget/" class="inline-block whitespace-nowrap py-3 px-6 bg-white border border-blue-600 rounded-md font-medium text-base text-red-600">See how it works</a>
           </div>
         </div>
       </header>
     </div>
     <div class="px-4 lg:px-20 relative">
       <div
-        class="bg-gradient-to-b from-blue-50 to-white absolute w-full h-[calc(100%-3rem)] top-12 left-0 right-0 -z-10">
+        class="bg-gradient-to-b from-red-50 to-white absolute w-full h-[calc(100%-3rem)] top-12 left-0 right-0 -z-10">
       </div>
       <div class="max-w-7xl mx-auto lg:px-8">
         <div class="bg-blue-200 rounded-2xl relative">
