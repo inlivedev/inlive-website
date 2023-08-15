@@ -47,8 +47,8 @@
             </div>
           </div>
         </div>
-        <div class="flex-1 flex justify-center lg:justify-end">
-          <div class="max-w-xs lg:max-w-xl lg:max-h-[576px] aspect-square">
+        <div class="flex-1 flex justify-center">
+          <div class="max-w-xs lg:max-w-md lg:max-h-[448px] aspect-square">
             <video autoplay loop muted playsinline class="w-full h-full">
               <source src="/videos/live-streaming/inlive-stream.webm" type="video/webm">
               <source src="/videos/live-streaming/inlive-stream.mp4" type="video/mp4">
@@ -59,40 +59,46 @@
     </div>
   </section>
 
-<section class="py-10">
-  <div class="mx-auto max-w-7xl px-4 lg:px-8">
-    <div class="md:text-center lg:max-w-3xl mx-auto">
-      <div>
-        <h2 class="font-bold text-3xl lg:text-4xl text-slate-800 leading-tight">
-          Why you will need inLive Live Streaming API
-        </h2>
+  <style>
+    .bg-gradient {
+      background: linear-gradient(to bottom, hsla(0, 0%, 100%, 1), hsla(0, 0%, 100%, 1), hsla(210, 25%, 98%, 1), hsla(210, 25%, 98%, 1));
+    }
+  </style>
+
+  <section class="mt-20 py-10">
+    <div class="mx-auto max-w-7xl px-4 lg:px-8">
+      <div class="md:text-center lg:max-w-4xl mx-auto">
+        <div>
+          <h2 class="font-bold text-3xl lg:text-4xl text-slate-800 leading-tight">
+            Why you will need inLive Live Streaming API?
+          </h2>
+        </div>
+        <div class="mt-4 lg:mt-6">
+          <p class="font-medium text-gray-500 lg:text-lg leading-6">
+            If you want to host your own live streaming video outside platforms like Youtube, Facebook, or Twitch but keep the cost lower, you will need a live streaming API to convert your video to Dash/HLS format and distribute it to your viewers through CDN to keep it cost efficient. Or if you like to have a broadcast quality focus live streaming where a slight delay is acceptable, inLive Live Streaming API is the right choice for you.
+          </p>
+        </div>
+        <div class="mt-12">
+          <a href="https://codepen.io/inlive/pen/BaPExzJ" class="w-auto font-semibold text-lg border border-gray-800 rounded-[10px] pl-3 pr-3.5 py-2 inline-flex justify-center items-center gap-3 text-gray-700 min-w-[250px] md:min-w-0" target="_blank" rel="noopener noreferrer" data-tracking-event="open-link" data-tracking-label="CTA try it on codepen">
+            <span>
+              <svg class="w-8 h-8" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_97_347)">
+                  <path d="M32 16C32 24.8366 24.8366 32 16 32C7.16344 32 0 24.8366 0 16C0 7.16344 7.16344 0 16 0C24.8366 0 32 7.16344 32 16Z" fill="#111111"/>
+                  <path d="M7.25 13.1V18.9L16 24.75L24.75 18.9V13.1L16 7.25L7.25 13.1Z" stroke="#E6E6E6" stroke-width="1.65" stroke-linejoin="round"/>
+                  <path d="M7.25 13.1L16 18.9L24.75 13.1M16 7.25V13.1" stroke="#E6E6E6" stroke-width="1.65" stroke-linejoin="round"/>
+                  <path d="M7.25 18.9L16 13.1L24.75 18.9M16 24.75V18.9" stroke="#E6E6E6" stroke-width="1.65" stroke-linejoin="round"/>
+                </g>
+                <defs>
+                  <clipPath id="clip0_97_347">
+                  <rect width="32" height="32" fill="white"/>
+                  </clipPath>
+                </defs>
+              </svg>
+            </span>
+            <span>Try it on CodePen</span>
+          </a>
+        </div>
       </div>
-      <div class="mt-4 lg:mt-6">
-        <p class="font-medium mb-5 text-gray-500 lg:text-lg leading-6">
-          If you want to host your own live streaming video outside platforms like Youtube, Facebook, or Twitch but keep the cost lower, you will need a live streaming API to convert your video to Dash/HLS format and distribute it to your viewers through CDN to keep it cost efficient. Or if you like to have a broadcast quality focus live streaming where a slight delay is acceptable, inLive Live Streaming API is the right choice for you.
-        </p>
-      </div>
-      <div class="mt-4 lg:mt-6">
-        <a href="https://codepen.io/inlive/pen/BaPExzJ" class="w-auto font-semibold text-lg border border-gray-800 rounded-[10px] pl-3 pr-3.5 py-2.5 inline-flex justify-center items-center gap-3 text-gray-700 min-w-[250px] md:min-w-0" target="_blank" rel="noopener noreferrer" data-tracking-event="open-link" data-tracking-label="CTA try it on codepen">
-          <span>
-            <svg class="w-8 h-8" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <g clip-path="url(#clip0_97_347)">
-                <path d="M32 16C32 24.8366 24.8366 32 16 32C7.16344 32 0 24.8366 0 16C0 7.16344 7.16344 0 16 0C24.8366 0 32 7.16344 32 16Z" fill="#111111"/>
-                <path d="M7.25 13.1V18.9L16 24.75L24.75 18.9V13.1L16 7.25L7.25 13.1Z" stroke="#E6E6E6" stroke-width="1.65" stroke-linejoin="round"/>
-                <path d="M7.25 13.1L16 18.9L24.75 13.1M16 7.25V13.1" stroke="#E6E6E6" stroke-width="1.65" stroke-linejoin="round"/>
-                <path d="M7.25 18.9L16 13.1L24.75 18.9M16 24.75V18.9" stroke="#E6E6E6" stroke-width="1.65" stroke-linejoin="round"/>
-              </g>
-              <defs>
-                <clipPath id="clip0_97_347">
-                <rect width="32" height="32" fill="white"/>
-                </clipPath>
-              </defs>
-            </svg>
-          </span>
-          <span>Try it on CodePen</span>
-        </a>
-      </div>
-    </div>
     </div>
   </section>
 
