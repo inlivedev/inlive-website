@@ -82,5 +82,9 @@ body {
   background-size: 2px 10px, 100%;
 }
 
+.overflow-hidden {
+  overflow: hidden;
+}
+
 /* put below to ensure utilities can still override the styles */
 @tailwind utilities;
