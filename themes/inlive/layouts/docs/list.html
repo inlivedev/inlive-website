@@ -8,7 +8,7 @@
       <main>
         {{ partial "docs/breadcrumbs.html" . }}
         <article id="docs-content"
-          class="mb-12 prose prose-sm lg:prose-base max-w-none prose-blue prose-a:no-underline hover:prose-a:underline prose-blockquote:not-italic prose-quoteless">
+          class="mb-12 prose prose-sm lg:prose-base max-w-none prose-red prose-a:no-underline hover:prose-a:underline prose-blockquote:not-italic prose-quoteless">
           {{ .Content }}
         </article>
         <section>
@@ -16,7 +16,7 @@
             {{ range sort .Pages ".Params.menu.docs_sidebar.weight" "asc" }}
             <li class="mb-6 last:mb-0">
               <a href="{{ .RelPermalink }}"
-                class="p-4 lg:p-6 bg-white border border-gray-300 hover:border-blue-400 rounded-lg flex">
+                class="p-4 lg:p-6 bg-white border border-gray-300 hover:border-red-400 rounded-lg flex">
                 <div>
                   {{/* tabler-icons */}}
                   <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 lg:w-8 lg:h-8 text-gray-400"
@@ -27,7 +27,7 @@
                     <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
                   </svg>
                 </div>
-                <p class="ml-3 lg:ml-4 flex-1 font-semibold text-base lg:text-xl lg:leading-8 text-blue-700">
+                <p class="ml-3 lg:ml-4 flex-1 font-semibold text-base lg:text-xl lg:leading-8 text-slate-700">
                   {{ .Params.menu.docs_sidebar.name }}
                 </p>
               </a>
