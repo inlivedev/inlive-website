@@ -1,6 +1,10 @@
 @tailwind base;
 @tailwind components;
 
+html {
+  @apply scroll-smooth scroll-pt-20;
+}
+
 body {
   @apply selection:bg-red-100
 }
