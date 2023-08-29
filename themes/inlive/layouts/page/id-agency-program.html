@@ -1,6 +1,12 @@
 {{ define "main" }}
 {{ partial "header/header.html" . }}
 
+<style>
+  .bg-gradient {
+    background: linear-gradient(to bottom, hsla(0, 0%, 100%, 1), hsla(0, 0%, 100%, 1), hsla(210, 25%, 98%, 1), hsla(210, 25%, 98%, 1));
+  }
+</style>
+
 <main>
   <section class="mt-20 mx-auto max-w-7xl px-4 lg:px-8">
     <div class="flex flex-col gap-10 lg:flex-row">
@@ -53,6 +59,99 @@
           </p>
         </div>
         <div class="dashed-horizontal-line absolute bottom-0"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pt-16 bg-gradient pb-20 lg:pb-32">
+    <div class="mx-auto max-w-7xl px-4 lg:px-8">
+      <header>
+        <h2 class="font-semibold text-base text-red-700">
+          Bentuk kerja sama <span class="text-red-300">_</span>
+        </h2>
+        <h3 class="mt-2 font-bold text-3xl lg:text-4xl leading-tight lg:leading-tight text-slate-800">
+          Saling menguntungkan dalam pengembangan bisnis Anda.
+        </h3>
+      </header>
+      <div class="mt-6">
+        <p class="max-w-3xl text-slate-500 text-base leading-relaxed">
+          Dalam program ini, kerja sama antara inLive dan agensi perangkat lunak adalah inLive sebagai penyedia layanan akan berbagi hasil pendapatan dengan para agensi untuk setiap aplikasi yang diimplementasikan oleh para agensi untuk client-nya. Besaran pembagian hasil akan disepakati bersama dalam rentang 10-20% dari biaya yang dibebankan inLive ke pengguna Cloud API inLive.
+        </p>
+      </div>
+      <div class="mt-16">
+        <h4 class="text-xl font-semibold text-slate-700">
+          Benefit untuk setiap agensi yang menjadi bagian dari program ini
+        </h4>
+        <ul class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <li>
+            <div class="h-full p-5 pb-8 rounded-xl bg-white border border-slate-200">
+              <span class="text-slate-800">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_1045_2443)">
+                    <path d="M3 12C3 13.1819 3.23279 14.3522 3.68508 15.4442C4.13738 16.5361 4.80031 17.5282 5.63604 18.364C6.47177 19.1997 7.46392 19.8626 8.55585 20.3149C9.64778 20.7672 10.8181 21 12 21C13.1819 21 14.3522 20.7672 15.4442 20.3149C16.5361 19.8626 17.5282 19.1997 18.364 18.364C19.1997 17.5282 19.8626 16.5361 20.3149 15.4442C20.7672 14.3522 21 13.1819 21 12C21 10.8181 20.7672 9.64778 20.3149 8.55585C19.8626 7.46392 19.1997 6.47177 18.364 5.63604C17.5282 4.80031 16.5361 4.13738 15.4442 3.68508C14.3522 3.23279 13.1819 3 12 3C10.8181 3 9.64778 3.23279 8.55585 3.68508C7.46392 4.13738 6.47177 4.80031 5.63604 5.63604C4.80031 6.47177 4.13738 7.46392 3.68508 8.55585C3.23279 9.64778 3 10.8181 3 12Z" stroke="currentcolor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M12 3C13.9006 3 15.7524 3.60169 17.2901 4.71885C18.8277 5.836 19.9722 7.41126 20.5595 9.21885L12 12L12 3Z" stroke="currentcolor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_1045_2443">
+                      <rect width="24" height="24" fill="white"/>
+                    </clipPath>
+                  </defs>
+                </svg>
+              </span>
+              <p class="mt-2 text-base font-medium text-slate-700">
+                Sistem bagi hasil 10-20% dari setiap biaya yang dibebankan ke aplikasi client
+              </p>
+            </div>
+          </li>
+          <li>
+            <div class="h-full p-5 pb-8 rounded-xl bg-white border border-slate-200">
+              <span class="text-slate-800">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3.75 3V14.25C3.75 14.8467 3.98705 15.419 4.40901 15.841C4.83097 16.2629 5.40326 16.5 6 16.5H8.25M3.75 3H2.25M3.75 3H20.25M8.25 16.5H15.75M8.25 16.5L7.25 19.5L6.75 21M20.25 3H21.75M20.25 3V14.25C20.25 14.8467 20.0129 15.419 19.591 15.841C19.169 16.2629 18.5967 16.5 18 16.5H15.75M15.75 16.5L16.75 19.5L17.25 21" stroke="currentcolor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M8 7H16" stroke="currentcolor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M8 11H11" stroke="currentcolor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <p class="mt-2 text-base font-medium text-slate-700">
+                Training pengembangan aplikasi berbasis WebRTC dan penerapan Cloud API inLive
+              </p>
+            </div>
+          </li>
+          <li>
+            <div class="h-full p-5 pb-8 rounded-xl bg-white border border-slate-200">
+              <span class="text-slate-800">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M12 3.5C16.97 3.5 21 7.08 21 11.5C21 15.92 16.97 19.5 12 19.5C10.7 19.5 9.47 19.26 8.36 18.82C7.66616 19.6425 6.72683 20.2208 5.68 20.47C5.49283 20.5122 5.29748 20.4996 5.11726 20.4338C4.93704 20.3679 4.77956 20.2517 4.6636 20.0988C4.54764 19.946 4.4781 19.763 4.46328 19.5717C4.44846 19.3804 4.48897 19.1889 4.58 19.02C4.9 18.44 5.17 17.74 5.39 16.93C4.64422 16.2343 4.04776 15.3941 3.63689 14.4607C3.22602 13.5272 3.00933 12.5199 3 11.5C3 7.08 7.03 3.5 12 3.5Z" stroke="currentcolor" stroke-width="1.5" stroke-linejoin="round"/>
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M10.6108 8.43991C10.5412 8.50957 10.4584 8.56484 10.3674 8.60254C10.2764 8.64024 10.1788 8.65965 10.0803 8.65965C9.9818 8.65965 9.88424 8.64024 9.79321 8.60254C9.70219 8.56484 9.61948 8.50957 9.54982 8.43991C9.48015 8.37024 9.42489 8.28753 9.38719 8.19651C9.34948 8.10548 9.33008 8.00792 9.33008 7.9094C9.33008 7.81087 9.34948 7.71331 9.38719 7.62229C9.42489 7.53126 9.48015 7.44855 9.54982 7.37889C9.87601 7.05263 10.2731 6.806 10.7101 6.65817C11.1471 6.51034 11.6124 6.46531 12.0696 6.52656C12.5269 6.58781 12.9639 6.7537 13.3466 7.01133C13.7293 7.26896 14.0474 7.6114 14.2763 8.012C14.5051 8.41261 14.6385 8.8606 14.666 9.32114C14.6935 9.78168 14.6144 10.2424 14.4349 10.6674C14.2554 11.0924 13.9803 11.4702 13.631 11.7716C13.2817 12.073 12.8675 12.2897 12.4208 12.405V12.75C12.4208 12.9489 12.3418 13.1397 12.2011 13.2803C12.0605 13.421 11.8697 13.5 11.6708 13.5C11.4719 13.5 11.2811 13.421 11.1405 13.2803C10.9998 13.1397 10.9208 12.9489 10.9208 12.75V12.25C10.9208 11.53 11.4908 11.078 12.0018 10.963C12.2289 10.9119 12.4409 10.8087 12.6212 10.6615C12.8014 10.5143 12.945 10.3272 13.0405 10.115C13.1359 9.90279 13.1807 9.67126 13.1713 9.43874C13.1619 9.20621 13.0985 8.97907 12.9861 8.77528C12.8738 8.57149 12.7156 8.39663 12.524 8.26454C12.3324 8.13245 12.1127 8.04675 11.8823 8.01421C11.6518 7.98168 11.417 8.00321 11.1963 8.07709C10.9757 8.15097 10.7752 8.27519 10.6108 8.43991Z" fill="currentcolor"/>
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M11.6709 16.25C11.9361 16.25 12.1905 16.1446 12.378 15.9571C12.5655 15.7696 12.6709 15.5152 12.6709 15.25C12.6709 14.9848 12.5655 14.7304 12.378 14.5429C12.1905 14.3554 11.9361 14.25 11.6709 14.25C11.4057 14.25 11.1513 14.3554 10.9638 14.5429C10.7763 14.7304 10.6709 14.9848 10.6709 15.25C10.6709 15.5152 10.7763 15.7696 10.9638 15.9571C11.1513 16.1446 11.4057 16.25 11.6709 16.25Z" fill="currentcolor"/>
+                </svg>
+              </span>
+              <p class="mt-2 text-base font-medium text-slate-700">
+                Dukungan teknis gratis dan update berkala dari inLive
+              </p>
+            </div>
+          </li>
+          <li>
+            <div class="h-full p-5 pb-8 rounded-xl bg-white border border-slate-200">
+              <span class="text-slate-800">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_1047_2501)">
+                  <path d="M15.6206 3.21925C15.2715 3.07464 14.8974 3.00021 14.5195 3.00021C14.1417 3.00021 13.7675 3.07464 13.4184 3.21925C13.0694 3.36386 12.7522 3.57582 12.485 3.84302L9.84202 6.48602C9.57482 6.75318 9.36287 7.07036 9.21826 7.41944C9.07365 7.76852 8.99922 8.14267 8.99922 8.52052C8.99922 8.89837 9.07365 9.27252 9.21826 9.6216C9.36287 9.97068 9.57482 10.2879 9.84202 10.555L10.143 10.856L3.58502 17.414C3.25279 17.7463 3.04816 18.1849 3.00702 18.653L2.99902 18.828V20C2.99906 20.245 3.08898 20.4814 3.25174 20.6644C3.4145 20.8474 3.63877 20.9644 3.88202 20.993L3.99902 21H5.17102C5.64057 20.9999 6.09511 20.8346 6.45502 20.533L6.58502 20.414L6.99902 20V18H8.99902V16H10.999L13.143 13.856L13.444 14.157C13.7112 14.4242 14.0284 14.6362 14.3774 14.7808C14.7265 14.9254 15.1007 14.9998 15.4785 14.9998C15.8564 14.9998 16.2305 14.9254 16.5796 14.7808C16.9287 14.6362 17.2459 14.4242 17.513 14.157L20.156 11.514C20.4232 11.2469 20.6352 10.9297 20.7798 10.5806C20.9244 10.2315 20.9988 9.85737 20.9988 9.47952C20.9988 9.10167 20.9244 8.72752 20.7798 8.37844C20.114 6.77128 17.2278 3.88503 15.6206 3.21925Z" stroke="currentcolor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M15.5 9C15.5 9.2761 15.2761 9.5 15 9.5C14.7239 9.5 14.5 9.2761 14.5 9C14.5 8.7239 14.7239 8.5 15 8.5C15.2761 8.5 15.5 8.7239 15.5 9Z" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round"/>
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_1047_2501">
+                      <rect width="24" height="24" fill="white"/>
+                    </clipPath>
+                  </defs>
+                </svg>
+              </span>
+              <p class="mt-2 text-base font-medium text-slate-700">
+                Akses ke versi beta dari semua produk inLive lebih awal
+              </p>
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
   </section>
