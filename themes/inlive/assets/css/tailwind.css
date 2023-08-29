@@ -40,6 +40,11 @@ body {
   animation: blink 1s step-end infinite;
 }
 
+.animate-blink {
+  -webkit-animation: blink 1s step-end infinite;
+  animation: blink 1s step-end infinite;
+}
+
 @-webkit-keyframes blink {
   0% {
     opacity: 1.0;
