@@ -19,19 +19,11 @@
 {{ partial "header/header.html" . }}
 {{ $inliveEmail := getenv "_HUGO_INLIVE_EMAIL" }}
 <main class="px-4 lg:px-8 sm:mb-20 xl:flex xl:flex-col xl:justify-center xl:items-center mx-auto mb-12">
-  <header class="text-center mt-16 mb-10">
+  <header class="text-center mt-20 mb-12">
     <h1 class="font-extrabold text-3xl leading-9 mb-2">Choose Your Plan</h1>
     <p class="text-lg leading-7 text-gray-700 px-6">Flexible pricing plans for teams of all sizes and pay by month.</p>
   </header>
 
-  <section class="flex justify-center items-center mb-10">
-    <div class="bg-emerald-100 border border-emerald-300 w-full max-w-4xl rounded-lg py-4 sm:py-6 px-4 sm:px-6">
-      <p class="text-emerald-800 leading-7 font-medium text-center">
-        You can get a free 3 months of business plan coupon.
-        <b><a href="https://docs.google.com/forms/d/e/1FAIpQLScdo7fm1XbfaW9_O59IqU2GX7qy9f6huZBybWLMnsY_rML66A/viewform" class="underline" target="_blank" rel="noopener noreferrer" data-tracking-event="open-link" data-tracking-label="3 months of business plan form at pricing page">Fill out this form </a></b> to check if you're eligible.
-      </p>
-    </div>
-  </section>
   <section class="mt-4">
       <div class="grid overflow-x-auto gap-5" style="grid-template-columns: repeat(4, 1fr);">
         {{ $linkStudioOrigin := getenv "_HUGO_INLIVE_STUDIO_ORIGIN" }}
@@ -39,8 +31,8 @@
         {{ $linkAPI := printf "%s/v1/package" $apiOriginLink }}
         {{ $items := getJSON $linkAPI }}
         {{ range $item := sort $items.data "id" "asc"}}
-        <div class="text-center w-[280px] border border-gray-300 rounded-2xl min-h-[586px]">
-          <h2 class="bg-blue-200 font-bold text-2xl leading-8 rounded-t-2xl text-center py-5 capitalize">{{ $item.name }}</h2>
+        <div class="text-center w-[280px] border border-red-300 rounded-2xl min-h-[586px]">
+          <h2 class="bg-red-200 font-bold text-2xl leading-8 rounded-t-2xl text-center py-5 capitalize">{{ $item.name }}</h2>
           <div class="grid items-end">
             <div class="my-10 self-start">
               <span class="text-4xl leading-10">$</span><span class="text-6xl leading-none font-extrabold">{{ $item.price }}</span><span class="text-xl leading-10">/mo</span>
@@ -48,23 +40,23 @@
             <p class="text-sm leading-5 px-8 self-start min-h-[5rem]">{{ $item.description }}</p>
             {{ if eq (int $item.id) 1 }}
               <div class="my-10">
-                <a href="{{ $linkStudioOrigin }}/login" target="_blank" rel="noopener noreferrer" class="inline-block text-blue-600 border border-blue-600 hover:bg-blue-600 hover:text-white rounded-md hover:shadow-lg active:shadow-lg py-3 px-6 text-center" data-tracking-event="open-link" data-tracking-label="{{ $item.name }} plan on the pricing page">Get Started</a>
+                <a href="{{ $linkStudioOrigin }}/login" target="_blank" rel="noopener noreferrer" class="inline-block text-red-600 border border-red-600 hover:bg-red-600 hover:text-white rounded-md hover:shadow-lg active:shadow-lg py-3 px-6 text-center" data-tracking-event="open-link" data-tracking-label="{{ $item.name }} plan on the pricing page">Get Started</a>
               </div>
             {{ else if eq (int $item.id) 2 }}
               <div class="my-10">
-                <a href="{{ $linkStudioOrigin }}/login" target="_blank" rel="noopener noreferrer" class="inline-block text-blue-600 border border-blue-600 hover:bg-blue-600 hover:text-white rounded-md hover:shadow-lg active:shadow-lg py-3 px-6 text-center" data-tracking-event="open-link" data-tracking-label="{{ $item.name }} plan on the pricing page">Start Trial</a>
+                <a href="{{ $linkStudioOrigin }}/login" target="_blank" rel="noopener noreferrer" class="inline-block text-red-600 border border-red-600 hover:bg-red-600 hover:text-white rounded-md hover:shadow-lg active:shadow-lg py-3 px-6 text-center" data-tracking-event="open-link" data-tracking-label="{{ $item.name }} plan on the pricing page">Start Trial</a>
               </div>
             {{ else if eq (int $item.id) 3 }}
               <div class="my-10">
-                <a href="{{ $linkStudioOrigin }}/login" target="_blank" rel="noopener noreferrer" class="inline-block text-blue-600 border border-blue-600 hover:bg-blue-600 hover:text-white rounded-md hover:shadow-lg active:shadow-lg py-3 px-6 text-center" data-tracking-event="open-link" data-tracking-label="{{ $item.name }} plan on the pricing page">Start Trial</a>
+                <a href="{{ $linkStudioOrigin }}/login" target="_blank" rel="noopener noreferrer" class="inline-block text-red-600 border border-red-600 hover:bg-red-600 hover:text-white rounded-md hover:shadow-lg active:shadow-lg py-3 px-6 text-center" data-tracking-event="open-link" data-tracking-label="{{ $item.name }} plan on the pricing page">Start Trial</a>
               </div>
             {{ else if eq (int $item.id) 4 }}
               <div class="my-10">
-                <a href="mailto:{{ $inliveEmail }}" target="_blank" rel="noopener noreferrer" class="inline-block text-blue-600 border border-blue-600 hover:bg-blue-600 hover:text-white rounded-md hover:shadow-lg active:shadow-lg py-3 px-6 text-center" data-tracking-event="open-link" data-tracking-label="{{ $item.name }} plan on the pricing page">Contact Us</a>
+                <a href="mailto:{{ $inliveEmail }}" target="_blank" rel="noopener noreferrer" class="inline-block text-red-600 border border-red-600 hover:bg-red-600 hover:text-white rounded-md hover:shadow-lg active:shadow-lg py-3 px-6 text-center" data-tracking-event="open-link" data-tracking-label="{{ $item.name }} plan on the pricing page">Contact Us</a>
               </div>
             {{ end }}
           </div>
-          <div class="flex justify-center py-10 border-t border-t-gray-300">
+          <div class="flex justify-center py-10 border-t border-t-red-300">
             <ul class="list-none text-center text-sm">
               <li>
                 <b>Streaming hours</b>
@@ -155,7 +147,7 @@
   </section>
 
   <section>
-    <h1 class="font-bold text-2xl leading-8 mt-20 lg:mt-36 mb-[46px] text-center">Frequently Asked Questions</h1>
+    <h1 class="font-bold text-2xl leading-8 mt-20 lg:mt-36 mb-12 text-center">Frequently Asked Questions</h1>
 
     <div class="max-w-[580px] mx-auto">
         <!-- faq 1 -->
@@ -194,7 +186,7 @@
               <span class="w-11/12 md:w-full">Can I cancel my subscription at any time?</span>
             </button>
             <div class="panel overflow-hidden text-left text-gray-600">
-              <p class="text-base leading-6 mt-3.5 mr-5 lg:mr-[3.75rem]">You can <a href="mailto:{{ $inliveEmail }}" aria-label="link-to-studio" target="_blank" rel="noopener noreferrer" class="text-blue-700 font-semibold hover:underline">contact us</a> anytime to cancel the subscription and it will be ended for the next billing cycle.</p>
+              <p class="text-base leading-6 mt-3.5 mr-5 lg:mr-[3.75rem]">You can <a href="mailto:{{ $inliveEmail }}" aria-label="link-to-studio" target="_blank" rel="noopener noreferrer" class="text-red-600 font-semibold hover:underline">contact us</a> anytime to cancel the subscription and it will be ended for the next billing cycle.</p>
             </div>
         </div>
 

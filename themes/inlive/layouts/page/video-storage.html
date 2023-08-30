@@ -1,0 +1,33 @@
+{{ define "main" }}
+{{ partial "header/header.html" . }}
+{{ $inliveStudioOrigin := getenv "_HUGO_INLIVE_STUDIO_ORIGIN" }}
+{{ $inliveEmail := getenv "_HUGO_INLIVE_EMAIL" }}
+
+<main>
+  <section class="my-20 lg:my-40 mx-auto max-w-7xl px-4 lg:px-8">
+    <div class="flex flex-col gap-10 lg:flex-row">
+      <div class="flex-1 max-w-[600px]">
+        <div
+          class="inline-block mb-4 py-1 px-3 text-center bg-emerald-100 rounded-3xl text-xs font-semibold text-emerald-700">
+          Coming soon - In planning
+        </div>
+        <h1 class="blink font-bold text-3xl lg:text-6xl -tracking-wide text-slate-800">
+          Video API
+        </h1>
+        <p class="mt-4 lg:mt-6 font-medium text-gray-500 lg:text-lg">
+          Serve your own video with 50% less cost on storage and bandwidth. We only store one of your video but able to serve multiple bitrates on the fly.
+        </p>
+      </div>
+    </div>
+  </section>
+</main>
+{{ end }}
+
+{{ define "footer" }}
+{{ partial "footer/footer.html" . }}
+{{ end }}
+
+{{ define "script" }}
+{{ $globalJS := resources.Get "js/global.js" | minify }}
+<script type="text/javascript" src="{{ $globalJS.RelPermalink }}" defer></script>
+{{ end }}
