@@ -1,6 +1,10 @@
 @tailwind base;
 @tailwind components;
 
+html {
+  @apply scroll-smooth scroll-pt-20;
+}
+
 body {
   @apply selection:bg-red-100
 }
@@ -32,6 +36,11 @@ body {
   width: 0.6em;
   height: 0.15em;
   background-color: #CAD4E0;
+  -webkit-animation: blink 1s step-end infinite;
+  animation: blink 1s step-end infinite;
+}
+
+.animate-blink {
   -webkit-animation: blink 1s step-end infinite;
   animation: blink 1s step-end infinite;
 }
