@@ -1,7 +1,7 @@
 ---
 # Refer to the themes/inlive/archetypes/README.md
-date: 2023-07-30
-lastmod: 2023-07-30
+date: 2023-09-08
+lastmod: 2023-09-08
 title: Challenges in developing an SFU - Developing a WebRTC SFU - Part 2
 description: What we learned from developing an SFU, the challenges and how we solve it
 ogimage: /blog/designing-inlive-hub/images/og-image.png
