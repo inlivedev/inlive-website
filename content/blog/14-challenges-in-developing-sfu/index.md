@@ -2,13 +2,16 @@
 # Refer to the themes/inlive/archetypes/README.md
 date: 2023-09-08
 lastmod: 2023-09-08
-title: Challenges in developing an SFU - Developing a WebRTC SFU - Part 2
+title: Challenges in developing an SFU - Developing a WebRTC SFU Part 2
 description: What we learned from developing an SFU, the challenges and how we solve it
 ogimage: /blog/designing-inlive-hub/images/og-image.png
 slug: challenges-in-developing-sfu
 summary: What we learned from developing an SFU, the challenges and how we solve it
 ---
-# Challenges in developing an SFU - Developing a WebRTC SFU - Part 2
+
+# Challenges in developing an SFU - Developing a WebRTC SFU Part 2
+
+![Selective Forwarder Unit(SFU)](/blog/how-sfu-works-developing-webrtc-sfu-part-1/images/sfu.png "Selective Forwarder Unit(SFU)")
 
 When developing an SFU server there are several things that you need to consider because it will affect how you will deploy and scale it.
 

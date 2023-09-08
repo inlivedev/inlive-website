@@ -2,14 +2,14 @@
 # Refer to the themes/inlive/archetypes/README.md
 date: 2023-07-10
 lastmod: 2023-07-10
-title: How a WebRTC SFU works - Developing a WebRTC SFU(Selective Forwarding Unit) Part 1
+title: How a WebRTC SFU works - Developing a WebRTC SFU Part 1
 description: What you need to know when developing a WebRTC SFU
 ogimage: /blog/how-sfu-works-developing-webrtc-sfu-part-1/images/sfu.png
 slug: how-sfu-works-developing-webrtc-sfu-part-1
 summary: Lesson learned from developing a WebRTC SFU, how a WebRTC SFU works, and what you need to know when developing a WebRTC SFU
 ---
 
-# How a WebRTC SFU works Part 1 - Developing a WebRTC SFU 
+# How a WebRTC SFU works - Developing a WebRTC SFU Part 1
 
 ![Selective Forwarder Unit(SFU)](/blog/how-sfu-works-developing-webrtc-sfu-part-1/images/sfu.png "Selective Forwarder Unit(SFU)")
 
