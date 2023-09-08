@@ -8,6 +8,8 @@ ogimage: /blog/designing-inlive-hub/images/og-image.png
 slug: challenges-in-developing-sfu
 summary: What we learned from developing an SFU, the challenges and how we solve it
 ---
+# Challenges in developing an SFU - Developing a WebRTC SFU - Part 2
+
 When developing an SFU server there are several things that you need to consider because it will affect how you will deploy and scale it.
 
 ### Signaling channel
