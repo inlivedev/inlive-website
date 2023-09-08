@@ -6,13 +6,13 @@ title: Designing inLive Hub, an automated and extendable WebRTC SFU(Selective Fo
 description: How we design the inlive SFU to be unique and different from other SFU.
 ogimage: /blog/designing-inlive-hub/images/og-image.png
 slug: designing-inlive-hub
-summary: There are many SFU out there, but we saw they're still lack of automation and data driven to develop a new real time interactive app beyond video conference. We want to build a SFU that can be used for any real time app, not just video conference.
+summary: There are many SFU out there, but we saw they're still lack of automation and data driven to develop a new real time interactive app beyond video conference. We want to build an SFU that can be used for any real time app, not just video conference.
 ---
 
 # Designing inLive Hub, an automated and extendable WebRTC SFU
 
 ![Designing inLive Hub](/images/realtime-interactive/illust-feature-room.svg "Designing inLive Hub")
-During pandemic, we saw a lot of WebRTC SFU(Selective Forwarding Unit) API developed and released to the market. Most of them focus on the conference app usecase where a participant will join into a room and interact with the other participants in the room. Basically the API will help you develop a Zoom/Google Meet like app. But a real time interactive app is beyond conference app. We want to build a SFU that can be used for any real-time use cases, not just video conference. To be able to do that, we want to focus on automation and data driven SFU.
+During pandemic, we saw a lot of WebRTC SFU(Selective Forwarding Unit) API developed and released to the market. Most of them focus on the conference app usecase where a participant will join into a room and interact with the other participants in the room. Basically the API will help you develop a Zoom/Google Meet like app. But a real time interactive app is beyond conference app. We want to build an SFU that can be used for any real-time use cases, not just video conference. To be able to do that, we want to focus on automation and data driven SFU.
 
 When we're decided to work on SFU, these are some of the usecases that we have in mind:
 - Call center, a single button in the app that will connect you to the agent. The agent will be able to see you and talk to you. The agent will be able to share their screen to you. The agent will be able to invite another agent to join the call.

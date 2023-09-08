@@ -2,24 +2,24 @@
 # Refer to the themes/inlive/archetypes/README.md
 date: 2023-07-10
 lastmod: 2023-07-10
-title: How a WebRTC SFU works - Developing a WebRTC SFU(Selective Forwarding Unit) Part 1
+title: How a WebRTC SFU works - Developing a WebRTC SFU Part 1
 description: What you need to know when developing a WebRTC SFU
 ogimage: /blog/how-sfu-works-developing-webrtc-sfu-part-1/images/sfu.png
 slug: how-sfu-works-developing-webrtc-sfu-part-1
 summary: Lesson learned from developing a WebRTC SFU, how a WebRTC SFU works, and what you need to know when developing a WebRTC SFU
 ---
 
-# How a WebRTC SFU works Part 1 - Developing a WebRTC SFU 
+# How a WebRTC SFU works - Developing a WebRTC SFU Part 1
 
 ![Selective Forwarder Unit(SFU)](/blog/how-sfu-works-developing-webrtc-sfu-part-1/images/sfu.png "Selective Forwarder Unit(SFU)")
 
 ## Opening
-A SFU(Selective Forwarding Unit) is a WebRTC architecture that will route the media stream from one peer to another peer in the same group. The SFU is design to make the group video conference scaleable with low latency. Other architechture options are MCU(Multipoint Control Unit) and Mesh. MCU is hard to scale because it will need a lot of CPU power to composite the media stream. Mesh is not scalable because it will need a lot of bandwidth to send the media stream to all peers in the room. You can learn more about the WebRTC architecture in [this article](https://bloggeek.me/webrtcglossary/sfu/).
+An SFU(Selective Forwarding Unit) is a WebRTC architecture that will route the media stream from one peer to another peer in the same group. The SFU is design to make the group video conference scaleable with low latency. Other architechture options are MCU(Multipoint Control Unit) and Mesh. MCU is hard to scale because it will need a lot of CPU power to composite the media stream. Mesh is not scalable because it will need a lot of bandwidth to send the media stream to all peers in the room. You can learn more about the WebRTC architecture in [this article](https://bloggeek.me/webrtcglossary/sfu/).
 
 When we design our SFU, we focus on making the SFU portable and can be extend later. You can read about how we design our SFU in [this article](/blog/designing-inlive-hub/). This post we focus on what the we learn we we developing the SFU. This will be a series of blog posts because it will be hard to cover everything in single post. In this series, we will cover the following topics:
 
 1. How the SFU works
-2. Challenges in developing a SFU
+2. Challenges in developing an SFU
 3. Signal negotiation and renegotiation
 4. Codec negotiation
 5. Improving join and leave experiences
@@ -53,7 +53,7 @@ To understand how those components above works, let see what happens if you are 
 4. When the connection established, your browser will start sending the media stream to the SFU. Your pair WebRTC client on the SFU will receive the media stream and forward it to the each WebRTC client in the room who also a pair for each peer client in the group.
 
 ## Closing
-Those are the basic flow of how a SFU works. Developing a simple SFU can be done in a week, but to make it production ready, it will take a lot of time. We will cover more about the challenges in developing a SFU for production in the next posts. Stay tuned!
+Those are the basic flow of how an SFU works. Developing a simple SFU can be done in a week, but to make it production ready, it will take a lot of time. We will cover more about the challenges in developing an SFU for production in the next posts. Stay tuned!
 
 
 
