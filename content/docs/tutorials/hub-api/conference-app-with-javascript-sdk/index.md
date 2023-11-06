@@ -166,14 +166,14 @@ Let's create a logic to create a new room inside the `join()` function. In this 
 ```js
 async function join() {
     // ...
-    roomID = new URL(location.href).searchParams.get('roomID');
+    roomID = new URL(window.location.href).searchParams.get('roomID');
 
     if (!roomID) {
         const newRoom = await room.createRoom('My room');
         roomID = newRoom.data.roomId;
     }
 
-    joinUrl = encodeURI(location.origin + `?roomID=${roomID}`);
+    joinUrl = encodeURI(window.location.href + `?roomID=${roomID}`);
     document.getElementById('info').innerHTML = `Join URL : <a href="${joinUrl}" target="_blank">${joinUrl}</a>`;
 }
 ```
