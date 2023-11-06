@@ -173,7 +173,7 @@ async function join() {
         roomID = newRoom.data.roomId;
     }
 
-    joinUrl = encodeURI(window.location.href + `?roomID=${roomID}`);
+    joinUrl = encodeURI(window.location.origin + window.location.pathname + `?roomID=${roomID}`);
     document.getElementById('info').innerHTML = `Join URL : <a href="${joinUrl}" target="_blank">${joinUrl}</a>`;
 }
 ```
