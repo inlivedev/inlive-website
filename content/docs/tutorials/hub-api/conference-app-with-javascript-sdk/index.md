@@ -174,7 +174,7 @@ async function join() {
     }
 
     joinUrl = encodeURI(location.origin + `?roomID=${roomID}`);
-    document.getElementById('info').innerHTML = `Join URL : <a href="${joinUrl}" target="_blank">${joinUrl}</a>`
+    document.getElementById('info').innerHTML = `Join URL : <a href="${joinUrl}" target="_blank">${joinUrl}</a>`;
 }
 ```
 
@@ -186,7 +186,7 @@ Every user who wants to join to the room needs to create a client. A client is r
 async function join() {
     // ...
     const client = await room.createClient(roomID);
-    clientID = client.data.clientId
+    clientID = client.data.clientId;
 }
 ```
 
@@ -200,10 +200,9 @@ What you need to do to trigger a WebRTC negotiation is by adding a local MediaSt
 async function join() {
     // ...
     peer = await room.createPeer(roomID, clientID);
-
     peer.addStream(mediaStream.id, {
         clientId: clientID,
-        name: 'client A',
+        name: 'local client',
         origin: 'local',
         source: 'media',
         mediaStream: mediaStream
@@ -229,7 +228,7 @@ room.on(room.event.STREAM_AVAILABLE, ({ stream }) => {
     video.muted = false;
     video.autoplay = true;
     video.srcObject = stream.mediaStream;
-    video.setAttribute('id', `video-${stream.id}`)
+    video.setAttribute('id', `video-${stream.id}`);
 
     document.querySelector('main').appendChild(video);
 });
@@ -260,7 +259,7 @@ async function leave() {
 
     document.getElementById('local-video').srcObject = null;
     joinUrl = '';
-    document.querySelector('#info').innerHTML = '';
+    document.getElementById('info').innerHTML = '';
 }
 ```
 
