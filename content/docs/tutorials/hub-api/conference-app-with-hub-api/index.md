@@ -12,6 +12,7 @@ menu:
     name: Conference App with Hub API
     parent: hub-api
     weight: 1
+draft: true
 ---
 
 # Conference App with Hub API
