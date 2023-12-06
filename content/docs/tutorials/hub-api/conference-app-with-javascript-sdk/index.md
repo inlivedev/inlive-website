@@ -103,10 +103,12 @@ If you want to add basic CSS for styling purpose, you can put the CSS code below
 We will start implementing the JavaScript for the application. We need to import the inLive JavaScript SDK and initialize global variables to use later.
 
 ```js
-import { Room } from 'https://cdn.jsdelivr.net/npm/@inlivedev/inlive-js-sdk@0.10.2/dist/room.js'
+import { Room,RoomEvent } from 'https://cdn.jsdelivr.net/npm/@inlivedev/inlive-js-sdk@0.13.1/dist/room.js'
 
 // Initialize the Room module
-const room = Room();
+const room = Room({
+    apiKey: <InsertYourAPIKeyHere>
+});
 
 // The ID of the room
 let roomID = '';
@@ -219,7 +221,7 @@ When the user has successfully joined to the room, the join URL for that room wi
 To handle a remote user who joins the room, we can listen for an event called `STREAM_AVAILABLE`. This event happens when the remote user MediaStream is already available to use. When this event happens, we can create a new video element using JavaScript, and append it into the HTML. We can exclude the local MediaStream we have obtained from turning on the camera and mic by checking the `stream.origin` is a `local` and `stream.source` is a `media`.
 
 ```js
-room.on(room.event.STREAM_AVAILABLE, ({ stream }) => {
+room.on(RoomEvent.STREAM_AVAILABLE, ({ stream }) => {
     if (stream.origin === 'local' && stream.source === 'media') return;
 
     const video = document.createElement('video');
@@ -239,7 +241,7 @@ room.on(room.event.STREAM_AVAILABLE, ({ stream }) => {
 When a remote user leaves the room, we can a listen for an event called `STREAM_REMOVED`. This event happens when the remote user no longer sends streaming data. We will remove the video element based on the ID of the removed stream.
 
 ```js
-room.on(room.event.STREAM_REMOVED, ({ stream }) => {
+room.on(RoomEvent.STREAM_REMOVED, ({ stream }) => {
     const videoElement = document.getElementById(`video-${stream.id}`);
 
     if (videoElement) {
