@@ -107,7 +107,9 @@ import { Room,RoomEvent } from 'https://cdn.jsdelivr.net/npm/@inlivedev/inlive-j
 
 // Initialize the Room module
 const room = Room({
-    apiKey: <InsertYourAPIKeyHere>
+    api : {
+        apiKey: <InsertYourAPIKeyHere>
+    }
 });
 
 // The ID of the room
