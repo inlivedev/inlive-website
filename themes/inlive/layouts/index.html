@@ -3,6 +3,21 @@
 {{ $inliveStudioOrigin := getenv "_HUGO_INLIVE_STUDIO_ORIGIN" }}
 {{ $inliveEmail := getenv "_HUGO_INLIVE_EMAIL" }}
 
+<style>
+  @media (min-width: 640px) {
+
+    .feature-list,
+    .use-case {
+      grid-template-columns: repeat(2, minmax(0, 440px));
+      justify-content: center;
+    }
+  }
+
+  .bg-gradient {
+    background: linear-gradient(to bottom, hsla(0, 0%, 100%, 1), hsla(0, 0%, 100%, 1), hsla(210, 25%, 98%, 1), hsla(210, 25%, 98%, 1));
+  }
+</style>
+
 <main class="mb-20">
   <section class="px-4 lg:px-20">
     <div class="max-w-7xl mx-auto lg:px-8 py-10 lg:py-32">
@@ -200,6 +215,62 @@
           </div>
         </li>
       </ul>
+    </div>
+  </section>
+  <section class="px-4 lg:px-20 bg-gradient">
+    <div class="max-w-7xl mx-auto lg:px-8 py-12 lg:py-24">
+      <h2 class="text-center font-bold text-3xl lg:text-4xl text-slate-800">
+        Features
+      </h2>
+      <div class="mt-10 lg:mt-20">
+        <ul class="feature-list grid gap-6 sm:gap-4">
+          <li class="sm:col-span-1">
+            {{ partial "landing/feature-item.html" (
+            dict "context" .
+            "src" `/images/home/event-management.png`
+            "alt" `The image of integrated event management feature`
+            "heading" `Integrated event management`
+            "paragraph" `Streamline your online event management with our comprehensive platform. With event page
+            creation, video conferencing, registration, schedule reminders, and analytics, everything you need is in one
+            place.`
+            ) }}
+          </li>
+          <li class="sm:col-span-1">
+            {{ partial "landing/feature-item.html" (
+            dict "context" .
+            "src" `/images/home/event-analytics.png`
+            "alt" `The image of event analytics feature`
+            "heading" `Event analytics`
+            "paragraph" `Gain deeper insights into participant engagement by visualizing the time they join and leave
+            events. Additionally, identify those actively engaged by tracking who speaks or makes comments during the
+            sessions. Tag and categorize them based on the engagement analytics for your future reference.`
+            ) }}
+          </li>
+          <li class="sm:col-span-1">
+            {{ partial "landing/feature-item.html" (
+            dict "context" .
+            "src" `/images/home/video-conference-api.png`
+            "alt" `The image of video conference api feature`
+            "heading" `Flexible video conference API`
+            "paragraph" `Our in-house real-time communication technology allows us to fine tune and balance the
+            streaming quality but keep the low latency for different use cases. With latency less than 10 milliseconds,
+            you can experience seamless streaming, even in challenging network conditions. Our adaptive bitrate and
+            streaming protection technology ensures smooth playback, while the audio/video packet loss protection
+            technology guarantees uninterrupted communication, even in highly congested network environments.`
+            ) }}
+          </li>
+          <li class="sm:col-span-1">
+            {{ partial "landing/feature-item.html" (
+            dict "context" .
+            "src" `/images/home/contact-management.png`
+            "alt" `The image of contact management feature`
+            "heading" `Contact management`
+            "paragraph" `Tagging previous participants in your upcoming event will help gauge their interest.
+            Additionally, schedule a follow-up meeting to discuss the event's details and ensure their engagement.`
+            ) }}
+          </li>
+        </ul>
+      </div>
     </div>
   </section>
 </main>
