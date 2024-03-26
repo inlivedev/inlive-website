@@ -1,6 +1,7 @@
 {{ define "main" }}
 {{ partial "header/home.html" . }}
 {{ $inliveStudioOrigin := getenv "_HUGO_INLIVE_STUDIO_ORIGIN" }}
+{{ $inliveEmail := getenv "_HUGO_INLIVE_EMAIL" }}
 
 <main class="mb-20">
   <section class="px-4 lg:px-20">
@@ -74,7 +75,7 @@
       </ul>
     </div>
   </section>
-  <section class="px-4 lg:px-20">
+  <section class="lg:px-20">
     <div class="py-10 relative mx-auto max-w-7xl">
       <div class="hidden lg:block w-full h-full absolute top-0 left-0 lg:px-8 -z-10">
         <div class="w-full h-full relative">
@@ -85,18 +86,18 @@
       <div class="py-8 px-4 lg:px-8 relative overflow-hidden">
         <div class="dashed-horizontal-line absolute top-0"></div>
         <div class="block">
-          <div class="px-8 flex flex-col lg:flex-row justify-between">
-            <div class="max-w-2xl">
+          <div class="lg:px-8 flex flex-col lg:flex-row gap-6 justify-between">
+            <div class="flex-1 lg:max-w-2xl">
               <h2 class="font-bold text-2xl text-red-900">
                 inLive - Where Real-time Engagement Comes Alive
               </h2>
-              <p class="text-base lg:text-lg text-slate-600">
+              <p class="mt-2 text-base lg:text-lg text-slate-600">
                 Join the future of online engagement with inLive. Contact us today to
                 learn more and schedule a demo.
               </p>
             </div>
             <div class="flex items-center">
-              <a href="#learn-more"
+              <a href="mailto:{{ $inliveEmail }}" target="_blank" rel="noopener noreferrer"
                 class="pl-4 pr-3 py-2 inline-flex items-center gap-1.5 bg-red-700 rounded-md font-medium text-base lg:text-lg text-red-50">
                 <span>Contact us</span>
                 <span>
