@@ -1,0 +1,116 @@
+{{ define "main" }}
+{{ partial "header/home.html" . }}
+
+<main class="mb-20">
+  <section class="px-4 lg:px-20">
+    <div class="max-w-7xl mx-auto lg:px-8 py-10 lg:py-16">
+      <div class="flex flex-col lg:flex-row justify-between">
+        <div class="flex-1 max-w-2xl">
+          <h1 class="blink font-bold text-3xl lg:text-6xl -tracking-wide text-slate-800">
+            Make inLive your own to unlock other possibilities
+          </h1>
+          <p class="mt-4 lg:mt-6 text-slate-500 text-base font-medium">
+            APIs for your next-gen real-time communication app. Harness the potential of live streaming and real-time
+            communication by seamlessly integrating with our
+            robust APIs. Our comprehensive API suite provides the essential building blocks for creating engaging and
+            dynamic applications.
+          </p>
+          <div class="mt-6">
+            <a href="/docs/getting-started"
+              class="inline-block font-medium bg-slate-900 text-base lg:text-lg text-slate-100 rounded-md pl-4 pr-3 py-2"
+              data-tracking-event="open-link" data-tracking-label="CTA get started">
+              Get started
+            </a>
+          </div>
+        </div>
+        <div class="-mt-32 hidden lg:block">
+          <img src="/images/home/pulse.gif" class="w-80 h-80 xl:w-[400px] xl:h-[400px]" width="400" height="400"
+            alt="Pulse animation" fetchpriority="low">
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="learn-more" class="px-4 lg:px-20">
+    <div class="max-w-7xl mx-auto lg:px-8 py-12">
+      <h2 class="text-center font-bold text-3xl lg:text-4xl text-slate-800">
+        inLive APIs
+      </h2>
+      <ul class="mt-12 flex flex-col lg:flex-row border border-slate-200 rounded-xl">
+        <li class="flex-1 bg-gradient-to-t from-slate-50">
+          <div class="flex flex-col justify-between gap-6 h-full py-8 px-6 lg:py-10 lg:px-8">
+            <div class="flex-1">
+              <h3 class="font-semibold text-xl text-slate-900">
+                Real-time communication API
+              </h3>
+              <p class="mt-2 text-base text-slate-500">
+                Automate your video, audio, and data interactions with our real-time API 
+              </p>
+            </div>
+            <div>
+              <a href="/realtime-interactive/"
+                class="inline-flex items-center gap-1 text-red-700 font-medium text-base hover:underline underline-offset-8">
+                <span>Learn more</span>
+                <span>
+                  <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_1183_2849)">
+                      <path d="M4.6665 10H16.3332M16.3332 10L11.3332 15M16.3332 10L11.3332 5" stroke="#B81C1C"
+                        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_1183_2849">
+                        <rect width="20" height="20" fill="white" transform="translate(0.5)" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </div>
+        </li>
+        <li class="flex-1 border-t lg:border-t-0 lg:border-l border-slate-200 bg-gradient-to-t from-slate-50">
+          <div class="flex flex-col justify-between gap-6 h-full py-8 px-6 lg:py-10 lg:px-8">
+            <div class="flex-1">
+              <h3 class="font-semibold text-xl text-slate-900">
+                Live API
+              </h3>
+              <p class="mt-2 text-base text-slate-500">
+                Scaleable video live streaming with affordable cost 
+              </p>
+            </div>
+            <div>
+              <a href="/live-streaming/"
+                class="inline-flex items-center gap-1 text-red-700 font-medium text-base hover:underline underline-offset-8">
+                <span>Learn more</span>
+                <span>
+                  <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_1183_2849)">
+                      <path d="M4.6665 10H16.3332M16.3332 10L11.3332 15M16.3332 10L11.3332 5" stroke="#B81C1C"
+                        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_1183_2849">
+                        <rect width="20" height="20" fill="white" transform="translate(0.5)" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  {{ partial "landing/contact-us.html" }}
+</main>
+{{ end }}
+
+{{ define "footer" }}
+{{ partial "footer/footer.html" . }}
+{{ end }}
+
+{{ define "script" }}
+{{ $globalJS := resources.Get "js/global.js" | minify }}
+<script type="text/javascript" src="{{ $globalJS.RelPermalink }}" defer></script>
+{{ end }}

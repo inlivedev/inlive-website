@@ -1,6 +1,5 @@
 {{ define "main" }}
 {{ partial "header/home.html" . }}
-{{ $inliveStudioOrigin := getenv "_HUGO_INLIVE_STUDIO_ORIGIN" }}
 
 <style>
   @media (min-width: 640px) {
@@ -148,7 +147,7 @@
               </p>
             </div>
             <div>
-              <a href="/realtime-interactive/"
+              <a href="/api/"
                 class="inline-flex items-center gap-1 text-red-700 font-medium text-base hover:underline underline-offset-8">
                 <span>Learn more</span>
                 <span>
