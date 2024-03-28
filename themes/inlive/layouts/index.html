@@ -16,165 +16,198 @@
   }
 </style>
 
+{{ $inliveRoomOrigin := getenv "_HUGO_INLIVE_ROOM_ORIGIN" }}
+
 <main class="mb-20">
-  <section class="px-4 lg:px-20">
-    <div class="max-w-7xl mx-auto lg:px-8 py-10 lg:py-32">
-      <div class="flex flex-col lg:flex-row justify-between">
-        <div class="flex-1 max-w-2xl">
-          <h1 class="font-extrabold text-3xl lg:text-6xl text-slate-900">
-            Real-time Engagement Platform
-          </h1>
-          <p class="mt-6 lg:mt-8 text-lg text-slate-500">
-            Create immersive and <b class="font-semibold text-slate-700">interactive experiences</b> that will captivate
-            your audience.
-            Our platform empowers
-            you to
-            <b class="font-semibold text-slate-700">host live video and audio sessions, webinars, virtual events, and
-              more</b>.
-          </p>
-          <div class="flex mt-6 lg:mt-12 gap-4">
-            <div>
-              <a href="/docs/getting-started"
-                class="inline-block font-medium bg-slate-900 text-base lg:text-lg text-slate-100 rounded-md pl-4 pr-3 py-2"
-                data-tracking-event="open-link" data-tracking-label="CTA get started">
-                Get started
-              </a>
-            </div>
-            <div>
-              <a href="#learn-more"
-                class="pl-4 pr-3 py-2 inline-flex items-center gap-1.5 bg-slate-100 rounded-md font-medium text-base lg:text-lg text-slate-800">
-                <span>Learn more</span>
-                <span class="h-7 flex items-end">
-                  <svg class="w-5 h-5 lg:w-6 lg:h-6 animate-bounce" viewBox="0 0 24 24" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 5V19M12 19L18 13M12 19L6 13" stroke="#1E293B" stroke-width="2" stroke-linecap="round"
-                      stroke-linejoin="round"></path>
-                  </svg>
-                </span>
-              </a>
-            </div>
-          </div>
+  <section class="max-w-7xl mx-auto px-4 xl:px-8 py-10 xl:py-32">
+    <div class="flex flex-col lg:flex-row justify-between">
+      <div class="flex-1 max-w-2xl">
+        <h1 class="font-extrabold text-3xl lg:text-6xl text-slate-900">
+          Real-time Engagement Platform
+        </h1>
+        <p class="mt-4 lg:mt-8 text-lg text-slate-500">
+          Create <b class="font-semibold text-slate-600">immersive and interactive experiences</b> that will
+          captivate
+          your audience.
+          Our platform empowers
+          you to
+          <b class="font-semibold text-slate-600">host live video and audio sessions, webinars, virtual events, and
+            more</b>.
+        </p>
+        <div class="mt-6 lg:mt-12">
+          <a href="{{ $inliveRoomOrigin }}" target="_blank"
+            class="pl-4 pr-3 py-2 inline-flex items-center gap-2 bg-red-700 rounded-md font-medium text-base lg:text-lg text-red-50">
+            <span>Try inLive Room for free</span>
+            <span>
+              <svg class="w-5 h-5 lg:w-6 lg:h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_1272_2481)">
+                  <path d="M17 7L7 17M17 7H8M17 7V16" stroke="#FDF1F1" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </g>
+                <defs>
+                  <clipPath id="clip0_1272_2481">
+                    <rect width="24" height="24" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+            </span>
+          </a>
         </div>
-        <div class="-mt-32 hidden lg:block">
-          <img src="/images/home/pulse.gif" class="w-80 h-80 xl:w-[400px] xl:h-[400px]" width="400" height="400"
-            alt="Pulse animation" fetchpriority="low">
+        <p class="mt-4 text-sm text-slate-500">
+          <em>Create your instant meeting to experience inLive Room first by yourself</em>
+        </p>
+      </div>
+      <div class="lg:-mt-10 xl:-mt-32 hidden lg:block">
+        <img src="/images/home/pulse.gif" class="w-80 h-80 xl:w-[400px] xl:h-[400px]" width="400" height="400"
+          alt="Pulse animation" fetchpriority="low">
+      </div>
+    </div>
+  </section>
+  <section class="max-w-7xl mx-auto px-4 xl:px-8 py-6 xl:py-12">
+    <div class="flex flex-col xl:flex-row gap-8 xl:gap-6">
+      <div class="xl:order-2">
+        <div class="xl:max-w-2xl">
+          <p class="text-lg text-slate-600">
+            Reasons why you should choose inLive:
+          </p>
+          <ul role="list" class="flex flex-col gap-4 mt-6">
+            <li
+              class="font-medium text-base text-slate-700 pl-6 before:w-1.5 before:h-1.5 before:bg-red-600 before:rounded-full before:ring-2 before:ring-red-100 before:inline-block before:absolute before:top-2.5 before:left-2 relative">
+              Free to try and very competitive local pricing for Indonesia businesses
+            </li>
+            <li
+              class="font-medium text-base text-slate-700 pl-6 before:w-1.5 before:h-1.5 before:bg-red-600 before:rounded-full before:ring-2 before:ring-red-100 before:inline-block before:absolute before:top-2.5 before:left-2 relative">
+              In-house technology over years of R&D
+            </li>
+            <li
+              class="font-medium text-base text-slate-700 pl-6 before:w-1.5 before:h-1.5 before:bg-red-600 before:rounded-full before:ring-2 before:ring-red-100 before:inline-block before:absolute before:top-2.5 before:left-2 relative">
+              Low latency with local Indonesia server
+            </li>
+            <li
+              class="font-medium text-base text-slate-700 pl-6 before:w-1.5 before:h-1.5 before:bg-red-600 before:rounded-full before:ring-2 before:ring-red-100 before:inline-block before:absolute before:top-2.5 before:left-2 relative">
+              Integrated online event management, contact, calendar, and analytics in one tool
+            </li>
+            <li
+              class="font-medium text-base text-slate-700 pl-6 before:w-1.5 before:h-1.5 before:bg-red-600 before:rounded-full before:ring-2 before:ring-red-100 before:inline-block before:absolute before:top-2.5 before:left-2 relative">
+              Local support and training for WebRTC technology
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="xl:order-1 xl:flex-1">
+        <div class="flex gap-4">
+          <div>
+            <a href="/docs/getting-started"
+              class="inline-block font-medium bg-slate-900 text-base lg:text-lg text-slate-100 rounded-md pl-4 pr-3 py-2">
+              Build your own app
+            </a>
+          </div>
+          <div>
+            <a href="#products"
+              class="pl-4 pr-3 py-2 inline-flex items-center gap-1.5 bg-slate-100 rounded-md font-medium text-base lg:text-lg text-slate-800">
+              <span>Learn more</span>
+              <span class="h-7 flex items-center">
+                <svg class="w-5 h-5 lg:w-6 lg:h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_1271_2473)">
+                    <path
+                      d="M8 12L12 16M12 16V8M12 16L16 12M3 12C3 13.1819 3.23279 14.3522 3.68508 15.4442C4.13738 16.5361 4.80031 17.5282 5.63604 18.364C6.47177 19.1997 7.46392 19.8626 8.55585 20.3149C9.64778 20.7672 10.8181 21 12 21C13.1819 21 14.3522 20.7672 15.4442 20.3149C16.5361 19.8626 17.5282 19.1997 18.364 18.364C19.1997 17.5282 19.8626 16.5361 20.3149 15.4442C20.7672 14.3522 21 13.1819 21 12C21 9.61305 20.0518 7.32387 18.364 5.63604C16.6761 3.94821 14.3869 3 12 3C9.61305 3 7.32387 3.94821 5.63604 5.63604C3.94821 7.32387 3 9.61305 3 12Z"
+                      stroke="#1E293B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_1271_2473">
+                      <rect width="24" height="24" fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </span>
+            </a>
+          </div>
         </div>
       </div>
     </div>
   </section>
-  <section id="learn-more" class="px-4 lg:px-20">
-    <div class="max-w-7xl mx-auto lg:px-8 py-12">
-      <strong class="font-semibold text-lg lg:text-xl text-slate-700">
-        Why inLive
-      </strong>
-      <ul role="list" class="flex flex-col gap-4 mt-6 max-w-2xl">
-        <li
-          class="flex font-medium text-base text-slate-700 pl-6 before:w-1.5 before:h-1.5 before:bg-red-600 before:rounded-full before:ring-2 before:ring-red-100 before:inline-block before:absolute before:top-2.5 before:left-2 relative">
-          Free to try and very competitive local pricing for Indonesia businesses
-        </li>
-        <li
-          class="flex font-medium text-base text-slate-700 pl-6 before:w-1.5 before:h-1.5 before:bg-red-600 before:rounded-full before:ring-2 before:ring-red-100 before:inline-block before:absolute before:top-2.5 before:left-2 relative">
-          In-house technology over years of R&D
-        </li>
-        <li
-          class="flex font-medium text-base text-slate-700 pl-6 before:w-1.5 before:h-1.5 before:bg-red-600 before:rounded-full before:ring-2 before:ring-red-100 before:inline-block before:absolute before:top-2.5 before:left-2 relative">
-          Low latency with local Indonesia server
-        </li>
-        <li
-          class="flex font-medium text-base text-slate-700 pl-6 before:w-1.5 before:h-1.5 before:bg-red-600 before:rounded-full before:ring-2 before:ring-red-100 before:inline-block before:absolute before:top-2.5 before:left-2 relative">
-          Integrated online event management, contact, calendar, and analytics in one tool
-        </li>
-        <li
-          class="flex font-medium text-base text-slate-700 pl-6 before:w-1.5 before:h-1.5 before:bg-red-600 before:rounded-full before:ring-2 before:ring-red-100 before:inline-block before:absolute before:top-2.5 before:left-2 relative">
-          Local support and training for WebRTC technology
-        </li>
-      </ul>
-    </div>
-  </section>
   {{ partial "landing/contact-us.html" }}
-  <section class="px-4 lg:px-20">
-    <div class="max-w-7xl mx-auto lg:px-8 py-12">
-      <h2 class="text-center font-bold text-3xl lg:text-4xl text-slate-800">
-        Products & Services
-      </h2>
-      <ul class="mt-12 flex flex-col lg:flex-row border border-slate-200 rounded-xl">
-        <li class="flex-1 bg-gradient-to-t from-slate-50">
-          <div class="flex flex-col justify-between gap-6 h-full py-8 px-6 lg:py-10 lg:px-8">
-            <div class="flex-1">
-              <h3 class="font-semibold text-xl text-slate-900">
-                inLive Room App
-              </h3>
-              <p class="mt-2 text-base text-slate-500">
-                Experience seamless video conferencing and calling with our web app. Host webinars, interviews, or any
-                meeting effortlessly. Enjoy advanced features like analytics, automatic media bandwidth adjustment, and
-                hassle-free event registration, all conveniently accessible within a single application.
-              </p>
-            </div>
-            <div>
-              <a href="#"
-                class="inline-flex items-center gap-1 text-red-700 font-medium text-base hover:underline underline-offset-8">
-                <span>Learn more</span>
-                <span>
-                  <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g clip-path="url(#clip0_1183_2849)">
-                      <path d="M4.6665 10H16.3332M16.3332 10L11.3332 15M16.3332 10L11.3332 5" stroke="#B81C1C"
-                        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                    </g>
-                    <defs>
-                      <clipPath id="clip0_1183_2849">
-                        <rect width="20" height="20" fill="white" transform="translate(0.5)" />
-                      </clipPath>
-                    </defs>
-                  </svg>
-                </span>
-              </a>
-            </div>
+  <section id="products" class="max-w-7xl mx-auto px-4 xl:px-8 py-6 xl:py-12">
+    <h2 class="text-center font-bold text-3xl lg:text-4xl text-slate-800">
+      Products & Services
+    </h2>
+    <ul class="mt-12 flex flex-col lg:flex-row border border-slate-200 rounded-xl">
+      <li class="flex-1 bg-gradient-to-t from-slate-50">
+        <div class="flex flex-col justify-between gap-6 h-full py-8 px-6 lg:py-10 lg:px-8">
+          <div class="flex-1">
+            <h3 class="font-semibold text-xl text-slate-900">
+              inLive Room App
+            </h3>
+            <p class="mt-2 text-base text-slate-500">
+              Experience seamless video conferencing and calling with our web app. Host webinars, interviews, or any
+              meeting effortlessly. Enjoy advanced features like analytics, automatic media bandwidth adjustment, and
+              hassle-free event registration, all conveniently accessible within a single application.
+            </p>
           </div>
-        </li>
-        <li class="flex-1 border-t lg:border-t-0 lg:border-l border-slate-200 bg-gradient-to-t from-slate-50">
-          <div class="flex flex-col justify-between gap-6 h-full py-8 px-6 lg:py-10 lg:px-8">
-            <div class="flex-1">
-              <h3 class="font-semibold text-xl text-slate-900">
-                APIs for your next-gen real-time communication
-                app
-              </h3>
-              <p class="mt-2 text-base text-slate-500">
-                Harness the potential of live streaming and real-time communication by seamlessly integrating with our
-                robust APIs. Our comprehensive API suite provides the essential building blocks for creating engaging
-                and
-                dynamic applications. Thanks to our intuitive documentation and developer-friendly SDKs, integrating our
-                APIs into your projects is quick and effortless. Our APIs empower developers of all levels to build
-                innovative solutions that meet the needs of the modern digital landscape. See what the use cases that
-                you
-                can develop here.
-              </p>
-            </div>
-            <div>
-              <a href="/api/"
-                class="inline-flex items-center gap-1 text-red-700 font-medium text-base hover:underline underline-offset-8">
-                <span>Learn more</span>
-                <span>
-                  <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g clip-path="url(#clip0_1183_2849)">
-                      <path d="M4.6665 10H16.3332M16.3332 10L11.3332 15M16.3332 10L11.3332 5" stroke="#B81C1C"
-                        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                    </g>
-                    <defs>
-                      <clipPath id="clip0_1183_2849">
-                        <rect width="20" height="20" fill="white" transform="translate(0.5)" />
-                      </clipPath>
-                    </defs>
-                  </svg>
-                </span>
-              </a>
-            </div>
+          <div>
+            <a href="#"
+              class="inline-flex items-center gap-1 text-red-700 font-medium text-base hover:underline underline-offset-8">
+              <span>Learn more</span>
+              <span>
+                <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_1183_2849)">
+                    <path d="M4.6665 10H16.3332M16.3332 10L11.3332 15M16.3332 10L11.3332 5" stroke="#B81C1C"
+                      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_1183_2849">
+                      <rect width="20" height="20" fill="white" transform="translate(0.5)" />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </span>
+            </a>
           </div>
-        </li>
-      </ul>
-    </div>
+        </div>
+      </li>
+      <li class="flex-1 border-t lg:border-t-0 lg:border-l border-slate-200 bg-gradient-to-t from-slate-50">
+        <div class="flex flex-col justify-between gap-6 h-full py-8 px-6 lg:py-10 lg:px-8">
+          <div class="flex-1">
+            <h3 class="font-semibold text-xl text-slate-900">
+              APIs for your next-gen real-time communication
+              app
+            </h3>
+            <p class="mt-2 text-base text-slate-500">
+              Harness the potential of live streaming and real-time communication by seamlessly integrating with our
+              robust APIs. Our comprehensive API suite provides the essential building blocks for creating engaging
+              and
+              dynamic applications. Thanks to our intuitive documentation and developer-friendly SDKs, integrating our
+              APIs into your projects is quick and effortless. Our APIs empower developers of all levels to build
+              innovative solutions that meet the needs of the modern digital landscape. See what the use cases that
+              you
+              can develop here.
+            </p>
+          </div>
+          <div>
+            <a href="/api/"
+              class="inline-flex items-center gap-1 text-red-700 font-medium text-base hover:underline underline-offset-8">
+              <span>Learn more</span>
+              <span>
+                <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_1183_2849)">
+                    <path d="M4.6665 10H16.3332M16.3332 10L11.3332 15M16.3332 10L11.3332 5" stroke="#B81C1C"
+                      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_1183_2849">
+                      <rect width="20" height="20" fill="white" transform="translate(0.5)" />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </span>
+            </a>
+          </div>
+        </div>
+      </li>
+    </ul>
   </section>
-  <section class="px-4 lg:px-20 bg-gradient">
-    <div class="max-w-7xl mx-auto lg:px-8 py-12 lg:py-24">
+  <section class="px-4 xl:px-8 py-12 xl:py-24 bg-gradient">
+    <div class="max-w-7xl mx-auto">
       <h2 class="text-center font-bold text-3xl lg:text-4xl text-slate-800">
         Features
       </h2>
@@ -229,73 +262,71 @@
       </div>
     </div>
   </section>
-  <section id="use-case" class="px-4 lg:px-20">
-    <div class="max-w-7xl mx-auto lg:px-8 py-12 lg:py-24">
-      <h2 class="text-center font-bold text-3xl lg:text-4xl text-slate-800">
-        Use case
-      </h2>
-      <ul class="mt-10 lg:mt-20 flex flex-col gap-4">
-        <li class="border border-slate-200 p-5 lg:py-6 lg:px-8 rounded-xl flex flex-col lg:flex-row gap-5 lg:gap-8">
-          <div>
-            <img class="w-12 lg:w-20 h-12 lg:h-20" src="/images/home/blink-icon.svg" alt="Blink icon" loading="lazy">
-          </div>
-          <div class="flex-1">
-            <h3 class="font-semibold text-xl text-slate-700">
-              Webinar, meeting and conference call
-            </h3>
-            <p class="mt-2 text-base text-slate-500">
-              Most common use case that you already see in many apps like Zoom, Google Meet, and our own app, inLive
-              Room.
-            </p>
-          </div>
-        </li>
-        <li class="border border-slate-200 p-5 lg:py-6 lg:px-8 rounded-xl flex flex-col lg:flex-row gap-5 lg:gap-8">
-          <div>
-            <img class="w-12 lg:w-20 h-12 lg:h-20" src="/images/home/blink-icon.svg" alt="Blink icon" loading="lazy">
-          </div>
-          <div class="flex-1">
-            <h3 class="font-semibold text-xl text-slate-700">
-              Walk-in interview
-            </h3>
-            <p class="mt-2 text-base text-slate-500">
-              Replace a long queue of walk-in interviews, with an online walk-in video call interview. With an automatic
-              real-time schedule estimation, it will help candidates to wait and prepare on time.
-            </p>
-          </div>
-        </li>
-        <li class="border border-slate-200 p-5 lg:py-6 lg:px-8 rounded-xl flex flex-col lg:flex-row gap-5 lg:gap-8">
-          <div>
-            <img class="w-12 lg:w-20 h-12 lg:h-20" src="/images/home/blink-icon.svg" alt="Blink icon" loading="lazy">
-          </div>
-          <div class="flex-1">
-            <h3 class="font-semibold text-xl text-slate-700">
-              Call centre
-            </h3>
-            <p class="mt-2 text-base text-slate-500">
-              Implement an in-app calling feature that enables users to seek help conveniently without worrying about
-              phone credits or roaming charges. The automated call distribution system equipped with a smart queue
-              allows real-time monitoring of the call queue and efficient dispatch of multiple agents to address the
-              calls effectively.
-            </p>
-          </div>
-        </li>
-        <li class="border border-slate-200 p-5 lg:py-6 lg:px-8 rounded-xl flex flex-col lg:flex-row gap-5 lg:gap-8">
-          <div>
-            <img class="w-12 lg:w-20 h-12 lg:h-20" src="/images/home/blink-icon.svg" alt="Blink icon" loading="lazy">
-          </div>
-          <div class="flex-1">
-            <h3 class="font-semibold text-xl text-slate-700">
-              Ephemeral communication channel
-            </h3>
-            <p class="mt-2 text-base text-slate-500">
-              Establish a temporary communication channel that facilitates seamless communication between users without
-              revealing their phone numbers. This solution is particularly valuable for two-sided marketplace
-              applications, where users need to communicate effectively to perform their tasks or actions.
-            </p>
-          </div>
-        </li>
-      </ul>
-    </div>
+  <section id="use-case" class="max-w-7xl mx-auto px-4 xl:px-8 py-12 lg:py-24">
+    <h2 class="text-center font-bold text-3xl lg:text-4xl text-slate-800">
+      Use case
+    </h2>
+    <ul class="mt-10 lg:mt-20 flex flex-col gap-4">
+      <li class="border border-slate-200 p-5 lg:py-6 lg:px-8 rounded-xl flex flex-col lg:flex-row gap-5 lg:gap-8">
+        <div>
+          <img class="w-12 lg:w-20 h-12 lg:h-20" src="/images/home/blink-icon.svg" alt="Blink icon" loading="lazy">
+        </div>
+        <div class="flex-1">
+          <h3 class="font-semibold text-xl text-slate-700">
+            Webinar, meeting and conference call
+          </h3>
+          <p class="mt-2 text-base text-slate-500">
+            Most common use case that you already see in many apps like Zoom, Google Meet, and our own app, inLive
+            Room.
+          </p>
+        </div>
+      </li>
+      <li class="border border-slate-200 p-5 lg:py-6 lg:px-8 rounded-xl flex flex-col lg:flex-row gap-5 lg:gap-8">
+        <div>
+          <img class="w-12 lg:w-20 h-12 lg:h-20" src="/images/home/blink-icon.svg" alt="Blink icon" loading="lazy">
+        </div>
+        <div class="flex-1">
+          <h3 class="font-semibold text-xl text-slate-700">
+            Walk-in interview
+          </h3>
+          <p class="mt-2 text-base text-slate-500">
+            Replace a long queue of walk-in interviews, with an online walk-in video call interview. With an automatic
+            real-time schedule estimation, it will help candidates to wait and prepare on time.
+          </p>
+        </div>
+      </li>
+      <li class="border border-slate-200 p-5 lg:py-6 lg:px-8 rounded-xl flex flex-col lg:flex-row gap-5 lg:gap-8">
+        <div>
+          <img class="w-12 lg:w-20 h-12 lg:h-20" src="/images/home/blink-icon.svg" alt="Blink icon" loading="lazy">
+        </div>
+        <div class="flex-1">
+          <h3 class="font-semibold text-xl text-slate-700">
+            Call centre
+          </h3>
+          <p class="mt-2 text-base text-slate-500">
+            Implement an in-app calling feature that enables users to seek help conveniently without worrying about
+            phone credits or roaming charges. The automated call distribution system equipped with a smart queue
+            allows real-time monitoring of the call queue and efficient dispatch of multiple agents to address the
+            calls effectively.
+          </p>
+        </div>
+      </li>
+      <li class="border border-slate-200 p-5 lg:py-6 lg:px-8 rounded-xl flex flex-col lg:flex-row gap-5 lg:gap-8">
+        <div>
+          <img class="w-12 lg:w-20 h-12 lg:h-20" src="/images/home/blink-icon.svg" alt="Blink icon" loading="lazy">
+        </div>
+        <div class="flex-1">
+          <h3 class="font-semibold text-xl text-slate-700">
+            Ephemeral communication channel
+          </h3>
+          <p class="mt-2 text-base text-slate-500">
+            Establish a temporary communication channel that facilitates seamless communication between users without
+            revealing their phone numbers. This solution is particularly valuable for two-sided marketplace
+            applications, where users need to communicate effectively to perform their tasks or actions.
+          </p>
+        </div>
+      </li>
+    </ul>
   </section>
   {{ partial "landing/contact-us.html" }}
 </main>
