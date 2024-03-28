@@ -1,156 +1,208 @@
 {{ define "head" }}
-<style>
-    .panel {
-        transition: max-height 0.2s ease-out;
-        max-height: 0;
-    }
+<!-- <style>
+  .panel {
+    transition: max-height 0.2s ease-out;
+    max-height: 0;
+  }
 
-    .accordion:after {
-        content: url('data:image/svg+xml;charset=UTF-8, <svg width="21" height="20" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" version="1.1"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>');
-    }
+  .accordion:after {
+    content: url('data:image/svg+xml;charset=UTF-8, <svg width="21" height="20" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" version="1.1"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>');
+  }
 
-    .active:after {
-        content: url('data:image/svg+xml;charset=UTF-8, <svg width="21" height="21" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" version="1.1"><path fill-rule="evenodd" d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z" clip-rule="evenodd"></path></svg>');
-    }
-</style>
+  .active:after {
+    content: url('data:image/svg+xml;charset=UTF-8, <svg width="21" height="21" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" version="1.1"><path fill-rule="evenodd" d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z" clip-rule="evenodd"></path></svg>');
+  }
+</style> -->
 {{ end }}
 
 {{ define "main" }}
 {{ partial "header/header.html" . }}
 {{ $inliveEmail := getenv "_HUGO_INLIVE_EMAIL" }}
-<main class="px-4 lg:px-8 sm:mb-20 xl:flex xl:flex-col xl:justify-center xl:items-center mx-auto mb-12">
-  <header class="text-center mt-20 mb-12">
+{{ $inliveRoomOrigin := getenv "_HUGO_INLIVE_ROOM_ORIGIN" }}
+
+<main class="flex-1 flex flex-col justify-center">
+  <section class="py-24 max-w-3xl mx-auto">
+    <h1 class="mb-6 font-extrabold text-3xl text-center text-gray-900">
+      Our Pricing
+    </h1>
+    <p class="mb-4 text-center text-slate-600 ">
+      At the moment, our product <a href="/room"
+        class="text-red-700 font-medium text-base underline underline-offset-4">inLive
+        Room</a>
+      and <a href="/api" class="text-red-700 font-medium text-base underline underline-offset-4">inLive
+        APIs</a> are
+      available for free to use.
+      We're currently still developing our pricing model for individual product to create a competitive local pricing
+      for Indonesia businesses.
+    </p>
+    <p class="text-center text-slate-600">
+      Please let us know about your use case and allow us to discuss a suitable pricing information for your needs.
+    </p>
+    <div class="mt-10 text-center">
+      <a href="mailto:{{ $inliveEmail }}" target="_blank" rel="noopener noreferrer"
+        class="pl-4 pr-3 py-2 inline-flex items-center gap-1.5 bg-red-700 rounded-md font-medium text-base lg:text-lg text-red-50">
+        <span>Contact us</span>
+        <span>
+          <svg class="w-5 h-5 lg:w-6 lg:h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_1181_2604)">
+              <path d="M15 10L11 14L17 20L21 4L3 11L7 13L9 19L12 15" stroke="#FDF1F1" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" />
+            </g>
+            <defs>
+              <clipPath id="clip0_1181_2604">
+                <rect width="24" height="24" fill="white" />
+              </clipPath>
+            </defs>
+          </svg>
+        </span>
+      </a>
+    </div>
+  </section>
+  <!-- <header class="text-center mt-20 mb-12">
     <h1 class="font-extrabold text-3xl leading-9 mb-2">Choose Your Plan</h1>
     <p class="text-lg leading-7 text-gray-700 px-6">Flexible pricing plans for teams of all sizes and pay by month.</p>
   </header>
 
   <section class="mt-4">
-      <div class="grid overflow-x-auto gap-5" style="grid-template-columns: repeat(4, 1fr);">
-        {{ $linkStudioOrigin := getenv "_HUGO_INLIVE_STUDIO_ORIGIN" }}
-        {{ $apiOriginLink := getenv "_HUGO_INLIVE_API_ORIGIN"}}
-        {{ $linkAPI := printf "%s/v1/package" $apiOriginLink }}
-        {{ $items := getJSON $linkAPI }}
-        {{ range $item := sort $items.data "id" "asc"}}
-        <div class="text-center w-[280px] border border-red-300 rounded-2xl min-h-[586px]">
-          <h2 class="bg-red-200 font-bold text-2xl leading-8 rounded-t-2xl text-center py-5 capitalize">{{ $item.name }}</h2>
-          <div class="grid items-end">
-            <div class="my-10 self-start">
-              <span class="text-4xl leading-10">$</span><span class="text-6xl leading-none font-extrabold">{{ $item.price }}</span><span class="text-xl leading-10">/mo</span>
-            </div>
-            <p class="text-sm leading-5 px-8 self-start min-h-[5rem]">{{ $item.description }}</p>
-            {{ if eq (int $item.id) 1 }}
-              <div class="my-10">
-                <a href="{{ $linkStudioOrigin }}/login" target="_blank" rel="noopener noreferrer" class="inline-block text-red-600 border border-red-600 hover:bg-red-600 hover:text-white rounded-md hover:shadow-lg active:shadow-lg py-3 px-6 text-center" data-tracking-event="open-link" data-tracking-label="{{ $item.name }} plan on the pricing page">Get Started</a>
-              </div>
-            {{ else if eq (int $item.id) 2 }}
-              <div class="my-10">
-                <a href="{{ $linkStudioOrigin }}/login" target="_blank" rel="noopener noreferrer" class="inline-block text-red-600 border border-red-600 hover:bg-red-600 hover:text-white rounded-md hover:shadow-lg active:shadow-lg py-3 px-6 text-center" data-tracking-event="open-link" data-tracking-label="{{ $item.name }} plan on the pricing page">Start Trial</a>
-              </div>
-            {{ else if eq (int $item.id) 3 }}
-              <div class="my-10">
-                <a href="{{ $linkStudioOrigin }}/login" target="_blank" rel="noopener noreferrer" class="inline-block text-red-600 border border-red-600 hover:bg-red-600 hover:text-white rounded-md hover:shadow-lg active:shadow-lg py-3 px-6 text-center" data-tracking-event="open-link" data-tracking-label="{{ $item.name }} plan on the pricing page">Start Trial</a>
-              </div>
-            {{ else if eq (int $item.id) 4 }}
-              <div class="my-10">
-                <a href="mailto:{{ $inliveEmail }}" target="_blank" rel="noopener noreferrer" class="inline-block text-red-600 border border-red-600 hover:bg-red-600 hover:text-white rounded-md hover:shadow-lg active:shadow-lg py-3 px-6 text-center" data-tracking-event="open-link" data-tracking-label="{{ $item.name }} plan on the pricing page">Contact Us</a>
-              </div>
-            {{ end }}
+    <div class="grid overflow-x-auto gap-5" style="grid-template-columns: repeat(4, 1fr);">
+      {{ $linkStudioOrigin := getenv "_HUGO_INLIVE_STUDIO_ORIGIN" }}
+      {{ $apiOriginLink := getenv "_HUGO_INLIVE_API_ORIGIN"}}
+      {{ $linkAPI := printf "%s/v1/package" $apiOriginLink }}
+      {{ $items := getJSON $linkAPI }}
+      {{ range $item := sort $items.data "id" "asc"}}
+      <div class="text-center w-[280px] border border-red-300 rounded-2xl min-h-[586px]">
+        <h2 class="bg-red-200 font-bold text-2xl leading-8 rounded-t-2xl text-center py-5 capitalize">{{ $item.name }}
+        </h2>
+        <div class="grid items-end">
+          <div class="my-10 self-start">
+            <span class="text-4xl leading-10">$</span><span class="text-6xl leading-none font-extrabold">{{ $item.price
+              }}</span><span class="text-xl leading-10">/mo</span>
           </div>
-          <div class="flex justify-center py-10 border-t border-t-red-300">
-            <ul class="list-none text-center text-sm">
-              <li>
-                <b>Streaming hours</b>
-                <div>{{div $item.time_quota 60}} hours</div>
-              </li>
-              {{ $byteToGB := div $item.bandwidth_quota (mul 1000 (mul 1000 1000))}}
-              <li class="mt-8">
-                <b>Bandwidth</b>
-                <div>{{ lang.FormatNumberCustom 0 $byteToGB }} GB</div>
-              </li>
-              <li class="mt-8">
-                <b>Quality</b>
-                <div>{{ print $item.quality "p" }}</div>
-              </li>
-
-              {{ if eq (int $item.id) 4 }}
-              <li class="mt-8">
-                <b>Streaming overage</b>
-                <div>$0.525/hour</div>
-              </li>
-              {{ else }}
-              <li class="mt-8">
-                <b>Streaming overage</b>
-                <div>Not allowed</div>
-              </li>
-              {{ end }}
-
-              {{ if eq (int $item.id) 4 }}
-              <li class="mt-8">
-                <b>Bandwidth overage</b>
-                <div>$0.009/GB</div>
-              </li>
-              {{ else }}
-              <li class="mt-8">
-                <b>Bandwidth overage</b>
-                <div>Not allowed</div>
-              </li>
-              {{ end }}
-
-              {{ if eq (int $item.id) 1 }}
-              <li class="mt-8">
-                <b>Average viewers per stream</b>
-                <div>Allow up to 33 viewers</div>
-              </li>
-              {{ else if eq (int $item.id) 2 }}
-              <li class="mt-8">
-                <b>Average viewers per stream</b>
-                <div>Allow up to 200 viewers</div>
-              </li>
-              {{ else if eq (int $item.id) 3 }}
-              <li class="mt-8">
-                <b>Average viewers per stream</b>
-                <div>Allow up to 240 viewers</div>
-              </li>
-              {{ else if eq (int $item.id) 4 }}
-              <li class="mt-8">
-                <b>Average viewers per stream</b>
-                <div>Allow up to 267 viewers</div>
-              </li>
-              {{ end }}
-
-              {{ if eq (int $item.id) 1 }}
-              <li class="mt-8">
-                <b>Total viewers</b>
-                <div>Allow up to 100 viewers</div>
-              </li>
-              {{ else if eq (int $item.id) 2 }}
-              <li class="mt-8">
-                <b>Total viewers</b>
-                <div>Allow up to 800 viewers</div>
-              </li>
-              {{ else if eq (int $item.id) 3 }}
-              <li class="mt-8">
-                <b>Total viewers</b>
-                <div>Allow up to 2,400 viewers</div>
-              </li>
-              {{ else if eq (int $item.id) 4 }}
-              <li class="mt-8">
-                <b>Total viewers</b>
-                <div>Allow up to 6,400 viewers</div>
-              </li>
-              {{ end }}
-            </ul>
+          <p class="text-sm leading-5 px-8 self-start min-h-[5rem]">{{ $item.description }}</p>
+          {{ if eq (int $item.id) 1 }}
+          <div class="my-10">
+            <a href="{{ $linkStudioOrigin }}/login" target="_blank" rel="noopener noreferrer"
+              class="inline-block text-red-600 border border-red-600 hover:bg-red-600 hover:text-white rounded-md hover:shadow-lg active:shadow-lg py-3 px-6 text-center"
+              data-tracking-event="open-link" data-tracking-label="{{ $item.name }} plan on the pricing page">Get
+              Started</a>
           </div>
+          {{ else if eq (int $item.id) 2 }}
+          <div class="my-10">
+            <a href="{{ $linkStudioOrigin }}/login" target="_blank" rel="noopener noreferrer"
+              class="inline-block text-red-600 border border-red-600 hover:bg-red-600 hover:text-white rounded-md hover:shadow-lg active:shadow-lg py-3 px-6 text-center"
+              data-tracking-event="open-link" data-tracking-label="{{ $item.name }} plan on the pricing page">Start
+              Trial</a>
+          </div>
+          {{ else if eq (int $item.id) 3 }}
+          <div class="my-10">
+            <a href="{{ $linkStudioOrigin }}/login" target="_blank" rel="noopener noreferrer"
+              class="inline-block text-red-600 border border-red-600 hover:bg-red-600 hover:text-white rounded-md hover:shadow-lg active:shadow-lg py-3 px-6 text-center"
+              data-tracking-event="open-link" data-tracking-label="{{ $item.name }} plan on the pricing page">Start
+              Trial</a>
+          </div>
+          {{ else if eq (int $item.id) 4 }}
+          <div class="my-10">
+            <a href="mailto:{{ $inliveEmail }}" target="_blank" rel="noopener noreferrer"
+              class="inline-block text-red-600 border border-red-600 hover:bg-red-600 hover:text-white rounded-md hover:shadow-lg active:shadow-lg py-3 px-6 text-center"
+              data-tracking-event="open-link" data-tracking-label="{{ $item.name }} plan on the pricing page">Contact
+              Us</a>
+          </div>
+          {{ end }}
         </div>
-        {{ end }}
-      </div>
-  </section>
+        <div class="flex justify-center py-10 border-t border-t-red-300">
+          <ul class="list-none text-center text-sm">
+            <li>
+              <b>Streaming hours</b>
+              <div>{{div $item.time_quota 60}} hours</div>
+            </li>
+            {{ $byteToGB := div $item.bandwidth_quota (mul 1000 (mul 1000 1000))}}
+            <li class="mt-8">
+              <b>Bandwidth</b>
+              <div>{{ lang.FormatNumberCustom 0 $byteToGB }} GB</div>
+            </li>
+            <li class="mt-8">
+              <b>Quality</b>
+              <div>{{ print $item.quality "p" }}</div>
+            </li>
 
-  <section>
+            {{ if eq (int $item.id) 4 }}
+            <li class="mt-8">
+              <b>Streaming overage</b>
+              <div>$0.525/hour</div>
+            </li>
+            {{ else }}
+            <li class="mt-8">
+              <b>Streaming overage</b>
+              <div>Not allowed</div>
+            </li>
+            {{ end }}
+
+            {{ if eq (int $item.id) 4 }}
+            <li class="mt-8">
+              <b>Bandwidth overage</b>
+              <div>$0.009/GB</div>
+            </li>
+            {{ else }}
+            <li class="mt-8">
+              <b>Bandwidth overage</b>
+              <div>Not allowed</div>
+            </li>
+            {{ end }}
+
+            {{ if eq (int $item.id) 1 }}
+            <li class="mt-8">
+              <b>Average viewers per stream</b>
+              <div>Allow up to 33 viewers</div>
+            </li>
+            {{ else if eq (int $item.id) 2 }}
+            <li class="mt-8">
+              <b>Average viewers per stream</b>
+              <div>Allow up to 200 viewers</div>
+            </li>
+            {{ else if eq (int $item.id) 3 }}
+            <li class="mt-8">
+              <b>Average viewers per stream</b>
+              <div>Allow up to 240 viewers</div>
+            </li>
+            {{ else if eq (int $item.id) 4 }}
+            <li class="mt-8">
+              <b>Average viewers per stream</b>
+              <div>Allow up to 267 viewers</div>
+            </li>
+            {{ end }}
+
+            {{ if eq (int $item.id) 1 }}
+            <li class="mt-8">
+              <b>Total viewers</b>
+              <div>Allow up to 100 viewers</div>
+            </li>
+            {{ else if eq (int $item.id) 2 }}
+            <li class="mt-8">
+              <b>Total viewers</b>
+              <div>Allow up to 800 viewers</div>
+            </li>
+            {{ else if eq (int $item.id) 3 }}
+            <li class="mt-8">
+              <b>Total viewers</b>
+              <div>Allow up to 2,400 viewers</div>
+            </li>
+            {{ else if eq (int $item.id) 4 }}
+            <li class="mt-8">
+              <b>Total viewers</b>
+              <div>Allow up to 6,400 viewers</div>
+            </li>
+            {{ end }}
+          </ul>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </section> -->
+
+  <!-- <section>
     <h1 class="font-bold text-2xl leading-8 mt-20 lg:mt-36 mb-12 text-center">Frequently Asked Questions</h1>
 
     <div class="max-w-[580px] mx-auto">
-        <!-- faq 1 -->
         <div class="border-y border-y-gray-300 py-3.5">
           <button class="accordion font-bold text-gray-800 text-lg leading-7 text-left w-full flex items-center justify-between" style="transition: 0.4s;">
             <span class="w-11/12 md:w-full">How much is the cost of bandwidth or viewer minutes?</span>
@@ -159,8 +211,6 @@
             <p class="text-base leading-6 mt-3.5 mr-5 lg:mr-[3.75rem]">The bandwidth and viewer minutes is the biggest factor in live streaming cost, we're working to make this more affordable so small startups and indie hackers can afford to build a live streaming app.</p>
           </div>
         </div>
-
-        <!-- faq 2 -->
         <div class="border-b border-b-gray-300 py-3.5">
             <button class="accordion font-bold text-gray-800 text-lg leading-7 text-left w-full flex items-center justify-between" style="transition: 0.4s;">
               <span class="w-11/12 md:w-full">What if I only want to host a single event?</span>
@@ -169,8 +219,6 @@
               <p class="text-base leading-6 mt-3.5 mr-5 lg:mr-[3.75rem]">Plans can be canceled at any time. After registration, your account will be automatically applied with a starter plan. Which means you will get streaming hours for free in a month.</p>
             </div>
         </div>
-
-        <!-- faq 3 -->
         <div class="border-b border-b-gray-300 py-3.5">
             <button class="accordion font-bold text-gray-800 text-lg leading-7 text-left w-full flex items-center justify-between" style="transition: 0.4s;">
               <span class="w-11/12 md:w-full">Can I upgrade/downgrade my plan at a later date?</span>
@@ -179,8 +227,6 @@
               <p class="text-base leading-6 mt-3.5 mr-5 lg:mr-[3.75rem]">Since it's a monthly plan, your upgrade or downgrade is allowed and applied for the next billing cycle.</p>
             </div>
         </div>
-
-        <!-- faq 4 -->
         <div class="border-b border-b-gray-300 py-3.5">
             <button class="accordion font-bold text-gray-800 text-lg leading-7 text-left w-full flex items-center justify-between" style="transition: 0.4s;">
               <span class="w-11/12 md:w-full">Can I cancel my subscription at any time?</span>
@@ -189,8 +235,6 @@
               <p class="text-base leading-6 mt-3.5 mr-5 lg:mr-[3.75rem]">You can <a href="mailto:{{ $inliveEmail }}" aria-label="link-to-studio" target="_blank" rel="noopener noreferrer" class="text-red-600 font-semibold hover:underline">contact us</a> anytime to cancel the subscription and it will be ended for the next billing cycle.</p>
             </div>
         </div>
-
-        <!-- faq 5 -->
         <div class="border-b border-b-gray-300 py-3.5">
           <button class="accordion font-bold text-gray-800 text-lg leading-7 text-left w-full flex items-center justify-between" style="transition: 0.4s;">
             <span class="w-11/12 md:w-full">How many days is inLive billing cycle?</span>
@@ -199,8 +243,6 @@
             <p class="text-base leading-6 mt-3.5 mr-5 lg:mr-[3.75rem]">Our billing cycle is every 30 days.</p>
           </div>
         </div>
-
-        <!-- faq 6 -->
         <div class="border-b border-b-gray-300 py-3.5">
           <button class="accordion font-bold text-gray-800 text-lg leading-7 text-left w-full flex items-center justify-between" style="transition: 0.4s;">
             <span class="w-11/12 md:w-full">What if my quota is still available but the cycle has ended?</span>
@@ -210,9 +252,9 @@
           </div>
         </div>
     </div>
-  </section>
+  </section> -->
 </main>
-{{ partial "cta/try-inlive.html" . }}
+<!-- {{ partial "cta/try-inlive.html" . }} -->
 {{ end }}
 
 {{ define "footer" }}

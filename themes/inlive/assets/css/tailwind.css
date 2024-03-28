@@ -1,6 +1,13 @@
 @tailwind base;
 @tailwind components;
 
+html, body {
+  min-height: 100vh; /*older device*/
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
 html {
   @apply scroll-smooth scroll-pt-20;
 }
