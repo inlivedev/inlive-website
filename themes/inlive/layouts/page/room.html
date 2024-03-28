@@ -1,0 +1,243 @@
+{{ define "main" }}
+{{ partial "header/home.html" . }}
+
+{{ $inliveRoomOrigin := getenv "_HUGO_INLIVE_ROOM_ORIGIN" }}
+
+<main>
+  <section class="max-w-7xl mx-auto px-4 xl:px-8 py-12 lg:py-16">
+    <div class="flex flex-col gap-12 lg:gap-8 lg:flex-row justify-between">
+      <div class="flex-auto max-w-[600px] lg:max-w-lg xl:max-w-[600px]">
+        <h1 class="blink font-bold text-3xl lg:text-6xl -tracking-wide text-slate-900">
+          inLive Room
+        </h1>
+        <p class="mt-4 lg:mt-6 text-slate-500 text-base font-medium">
+          When you need to engage with external contacts like your customers, business partners, or community members,
+          managing the participants to invite can be painful. Manually looking into the list, and inviting the right
+          people is not easy without a right reference and data about each person.
+        </p>
+        <div class="mt-6 lg:mt-12">
+          <a href="{{ $inliveRoomOrigin }}" target="_blank"
+            class="pl-4 pr-3 py-2 inline-flex items-center gap-2 bg-red-700 rounded-md font-medium text-base lg:text-lg text-red-50">
+            <span>Try inLive Room for free</span>
+            <span>
+              <svg class="w-5 h-5 lg:w-6 lg:h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_1272_2481)">
+                  <path d="M17 7L7 17M17 7H8M17 7V16" stroke="#FDF1F1" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </g>
+                <defs>
+                  <clipPath id="clip0_1272_2481">
+                    <rect width="24" height="24" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+            </span>
+          </a>
+        </div>
+        <p class="mt-4 text-sm text-slate-500">
+          <em>Create your instant meeting to experience inLive Room first by yourself</em>
+        </p>
+      </div>
+      <div>
+        <img src="/images/inlive-room/homepage.png" class="xl:-mt-6 w-full mx-auto max-w-lg lg:max-w-xl rounded-lg"
+          alt="Image of inLive Room" fetchpriority="high">
+      </div>
+    </div>
+  </section>
+  <section class="max-w-7xl mx-auto px-4 xl:px-8 py-12 lg:py-16">
+    <header>
+      <h2 class="font-semibold text-base text-red-700">
+        Features <span class="text-red-300 animate-blink">_</span>
+      </h2>
+      <h3 class="mt-2 font-bold text-3xl lg:text-4xl leading-tight text-slate-800">
+        Manage all from one place
+      </h3>
+    </header>
+    <div class="mt-6 lg:mt-12 flex flex-col lg:flex-row gap-x-6 gap-y-10">
+      <div class="lg:flex-1">
+        <div class="border border-slate-200 rounded-xl py-6 px-4 lg:py-6 lg:px-8">
+          <h4 class="font-semibold text-lg lg:text-xl text-slate-700">
+            Integrated webinar platforms
+          </h4>
+          <ul class="mt-4 lg:mt-6 flex flex-col gap-1">
+            <li class="bg-slate-50 rounded-sm py-2 px-3">
+              <div class="text-base lg:text-lg text-slate-600">
+                Custom event registration
+              </div>
+              <ul class="mt-3 flex flex-col gap-3">
+                <li
+                  class="bg-slate-100 border-l-[3px] border-slate-200 py-0.5 pr-3 pl-4 text-base lg:text-lg text-slate-500">
+                  Design your own registration form
+                </li>
+              </ul>
+            </li>
+            <li class="bg-slate-50 rounded-sm py-2 px-3">
+              <div class="text-base lg:text-lg text-slate-600">
+                Participants analytics
+              </div>
+              <ul class="mt-3 flex flex-col gap-3">
+                <li
+                  class="bg-slate-100 border-l-[3px] border-slate-200 py-0.5 pr-3 pl-4 text-base lg:text-lg text-slate-500">
+                  See when participants join and leave to understand the participants behaviours and interests
+                </li>
+                <li
+                  class="bg-slate-100 border-l-[3px] border-slate-200 py-0.5 pr-3 pl-4 text-base lg:text-lg text-slate-500">
+                  Speaking statistic to knows the most active participants
+                </li>
+              </ul>
+            </li>
+            <li class="bg-slate-50 rounded-sm py-2 px-3">
+              <div class="text-base lg:text-lg text-slate-600">
+                Reinvites previous participants to your next events
+              </div>
+              <ul class="mt-3 flex flex-col gap-3">
+                <li
+                  class="bg-slate-100 border-l-[3px] border-slate-200 py-0.5 pr-3 pl-4 text-base lg:text-lg text-slate-500">
+                  Reinvites participants from similar events or topics
+                </li>
+              </ul>
+            </li>
+            <li class="bg-slate-50 rounded-sm py-2 px-3">
+              <div class="text-base lg:text-lg text-slate-600">
+                Integrated meeting notes
+              </div>
+            </li>
+            <li class="bg-slate-50 rounded-sm py-2 px-3">
+              <div class="text-base lg:text-lg text-slate-600">
+                Record webinars
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="lg:flex-1 flex flex-col gap-y-10">
+        <div class="border border-slate-200 rounded-xl py-6 px-4 lg:py-6 lg:px-8">
+          <h4 class="font-semibold text-lg lg:text-xl text-slate-700">
+            Powerful Contacts Management
+          </h4>
+          <ul class="mt-4 lg:mt-6 flex flex-col gap-1">
+            <li class="bg-slate-50 rounded-sm py-2 px-3">
+              <div class="text-base lg:text-lg text-slate-600">
+                Advanced taggings
+              </div>
+            </li>
+            <li class="bg-slate-50 rounded-sm py-2 px-3">
+              <div class="text-base lg:text-lg text-slate-600">
+                Meeting notes
+              </div>
+            </li>
+            <li class="bg-slate-50 rounded-sm py-2 px-3">
+              <div class="text-base lg:text-lg text-slate-600">
+                Engagements history - events, 1on1 call, meetings
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="border border-slate-200 rounded-xl py-6 px-4 lg:py-6 lg:px-8">
+          <h4 class="font-semibold text-lg lg:text-xl text-slate-700">
+            Smart scheduling -> calendy alternative
+          </h4>
+          <ul class="mt-4 lg:mt-6 flex flex-col gap-1">
+            <li class="bg-slate-50 rounded-sm py-2 px-3">
+              <div class="text-base lg:text-lg text-slate-600">
+                Google calendar integrations
+              </div>
+            </li>
+            <li class="bg-slate-50 rounded-sm py-2 px-3">
+              <div class="text-base lg:text-lg text-slate-600">
+                Invite someone to find the right schedule to have a call
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="max-w-7xl mx-auto px-4 xl:px-8 py-12 lg:py-16">
+    <header>
+      <h2 class="font-semibold text-base text-red-700">
+        Use cases <span class="text-red-300 animate-blink">_</span>
+      </h2>
+      <h3 class="mt-2 font-bold text-3xl lg:text-4xl leading-tight text-slate-800">
+        Solutions for your needs
+      </h3>
+    </header>
+    <ul class="mt-6 lg:mt-12 flex flex-col gap-4">
+      <li class="border border-slate-200 p-5 lg:py-6 lg:px-8 rounded-xl flex flex-col lg:flex-row gap-5 lg:gap-8">
+        <div>
+          <img class="w-12 lg:w-20 h-12 lg:h-20" src="/images/home/blink-icon.svg" alt="Blink icon" loading="lazy">
+        </div>
+        <div class="flex-1">
+          <h3 class="font-semibold text-xl text-slate-700">
+            Host your webinar
+          </h3>
+          <p class="mt-2 text-base text-slate-500">
+            With our platform, you can easily host webinars and online events, providing a seamless experience for
+            your audience and streamlining your event management process.
+          </p>
+          <div class="mt-6">
+            <span class="inline-block rounded-xl px-6 py-4 bg-slate-100 font-semibold text-xl text-slate-600">
+              Online certification feature
+            </span>
+          </div>
+        </div>
+      </li>
+      <li class="border border-slate-200 p-5 lg:py-6 lg:px-8 rounded-xl flex flex-col lg:flex-row gap-5 lg:gap-8">
+        <div>
+          <img class="w-12 lg:w-20 h-12 lg:h-20" src="/images/home/blink-icon.svg" alt="Blink icon" loading="lazy">
+        </div>
+        <div class="flex-1">
+          <h3 class="font-semibold text-xl text-slate-700">
+            Online workout
+          </h3>
+          <p class="mt-2 text-base text-slate-500">
+            With our platform, you can easily stream live workout classes and host online fitness events, providing a
+            convenient and engaging experience for your clients. Our platform makes it easy to manage your online
+            workout business, from scheduling classes to record attendance.
+          </p>
+        </div>
+      </li>
+      <li class="border border-slate-200 p-5 lg:py-6 lg:px-8 rounded-xl flex flex-col lg:flex-row gap-5 lg:gap-8">
+        <div>
+          <img class="w-12 lg:w-20 h-12 lg:h-20" src="/images/home/blink-icon.svg" alt="Blink icon" loading="lazy">
+        </div>
+        <div class="flex-1">
+          <h3 class="font-semibold text-xl text-slate-700">
+            Mentoring
+          </h3>
+          <p class="mt-2 text-base text-slate-500">
+            Our platform simplifies and enhances 1-on-1 mentoring with user-friendly scheduling, payment management,
+            and progress tracking. A private space ensures secure and effective collaboration.
+          </p>
+        </div>
+      </li>
+      <li class="border border-slate-200 p-5 lg:py-6 lg:px-8 rounded-xl flex flex-col lg:flex-row gap-5 lg:gap-8">
+        <div>
+          <img class="w-12 lg:w-20 h-12 lg:h-20" src="/images/home/blink-icon.svg" alt="Blink icon" loading="lazy">
+        </div>
+        <div class="flex-1">
+          <h3 class="font-semibold text-xl text-slate-700">
+            Online meeting
+          </h3>
+          <p class="mt-2 text-base text-slate-500">
+            Our platform provides a seamless online meeting experience for teams of all sizes. Easily host meetings,
+            collaborate on projects, and stay connected with your team, all in one place.
+          </p>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  {{ partial "landing/feedback.html" }}
+  {{ partial "landing/contact-us.html" }}
+</main>
+{{ end }}
+
+{{ define "footer" }}
+{{ partial "footer/footer.html" . }}
+{{ end }}
+
+{{ define "script" }}
+{{ $globalJS := resources.Get "js/global.js" | minify }}
+<script type="text/javascript" src="{{ $globalJS.RelPermalink }}" defer></script>
+{{ end }}
