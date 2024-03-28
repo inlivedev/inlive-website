@@ -1,0 +1,59 @@
+{{ define "main" }}
+{{ partial "header/home.html" . }}
+
+{{ $inliveRoomOrigin := getenv "_HUGO_INLIVE_ROOM_ORIGIN" }}
+
+<main>
+  <section class="max-w-7xl mx-auto px-4 xl:px-8 py-12 lg:py-16">
+    <div class="flex flex-col gap-12 lg:gap-8 lg:flex-row justify-between">
+      <div class="flex-auto max-w-[600px] lg:max-w-lg xl:max-w-[600px]">
+        <h1 class="blink font-bold text-3xl lg:text-6xl -tracking-wide text-slate-900">
+          inLive Room
+        </h1>
+        <p class="mt-4 lg:mt-6 text-slate-500 text-base font-medium">
+          When you need to engage with external contacts like your customers, business partners, or community members,
+          managing the participants to invite can be painful. Manually looking into the list, and inviting the right
+          people is not easy without a right reference and data about each person.
+        </p>
+        <div class="mt-6 lg:mt-12">
+          <a href="{{ $inliveRoomOrigin }}" target="_blank"
+            class="pl-4 pr-3 py-2 inline-flex items-center gap-2 bg-red-700 rounded-md font-medium text-base lg:text-lg text-red-50">
+            <span>Try inLive Room for free</span>
+            <span>
+              <svg class="w-5 h-5 lg:w-6 lg:h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_1272_2481)">
+                  <path d="M17 7L7 17M17 7H8M17 7V16" stroke="#FDF1F1" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </g>
+                <defs>
+                  <clipPath id="clip0_1272_2481">
+                    <rect width="24" height="24" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+            </span>
+          </a>
+        </div>
+        <p class="mt-4 text-sm text-slate-500">
+          <em>Create your instant meeting to experience inLive Room first by yourself</em>
+        </p>
+      </div>
+      <div>
+        <img src="/images/inlive-room/homepage.png" class="xl:-mt-6 w-full mx-auto max-w-lg lg:max-w-xl rounded-lg"
+          alt="Image of inLive Room" fetchpriority="high">
+      </div>
+    </div>
+  </section>
+
+  {{ partial "landing/contact-us.html" }}
+</main>
+{{ end }}
+
+{{ define "footer" }}
+{{ partial "footer/footer.html" . }}
+{{ end }}
+
+{{ define "script" }}
+{{ $globalJS := resources.Get "js/global.js" | minify }}
+<script type="text/javascript" src="{{ $globalJS.RelPermalink }}" defer></script>
+{{ end }}
