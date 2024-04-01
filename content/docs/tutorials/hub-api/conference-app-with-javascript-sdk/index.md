@@ -103,12 +103,12 @@ If you want to add basic CSS for styling purpose, you can put the CSS code below
 We will start implementing the JavaScript for the application. We need to import the inLive JavaScript SDK and initialize global variables to use later.
 
 ```js
-import { Room,RoomEvent } from 'https://cdn.jsdelivr.net/npm/@inlivedev/inlive-js-sdk@0.13.1/dist/room.js'
+import { Room, RoomEvent } from 'https://cdn.jsdelivr.net/npm/@inlivedev/inlive-js-sdk@0.16.1/dist/room.js'
 
 // Initialize the Room module
 const room = Room({
     api : {
-        apiKey: <InsertYourAPIKeyHere>
+        apiKey: 'YOUR_API_KEY'
     }
 });
 
@@ -135,13 +135,13 @@ let joined = false;
 The first thing the user will see when they open the page is a blank screen and a join button. When the join button is clicked, the user will join the room. When the leave button is clicked, the user will leave the room. We can use the code below to create the basic click listener logic on the button.
 
 ```js
-document.getElementById('toggle-join-btn').addEventListener('click', function(event) {
+document.getElementById('toggle-join-btn').addEventListener('click', async function(event) {
     if (joined) {
-        leave();
+        await leave();
         event.target.textContent = 'Join';
         joined = false;
     } else {
-        join();
+        await join();
         event.target.textContent = 'Leave';
         joined = true;
     }
@@ -174,7 +174,7 @@ async function join() {
 
     if (!roomID) {
         const newRoom = await room.createRoom('My room');
-        roomID = newRoom.data.roomId;
+        roomID = newRoom.data.id;
     }
 
     joinUrl = encodeURI(window.location.origin + window.location.pathname + `?roomID=${roomID}`);
@@ -269,4 +269,4 @@ async function leave() {
 
 ## Closing
 
-We have created a simple video conferencing room application using inLive JavaScript SDK. You can check the full source code of this tutorial on [this repository](https://github.com/inlivedev/inlivedev.github.io/tree/main/examples/conference-app-with-sdk). You can also check the [live demo](https://inlivedev.github.io/examples/conference-app-with-sdk) of this tutorial.
+We have created a simple video conferencing room application using inLive JavaScript SDK. You can check the full source code of this tutorial on [this repository](https://github.com/inlivedev/inlivedev.github.io/tree/main/examples/conference-app-with-sdk).
