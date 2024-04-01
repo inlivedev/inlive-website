@@ -269,4 +269,4 @@ async function leave() {
 
 ## Closing
 
-We have created a simple video conferencing room application using inLive JavaScript SDK. You can check the full source code of this tutorial on [this repository](https://github.com/inlivedev/inlivedev.github.io/tree/main/examples/conference-app-with-sdk). You can also check the [live demo](https://inlivedev.github.io/examples/conference-app-with-sdk) of this tutorial.
+We have created a simple video conferencing room application using inLive JavaScript SDK. You can check the full source code of this tutorial on [this repository](https://github.com/inlivedev/inlivedev.github.io/tree/main/examples/conference-app-with-sdk).
