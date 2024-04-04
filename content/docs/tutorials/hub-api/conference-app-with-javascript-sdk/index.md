@@ -103,7 +103,7 @@ If you want to add basic CSS for styling purpose, you can put the CSS code below
 We will start implementing the JavaScript for the application. We need to import the inLive JavaScript SDK and initialize global variables to use later.
 
 ```js
-import { Room, RoomEvent } from 'https://cdn.jsdelivr.net/npm/@inlivedev/inlive-js-sdk@0.16.1/dist/room.js'
+import { Room, RoomEvent } from 'https://cdn.jsdelivr.net/npm/@inlivedev/inlive-js-sdk@0.17.1/dist/room.js'
 
 // Initialize the Room module
 const room = Room({
