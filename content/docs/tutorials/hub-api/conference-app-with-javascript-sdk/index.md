@@ -103,7 +103,7 @@ If you want to add basic CSS for styling purpose, you can put the CSS code below
 We will start implementing the JavaScript for the application. We need to import the inLive JavaScript SDK and initialize global variables to use later.
 
 ```js
-import { Room, RoomEvent } from 'https://cdn.jsdelivr.net/npm/@inlivedev/inlive-js-sdk@0.17.1/dist/room.js'
+import { Room, RoomEvent } from 'https://cdn.jsdelivr.net/npm/@inlivedev/inlive-js-sdk@0.17.3/dist/room.js'
 
 // Initialize the Room module
 const room = Room({
@@ -117,6 +117,9 @@ let roomID = '';
 
 // The ID of the client used to connect with the Room API
 let clientID = '';
+
+// Client identifier name
+let clientName = '';
 
 // The peer object
 let peer = null;
@@ -184,13 +187,19 @@ async function join() {
 
 ### Create a client
 
-Every user who wants to join to the room needs to create a client. A client is required to make the room secure by only allowing the client who has already created to join the room. We can create a client to the room only when the room is already created because we need the ID of the room for creating a client. To create a client, simply call the `room.createClient()` method.
+Every user who wants to join to the room needs to create a client. A client is required to make the room secure by only allowing the client who has been created to join the room. We can create a client to the room only when the room is already created because we need the ID of the room for creating a client. To create a client, simply call the `room.createClient()` method. You can create a client with a custom client ID, or custom name. The example below gives an example of creating a client with a random client name string.
 
 ```js
 async function join() {
     // ...
-    const client = await room.createClient(roomID);
+    const random = Date.now().toString(36).slice(-5);
+
+    const client = await room.createClient(roomID, {
+        clientName: `client-${random}`
+    });
+
     clientID = client.data.clientId;
+    clientName = client.data.clientName;
 }
 ```
 
@@ -206,7 +215,7 @@ async function join() {
     peer = await room.createPeer(roomID, clientID);
     peer.addStream(mediaStream.id, {
         clientId: clientID,
-        name: 'local client',
+        name: clientName,
         origin: 'local',
         source: 'media',
         mediaStream: mediaStream
