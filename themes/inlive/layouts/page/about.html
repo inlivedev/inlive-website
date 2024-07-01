@@ -1,0 +1,146 @@
+{{ define "main" }}
+{{ partial "header/home.html" . }}
+
+{{ $inliveRoomOrigin := getenv "_HUGO_INLIVE_ROOM_ORIGIN" }}
+
+<main class="relative pt-10 lg:pt-20">
+  <div class="w-full h-full max-w-7xl lg:px-4 xl:px-8 absolute top-0 left-1/2 -translate-x-1/2 -z-10">
+    <div class="relative z-20 h-20 w-full bg-gradient-to-b from-white to-white/0"></div>
+    <div class="w-full h-full -mt-20 grid grid-cols-8 lg:grid-cols-[repeat(16,_minmax(0,_1fr))]">
+      <div class="lg:border-l border-r border-slate-100"></div>
+      <div class="border-r border-slate-100"></div>
+      <div class="border-r border-slate-100"></div>
+      <div class="border-r border-slate-100"></div>
+      <div class="border-r border-slate-100"></div>
+      <div class="border-r border-slate-100"></div>
+      <div class="border-r border-slate-100"></div>
+      <div class="hidden lg:block border-r border-slate-100"></div>
+      <div class="hidden lg:block border-r border-slate-100"></div>
+      <div class="hidden lg:block border-r border-slate-100"></div>
+      <div class="hidden lg:block border-r border-slate-100"></div>
+      <div class="hidden lg:block border-r border-slate-100"></div>
+      <div class="hidden lg:block border-r border-slate-100"></div>
+      <div class="hidden lg:block border-r border-slate-100"></div>
+      <div class="hidden lg:block border-r border-slate-100"></div>
+      <div class="hidden lg:block border-r border-slate-100"></div>
+    </div>
+  </div>
+  <!-- col-[16_/_span_16] -->
+  <!-- portrait:aspect-[9/16] landscape:aspect-video -->
+  <!-- px-4 xl:px-8 -->
+  <!-- grid-cols-[repeat(8,_minmax(40px,_1fr))] -->
+  <style>
+    .hero-grid {
+    }
+
+    @media (min-width: 768px) {
+      .hero-grid {
+        grid-template-columns: repeat(16, minmax(40px, 1fr));
+        grid-template-rows: repeat(9, minmax(40px, 1fr));
+      }
+    }
+  </style>
+
+  <section class="max-w-7xl mx-auto mb-20 lg:mb-40">
+    <div class="hero-grid w-full">
+      <div class="col-span-8 row-span-1 px-4 xl:px-8 flex items-center">
+        <h2 class="font-bold text-xl sm:text-2xl lg:text-3xl text-red-700">
+          Our mission
+        </h2>
+      </div>
+      <div class="mt-6 lg:mt-0 col-span-8 row-span-3 px-4 xl:px-8">
+        <h3 class="font-semibold text-3xl sm:text-5xl lg:text-6xl text-slate-400 tracking-tight sm:leading-tight">
+          Make video and <strong class="font-semibold text-slate-800">real-time</strong> communication technology more <strong class="font-semibold text-slate-800">accessible</strong> for <strong class="font-semibold text-slate-800">Indonesia</strong>
+        </h3>
+      </div>
+      <div class="mt-12 lg:mt-0 col-span-8 row-span-1 px-4 xl:px-8">
+        <blockquote class="text-slate-600 text-lg sm:text-xl lg:text-2xl sm:leading-9">
+          “We saw business transformation will slow down when a technology is not accessible and available locally”
+        </blockquote>
+      </div>
+      <div class="mt-8 lg:mt-0 col-span-8 row-span-1 px-4 xl:px-8 flex items-center">
+        <button class="bg-red-700 px-4 py-2.5 lg:p-5 flex items-center gap-4 sm:gap-8 text-red-50">
+          <span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 sm:w-8 sm:h-8" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0-18 0m5 0l4 4m0-8v8m4-4l-4 4"/></svg>
+          </span>
+          <span class="font-bold text-lg sm:text-xl leading-none tracking-wide">
+            Read <br class="hidden lg:block"> more
+          </span>
+        </button>
+      </div>
+    </div>
+
+    <!-- <div class="pt-12 xl:pt-16 pb-20 xl:pb-40">
+      <div class="grid grid-cols-8 md:grid-cols-[repeat(16,_minmax(0,_1fr))]">
+
+      </div>
+      <div class="col-span-8 md:col-span-4 lg:col-span-3">
+
+      </div>
+      <div class="mt-16 col-span-8 md:col-span-12">
+
+      </div>
+      <div>
+
+      </div>
+      <div>
+
+      </div>
+      <div>
+
+      </div>
+    </div> -->
+    <!-- <div class="pt-12 xl:pt-16 pb-20 xl:pb-40 flex flex-col lg:flex-row justify-between">
+      <div class="flex-1 max-w-[960px]">
+
+
+
+      </div>
+    </div> -->
+  </section>
+  <section class="max-w-7xl mx-auto lg:px-4 xl:px-8">
+    <div class="border-t border-l border-r border-slate-100 p-10 md:px-20 md:py-16 bg-gradient-to-b from-[#F7F9FB] to-white">
+      <p class="font-semibold text-base sm:text-lg text-slate-700">
+        In the future, physical interactions will be primarily reserved for personal and social purposes, while most other interactions will be conducted virtually.
+      </p>
+    </div>
+  </section>
+  <section class="max-w-7xl mx-auto lg:px-4 xl:px-8">
+    <div class="border-t border-l border-r border-slate-100 p-10 md:p-20 lg:pb-32 relative bg-white">
+      <span class="absolute h-20 w-2.5 bg-red-700 left-0 top-0"></span>
+      <h4 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-800 tracking-tight">
+        Building a tele conferencing app is too complex
+      </h4>
+      <p class="mt-5 sm:mt-10 text-base leading-7 text-slate-600">
+        Building video conferencing apps remains complex and expensive for Indonesian startups and other developing countries. Most edutech and healthtech startups still depend on expensive global third-party solutions, this makes the technology is not available locally and cause the ecosystem struggle. This limits the availability of skilled developers and engineers to implement the technology.
+      </p>
+    </div>
+  </section>
+  <section class="max-w-7xl mx-auto lg:px-4 xl:px-8">
+    <div class="border-t border-l border-r border-slate-100 p-10 md:p-20 lg:pb-32 relative bg-white">
+      <span class="absolute h-20 w-2.5 bg-red-700 left-0 top-0"></span>
+      <h4 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-800 tracking-tight">
+        Escalating concern about privacy is a big deal these days
+      </h4>
+      <p class="mt-5 sm:mt-10 text-base leading-7 text-slate-600">
+        Your privacy matters. With inLive, you have full control over your data, analytics, and the privacy of your video calls.
+      </p>
+      <p class="mt-5 sm:mt-10 text-base leading-7 text-slate-600">
+        You can create your own video call environment where you set the rules and protect your sensitive information. Whether it's safeguarding business discussions or maintaining personal confidentiality, inLive empowers you to have complete control over your interactions.
+      </p>
+      <p class="mt-5 sm:mt-10 text-base leading-7 text-slate-600">
+        By having control of your data, you can gain insights from it using data analytics and data automation. This means you can personalize your video calls, make informed decisions, and improve your overall experience.
+      </p>
+    </div>
+  </section>
+</main>
+{{ end }}
+
+{{ define "footer" }}
+{{ partial "footer/footer.html" . }}
+{{ end }}
+
+{{ define "script" }}
+{{ $globalJS := resources.Get "js/global.js" | minify }}
+<script type="text/javascript" src="{{ $globalJS.RelPermalink }}" defer></script>
+{{ end }}
