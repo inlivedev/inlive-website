@@ -94,8 +94,8 @@
   </section>
   <section class="max-w-7xl mx-auto lg:px-4 xl:px-8">
     <div class="grid grid-cols-1 xl:grid-cols-[800px,auto] group">
-      <div class="border-t border-l border-r border-slate-100 p-10 md:p-20 lg:pb-32 relative bg-gradient-to-b from-white to-white group-hover:from-[#F7F9FB] group-hover:to-white transition-all">
-        <span class="absolute h-20 w-2.5 bg-red-700 xl:bg-slate-200 group-hover:bg-red-700 left-0 top-0 transition-all"></span>
+      <div class="border-t border-l border-r border-slate-100 p-10 md:p-20 lg:pb-32 relative bg-gradient-to-b from-white to-white xl:group-hover:from-[#F7F9FB] xl:group-hover:to-white transition-all">
+        <span class="absolute h-20 w-1.5 xl:w-2.5 bg-red-700 xl:bg-slate-200 group-hover:bg-red-700 left-0 top-0 transition-all"></span>
         <h4 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-800 tracking-tight">
           Building a tele conferencing app is too complex
         </h4>
@@ -110,8 +110,8 @@
   </section>
   <section class="max-w-7xl mx-auto lg:px-4 xl:px-8">
     <div class="grid grid-cols-1 xl:grid-cols-[800px,auto] group">
-      <div class="border-t border-l border-r border-slate-100 p-10 md:p-20 lg:pb-32 relative bg-gradient-to-b from-white to-white group-hover:from-[#F7F9FB] group-hover:to-white transition-all">
-        <span class="absolute h-20 w-2.5 bg-red-700 xl:bg-slate-200 group-hover:bg-red-700 left-0 top-0 transition-all"></span>
+      <div class="border-t border-b border-l border-r border-slate-100 p-10 md:p-20 lg:pb-32 relative bg-gradient-to-b from-white to-white xl:group-hover:from-[#F7F9FB] xl:group-hover:to-white transition-all">
+        <span class="absolute h-20 w-1.5 xl:w-2.5 bg-red-700 xl:bg-slate-200 group-hover:bg-red-700 left-0 top-0 transition-all"></span>
         <h4 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-800 tracking-tight">
           Escalating concern about privacy is a big deal these days
         </h4>
@@ -125,8 +125,200 @@
           By having control of your data, you can gain insights from it using data analytics and data automation. This means you can personalize your video calls, make informed decisions, and improve your overall experience.
         </p>
       </div>
-      <div class="hidden xl:flex items-center justify-center py-20 px-5 border-t border-r border-slate-100 relative bg-white">
+      <div class="hidden xl:flex items-center justify-center py-20 px-5 border-t border-b border-r border-slate-100 relative bg-white">
         <img class="w-[360px] h-[360px] object-cover opacity-0 group-hover:opacity-100 transition-all" width="360" height="360" src="/images/about/using-inlive.png" alt="Illustration of using inLive" loading="lazy">
+      </div>
+    </div>
+  </section>
+  <section class="mt-10 xl:mt-14 max-w-7xl mx-auto mb-20 xl:mb-40 px-4 xl:px-8">
+    <div class="team-grid">
+      <div class="flex items-center lg:col-start-1 lg:row-start-1 lg:col-span-3 lg:row-span-2">
+        <h2 class="font-bold text-xl sm:text-2xl xl:text-3xl text-red-700">
+          The team
+        </h2>
+      </div>
+
+      <div class="pt-6 lg:pt-0 lg:col-start-1 lg:row-start-3 lg:col-span-10">
+        <h3 class="font-semibold text-3xl sm:text-4xl xl:text-5xl text-slate-700 max-w-[640px] xl:max-w-[800px]">
+          We are a fully remote small team on a big missions
+        </h3>
+      </div>
+
+      <div class="pt-12 lg:pt-0 lg:col-start-7 xl:col-start-8 lg:col-span-10 xl:col-span-9 lg:row-start-5">
+        <p class="text-slate-600 text-base leading-7 max-w-[640px]">
+          inLive is an engineering and value-driven team focused on delivering exceptional experiences for our users. Our in-house, real-time communication (RTC) technology allows us to fully customize our applications and APIs to perfectly match user needs.
+        </p>
+        <p class="mt-7 text-slate-600 text-base leading-7 max-w-[640px]">
+          <b>We don't rely on third-party APIs</b> that might limit our ability to serve you.
+        </p>
+        <p class="mt-7 text-slate-600 text-base leading-7 max-w-[640px]">
+          Beyond the software, we meticulously design our own servers optimized for specific RTC requirements. This meticulous approach grants us control over our infrastructure costs for accessible pricing for Indonesian businesses and developers.
+        </p>
+      </div>
+
+      <style>
+        .team-grid {
+          display: grid;
+          grid-template-columns: 1fr;
+        }
+
+        @media (min-width: 1024px) {
+          .team-grid {
+            grid-template-columns: repeat(16, calc((100dvw - 2rem) / 16));
+            grid-template-rows: repeat(17, calc((100dvw - 2rem) / 16));
+          }
+        }
+
+        @media (min-width: 1280px) {
+          .team-grid {
+            grid-template-columns: repeat(16, calc((1280px - 4rem) / 16));
+            grid-template-rows: repeat(17, calc((1280px - 4rem) / 16));
+          }
+        }
+
+        .people-grid {
+          display: flex;
+          flex-direction: column;
+          gap: 40px;
+        }
+
+        @media (min-width: 1024px) {
+          .people-grid {
+            display: grid;
+            flex-direction: unset;
+            gap: unset;
+            grid-template-columns: repeat(16, calc((100dvw - 2rem) / 16));
+            grid-template-rows: repeat(12, calc((100dvw - 2rem) / 16));
+            grid-column-start: 1;
+            grid-column-end: 17;
+            grid-row-start: 7;
+            grid-row-end: 18;
+          }
+        }
+
+        @media (min-width: 1280px) {
+          .people-grid {
+            grid-template-columns: repeat(16, calc((1280px - 4rem) / 16));
+            grid-template-rows: repeat(12, calc((1280px - 4rem) / 16));
+            grid-row-start: 6;
+          }
+        }
+
+        .management-grid {
+          display: flex;
+          flex-flow: row wrap;
+          gap: 40px;
+          justify-content: center;
+        }
+
+        @media (min-width: 1024px) {
+          .management-grid {
+            display: grid;
+            flex-flow: unset;
+            gap: unset;
+            justify-content: unset;
+            grid-template-columns: repeat(16, calc((100dvw - 2rem) / 16));
+            grid-template-rows: repeat(9, calc((100dvw - 2rem) / 16));
+            grid-column-start: 1;
+            grid-column-end: 17;
+            grid-row-start: 1;
+            grid-row-end: 10;
+          }
+        }
+
+        @media (min-width: 1280px) {
+          .management-grid {
+            grid-template-columns: repeat(16, calc((1280px - 4rem) / 16));
+            grid-template-rows: repeat(9, calc((1280px - 4rem) / 16));
+          }
+        }
+
+        .staff-grid {
+          display: flex;
+          flex-flow: row wrap;
+          gap: 40px;
+          justify-content: center;
+        }
+
+        @media (min-width: 1024px) {
+          .staff-grid {
+            gap: unset;
+          }
+        }
+      </style>
+
+      <div class="mt-20 lg:mt-0 people-grid">
+        <div class="management-grid">
+          <div class="col-start-6 col-span-1 row-start-5 row-span-1 w-full h-full bg-slate-200 hidden lg:block"></div>
+          <div class="col-start-7 col-span-2 row-start-6 row-span-2 w-full h-full bg-slate-400 hidden lg:block"></div>
+          <div class="col-start-[13] col-span-1 row-start-7 row-span-1 w-full h-full bg-slate-200 hidden lg:block"></div>
+
+          <div class="w-[200px] lg:w-auto lg:h-auto lg:col-start-2 lg:col-span-4 lg:row-start-1 lg:row-span-5 grid grid-rows-[1fr,auto] gap-4 lg:gap-0 lg:grid-rows-5 lg:grid-cols-4">
+            <div class="lg:col-start-1 lg:row-start-1 lg:col-span-4 lg:row-span-4 flex items-center justify-center">
+              <img class="w-full h-full object-cover object-top" width="320" height="320" src="/images/about/yohan.png" alt="Yohan Totting" loading="lazy">
+            </div>
+            <div class="lg:col-start-1 lg:row-start-5 lg:col-span-4 lg:row-span-1 flex items-center">
+              <div class="w-full h-full flex flex-col justify-center gap-0.5 xl:gap-1">
+                <div class="flex items-center gap-5">
+                  <span class="inline-block w-3 h-3 bg-red-700"></span>
+                  <b class="block font-semibold text-base text-red-700">Yohan Totting</b>
+                </div>
+                <div class="pl-8 font-medium text-base text-slate-800">
+                  Founder, CTO
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="w-[200px] lg:w-auto lg:h-auto lg:col-start-10 lg:col-span-3 lg:row-start-4 lg:row-span-4 grid grid-rows-[1fr,auto] gap-4 lg:gap-0 lg:grid-rows-4 lg:grid-cols-3">
+            <div class="lg:col-start-1 lg:row-start-1 lg:col-span-3 lg:row-span-3 flex items-center justify-center">
+              <img class="w-full h-full object-cover object-top" width="240" height="240" src="/images/about/pangeran.png" alt="Pangeran Siahaan" loading="lazy">
+            </div>
+            <div class="lg:col-start-1 lg:row-start-4 lg:col-span-3 lg:row-span-1 flex items-center">
+              <div class="w-full h-full flex flex-col justify-center gap-0.5 xl:gap-1">
+                <div class="flex items-center gap-5">
+                  <span class="inline-block w-3 h-3 bg-red-700"></span>
+                  <b class="block font-semibold text-base text-red-700">Pangeran Siahaan</b>
+                </div>
+                <div class="pl-8 font-medium text-base text-slate-800">
+                  Board
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- <div class="w-[200px] lg:w-auto lg:h-auto    ">
+            <div class="flex items-center justify-center">
+              <img class="w-full h-full object-cover object-top" width="240" height="240" src="/images/about/pangeran.png" alt="Pangeran Siahaan" loading="lazy">
+            </div>
+            <div class="w-full h-full flex items-center">
+              <div class="pl-8 relative">
+                <b class="block font-semibold text-base text-red-700 before:absolute before:w-3 before:h-3 before:bg-red-700 before:left-0 before:top-1.5">Pangeran Siahaan</b>
+                <span class="block mt-1 font-medium text-base text-slate-800">Board</span>
+              </div>
+            </div>
+          </div> -->
+        </div>
+
+        <!-- <div class="staff-grid">
+          <div class="w-[200px] lg:w-[240px]">
+            <div class="flex items-center justify-center">
+              <img class="w-full h-full object-cover object-top" width="320" height="320" src="/images/about/yohan.png" alt="Yohan Totting" loading="lazy">
+            </div>
+          </div>
+
+          <div class="w-[200px] lg:w-[240px]">
+            <div class="flex items-center justify-center">
+              <img class="w-full h-full object-cover object-top" width="320" height="320" src="/images/about/yohan.png" alt="Yohan Totting" loading="lazy">
+            </div>
+          </div>
+
+          <div class="w-[200px] lg:w-[240px]">
+            <div class="flex items-center justify-center">
+              <img class="w-full h-full object-cover object-top" width="320" height="320" src="/images/about/yohan.png" alt="Yohan Totting" loading="lazy">
+            </div>
+          </div>
+        </div> -->
       </div>
     </div>
   </section>
