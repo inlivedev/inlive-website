@@ -130,7 +130,7 @@
       </div>
     </div>
   </section>
-  <section class="mt-10 xl:mt-14 max-w-7xl mx-auto mb-20 px-4 xl:px-8">
+  <section class="mt-10 xl:mt-14 max-w-7xl mx-auto mb-20 sm:mb-40 xl:mb-60 px-4 xl:px-8">
     <div class="team-grid">
       <div class="flex items-center lg:col-start-1 lg:row-start-1 lg:col-span-3 lg:row-span-2">
         <h2 class="font-bold text-xl sm:text-2xl xl:text-3xl text-red-700">
@@ -190,12 +190,6 @@
           }
         }
 
-        @media (min-width: 960px) {
-          .people-grid {
-            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-          }
-        }
-
         @media (min-width: 1024px) {
           .people-grid {
             display: grid;
@@ -217,7 +211,7 @@
         }
       </style>
 
-      <div class="mt-10 lg:mt-0 people-grid">
+      <div class="mt-10 lg:mt-0 max-w-[640px] lg:max-w-none people-grid">
         <div class="col-start-1 col-span-3 row-start-1 row-span-1 w-full h-full bg-slate-100 hidden lg:block"></div>
         <div class="col-start-4 col-span-1 row-start-2 row-span-1 w-full h-full bg-slate-200 hidden lg:block"></div>
         <div class="col-start-5 col-span-1 row-start-1 row-span-1 w-full h-full bg-slate-300 hidden lg:block"></div>
