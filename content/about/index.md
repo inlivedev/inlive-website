@@ -1,6 +1,6 @@
 ---
 title : "About"
-description: "About inLive"
+description: "Learn more about inLive"
 layout: "about"
 ogimage: /images/general/og-image.png
 ---
