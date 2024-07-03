@@ -100,7 +100,7 @@
           Building a tele conferencing app is too complex
         </h4>
         <p class="mt-5 sm:mt-10 text-base leading-7 text-slate-600">
-          Building video conferencing apps remains complex and expensive for Indonesian startups and other developing countries. Most edutech and healthtech startups still depend on expensive global third-party solutions, this makes the technology is not available locally and cause the ecosystem struggle. This limits the availability of skilled developers and engineers to implement the technology.
+          Building video conferencing apps remains complex and expensive for Indonesian startups and other developing countries. Most edutech and healthtech startups still depend on expensive global third-party solutions, this makes the technology is not available locally and limits the potential of the ecosystem. This limits the availability of skilled developers and engineers to implement the technology.
         </p>
       </div>
       <div class="hidden xl:flex items-center justify-center py-20 px-5 border-t border-r border-slate-100 relative bg-white">
@@ -144,7 +144,7 @@
         </h3>
       </div>
 
-      <div class="pt-12 lg:pt-0 lg:col-start-7 xl:col-start-8 lg:col-span-10 xl:col-span-9 lg:row-start-5">
+      <div class="pt-12 lg:pt-0 lg:col-start-8 lg:col-span-9 lg:row-start-5">
         <p class="text-slate-600 text-base leading-7 max-w-[640px]">
           inLive is an engineering and value-driven team focused on delivering exceptional experiences for our users. Our in-house, real-time communication (RTC) technology allows us to fully customize our applications and APIs to perfectly match user needs.
         </p>
@@ -165,21 +165,35 @@
         @media (min-width: 1024px) {
           .team-grid {
             grid-template-columns: repeat(16, calc((100dvw - 2rem) / 16));
-            grid-template-rows: repeat(18, calc((100dvw - 2rem) / 16));
+            grid-template-rows: repeat(13, calc((100dvw - 2rem) / 16));
           }
         }
 
         @media (min-width: 1280px) {
           .team-grid {
             grid-template-columns: repeat(16, calc((1280px - 4rem) / 16));
-            grid-template-rows: repeat(17, calc((1280px - 4rem) / 16));
+            grid-template-rows: repeat(11, calc((1280px - 4rem) / 16));
           }
         }
 
         .people-grid {
-          display: flex;
-          flex-direction: column;
-          gap: 40px;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          column-gap: 16px;
+          row-gap: 32px;
+        }
+
+        @media (min-width: 640px) {
+          .people-grid {
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 32px;
+          }
+        }
+
+        @media (min-width: 960px) {
+          .people-grid {
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+          }
         }
 
         @media (min-width: 1024px) {
@@ -188,7 +202,7 @@
             flex-direction: unset;
             gap: unset;
             grid-template-columns: repeat(16, calc((100dvw - 2rem) / 16));
-            grid-template-rows: repeat(12, calc((100dvw - 2rem) / 16));
+            grid-template-rows: repeat(7, calc((100dvw - 2rem) / 16));
             grid-column-start: 1;
             grid-row-start: 7;
           }
@@ -197,161 +211,80 @@
         @media (min-width: 1280px) {
           .people-grid {
             grid-template-columns: repeat(16, calc((1280px - 4rem) / 16));
-            grid-template-rows: repeat(12, calc((1280px - 4rem) / 16));
+            grid-template-rows: repeat(6, calc((1280px - 4rem) / 16));
             grid-row-start: 6;
-          }
-        }
-
-        .management-grid {
-          display: flex;
-          flex-flow: row wrap;
-          gap: 40px;
-          justify-content: center;
-        }
-
-        @media (min-width: 1024px) {
-          .management-grid {
-            display: grid;
-            flex-flow: unset;
-            gap: unset;
-            justify-content: unset;
-            grid-template-columns: repeat(16, calc((100dvw - 2rem) / 16));
-            grid-template-rows: repeat(7, calc((100dvw - 2rem) / 16));
-            grid-column-start: 1;
-            grid-row-start: 1;
-          }
-        }
-
-        @media (min-width: 1280px) {
-          .management-grid {
-            grid-template-columns: repeat(16, calc((1280px - 4rem) / 16));
-            grid-template-rows: repeat(7, calc((1280px - 4rem) / 16));
-          }
-        }
-
-        .staff-grid {
-          display: flex;
-          flex-flow: row wrap;
-          gap: 40px;
-          justify-content: center;
-        }
-
-        @media (min-width: 1024px) {
-          .staff-grid {
-            display: grid;
-            flex-flow: unset;
-            gap: unset;
-            justify-content: unset;
-            grid-column-start: 1;
-            grid-row-start: 8;
-            grid-template-columns: repeat(16, calc((100dvw - 2rem) / 16));
-            grid-template-rows: repeat(5, calc((100dvw - 2rem) / 16));
-          }
-        }
-
-        @media (min-width: 1280px) {
-          .staff-grid {
-            grid-template-columns: repeat(16, calc((1280px - 4rem) / 16));
-            grid-template-rows: repeat(5, calc((1280px - 4rem) / 16));
           }
         }
       </style>
 
-      <div class="mt-20 lg:mt-0 people-grid">
-        <div class="management-grid">
-          <div class="col-start-6 col-span-1 row-start-5 row-span-1 w-full h-full bg-slate-200 hidden lg:block"></div>
-          <div class="col-start-7 col-span-2 row-start-6 row-span-2 w-full h-full bg-slate-400 hidden lg:block"></div>
-          <div class="col-start-[13] col-span-1 row-start-7 row-span-1 w-full h-full bg-slate-200 hidden lg:block"></div>
-
-          <div class="w-[200px] lg:w-auto lg:h-auto lg:col-start-2 lg:col-span-4 lg:row-start-1 lg:row-span-5 grid grid-rows-[1fr,auto] gap-4 lg:gap-0 lg:grid-rows-5 lg:grid-cols-4">
-            <div class="lg:col-start-1 lg:row-start-1 lg:col-span-4 lg:row-span-4 flex items-center justify-center">
-              <img class="w-full h-full object-cover object-top" width="320" height="320" src="/images/about/yohan.png" alt="Picture of Yohan Totting" loading="lazy">
+      <div class="mt-10 lg:mt-0 people-grid">
+        <div class="col-start-1 col-span-3 row-start-1 row-span-1 w-full h-full bg-slate-100 hidden lg:block"></div>
+        <div class="col-start-4 col-span-1 row-start-2 row-span-1 w-full h-full bg-slate-200 hidden lg:block"></div>
+        <div class="col-start-5 col-span-1 row-start-1 row-span-1 w-full h-full bg-slate-300 hidden lg:block"></div>
+        <div class="lg:col-start-1 lg:col-span-3 lg:row-start-2 lg:row-span-1 flex items-center">
+          <div class="w-full h-full flex flex-col justify-center gap-0.5 xl:gap-1">
+            <div class="flex items-center gap-4 xl:gap-5">
+              <span class="hidden lg:inline-block w-3 h-3 bg-red-700"></span>
+              <b class="block font-semibold text-[15px] xl:text-base text-red-700">Yohan Totting</b>
             </div>
-            <div class="lg:col-start-1 lg:row-start-5 lg:col-span-4 lg:row-span-1 flex items-center">
-              <div class="w-full h-full flex flex-col justify-center gap-0.5 xl:gap-1">
-                <div class="flex items-center gap-4 xl:gap-5">
-                  <span class="inline-block w-3 h-3 bg-red-700"></span>
-                  <b class="block font-semibold text-[15px] xl:text-base text-red-700">Yohan Totting</b>
-                </div>
-                <div class="pl-7 xl:pl-8 font-medium text-[15px] xl:text-base text-slate-800">
-                  Founder
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="w-[200px] lg:w-auto lg:h-auto lg:col-start-10 lg:col-span-3 lg:row-start-4 lg:row-span-4 grid grid-rows-[1fr,auto] gap-4 lg:gap-0 lg:grid-rows-4 lg:grid-cols-3">
-            <div class="lg:col-start-1 lg:row-start-1 lg:col-span-3 lg:row-span-3 flex items-center justify-center">
-              <img class="w-full h-full object-cover object-top" width="240" height="240" src="/images/about/pangeran.png" alt="Picture of Pangeran Siahaan" loading="lazy">
-            </div>
-            <div class="lg:col-start-1 lg:row-start-4 lg:col-span-3 lg:row-span-1 flex items-center">
-              <div class="w-full h-full flex flex-col justify-center gap-0.5 xl:gap-1">
-                <div class="flex items-center gap-4 xl:gap-5">
-                  <span class="inline-block w-3 h-3 bg-red-700"></span>
-                  <b class="block font-semibold text-[15px] xl:text-base text-red-700">Pangeran Siahaan</b>
-                </div>
-                <div class="pl-7 xl:pl-8 font-medium text-[15px] xl:text-base text-slate-800">
-                  Board
-                </div>
-              </div>
+            <div class="lg:pl-7 xl:pl-8 font-medium text-[15px] xl:text-base text-slate-800">
+              Founder
             </div>
           </div>
         </div>
 
-        <div class="staff-grid">
-          <div class="col-start-5 col-span-1 row-start-1 row-span-1 w-full h-full bg-slate-200 hidden lg:block"></div>
-
-          <div class="w-[200px] lg:w-auto lg:h-auto lg:col-start-6 lg:col-span-3 lg:row-start-2 lg:row-span-4 grid grid-rows-[1fr,auto] gap-4 lg:gap-0 lg:grid-rows-4 lg:grid-cols-3">
-            <div class="lg:col-start-1 lg:row-start-1 lg:col-span-3 lg:row-span-3 flex items-center justify-center">
-              <img class="w-full h-full object-cover object-top" width="240" height="240" src="/images/about/ashar.png" alt="Picture of Ashar Setiawan" loading="lazy">
+        <div class="col-start-1 col-span-3 row-start-5 xl:row-start-4 row-span-1 w-full h-full bg-slate-100 hidden lg:block"></div>
+        <div class="col-start-4 col-span-1 row-start-6 xl:row-start-5 row-span-1 w-full h-full bg-slate-200 hidden lg:block"></div>
+        <div class="lg:col-start-1 lg:col-span-3 lg:row-start-6 xl:row-start-5 lg:row-span-1 flex items-center">
+          <div class="w-full h-full flex flex-col justify-center gap-0.5 xl:gap-1">
+            <div class="flex items-center gap-4 xl:gap-5">
+              <span class="hidden lg:inline-block w-3 h-3 bg-red-700"></span>
+              <b class="block font-semibold text-[15px] xl:text-base text-red-700">Pangeran Siahaan</b>
             </div>
-            <div class="lg:col-start-1 lg:row-start-4 lg:col-span-3 lg:row-span-1 flex items-center">
-              <div class="w-full h-full flex flex-col justify-center gap-0.5 xl:gap-1">
-                <div class="flex items-center gap-4 xl:gap-5">
-                  <span class="inline-block w-3 h-3 bg-red-700"></span>
-                  <b class="block font-semibold text-[15px] xl:text-base text-red-700">Ashar Setiawan</b>
-                </div>
-                <div class="pl-7 xl:pl-8 font-medium text-[15px] xl:text-base text-slate-800">
-                  Designer & PM
-                </div>
-              </div>
+            <div class="lg:pl-7 xl:pl-8 font-medium text-[15px] xl:text-base text-slate-800">
+              Board
             </div>
           </div>
+        </div>
 
-          <div class="w-[200px] lg:w-auto lg:h-auto lg:col-start-10 lg:col-span-3 lg:row-start-2 lg:row-span-4 grid grid-rows-[1fr,auto] gap-4 lg:gap-0 lg:grid-rows-4 lg:grid-cols-3">
-            <div class="lg:col-start-1 lg:row-start-1 lg:col-span-3 lg:row-span-3 flex items-center justify-center">
-              <img class="w-full h-full object-cover object-top" width="240" height="240" src="/images/about/gagah.png" alt="Picture of Gagah Ghaniswara K." loading="lazy">
+        <div class="col-start-6 col-span-1 row-start-6 xl:row-start-5 row-span-1 w-full h-full bg-slate-200 hidden lg:block"></div>
+        <div class="lg:col-start-6 lg:col-span-3 lg:row-start-7 xl:row-start-6 lg:row-span-1 flex items-center">
+          <div class="w-full h-full flex flex-col justify-center gap-0.5 xl:gap-1">
+            <div class="flex items-center gap-4 xl:gap-5">
+              <span class="hidden lg:inline-block w-3 h-3 bg-red-700"></span>
+              <b class="block font-semibold text-[15px] xl:text-base text-red-700">Ashar Setiawan</b>
             </div>
-            <div class="lg:col-start-1 lg:row-start-4 lg:col-span-3 lg:row-span-1 flex items-center">
-              <div class="w-full h-full flex flex-col justify-center gap-0.5 xl:gap-1">
-                <div class="flex items-center gap-4 xl:gap-5">
-                  <span class="inline-block w-3 h-3 bg-red-700"></span>
-                  <b class="block font-semibold text-[15px] xl:text-base text-red-700">Gagah Ghaniswara K.</b>
-                </div>
-                <div class="pl-7 xl:pl-8 font-medium text-[15px] xl:text-base text-slate-800">
-                  Full Stack Engineer
-                </div>
-              </div>
+            <div class="lg:pl-7 xl:pl-8 font-medium text-[15px] xl:text-base text-slate-800">
+              Designer & PM
             </div>
           </div>
+        </div>
 
-          <div class="w-[200px] lg:w-auto lg:h-auto lg:col-start-[14] lg:col-span-3 lg:row-start-2 lg:row-span-4 grid grid-rows-[1fr,auto] gap-4 lg:gap-0 lg:grid-rows-4 lg:grid-cols-3">
-            <div class="lg:col-start-1 lg:row-start-1 lg:col-span-3 lg:row-span-3 flex items-center justify-center">
-              <img class="w-full h-full object-cover object-top" width="240" height="240" src="/images/about/faiq.png" alt="Picture of Faiq Naufal" loading="lazy">
+
+        <div class="col-start-10 col-span-1 row-start-6 xl:row-start-5 row-span-1 w-full h-full bg-slate-200 hidden lg:block"></div>
+        <div class="lg:col-start-10 lg:col-span-3 lg:row-start-7 xl:row-start-6 lg:row-span-1 flex items-center">
+          <div class="w-full h-full flex flex-col justify-center gap-0.5 xl:gap-1">
+            <div class="flex items-center gap-4 xl:gap-5">
+              <span class="hidden lg:inline-block w-3 h-3 bg-red-700"></span>
+              <b class="block font-semibold text-[15px] xl:text-base text-red-700">Gagah Ghaniswara K.</b>
             </div>
-            <div class="lg:col-start-1 lg:row-start-4 lg:col-span-3 lg:row-span-1 flex items-center">
-              <div class="w-full h-full flex flex-col justify-center gap-0.5 xl:gap-1">
-                <div class="flex items-center gap-4 xl:gap-5">
-                  <span class="inline-block w-3 h-3 bg-red-700"></span>
-                  <b class="block font-semibold text-[15px] xl:text-base text-red-700">Faiq Naufal</b>
-                </div>
-                <div class="pl-7 xl:pl-8 font-medium text-[15px] xl:text-base text-slate-800">
-                  Front End Engineer
-                </div>
-              </div>
+            <div class="lg:pl-7 xl:pl-8 font-medium text-[15px] xl:text-base text-slate-800">
+              Full Stack Engineer
             </div>
           </div>
+        </div>
 
+        <div class="col-start-[14] col-span-1 row-start-6 xl:row-start-5 row-span-1 w-full h-full bg-slate-200 hidden lg:block"></div>
+        <div class="lg:col-start-[14] lg:col-span-3 lg:row-start-7 xl:row-start-6 lg:row-span-1 flex items-center">
+          <div class="w-full h-full flex flex-col justify-center gap-0.5 xl:gap-1">
+            <div class="flex items-center gap-4 xl:gap-5">
+              <span class="hidden lg:inline-block w-3 h-3 bg-red-700"></span>
+              <b class="block font-semibold text-[15px] xl:text-base text-red-700">Faiq Naufal</b>
+            </div>
+            <div class="lg:pl-7 xl:pl-8 font-medium text-[15px] xl:text-base text-slate-800">
+              Front End Engineer
+            </div>
+          </div>
         </div>
       </div>
     </div>
