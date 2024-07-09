@@ -16,8 +16,8 @@ menu:
 
 ## Get an Application Key
 To allow your app to access all Inlive APIs, you need an application key, also known as an API key. This application key is unique per application, and you will need to use it with all your API requests. Follow these steps to create your application key:
-1. Register [an Inlive account](#).
-2. Go to [the integration page](#).
+1. Register <a href="{{< getenv env=`_HUGO_INLIVE_STUDIO_ORIGIN` >}}" target="_blank" rel="noopener noreferrer">an Inlive account</a>.
+2. Go to <a href="{{< getenv env=`_HUGO_INLIVE_STUDIO_ORIGIN` >}}/settings/integration/" target="_blank" rel="noopener noreferrer">the integration page</a>.
 3. Create an application key. Make sure you copy the key after you create it because you won't be able to see it again later.
 
 ## Authenticate Your API Request
