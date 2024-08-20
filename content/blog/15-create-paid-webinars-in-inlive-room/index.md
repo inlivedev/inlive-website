@@ -4,7 +4,7 @@ date: 2024-08-20
 lastmod: 2024-08-20
 title: Inlive Room Paid Webinar Feature
 description: Introducing Paid Webinar Feature for InLive Room
-ogimage: blog/create-paid-webinars-in-inlive-room/images/og-image.png
+ogimage: /blog/create-paid-webinars-in-inlive-room/images/og-image.png
 slug: create-paid-webinars-in-inlive-room
 summary: Introducing Paid Webinar Feature for InLive Room
 ---
