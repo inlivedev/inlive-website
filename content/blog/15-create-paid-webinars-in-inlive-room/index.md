@@ -23,14 +23,14 @@ You asked, we listened\! Based on your valuable feedback, we've been working har
 
 Creating and managing paid webinars just got a whole lot simpler now. Here's why:
 
-1. **For your audience — Registration & payment in one place: No more bouncing between platforms. Your audience can register and complete their payment directly within your event page. It's a hassle-free experience for them\!**
-2. **For you, as a host — No more payment tracking: Our system handles payment tracking and shows you the report in real-time by email. Forget about manually writing down those payment confirmations\! Plus, you won't need to constantly update your audience about available spots – registration and payment will automatically close once your webinar reaches full capacity.**
+1. **For your audience — Registration & payment in one place:** No more bouncing between platforms. Your audience can register and complete their payment directly within your event page. It's a hassle-free experience for them\!
+2. **For you, as a host — No more payment tracking:** Our system handles payment tracking and shows you the report in real-time by email. Forget about manually writing down those payment confirmations\! Plus, you won't need to constantly update your audience about available spots – registration and payment will automatically close once your webinar reaches full capacity.
 
 ## The Benefits You'll Love
 
-1. **Simplify your workflow: Focus on creating engaging events for your audience. Let us handle the nitty-gritty on administrative tasks.**
-2. **Boost your revenue: Monetize your expertise and effortlessly earn from your webinars.**
-3. **Enhanced audience experience: Provide a smooth registration and payment process for your attendees.**
+1. **Simplify your workflow:** Focus on creating engaging events for your audience. Let us handle the nitty-gritty on administrative tasks.
+2. **Boost your revenue:** Monetize your expertise and effortlessly earn from your webinars.
+3. **Enhanced audience experience:** Provide a smooth registration and payment process for your attendees.
 
 ## How About the Payout?
 
