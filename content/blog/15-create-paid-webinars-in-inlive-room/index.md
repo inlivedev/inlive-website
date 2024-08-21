@@ -42,7 +42,7 @@ FYI, we use Xendit as our payment gateway, so there will be a small platform fee
 
 We're currently rolling out this feature to a limited group of users. If you're eager to start hosting paid webinars with InLive Room, simply submit a request to join our whitelist\!
 
-[Request to get early access](\#)
+[Request to get early access](https://forms.gle/kzp76byMs8WcLM8y8)
 
 “Let's take your webinars to the next level together\!”
 
