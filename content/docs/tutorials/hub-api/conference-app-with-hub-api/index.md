@@ -12,7 +12,7 @@ menu:
     name: Conference App with Hub API
     parent: hub-api
     weight: 1
-draft: true
+draft: false
 ---
 
 # Conference App with Hub API
@@ -25,12 +25,13 @@ We will create a simple web-based video conferencing room application. When the 
 
 The participants will automatically join the room when they open the URL and click the join button. There is no authentication and other protection mechanism to keep the implementation simple. The tutorial is split into multiple steps:
 1. Create a basic UI with simple HTML and CSS
-2. Create a room where local peer client can join
-3. Register a peer client to the room
-4. Join and connect to the room
-5. Handle other participants who enter and leave in the room
-6. Leave the room
-7. End the conference room
+2. Generate an access token to authenticate the API request
+3. Create a room where local peer client can join
+4. Register a peer client to the room
+5. Join and connect to the room
+6. Handle other participants who enter and leave in the room
+7. Leave the room
+8. End the conference room
 
 ## 1. Create a basic UI with simple HTML and CSS
 
@@ -97,7 +98,41 @@ If you want to add basic CSS for styling purpose, you can put the CSS code below
 </style>
 ```
 
-## 2. Create a room where local peer client can join
+## 2. Generate an access token to authenticate the API request
+Before able to interacting with the inLive Hub API, you need to generate an access token to authenticate the API request. You can generate an access token by sending a `POST` request to the `https://api.inlive.app/v1/keys/accesstoken` endpoint. To do that we create a function to generate the access token.
+
+```js
+async function createAccessToken() {
+    if (apiKey === '') {
+        alert('Please set your API key, you can get it from https://studio.inlive.app');
+        return;
+    }
+
+    const response = await fetch(`${tokenAPIOrigin}/${apiVersion}/keys/accesstoken`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${apiKey}`
+        },
+    })
+
+    const token = await response.json();
+
+    //data: {
+    //	"access_token": "string",
+    // 	"refresh_token": "string"
+    //}
+    return token.data;
+}
+```
+
+The access token will be used as a bearer token in your API requests. Please note that although you can set the expiration time of the access token when you generate it, make sure not to set it too long as it could be a security risk. The recommended and default expiration time is 1 hour.
+
+It also important to do this step on the server side because you don't want to expose your API key. You can use the server side language such as Node.js, Python, PHP, or any other server side language to generate the access token.
+
+Learn more about [API Authentication](/docs/getting-started/api-auth) to understand how to authenticate your application for access to inLive APIs using an application key and access token.
+
+## 3. Create a room where local peer client can join
 
 This is where we start to implement the JavaScript logics for the application. Let's define some global variables that we can use later.
 
@@ -128,6 +163,8 @@ let peer = null;
 
 // A state variable as an indicator if the user already joined a room
 let joined = false;
+
+let accessToken = createAccessToken().access_token;
 ```
 
 ### Build the create room function
@@ -139,7 +176,8 @@ async function createRoom(roomName = '') {
     const response = await fetch(`${apiOrigin}/${apiVersion}/rooms/create`, {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${accessToken}`
         },
         body: JSON.stringify({
             name: roomName
@@ -190,7 +228,7 @@ async function join() {
 The `join()` function above calls the `createRoom()` function which returns the ID and name of the room. After the room is created, the `join()` function will create an invitation URL that enables the host of the room to invite other participants into the room. Using the invitation URL, the other participants can join to the room when they click the join button.
 
 
-## 3. Register a peer client to the room
+## 4. Register a peer client to the room
 Every peer client (participant) who wants to join to the room needs to be registered. This way we can make the room secure by only allowing the peer client who has already registered to join the room. We can register a peer client to the room only when the room is already created because we need the ID of the room for registering the peer client.
 
 ### Build the register client function
@@ -229,7 +267,7 @@ async function join() {
 }
 ```
 
-## 4. Join and connect to the room
+## 5. Join and connect to the room
 
 This tutorial and the Hub API heavily use the [WebRTC technology](https://developer.mozilla.org/en-US/docs/Web/API/WebRTC_API) to provide real-time communication capability between each participant in the room. The way each participant joins the room is by establishing the connectivity and communication session between peers known as [signaling and negotiation process](https://developer.mozilla.org/en-US/docs/Web/API/WebRTC_API/Signaling_and_video_calling). The signaling process notifies each peer when another peer wants to connect and establish the connection through [ICE](https://developer.mozilla.org/en-US/docs/Glossary/ICE) protocol. The negotiation process allows each individual peer to exchange metadata such as offer, answer, and ICE candidates with another peer to establish a connection.
 
@@ -361,6 +399,8 @@ If the client is not allowed to request negotiation, there is a possibility the 
 
 After a successful exchange, the process of ice candidate gathering will begin. This ice candidate gathering process will trigger peer connection `icecandidate` event. What you need to do to speed up the ice gathering process is to send the [RTCIceCanddiate](https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidate) instance received from the `icecandidate` event to the `/rooms/<ROOM_ID>/candidate/<CLIENT_ID>` endpoint using `POST` method.
 
+**Important: The ice candidate exchange must be started only after the remote SDP is set to the local peer connection.** 
+
 
 ```js
 function establishPeerConnection(roomId, clientId, mediaStream) {
@@ -386,7 +426,9 @@ function establishPeerConnection(roomId, clientId, mediaStream) {
 
 ### Handle peer connection SSE candidate event
 
-The peer connection SSE `candidate` event will also be triggered when the ice candidate gathering process begins. To listen the SSE event, we need to create a new [EventSource](https://developer.mozilla.org/en-US/docs/Web/API/EventSource) interface that listens any event from a specific endpoint. The event endpoint we need to listen is `/rooms/<ROOM_ID>/events/<CLIENT_ID>`.
+The peer connection SSE `candidate` event will also be triggered when the ice candidate gathering process begins. To listen the SSE event, we need to create a new [EventSource](https://developer.mozilla.org/en-US/docs/Web/API/EventSource) interface that listens any event from a specific endpoint. The event endpoint we need to listen is `/rooms/<ROOM_ID>/events/<CLIENT_ID>`. 
+
+**Important to note that the ice candidate from the SSE event must be added to the local peer connection only after the remote SDP is set to the local peer connection. To do this, we need to listen the SSE event only after we set the remote SDP.**
 
 ```js
 function establishPeerConnection(roomId, clientId, mediaStream) {
@@ -452,7 +494,7 @@ async function join() {
 }
 ```
 
-## 5. Handle other participants who enter and leave in the room
+## 6. Handle other participants who enter and leave in the room
 
 ### Receive offer SDP from SSE signaling channel to repeat the negotiation process
 
