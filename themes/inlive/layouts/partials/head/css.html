@@ -1,7 +1,7 @@
 {{/* Using hack for automatically rebuilding / regenerating the tailwind styles in development https://github.com/gohugoio/hugo/issues/8343#issuecomment-1013956389 */}}
 
 {{ $styles := resources.Get "css/tailwind.css" }}
-{{ $styles = $styles | resources.PostCSS }}
+{{ $styles = $styles | css.PostCSS }}
 {{ if  or (eq hugo.Environment "production") (and (eq hugo.Environment "development") (not hugo.IsServer))  }}
   {{ $styles = $styles | minify | fingerprint | resources.PostProcess }}
 {{ else if hugo.IsServer }}
