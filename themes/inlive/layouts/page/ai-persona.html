@@ -1,0 +1,425 @@
+{{ define "main" }} {{ partial "header/header.html" . }} {{ $inliveEmail :=
+getenv "_HUGO_INLIVE_EMAIL" }}
+
+<style>
+  .bg-gradient {
+    background: linear-gradient(
+      to bottom,
+      hsla(0, 0%, 100%, 1),
+      hsla(0, 0%, 100%, 1),
+      hsla(210, 25%, 98%, 1),
+      hsla(210, 25%, 98%, 1)
+    );
+  }
+</style>
+
+<main>
+  <!-- Section: Hero -->
+  <section class="max-w-7xl mx-auto px-4 xl:px-8 py-12 lg:py-16">
+    <div class="flex flex-col lg:flex-row justify-between items-center">
+      <div class="flex-1 max-w-2xl order-2 lg:order-1">
+        <h1
+          class="blink font-bold text-4xl lg:text-5xl xl:text-6xl -tracking-wide text-slate-900"
+        >
+          Converse with AI <br class="hidden lg:block" />as if with a human
+        </h1>
+        <div class="mt-4 lg:mt-8">
+          <a
+            href="#section-intro"
+            class="pl-4 pr-3 py-2 inline-flex items-center gap-1.5 bg-slate-100 rounded-md font-medium text-base lg:text-lg text-slate-800"
+          >
+            <span>Learn more</span>
+            <span class="h-7 flex items-center">
+              <svg
+                class="w-5 h-5 lg:w-6 lg:h-6"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g clip-path="url(#clip0_1271_2473)">
+                  <path
+                    d="M8 12L12 16M12 16V8M12 16L16 12M3 12C3 13.1819 3.23279 14.3522 3.68508 15.4442C4.13738 16.5361 4.80031 17.5282 5.63604 18.364C6.47177 19.1997 7.46392 19.8626 8.55585 20.3149C9.64778 20.7672 10.8181 21 12 21C13.1819 21 14.3522 20.7672 15.4442 20.3149C16.5361 19.8626 17.5282 19.1997 18.364 18.364C19.1997 17.5282 19.8626 16.5361 20.3149 15.4442C20.7672 14.3522 21 13.1819 21 12C21 9.61305 20.0518 7.32387 18.364 5.63604C16.6761 3.94821 14.3869 3 12 3C9.61305 3 7.32387 3.94821 5.63604 5.63604C3.94821 7.32387 3 9.61305 3 12Z"
+                    stroke="#1E293B"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="clip0_1271_2473">
+                    <rect width="24" height="24" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+            </span>
+          </a>
+        </div>
+      </div>
+      <div class="flex order-1 lg:order-2 mb-10 xl:m-0">
+        <img
+          src="/images/ai-persona/hero-illustration.svg"
+          class="w-80 h-auto lg:w-[480px]"
+          width="480"
+          height="480"
+          alt="Inlive AI Persona Illustration"
+          fetchpriority="low"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Intro -->
+  <section id="section-intro" class="pt-16 bg-gradient pb-20 lg:pb-32">
+    <div class="mx-auto max-w-7xl px-4 lg:px-8">
+      <header>
+        <h2 class="font-semibold text-base text-red-700">
+          Revolutionizing Human-AI Interaction
+          <span class="text-red-300 animate-blink">_</span>
+        </h2>
+        <h3
+          class="mt-2 font-bold text-3xl lg:text-4xl leading-tight lg:leading-tight text-slate-800"
+        >
+          Introducing Inlive AI Persona
+        </h3>
+      </header>
+      <div class="mt-6 space-y-6">
+        <p class="max-w-3xl text-slate-500 text-base leading-relaxed">
+          In today's technology-driven world, the quest for more natural and
+          intuitive communication with digital systems is becoming increasingly
+          important. At Inlive, we are dedicated to bridging the gap between
+          cutting-edge technology and user-friendly experiences.
+        </p>
+        <p class="max-w-3xl text-slate-500 text-base leading-relaxed">
+          Inlive AI Persona transforms everyday devices into sensory tools that
+          enhance human-like interaction capabilities. By integrating webcams,
+          microphones, speakers, and video displays, AI agents can simulate
+          human senses:
+        </p>
+      </div>
+      <div class="mt-16">
+        <h4 class="text-xl font-semibold text-slate-700">
+          Utilizing Devices as AI Senses
+        </h4>
+        <ul class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <li>
+            <div
+              class="h-full p-5 pb-8 rounded-xl bg-white border border-slate-200"
+            >
+              <span class="text-slate-800">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="icon icon-tabler icons-tabler-outline icon-tabler-device-computer-camera"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M12 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
+                  <path d="M12 10m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
+                  <path
+                    d="M8 16l-2.091 3.486a1 1 0 0 0 .857 1.514h10.468a1 1 0 0 0 .857 -1.514l-2.091 -3.486"
+                  />
+                </svg>
+              </span>
+              <p class="mt-2 text-base font-medium text-slate-700">
+                Camera acts as the "eyes" for AI, allowing it to capture visual
+                data and detect changes or expressions, enriching the
+                interactive experience.
+              </p>
+            </div>
+          </li>
+          <li>
+            <div
+              class="h-full p-5 pb-8 rounded-xl bg-white border border-slate-200"
+            >
+              <span class="text-slate-800">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="icon icon-tabler icons-tabler-outline icon-tabler-microphone"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path
+                    d="M9 2m0 3a3 3 0 0 1 3 -3h0a3 3 0 0 1 3 3v5a3 3 0 0 1 -3 3h0a3 3 0 0 1 -3 -3z"
+                  />
+                  <path d="M5 10a7 7 0 0 0 14 0" />
+                  <path d="M8 21l8 0" />
+                  <path d="M12 17l0 4" />
+                </svg>
+              </span>
+              <p class="mt-2 text-base font-medium text-slate-700">
+                Microphone functions as "ears," enabling the AI to listen to
+                users, understand their spoken language, and capture nuances in
+                communication.
+              </p>
+            </div>
+          </li>
+          <li>
+            <div
+              class="h-full p-5 pb-8 rounded-xl bg-white border border-slate-200"
+            >
+              <span class="text-slate-800">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="icon icon-tabler icons-tabler-outline icon-tabler-volume"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M15 8a5 5 0 0 1 0 8" />
+                  <path d="M17.7 5a9 9 0 0 1 0 14" />
+                  <path
+                    d="M6 15h-2a1 1 0 0 1 -1 -1v-4a1 1 0 0 1 1 -1h2l3.5 -4.5a.8 .8 0 0 1 1.5 .5v14a.8 .8 0 0 1 -1.5 .5l-3.5 -4.5"
+                  />
+                </svg>
+              </span>
+              <p class="mt-2 text-base font-medium text-slate-700">
+                Speakers serves as the "mouth," letting the AI convey
+                information and express itself audibly to create a more engaging
+                dialog.
+              </p>
+            </div>
+          </li>
+          <li>
+            <div
+              class="h-full p-5 pb-8 rounded-xl bg-white border border-slate-200"
+            >
+              <span class="text-slate-800">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="icon icon-tabler icons-tabler-outline icon-tabler-device-desktop"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path
+                    d="M3 5a1 1 0 0 1 1 -1h16a1 1 0 0 1 1 1v10a1 1 0 0 1 -1 1h-16a1 1 0 0 1 -1 -1v-10z"
+                  />
+                  <path d="M7 20h10" />
+                  <path d="M9 16v4" />
+                  <path d="M15 16v4" />
+                </svg>
+              </span>
+              <p class="mt-2 text-base font-medium text-slate-700">
+                Video display provides a "face" or interface through which users
+                can engage visually, enhancing presence and relatability in
+                interactions.
+              </p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Use case -->
+  <section id="use-case" class="max-w-7xl mx-auto px-4 xl:px-8 py-12 lg:py-24">
+    <h2 class="text-center font-bold text-3xl lg:text-4xl text-slate-800">
+      Use case
+    </h2>
+    <ul class="mt-10 mx-auto lg:mt-20 flex flex-col gap-4 max-w-5xl">
+      <li
+        class="border border-slate-200 p-5 lg:py-6 lg:px-8 rounded-xl flex flex-col lg:flex-row gap-5 lg:gap-8"
+      >
+        <div>
+          <img
+            class="w-12 lg:w-20 h-12 lg:h-20"
+            src="/images/ai-persona/icon-use-case-ai-01.svg"
+            alt="Use Case Inlive AI Persona"
+            loading="lazy"
+          />
+        </div>
+        <div class="flex-1">
+          <h3 class="font-semibold text-xl text-slate-700">
+            Virtual Receptionist
+          </h3>
+          <p class="mt-2 text-base text-slate-500">
+            Imagine walking into an office, hotel, or corporate headquarters and
+            being greeted instantly—not by a person, but by a virtual
+            receptionist powered by AI. Using just its microphone and speakers,
+            it listens to your questions, understands your needs, and responds
+            with helpful information.
+            <br /><br />
+            Whether you're checking in for an appointment, asking for
+            directions, or inquiring about services, the virtual receptionist
+            delivers clear, conversational responses. It can even display
+            essential details, like schedules or maps, on a screen only when
+            needed, keeping interactions simple and focused.
+            <br /><br />
+            With an adaptive tone and natural voice, this AI-powered assistant
+            ensures every interaction feels warm, professional, and efficient.
+            It’s a smarter, more accessible way to keep your visitors informed
+            and delighted from the moment they arrive.
+          </p>
+        </div>
+      </li>
+      <li
+        class="border border-slate-200 p-5 lg:py-6 lg:px-8 rounded-xl flex flex-col lg:flex-row gap-5 lg:gap-8"
+      >
+        <div>
+          <img
+            class="w-12 lg:w-20 h-12 lg:h-20"
+            src="/images/ai-persona/icon-use-case-ai-02.svg"
+            alt="Use Case Inlive AI Persona"
+            loading="lazy"
+          />
+        </div>
+        <div class="flex-1">
+          <h3 class="font-semibold text-xl text-slate-700">
+            Virtual Hiring Recruiter
+          </h3>
+          <p class="mt-2 text-base text-slate-500">
+            Imagine having a hiring recruiter that’s always ready to conduct
+            interviews, no matter the time or place. With AI for virtual
+            recruitment, your candidates can connect online and experience a
+            seamless, professional interview process.
+            <br /><br />
+            Using voice and natural conversation, the virtual recruiter asks
+            thoughtful questions, gathers all the essential details, and records
+            responses accurately. It evaluates candidates based solely on their
+            qualifications and responses, free from biases related to
+            appearance. Whether it’s qualifications, past experiences, or
+            role-specific scenarios, every aspect is covered with precision. Key
+            information is summarized and organized for your review, saving you
+            hours of manual effort.
+            <br /><br />
+            By creating a consistent and stress-free experience for every
+            candidate, it simplifies your hiring process and helps you find the
+            right talent efficiently.
+          </p>
+        </div>
+      </li>
+      <li
+        class="border border-slate-200 p-5 lg:py-6 lg:px-8 rounded-xl flex flex-col lg:flex-row gap-5 lg:gap-8"
+      >
+        <div>
+          <img
+            class="w-12 lg:w-20 h-12 lg:h-20"
+            src="/images/ai-persona/icon-use-case-ai-03.svg"
+            alt="Use Case Inlive AI Persona"
+            loading="lazy"
+          />
+        </div>
+        <div class="flex-1">
+          <h3 class="font-semibold text-xl text-slate-700">
+            Virtual Call Center Officer
+          </h3>
+          <p class="mt-2 text-base text-slate-500">
+            Imagine a call center officer who’s always available to assist your
+            customers, day or night. With an AI-powered virtual support system,
+            it can answer questions, resolve common issues, and even create
+            detailed follow-up tickets for more complex problems.
+            <br /><br />
+            Powered by your company’s knowledge base, the virtual officer
+            delivers accurate, helpful information tailored to each customer’s
+            needs. It guides them step-by-step through solutions, ensuring
+            clarity and confidence in resolving their concerns. For inquiries
+            that require further attention, it generates comprehensive report
+            tickets, providing your team with everything needed to follow up
+            efficiently.
+            <br /><br />
+            With natural, conversational interactions and consistent
+            performance, this virtual officer offers reliable, high-quality
+            support. It enhances customer satisfaction, reduces wait times, and
+            streamlines operations, making it a valuable addition to any
+            customer service team.
+          </p>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Section: CTA -->
+  <section class="max-w-7xl mx-auto pt-12 pb-20">
+    <div class="relative">
+      <div
+        class="hidden lg:block w-full h-full absolute top-0 left-0 lg:px-8 -z-10"
+      >
+        <div class="w-full h-full relative">
+          <div class="dashed-vertical-line absolute left-0"></div>
+          <div class="dashed-vertical-line absolute right-0"></div>
+        </div>
+      </div>
+      <div class="py-8 px-4 lg:px-8 relative overflow-hidden">
+        <div class="dashed-horizontal-line absolute top-0"></div>
+        <div class="block">
+          <div class="lg:px-8 flex flex-col lg:flex-row gap-6 justify-between">
+            <div class="flex-1">
+              <h2 class="font-bold text-2xl text-red-900">
+                Ready to transform the AI interaction experience for your
+                business?
+              </h2>
+              <p class="mt-2 text-base lg:text-lg text-slate-600">
+                We're all ears and excited to hear from you. Let's talk and make
+                your ideas happen together!
+              </p>
+            </div>
+            <div class="flex items-center">
+              <a
+                href="mailto:{{ $inliveEmail }}"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="pl-4 pr-3 py-2 inline-flex items-center gap-1.5 bg-red-700 rounded-md font-medium text-base lg:text-lg text-red-50"
+              >
+                <span>Contact us</span>
+                <span>
+                  <svg
+                    class="w-5 h-5 lg:w-6 lg:h-6"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g clip-path="url(#clip0_1181_2604)">
+                      <path
+                        d="M15 10L11 14L17 20L21 4L3 11L7 13L9 19L12 15"
+                        stroke="#FDF1F1"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_1181_2604">
+                        <rect width="24" height="24" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="dashed-horizontal-line absolute bottom-0"></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+{{ end }} {{ define "footer" }} {{ partial "footer/footer.html" . }} {{ end }}
+{{ define "script" }} {{ $globalJS := resources.Get "js/global.js" | minify }}
+<script
+  type="text/javascript"
+  src="{{ $globalJS.RelPermalink }}"
+  defer
+></script>
+{{ end }}
