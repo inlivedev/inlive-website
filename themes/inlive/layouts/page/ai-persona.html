@@ -31,25 +31,20 @@ getenv "_HUGO_INLIVE_EMAIL" }}
             <span>Learn more</span>
             <span class="h-7 flex items-center">
               <svg
-                class="w-5 h-5 lg:w-6 lg:h-6"
+                xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="none"
-                xmlns="http://www.w3.org/2000/svg"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="icon icon-tabler icons-tabler-outline icon-tabler-circle-arrow-down w-5 h-5 lg:w-6 lg:h-6"
               >
-                <g clip-path="url(#clip0_1271_2473)">
-                  <path
-                    d="M8 12L12 16M12 16V8M12 16L16 12M3 12C3 13.1819 3.23279 14.3522 3.68508 15.4442C4.13738 16.5361 4.80031 17.5282 5.63604 18.364C6.47177 19.1997 7.46392 19.8626 8.55585 20.3149C9.64778 20.7672 10.8181 21 12 21C13.1819 21 14.3522 20.7672 15.4442 20.3149C16.5361 19.8626 17.5282 19.1997 18.364 18.364C19.1997 17.5282 19.8626 16.5361 20.3149 15.4442C20.7672 14.3522 21 13.1819 21 12C21 9.61305 20.0518 7.32387 18.364 5.63604C16.6761 3.94821 14.3869 3 12 3C9.61305 3 7.32387 3.94821 5.63604 5.63604C3.94821 7.32387 3 9.61305 3 12Z"
-                    stroke="#1E293B"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </g>
-                <defs>
-                  <clipPath id="clip0_1271_2473">
-                    <rect width="24" height="24" fill="white" />
-                  </clipPath>
-                </defs>
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+                <path d="M8 12l4 4" />
+                <path d="M12 8v8" />
+                <path d="M16 12l-4 4" />
               </svg>
             </span>
           </a>
@@ -232,12 +227,110 @@ getenv "_HUGO_INLIVE_EMAIL" }}
     </div>
   </section>
 
-  <!-- Section: Use case -->
-  <section id="use-case" class="max-w-7xl mx-auto px-4 xl:px-8 py-12 lg:py-24">
+  <!-- Section: Product -->
+  <section id="products" class="max-w-7xl mx-auto px-4 xl:px-8 py-12 xl:py-16">
     <h2 class="text-center font-bold text-3xl lg:text-4xl text-slate-800">
-      Use case
+      Products
     </h2>
-    <ul class="mt-10 mx-auto lg:mt-20 flex flex-col gap-4 max-w-5xl">
+    <ul
+      class="mt-12 flex flex-col lg:flex-row border border-slate-200 rounded-xl"
+    >
+      <li class="flex-1 bg-gradient-to-t from-slate-50">
+        <div
+          class="flex flex-col justify-between gap-6 h-full py-8 px-6 lg:py-10 lg:px-8"
+        >
+          <div class="flex-1">
+            <h3 class="font-semibold text-xl text-slate-900">
+              Real-time Voice Agent API
+            </h3>
+            <p class="mt-2 text-base text-slate-500">
+              Build voice-first applications with our real-time Voice Agent API.
+              Experience natural, turn-by-turn conversations powered by advanced
+              voice activity detection and low-latency performance.
+            </p>
+          </div>
+          <div>
+            <a
+              href="#section-use-case"
+              class="inline-flex items-center gap-1 text-red-700 font-medium text-base hover:underline underline-offset-8"
+            >
+              <span>See the use cases</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="icon icon-tabler icons-tabler-outline icon-tabler-circle-arrow-down"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+                <path d="M8 12l4 4" />
+                <path d="M12 8v8" />
+                <path d="M16 12l-4 4" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </li>
+      <li
+        class="flex-1 border-t lg:border-t-0 lg:border-l border-slate-200 bg-gradient-to-t from-slate-50"
+      >
+        <div
+          class="flex flex-col justify-between gap-6 h-full py-8 px-6 lg:py-10 lg:px-8"
+        >
+          <div class="flex-1">
+            <h3 class="font-semibold text-xl text-slate-900">
+              Voice Agent Playground
+            </h3>
+            <p class="mt-2 text-base text-slate-500">
+              Create the perfect voice agent for your needs! Test and refine
+              your prompts in our interactive Voice Agent Playground, then
+              easily share it for collaborative testing.
+            </p>
+          </div>
+          <div>
+            <a
+              href="https://studio.inlive.app/login"
+              class="inline-flex items-center gap-1 text-red-700 font-medium text-base hover:underline underline-offset-8"
+            >
+              <span>Try it now</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-right"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M5 12l14 0" />
+                <path d="M13 18l6 -6" />
+                <path d="M13 6l6 6" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Section: Use case -->
+  <section id="section-use-case" class="max-w-7xl mx-auto px-4 xl:px-8 py-12 lg:py-24">
+    <h2 class="text-center font-bold text-3xl lg:text-4xl text-slate-800">
+      Use cases
+    </h2>
+    <ul
+      class="max-w-7xl mt-10 mx-auto lg:mt-20 gap-4 grid grid-cols-1 lg:grid-cols-2"
+    >
       <li
         class="border border-slate-200 p-5 lg:py-6 lg:px-8 rounded-xl flex flex-col lg:flex-row gap-5 lg:gap-8"
       >
@@ -254,22 +347,11 @@ getenv "_HUGO_INLIVE_EMAIL" }}
             Virtual Receptionist
           </h3>
           <p class="mt-2 text-base text-slate-500">
-            Imagine walking into an office, hotel, or corporate headquarters and
-            being greeted instantly—not by a person, but by a virtual
-            receptionist powered by AI. Using just its microphone and speakers,
-            it listens to your questions, understands your needs, and responds
-            with helpful information.
-            <br /><br />
-            Whether you're checking in for an appointment, asking for
-            directions, or inquiring about services, the virtual receptionist
-            delivers clear, conversational responses. It can even display
-            essential details, like schedules or maps, on a screen only when
-            needed, keeping interactions simple and focused.
-            <br /><br />
-            With an adaptive tone and natural voice, this AI-powered assistant
-            ensures every interaction feels warm, professional, and efficient.
-            It’s a smarter, more accessible way to keep your visitors informed
-            and delighted from the moment they arrive.
+            Enhance your front office area with an AI-powered kiosk, placed on
+            the receptionist desk. This compact unit, featuring a user-friendly
+            screen, offers effortless voice interaction. Guests simply speak
+            their inquiries – no tapping or typing needed. Get directions,
+            service information, schedules, and more with ease.
           </p>
         </div>
       </li>
@@ -289,23 +371,12 @@ getenv "_HUGO_INLIVE_EMAIL" }}
             Virtual Hiring Recruiter
           </h3>
           <p class="mt-2 text-base text-slate-500">
-            Imagine having a hiring recruiter that’s always ready to conduct
-            interviews, no matter the time or place. With AI for virtual
-            recruitment, your candidates can connect online and experience a
-            seamless, professional interview process.
-            <br /><br />
-            Using voice and natural conversation, the virtual recruiter asks
-            thoughtful questions, gathers all the essential details, and records
-            responses accurately. It evaluates candidates based solely on their
-            qualifications and responses, free from biases related to
-            appearance. Whether it’s qualifications, past experiences, or
-            role-specific scenarios, every aspect is covered with precision. Key
-            information is summarized and organized for your review, saving you
-            hours of manual effort.
-            <br /><br />
-            By creating a consistent and stress-free experience for every
-            candidate, it simplifies your hiring process and helps you find the
-            right talent efficiently.
+            Streamline hiring with an AI recruiting agent. This agent
+            automatically calls candidates, conducting initial screening
+            interviews by phone. It gathers detailed job-relevant information,
+            going beyond applications, to ensure you connect with the most
+            qualified individuals. This saves time and resources while providing
+            a consistent, unbiased experience for every candidate.
           </p>
         </div>
       </li>
@@ -325,24 +396,30 @@ getenv "_HUGO_INLIVE_EMAIL" }}
             Virtual Call Center Officer
           </h3>
           <p class="mt-2 text-base text-slate-500">
-            Imagine a call center officer who’s always available to assist your
-            customers, day or night. With an AI-powered virtual support system,
-            it can answer questions, resolve common issues, and even create
-            detailed follow-up tickets for more complex problems.
-            <br /><br />
-            Powered by your company’s knowledge base, the virtual officer
-            delivers accurate, helpful information tailored to each customer’s
-            needs. It guides them step-by-step through solutions, ensuring
-            clarity and confidence in resolving their concerns. For inquiries
-            that require further attention, it generates comprehensive report
-            tickets, providing your team with everything needed to follow up
-            efficiently.
-            <br /><br />
-            With natural, conversational interactions and consistent
-            performance, this virtual officer offers reliable, high-quality
-            support. It enhances customer satisfaction, reduces wait times, and
-            streamlines operations, making it a valuable addition to any
-            customer service team.
+            Transform customer support with an AI-powered virtual call center
+            officer. Instead of typing in a chat with a help center chatbot,
+            customers now simply speak to get help. This agent answers
+            questions, resolves issues, and creates detailed follow-up tickets.
+            It delivers accurate and tailored information for helping customers.
+          </p>
+        </div>
+      </li>
+      <li
+        class="border border-slate-200 p-5 lg:py-6 lg:px-8 rounded-xl flex flex-col lg:flex-row gap-5 lg:gap-8"
+      >
+        <div>
+          <img
+            class="w-12 lg:w-20 h-12 lg:h-20"
+            src="/images/ai-persona/icon-use-case-ai-04.svg"
+            alt="Use Case Inlive AI Persona"
+            loading="lazy"
+          />
+        </div>
+        <div class="flex-1">
+          <h3 class="font-semibold text-xl text-slate-700">Other Use Cases?</h3>
+          <p class="mt-2 text-base text-slate-500">
+            Have other use cases? Tell us about them! We'll help you build a
+            great solution with our products.
           </p>
         </div>
       </li>
